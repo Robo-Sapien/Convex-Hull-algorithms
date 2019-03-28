@@ -121,4 +121,7 @@ int main(){
 
     //Creating the class and initializig the points
     Kirkpatrick_Seidel MyKPS(points);
+    //Testing the median finding algorithm
+    int med_idx=calculate_median(points);
+    cout<<"med_idx: "<<med_idx<<endl;
 }

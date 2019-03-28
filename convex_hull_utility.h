@@ -53,9 +53,11 @@ public:
     void insert_into_heap(int idx,float value);
     //Function to remove the topmost element from the heap and heapify
     int pop_from_heap();
+    //Function for printing the heap, for debugging purpose
+    void print_heap();
 };
 
 /*
 Fucntion for finding the median element using the heap in O(N)
 */
-int calcualte_median();
+int calculate_median(vector<struct point>&points);
