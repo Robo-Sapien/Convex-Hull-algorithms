@@ -69,6 +69,25 @@ private:
         cout<<"pl_max_";print_point(pl_max_idx);
     }
 
+    //Function to generate the upper hull
+    void get_upper_hull(vector<int> live_idx){
+        /*
+        DESCRIPTION:
+            This function will generate the upper hull of from the given
+            set of living points. This function will recursively call
+            itself each time it partition the problem into two half
+            and joining them by finding the upper bridge.
+        USAGE:
+            INPUT:
+                live_idx    : a.dtype = vector<int>
+                              b. the points on which to run the upper
+                                hull algorithm.
+            OUTPUT:
+
+        */
+        
+    }
+
 public:
     //Defining the constructor
     Kirkpatrick_Seidel(vector<struct point> points):ConvexHull(points){
@@ -81,6 +100,8 @@ public:
         cout<<"idx:"<<idx<<" at location: ";
         cout<<points[idx].x<<","<<points[idx].y<<endl;
     }
+
+
 };
 
 int main(){
