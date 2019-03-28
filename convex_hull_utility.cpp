@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cstdlib>
 #include "convex_hull_utility.h"
 using namespace std;
 
@@ -18,6 +19,10 @@ Heap::Heap(char heap_type,int heap_size){
             heap_size   : integer to define the specify of the heap
     */
     //Assigning the type and size to the heap
+    if(heap_type!='n' && heap_type!='x'){
+        cout<<"Wrong Heap type specified\n";
+        exit(0);
+    }
     this->heap_type=heap_type;
     this->heap_size=heap_size;
     this->last_pos=-1;          //nothing in the heap
@@ -96,6 +101,9 @@ int Heap::pop_from_heap(){
         do the cleanup after that. Also it returns the index of the
         point being popped.
     */
+    //saving the index of top of heap for returning
+    int pop_idx=idx_heap[0];
+
     //Removing the top of the heap
     idx_heap[0]=idx_heap[this->last_pos];
     val_heap[0]=val_heap[this->last_pos];
@@ -132,9 +140,9 @@ int Heap::pop_from_heap(){
             }
             break;
         }
-        else if(this->heap_type=='x' && (valp<val1 || valp<val2)){
-            int val1=val_heap[cid1];
-            int val2=val_heap[cid2];
+        int val1=val_heap[cid1];
+        int val2=val_heap[cid2];
+        if(this->heap_type=='x' && (valp<val1 || valp<val2)){
             //Now swappping the parent with the max valued child
             if(val1>val2){
                 //Swapping parent with the first child
@@ -150,8 +158,6 @@ int Heap::pop_from_heap(){
             }
         }
         else if(this->heap_type=='n' && (valp>val1 || valp>val2)){
-            int val1=val_heap[cid1];
-            int val2=val_heap[cid2];
             if(val1<val2){
                 //if child1's value is less than the child2 then let up.
                 this->swap_elements(cid1,pid);
@@ -166,4 +172,51 @@ int Heap::pop_from_heap(){
             break;
         }
     }
+    return pop_idx;
+}
+
+/*
+Median calculation function using the mean heap
+*/
+int calculate_median(vector<struct point> points){
+    /*
+    Description:
+        This function calcualte the median point according to x_coord
+        in O(N) using the max and min heap.
+    USAGE:
+        INPUT:
+            points  : the vector containing all the points which we
+                        want to get median from.
+        OUTPUT:
+            med_idx : the index of the median element in the points
+                        vector.
+    */
+    //Handling the base case when only two elements are present
+    if(points.size()==1 ||points.size()==2){
+        return 0;
+    }
+
+    //Initializing one min and one max heap
+    Heap min_heap('n',points.size());
+    Heap max_heap('x',points.size());
+
+    //Iterating over the points vector
+    for(int i=0;i<points.size();i++){
+        //Inserting an element into max heap and heapifying
+        max_heap.insert_into_heap(i,points[i].x);i++;
+        //If we reach to the end of the points vector
+        if(i==points.size()){
+            break;
+        }
+        max_heap.insert_into_heap(i,points[i].x);
+
+        //Poppoing the top of max heap to balance equal no. ele on
+        //both side of the heap (left and right)
+        int pop_idx=max_heap.pop_from_heap();
+        //Pushing this element to the min heap
+        min_heap.insert_into_heap(pop_idx,points[pop_idx].x);
+    }
+    //The the one at the top of the max heap is the median one
+    int med_idx=max_heap.pop_from_heap();
+    return med_idx;
 }
