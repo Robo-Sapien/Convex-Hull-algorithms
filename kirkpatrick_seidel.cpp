@@ -1,10 +1,12 @@
 #include <iostream>
 #include <algorithm>
+#include <vector>
 #include <climits>
+#include <cstdlib>
 #include "convex_hull_utility.h"
 using namespace std;
 
-class Kirkpatrick_Seidel: public inherit ConvexHull{
+class Kirkpatrick_Seidel: public ConvexHull{
 private:
     //Extremum points variable
     int pu_min_idx;     //index of uppermost minimum x-coordinate point
@@ -14,6 +16,7 @@ private:
 
     //Function for finding the extremum points
     void get_extremum_points(){
+        cout<<"Finding the extremum points"<<endl;
         //Initializing the min and max value of x-coordinate of points
         int min_x=INT_MAX;
         int max_x=INT_MIN;
@@ -54,17 +57,47 @@ private:
                     pu_max_idx=i;
                 }
                 else if(points[pl_max_idx].y>points[i].y){
-                    //the the lower max point is above 
+                    //the the lower max point is above current point
+                    pl_max_idx=i;
                 }
             }
-
         }
+        //Printing the bounding points
+        cout<<"pu_min_";print_point(pu_min_idx);
+        cout<<"pl_min_";print_point(pl_min_idx);
+        cout<<"pu_max_";print_point(pu_max_idx);
+        cout<<"pl_max_";print_point(pl_max_idx);
     }
+
 public:
     //Defining the constructor
     Kirkpatrick_Seidel(vector<struct point> points):ConvexHull(points){
-        cout<<"Points Initialized"<<endl;
+        cout<<"\nPoints Initialized"<<endl;
+        get_extremum_points();
     }
 
+    //printing the index and location of point
+    void print_point(int idx){
+        cout<<"idx:"<<idx<<" at location: ";
+        cout<<points[idx].x<<","<<points[idx].y<<endl;
+    }
+};
 
+int main(){
+    //Initializing the points
+    srand(14);
+    vector<struct point> points;
+    for(int i=0;i<10;i++){
+        float x=rand()%100;
+        float y=rand()%200;
+        // cin>>x>>y;
+        struct point p;
+        p.x=x;
+        p.y=y;
+        points.push_back(p);
+        cout<<"point: x:"<<p.x<<", y:"<<p.y<<endl;
+    }
+
+    //Creating the class and initializig the points
+    Kirkpatrick_Seidel MyKPS(points);
 }

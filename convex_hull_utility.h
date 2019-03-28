@@ -1,3 +1,5 @@
+#include <vector>
+using namespace std;
 /*
 Defining the structure to hold the point
 */
@@ -17,11 +19,11 @@ protected:
     vector<struct point> points;
 public:
     //Defining the constructor
-    ConvexHull(vecotor<struct point> points){
+    ConvexHull(vector<struct point> points){
         this->points=points;
     }
     //Defining the accessor function of the points
     vector<struct point> get_points(){
         return points;
     }
-}
+};
