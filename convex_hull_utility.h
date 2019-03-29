@@ -7,7 +7,14 @@ struct point{
     float x;
     float y;
 };
-
+/*
+Describing the data structure to hold the slope of pair of points
+*/
+struct p2p_slope{
+    int idx1;
+    int idx2;
+    float slope;
+};
 
 /*
 Defining the class which will serve as template to all the three
@@ -40,13 +47,13 @@ private:
     int last_pos;             //saving the position of last entry
 
     void swap_elements(int pos1,int pos2);
-
 public:
     char heap_type;                 //x: max_heap; n: min_heap
     int heap_size;                  //default size of the heap
 
-    //Defining the constructor
+    //Defining the constructor and destructor
     Heap(char heap_type,int heap_size);
+    ~Heap();
 
     //Defining the function supported in the heap.
     //Function to insert an element to the heap and then heapify

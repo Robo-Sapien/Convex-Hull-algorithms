@@ -31,6 +31,15 @@ Heap::Heap(char heap_type,int heap_size){
     idx_heap=(int *)malloc(sizeof(int)*heap_size);
     val_heap=(float *)malloc(sizeof(float)*heap_size);
 }
+Heap::~Heap(){
+    /*
+    Description:
+        Destructor for the heap, freeing the dynamically allocatted
+        area in heap used for this "heap"
+    */
+    free(this->idx_heap);
+    free(this->val_heap);
+}
 //Implementing the insertion function
 void Heap::insert_into_heap(int idx,float value){
     /*
