@@ -262,8 +262,93 @@ private:
 
         return med_slope_idx
     }
+    //Function for filling the new cand_idx
+    void generate_new_cand_idx(int leave_flag,\
+                                        vector<int> &new_cand_idx,\
+                                vector<struct p2p_slope*> &pair_slopes,\
+                                        vector<int> &LARGE_SLOPE,\
+                                        vector<int> &EQUAL_SLOPE,\
+                                        vector<int> &SMALL_SLOPE){
+        /*
+        Description:
+            This function will generate the new candidate points
+            leaving 1/4th of them either from the LARGE or from
+            SMALL SLOPE indexes based on the the condition mentioned
+            int leave_flag.
+        USAGE:
+            INPUT:
+                leave_flag  : 0/1 - if 0 then remove p from LARGE
+                                    if 1 then remove q from the SMALL
+                                    of the (p,q) sorted pair.
+                rest of the arguments are same meaning.
+            OUTPUT:
+                new_cand_idx: the list will be filled with the
+                                new candidate points for the next itr.
+        */
+        if(leave_flag!=0 && leave_flag!=1){
+            cout<<"Wrong leave flag\n";
+            exit(0);
+        }
+        if(leave_flag==0){
+            //Remove the p from the LARGE slope ones
+            for(int i=0;i<LARGE_SLOPE.size();i++){
+                struct p2p_slope *ptr=pair_slopes[LARGE_SLOPE[i]];
+                if(points[ptr->idx1].x<points[ptr->idx2].x){
+                    new_cand_idx.push_back(ptr->idx2);
+                }
+                else{
+                    new_cand_idx.push_back(ptr->idx1);
+                }
+            }
+            //Removing p from the Equal also
+            for(int i=0;i<EQUAL_SLOPE.size();i++){
+                struct p2p_slope *ptr=pair_slopes[EQUAL_SLOPE[i]];
+                if(points[ptr->idx1].x<points[ptr->idx2].x){
+                    new_cand_idx.push_back(ptr->idx2);
+                }
+                else{
+                    new_cand_idx.push_back(ptr->idx1);
+                }
+            }
+            //Adding all of the SMALL ones
+            for(int i=0;i<SMALL_SLOPE.size();i++){
+                struct p2p_slope *ptr=pair_slopes[SMALL_SLOPE[i]];
+                new_cand_idx.push_back(ptr->idx1);
+                new_cand_idx.push_back(ptr->idx2);
+            }
+        }
+        else{
+            //Removing q from the SMALL
+            for(int i=0;i<SMALL_SLOPE.size();i++){
+                struct p2p_slope *ptr=pair_slopes[SMALL_SLOPE[i]];
+                if(points[ptr->idx1].x<points[ptr->idx2].x){
+                    new_cand_idx.push_back(ptr->idx1);
+                }
+                else{
+                    new_cand_idx.push_back(ptr->idx2);
+                }
+            }
+            //Removing q from EQUAL also
+            for(int i=0;i<EQUAL_SLOPE.size();i++){
+                struct p2p_slope *ptr=pair_slopes[EQUAL_SLOPE[i]];
+                if(points[ptr->idx1].x<points[ptr->idx2].x){
+                    new_cand_idx.push_back(ptr->idx1);
+                }
+                else{
+                    new_cand_idx.push_back(ptr->idx2);
+                }
+            }
+            //Adding all of the LARGE
+            for(int i=0;i<LARGE_SLOPE.size();i++){
+                struct p2p_slope *ptr=pair_slopes[LARGE_SLOPE[i]];
+                new_cand_idx.push_back(ptr->idx1);
+                new_cand_idx.push_back(ptr->idx2);
+            }
+
+        }
+    }
     //Finding the bridge points or the new reduced candidate points
-    pair<int,int> get_bridge_or_candidate(float med_x,int med_slope_idx,\
+    vector<int> get_bridge_or_candidate(float med_x,int med_slope_idx,\
                                         vector<int> &cand_idx,\
                                         vector<int> &new_cand_idx,\
                                 vector<struct p2p_slope*> &pair_slopes,\
@@ -285,7 +370,8 @@ private:
                 med_slope_idx   : the index of pair with med slope
                 rest of the arguments are as usual
             OUTPUT:
-                bridge_point_idx: the pair of index of our bridge
+                bridge_point_idx: the vector of index of our bridge if
+                                    it's possible.
         */
         //Retreiving the median slope
         float med_slope=pair_slopes[med_slope_idx]->slope;
@@ -328,8 +414,28 @@ private:
         }
 
         //Now seeing if we have landed on the jackpot bridge points
-        if()
-
+        vector<int> bridge_point_idx;
+        if(min_x<=med_x && max_x>med_x){
+            cout<<"Jackpot! Got a Bridge Line!!"<<endl;
+            bridge_point_idx.push_back(min_idx);
+            bridge_point_idx.push_back(max_idx);
+            return bridge_point_idx;
+        }
+        else if(max_x<=med_x){//the support line has point on left of med
+            //So we could remove p from (p,q) whose slope is greater than
+            //median slope, since mpq>mh>mb cuz on left.
+            int leave_flag=0;
+            generate_new_cand_idx(leave_flag,new_cand_idx,\
+                                    pair_slopes,LARGE_SLOPE,\
+                                    EQUAL_SLOPE,SMALL_SLOPE);
+        }
+        else{
+            int leave_flag=1;
+            generate_new_cand_idx(leave_flag,new_cand_idx,\
+                                    pair_slopes,LARGE_SLOPE,\
+                                    EQUAL_SLOPE,SMALL_SLOPE);
+        }
+        return bridge_point_idx;
     }
     //Function to calculate the upper bridge
     vector<int> get_upper_bridge(float med_x,vector<int> &cand_idx){
