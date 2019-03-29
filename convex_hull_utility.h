@@ -58,6 +58,7 @@ public:
 };
 
 /*
-Fucntion for finding the median element using the heap in O(N)
+Function for finding the median element using the heap in O(N)
 */
-int calculate_median(vector<struct point>&points);
+int calculate_median(vector<int> &points_idx,\
+                        vector<struct point>&points);

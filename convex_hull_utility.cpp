@@ -194,40 +194,49 @@ void Heap::print_heap(){
 /*
 Median calculation function using the mean heap
 */
-int calculate_median(vector<struct point> &points){
+int calculate_median(vector<int> &points_idx,\
+                        vector<struct point> &points){
     /*
     Description:
         This function calcualte the median point according to x_coord
         in O(N) using the max and min heap.
     USAGE:
         INPUT:
-            points  : the vector containing all the points which we
-                        want to get median from.
+            points_idx  : the index of the points of which to collect
+                            the median.
+            points      : the vector containing all the points.
+
         OUTPUT:
             med_idx : the index of the median element in the points
                         vector.
     */
     cout<<"\nFinding the median element"<<endl;
     //Handling the base case when only two elements are present
-    if(points.size()==1 ||points.size()==2){
+    if(points_idx.size()==0){
+        cout<<"The live index list is empty\n"<<endl;
+        exit(0);
+    }
+    else if(points_idx.size()<=2){
         return 0;
     }
 
     cout<<"Initializing the heaps"<<endl;
     //Initializing one min and one max heap
-    Heap min_heap('n',points.size());
-    Heap max_heap('x',points.size());
+    Heap min_heap('n',points_idx.size());
+    Heap max_heap('x',points_idx.size());
 
     //Iterating over the points vector
-    for(int i=0;i<points.size();i++){
+    for(int i=0;i<points_idx.size();i++){
         cout<<"inserting the first two element on left"<<endl;
         //Inserting an element into max heap and heapifying
-        max_heap.insert_into_heap(i,points[i].x);i++;
+        int insert_idx=points_idx[i];
+        max_heap.insert_into_heap(insert_idx,points[insert_idx].x);i++;
         //If we reach to the end of the points vector
-        if(i==points.size()){
+        if(i==points_idx.size()){
             break;
         }
-        max_heap.insert_into_heap(i,points[i].x);
+        insert_idx=points_idx[i];
+        max_heap.insert_into_heap(insert_idx,points[insert_idx].x);
         // max_heap.print_heap();
 
         //Poppoing the top of max heap to balance equal no. ele on
@@ -237,8 +246,8 @@ int calculate_median(vector<struct point> &points){
         //Pushing this element to the min heap
         // cout<<"pop_idx: "<<pop_idx<<endl;
         min_heap.insert_into_heap(pop_idx,points[pop_idx].x);
-        // min_heap.print_heap();
-        // max_heap.print_heap();
+        min_heap.print_heap();
+        max_heap.print_heap();
     }
     //The the one at the top of the max heap is the median one
     int med_idx=max_heap.pop_from_heap();
