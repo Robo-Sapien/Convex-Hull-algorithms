@@ -38,6 +38,7 @@ public:
     QLabel *label;
     QLabel *label_2;
     QPushButton *btn_zoomFull;
+    QPushButton *btn_GrahamScan;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -46,7 +47,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(684, 566);
+        MainWindow->resize(683, 635);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         plot = new QCustomPlot(centralWidget);
@@ -73,10 +74,13 @@ public:
         btn_zoomFull = new QPushButton(centralWidget);
         btn_zoomFull->setObjectName(QStringLiteral("btn_zoomFull"));
         btn_zoomFull->setGeometry(QRect(560, 460, 96, 27));
+        btn_GrahamScan = new QPushButton(centralWidget);
+        btn_GrahamScan->setObjectName(QStringLiteral("btn_GrahamScan"));
+        btn_GrahamScan->setGeometry(QRect(210, 520, 251, 41));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 684, 23));
+        menuBar->setGeometry(QRect(0, 0, 683, 23));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -98,6 +102,7 @@ public:
         label->setText(QApplication::translate("MainWindow", "x", Q_NULLPTR));
         label_2->setText(QApplication::translate("MainWindow", "y", Q_NULLPTR));
         btn_zoomFull->setText(QApplication::translate("MainWindow", "Zoom Full", Q_NULLPTR));
+        btn_GrahamScan->setText(QApplication::translate("MainWindow", "Run Graham's Scan", Q_NULLPTR));
     } // retranslateUi
 
 };

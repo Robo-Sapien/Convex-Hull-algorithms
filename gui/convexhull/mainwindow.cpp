@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "GrahamScan.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -90,3 +91,15 @@ void MainWindow::on_btn_zoomFull_clicked()
     plot();
 }
 
+void MainWindow::on_btn_GrahamScan_clicked()
+{
+    std::vector<point> points;
+    for(int i = 0; i < (qv_x.size() - 1); i++){
+        struct point p;
+            p.x = qv_x[i];
+            p.y = qv_y[i];
+            points.push_back(p);
+    }
+    GrahamScan *obj = new GrahamScan(points);
+    obj->runGrahamScan(points, this);
+}

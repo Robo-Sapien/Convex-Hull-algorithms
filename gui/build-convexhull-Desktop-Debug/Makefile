@@ -52,11 +52,13 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../convexhull/main.cpp \
 		../convexhull/mainwindow.cpp \
-		../convexhull/qcustomplot.cpp moc_mainwindow.cpp \
+		../convexhull/qcustomplot.cpp \
+		../convexhull/convex_hull_utility.cpp moc_mainwindow.cpp \
 		moc_qcustomplot.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		qcustomplot.o \
+		convex_hull_utility.o \
 		moc_mainwindow.o \
 		moc_qcustomplot.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -134,9 +136,13 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../convexhull/convexhull.pro ../convexhull/mainwindow.h \
-		../convexhull/qcustomplot.h ../convexhull/main.cpp \
+		../convexhull/qcustomplot.h \
+		../convexhull/convex_hull_utility.h \
+		../convexhull/customStack.h \
+		../convexhull/GrahamScan.h ../convexhull/main.cpp \
 		../convexhull/mainwindow.cpp \
-		../convexhull/qcustomplot.cpp
+		../convexhull/qcustomplot.cpp \
+		../convexhull/convex_hull_utility.cpp
 QMAKE_TARGET  = convexhull
 DESTDIR       = 
 TARGET        = convexhull
@@ -322,8 +328,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../convexhull/mainwindow.h ../convexhull/qcustomplot.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../convexhull/main.cpp ../convexhull/mainwindow.cpp ../convexhull/qcustomplot.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../convexhull/mainwindow.h ../convexhull/qcustomplot.h ../convexhull/convex_hull_utility.h ../convexhull/customStack.h ../convexhull/GrahamScan.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../convexhull/main.cpp ../convexhull/mainwindow.cpp ../convexhull/qcustomplot.cpp ../convexhull/convex_hull_utility.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../convexhull/mainwindow.ui $(DISTDIR)/
 
 
@@ -375,7 +381,8 @@ compiler_uic_make_all: ui_mainwindow.h
 compiler_uic_clean:
 	-$(DEL_FILE) ui_mainwindow.h
 ui_mainwindow.h: ../convexhull/mainwindow.ui \
-		/usr/lib/qt5/bin/uic
+		/usr/lib/qt5/bin/uic \
+		../convexhull/qcustomplot.h
 	/usr/lib/qt5/bin/uic ../convexhull/mainwindow.ui -o ui_mainwindow.h
 
 compiler_yacc_decl_make_all:
@@ -392,11 +399,18 @@ main.o: ../convexhull/main.cpp ../convexhull/mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../convexhull/main.cpp
 
 mainwindow.o: ../convexhull/mainwindow.cpp ../convexhull/mainwindow.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../convexhull/qcustomplot.h \
+		../convexhull/GrahamScan.h \
+		../convexhull/convex_hull_utility.h \
+		../convexhull/customStack.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../convexhull/mainwindow.cpp
 
 qcustomplot.o: ../convexhull/qcustomplot.cpp ../convexhull/qcustomplot.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qcustomplot.o ../convexhull/qcustomplot.cpp
+
+convex_hull_utility.o: ../convexhull/convex_hull_utility.cpp ../convexhull/convex_hull_utility.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o convex_hull_utility.o ../convexhull/convex_hull_utility.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

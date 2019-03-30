@@ -28,6 +28,8 @@ private slots:
 
     void on_btn_zoomFull_clicked();
 
+    void on_btn_GrahamScan_clicked();
+
 private:
     Ui::MainWindow *ui;
 

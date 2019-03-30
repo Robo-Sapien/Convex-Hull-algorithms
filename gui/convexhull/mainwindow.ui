@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>684</width>
-    <height>566</height>
+    <width>683</width>
+    <height>635</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -109,13 +109,26 @@
      <string>Zoom Full</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="btn_GrahamScan">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>520</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Run Graham's Scan</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>684</width>
+     <width>683</width>
      <height>23</height>
     </rect>
    </property>
