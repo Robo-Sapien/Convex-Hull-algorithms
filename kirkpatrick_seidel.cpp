@@ -594,7 +594,9 @@ private:
         }
     }
     //Function to generate the upper hull
-    void get_upper_hull(vector<int> &cand_idx){
+    void get_upper_hull(vector<int> &cand_idx,\
+                            unsigned int lower_x_idx,\
+                            unsigned int upper_x_idx){
         /*
         DESCRIPTION:
             This function will generate the upper hull of from the given
@@ -631,6 +633,9 @@ private:
         //Appending the point to the final hull index list
         this->append_bridge_point_to_hull(bridge_point_idx);
 
+        int temp;
+        cin>>temp;
+
 
         /*       DIVISION STEP OF DIVIDE AND CONQUER             */
 
@@ -640,9 +645,9 @@ private:
         unsigned int left_pu_max_idx=bridge_point_idx[0];
         cout<<"\nSolving the left sub-problem"<<endl;
         cout<<"left_max_idx: "<<left_pu_max_idx<<endl;
-        if(this->pu_min_idx!=left_pu_max_idx){
+        if(lower_x_idx!=left_pu_max_idx){
             //Getting the index of probable point on left bridge
-            left_cand_idx=this->get_candidates_idx(this->pu_min_idx,\
+            left_cand_idx=this->get_candidates_idx(lower_x_idx,\
                                                     left_pu_max_idx);
             //Printing the candidate indexes
             for(unsigned int i=0;i<left_cand_idx.size();i++){
@@ -650,7 +655,8 @@ private:
                 this->print_point(left_cand_idx[i]);
             }
             //Calling this function recursively to solve left part
-            //this->get_upper_hull(left_cand_idx);
+            this->get_upper_hull(left_cand_idx,lower_x_idx,\
+                                                left_pu_max_idx);
         }
 
         //SOLVING RIGHT SUB-PROBLEM
@@ -659,17 +665,18 @@ private:
         unsigned int right_pu_min_idx=bridge_point_idx[1];
         cout<<"\nSolving the right sub-problem"<<endl;
         cout<<"right_min_idx: "<<right_pu_min_idx<<endl;
-        if(right_pu_min_idx!=this->pu_max_idx){
+        if(right_pu_min_idx!=upper_x_idx){
             //Getting the new candidates for the right side
             right_cand_idx=this->get_candidates_idx(right_pu_min_idx,\
-                                                    this->pu_max_idx);
+                                                    upper_x_idx);
             //Printing the candidate indexes
             for(unsigned int i=0;i<right_cand_idx.size();i++){
                 cout<<"UH-Cand: ";
                 this->print_point(right_cand_idx[i]);
             }
             //Calling this function recursively to solve right side
-            //this->get_upper_hull(right_cand_idx);
+            this->get_upper_hull(right_cand_idx,right_pu_min_idx,\
+                                                upper_x_idx);
         }
         return;
     }
@@ -712,7 +719,8 @@ public:
 
         //Now calling the upper hull creator to get upper hull
         cout<<endl<<"Calling the Upper Hull function"<<endl;
-        this->get_upper_hull(cand_idx);
+        this->get_upper_hull(cand_idx,this->pu_min_idx,\
+                                        this->pu_max_idx);
     }
 
 };
