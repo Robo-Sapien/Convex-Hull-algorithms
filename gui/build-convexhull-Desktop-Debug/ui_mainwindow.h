@@ -37,6 +37,7 @@ public:
     QPushButton *btn_clear;
     QLabel *label;
     QLabel *label_2;
+    QPushButton *btn_zoomFull;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -59,16 +60,19 @@ public:
         bx_y->setGeometry(QRect(200, 460, 76, 27));
         btn_add = new QPushButton(centralWidget);
         btn_add->setObjectName(QStringLiteral("btn_add"));
-        btn_add->setGeometry(QRect(360, 460, 96, 27));
+        btn_add->setGeometry(QRect(330, 460, 96, 27));
         btn_clear = new QPushButton(centralWidget);
         btn_clear->setObjectName(QStringLiteral("btn_clear"));
-        btn_clear->setGeometry(QRect(520, 460, 96, 27));
+        btn_clear->setGeometry(QRect(450, 460, 96, 27));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(40, 460, 74, 18));
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(170, 460, 74, 18));
+        btn_zoomFull = new QPushButton(centralWidget);
+        btn_zoomFull->setObjectName(QStringLiteral("btn_zoomFull"));
+        btn_zoomFull->setGeometry(QRect(560, 460, 96, 27));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -93,6 +97,7 @@ public:
         btn_clear->setText(QApplication::translate("MainWindow", "Clear", Q_NULLPTR));
         label->setText(QApplication::translate("MainWindow", "x", Q_NULLPTR));
         label_2->setText(QApplication::translate("MainWindow", "y", Q_NULLPTR));
+        btn_zoomFull->setText(QApplication::translate("MainWindow", "Zoom Full", Q_NULLPTR));
     } // retranslateUi
 
 };

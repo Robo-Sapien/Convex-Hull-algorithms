@@ -26,6 +26,8 @@ private slots:
 
     void clickedGraph(QMouseEvent *event);
 
+    void on_btn_zoomFull_clicked();
+
 private:
     Ui::MainWindow *ui;
 
