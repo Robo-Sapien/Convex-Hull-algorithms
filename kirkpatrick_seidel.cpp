@@ -9,10 +9,10 @@ using namespace std;
 class Kirkpatrick_Seidel: public ConvexHull{
 private:
     //Extremum points variable
-    int pu_min_idx;     //index of uppermost minimum x-coordinate point
-    int pu_max_idx;     //index of uppermost maximum x-coordinate point
-    int pl_min_idx;     //index of lowermost min x-coord point
-    int pl_max_idx;     //index of lowermost max x-coord point
+    unsigned int pu_min_idx;     //index of uppermost minimum x-coord point
+    unsigned int pu_max_idx;     //index of uppermost maximum x-coord point
+    unsigned int pl_min_idx;     //index of lowermost min x-coord point
+    unsigned int pl_max_idx;     //index of lowermost max x-coord point
 
     ///////////////////////////////////////////////////////////////////
     /*               GENEREAL UTILITY FUNCTION                      */
@@ -89,7 +89,8 @@ private:
         return slope;
     }
     //Function to get the candidate points to run the upper hull
-    vector<int> get_candidates_idx(int pu_min_idx,int pu_max_idx){
+    vector<int> get_candidates_idx(unsigned int pu_min_idx,
+                                    unsigned int pu_max_idx){
         /*
         Description:
             This fucntion will give us the candidate points index on
@@ -117,7 +118,7 @@ private:
         cand_idx.push_back(pu_max_idx);
 
         //Now traversing through points to get min-point line slope
-        for(int i=0;i<points.size();i++){
+        for(unsigned int i=0;i<points.size();i++){
             //Calculating the min-to-point line slope
             if(i==pu_min_idx || i==pu_max_idx){
                 continue;
@@ -130,7 +131,7 @@ private:
             }
         }
 
-        return cand_idx
+        return cand_idx;
     }
 
 
@@ -184,7 +185,7 @@ private:
         vector<struct p2p_slope*> pair_slopes;
 
         //Randomly pairing up the points (will do consecutive pairing)
-        for(int i=0;i<cand_idx.size();i++){
+        for(unsigned int i=0;i<cand_idx.size();i++){
             int idx1=cand_idx[i];i++;
             //If we have odd number of points then dont pair it up
             if(i==cand_idx.size()){
@@ -237,7 +238,7 @@ private:
         //Creating a dummy "points" with slope in x value
         vector<point> slope_points;
         vector<int> points_idx;
-        for(int i=0;i<pair_slopes.size();i++){
+        for(unsigned int i=0;i<pair_slopes.size();i++){
             struct point pt;
             pt.x=pair_slopes[i]->slope;
             slope_points.push_back(pt);
@@ -248,7 +249,7 @@ private:
         float med_slope=pair_slopes[med_slope_idx]->slope;
 
         //Now we will begin out splitting procedure of pairs into bucket
-        for(int i=0;i<pair_slopes.size();i++){
+        for(unsigned int i=0;i<pair_slopes.size();i++){
             if(pair_slopes[i]->slope > med_slope){
                 LARGE_SLOPE.push_back(i);
             }
@@ -260,7 +261,7 @@ private:
             }
         }
 
-        return med_slope_idx
+        return med_slope_idx;
     }
     //Function for filling the new cand_idx
     void generate_new_cand_idx(int leave_flag,\
@@ -291,7 +292,7 @@ private:
         }
         if(leave_flag==0){
             //Remove the p from the LARGE slope ones
-            for(int i=0;i<LARGE_SLOPE.size();i++){
+            for(unsigned int i=0;i<LARGE_SLOPE.size();i++){
                 struct p2p_slope *ptr=pair_slopes[LARGE_SLOPE[i]];
                 if(points[ptr->idx1].x<points[ptr->idx2].x){
                     new_cand_idx.push_back(ptr->idx2);
@@ -301,7 +302,7 @@ private:
                 }
             }
             //Removing p from the Equal also
-            for(int i=0;i<EQUAL_SLOPE.size();i++){
+            for(unsigned int i=0;i<EQUAL_SLOPE.size();i++){
                 struct p2p_slope *ptr=pair_slopes[EQUAL_SLOPE[i]];
                 if(points[ptr->idx1].x<points[ptr->idx2].x){
                     new_cand_idx.push_back(ptr->idx2);
@@ -311,7 +312,7 @@ private:
                 }
             }
             //Adding all of the SMALL ones
-            for(int i=0;i<SMALL_SLOPE.size();i++){
+            for(unsigned int i=0;i<SMALL_SLOPE.size();i++){
                 struct p2p_slope *ptr=pair_slopes[SMALL_SLOPE[i]];
                 new_cand_idx.push_back(ptr->idx1);
                 new_cand_idx.push_back(ptr->idx2);
@@ -319,7 +320,7 @@ private:
         }
         else{
             //Removing q from the SMALL
-            for(int i=0;i<SMALL_SLOPE.size();i++){
+            for(unsigned int i=0;i<SMALL_SLOPE.size();i++){
                 struct p2p_slope *ptr=pair_slopes[SMALL_SLOPE[i]];
                 if(points[ptr->idx1].x<points[ptr->idx2].x){
                     new_cand_idx.push_back(ptr->idx1);
@@ -329,7 +330,7 @@ private:
                 }
             }
             //Removing q from EQUAL also
-            for(int i=0;i<EQUAL_SLOPE.size();i++){
+            for(unsigned int i=0;i<EQUAL_SLOPE.size();i++){
                 struct p2p_slope *ptr=pair_slopes[EQUAL_SLOPE[i]];
                 if(points[ptr->idx1].x<points[ptr->idx2].x){
                     new_cand_idx.push_back(ptr->idx1);
@@ -339,7 +340,7 @@ private:
                 }
             }
             //Adding all of the LARGE
-            for(int i=0;i<LARGE_SLOPE.size();i++){
+            for(unsigned int i=0;i<LARGE_SLOPE.size();i++){
                 struct p2p_slope *ptr=pair_slopes[LARGE_SLOPE[i]];
                 new_cand_idx.push_back(ptr->idx1);
                 new_cand_idx.push_back(ptr->idx2);
@@ -378,7 +379,7 @@ private:
 
         //Getting the maximum y-intercept possible with median slope
         float max_intrcpt;
-        for(int i=0;i<cand_idx.size();i++){
+        for(unsigned int i=0;i<cand_idx.size();i++){
             float intrcpt=points[cand_idx[i]].y-\
                                 med_slope*points[cand_idx[i]].x;
             if(i==0){
@@ -390,19 +391,17 @@ private:
         }
         //Now getting the point with MAX intercept
         vector<int> MAX;
-        float min_x;
-        float max_x;
-        for(int i=0;i<cand_idx.size();i++){
+        for(unsigned int i=0;i<cand_idx.size();i++){
             float intrcpt=points[cand_idx[i]].y-\
                             med_slope*points[cand_idx[i]].x;
             if(intrcpt==max_intrcpt){
-                MAX.append(cand_idx[i]);
+                MAX.push_back(cand_idx[i]);
             }
         }
         //Now seeing x-coordinate of points on this line
         float min_x=points[MAX[0]].x;int min_idx=0;
         float max_x=points[MAX[0]].x;int max_idx=0;
-        for(int i=1;i<MAX.size();i++){
+        for(unsigned int i=1;i<MAX.size();i++){
             if(points[MAX[i]].x<min_x){
                 min_x=points[MAX[i]].x;
                 min_idx=i;
@@ -449,52 +448,54 @@ private:
                 median_x    : the x-coordinate of the median point.
                 cand_idx    : the index of points on which to get bridge.
             OUTPUT:
-                bridge_vec  : the index in sorted order acc to
+                bridge_point_idx  : the index in sorted order acc to
                                 x-coordinate formning the bridge above.
-                                (since it could be only 1 point)
+                                (it could be only 2 point)
         */
         //Initializing the bridge vector
-        vector<int> bridge_vec;
+        vector<int> bridge_point_idx;
 
         //Handling the base case
-        if(cand_idx.size()==1){NOT POSSIBLE, WE ALWAYS HAVE TWO POINTS
-            bridge_vec.push_back(cand_idx[0]);
-            return bridge_vec;
-        }
-        else if(cand_idx.size()==2){
+        if(cand_idx.size()==2){
             if(points[cand_idx[0]].x<points[cand_idx[1]].x){
-                bridge_vec.push_back(cand_idx[0]);
-                bridge_vec.push_back(cand_idx[1]);
+                bridge_point_idx.push_back(cand_idx[0]);
+                bridge_point_idx.push_back(cand_idx[1]);
             }
             else{
-                bridge_vec.push_back(cand_idx[1]);
-                bridge_vec.push_back(cand_idx[0]);
+                bridge_point_idx.push_back(cand_idx[1]);
+                bridge_point_idx.push_back(cand_idx[0]);
             }
-            return bridge_vec;
+            return bridge_point_idx;
         }
 
         //Now getting the bridges from the set of upper points
+        while(bridge_point_idx.size()!=2){
+            //Calculating the slopes
+            //Initializing the vector for the next set of candidaates idx
+            vector<int> new_cand_idx;
+            vector<struct p2p_slope*> pair_slopes;
+            //Calculating the sloped of the points along with some new cand
+            pair_slopes=get_pair_slopes(cand_idx,new_cand_idx);
+            //Have to free up the p2p_slope pointers from heap
 
-        //Calculating the slopes
-        //Initializing the vector for the next set of candidaates idx
-        vector<int> new_cand_idx;
-        vector<struct p2p_slope*> pair_slopes;
-        //Calculating the sloped of the points along with some new cand
-        pair_slopes=get_pair_slopes(cand_idx,new_cand_idx);
-        //Have to free up the p2p_slope pointers from heap
+            //Calcualting the median slopes index and making 3 slope buckets
+            vector<int> LARGE_SLOPE;
+            vector<int> EQUAL_SLOPE;
+            vector<int> SMALL_SLOPE;
+            //Calulating the median slope
+            int med_slope_idx=fill_slope_bucket(pair_slopes,LARGE_SLOPE,\
+                                                EQUAL_SLOPE,SMALL_SLOPE);
 
-        //Calcualting the median slopes index and making 3 slope buckets
-        vector<int> LARGE_SLOPE;
-        vector<int> EQUAL_SLOPE;
-        vector<int> SMALL_SLOPE;
-        //Calulating the median slope
-        int med_slope_idx=fill_slope_bucket(pair_slopes,LARGE_SLOPE,\
-                                            EQUAL_SLOPE,SMALL_SLOPE);
-
-        //Now finding the new candidate indexes or the the bridge points
-
+            //Now finding the new candidate indexes or the the bridge points
+            bridge_point_idx=get_bridge_or_candidate(med_x,med_slope_idx,\
+                                                cand_idx,new_cand_idx,\
+                                                pair_slopes,LARGE_SLOPE,\
+                                                EQUAL_SLOPE,SMALL_SLOPE);
+            //Reinitializing the new candidate indexes as curr candidate
+            cand_idx.assign(new_cand_idx.begin(),new_cand_idx.end());
+        }
+        return bridge_point_idx;
     }
-
 
 
     //////////////////////////////////////////////////////////////////
@@ -517,11 +518,14 @@ private:
 
         */
         //Finding the median element among the live candidate ones
-        int med_idx=calculate_median(live_idx,this->points);
+        int med_idx=calculate_median(cand_idx,this->points);
         float median_x=points[med_idx].x;
 
         //Now we have to calculate the upper bridge
+        vector<int> bridge_point_idx;
+        bridge_point_idx=get_upper_bridge(median_x,cand_idx);
 
+        //Running some test before proceeeding
 
     }
 
@@ -530,7 +534,7 @@ public:
     //Defining the constructor
     Kirkpatrick_Seidel(vector<struct point> points):ConvexHull(points){
         cout<<"\nPoints Initialized"<<endl;
-        get_extremum_points();
+        this->get_extremum_points();
     }
 
     //printing the index and location of point
@@ -539,6 +543,29 @@ public:
         cout<<points[idx].x<<","<<points[idx].y<<endl;
     }
 
+    //Public function to generate the convex hull
+    void put_a_hull_on_points(){
+        /*
+        DESCRIPTION:
+            This function is the main iterface of talking for finding the
+            convex world from the outside world.Internally it will call
+            it's helper function to generate the convex hull and put the
+            indexes of the points in the member variable hull_point_idx.
+        USAGE:
+            No Arguments and Return value
+        */
+        //First of all we will find the upper hull
+        //Generating the candidate points which could form upper hull.
+        vector<int> cand_idx=get_candidates_idx(this->pu_min_idx,\
+                                                this->pu_max_idx);
+        //Printing the candidate indexes
+        for(unsigned int i=0;i<cand_idx.size();i++){
+            cout<<"UH-Cand: ";
+            this->print_point(cand_idx[i]);
+        }
+        //Now calling the upper hull creator to get upper hull
+
+    }
 
 };
 
@@ -548,10 +575,10 @@ int main(){
     vector<struct point> points;
     vector<int> points_idx;
     for(int i=0;i<10;i++){
-        float x=rand()%100;
-        float y=rand()%200;
+        float x;//=rand()%100;
+        float y;//=rand()%200;
         int idx=i;
-        // cin>>x>>y;
+        cin>>x>>y;
         struct point p;
         p.x=x;
         p.y=y;
@@ -562,7 +589,11 @@ int main(){
 
     //Creating the class and initializig the points
     Kirkpatrick_Seidel MyKPS(points);
+
     //Testing the median finding algorithm
-    int med_idx=calculate_median(points_idx,points);
-    cout<<"med_idx: "<<med_idx<<endl;
+    //int med_idx=calculate_median(points_idx,points);
+    //cout<<"med_idx: "<<med_idx<<endl;
+
+    //Testing the Upper hull
+    MyKPS.put_a_hull_on_points();
 }
