@@ -454,8 +454,8 @@ private:
         cout<<endl;
         //Now seeing x-coordinate of points on this line
         cout<<"Finding the min and max x of points lying on support\n";
-        float min_x=points[MAX[0]].x;int min_idx=0;
-        float max_x=points[MAX[0]].x;int max_idx=0;
+        float min_x=points[MAX[0]].x;int min_idx=MAX[0];
+        float max_x=points[MAX[0]].x;int max_idx=MAX[0];
         for(unsigned int i=1;i<MAX.size();i++){
             if(points[MAX[i]].x<min_x){
                 min_x=points[MAX[i]].x;
@@ -639,6 +639,7 @@ private:
         vector<int> left_cand_idx;
         unsigned int left_pu_max_idx=bridge_point_idx[0];
         cout<<"\nSolving the left sub-problem"<<endl;
+        cout<<"left_max_idx: "<<left_pu_max_idx<<endl;
         if(this->pu_min_idx!=left_pu_max_idx){
             //Getting the index of probable point on left bridge
             left_cand_idx=this->get_candidates_idx(this->pu_min_idx,\
@@ -649,7 +650,7 @@ private:
                 this->print_point(left_cand_idx[i]);
             }
             //Calling this function recursively to solve left part
-            this->get_upper_hull(left_cand_idx);
+            //this->get_upper_hull(left_cand_idx);
         }
 
         //SOLVING RIGHT SUB-PROBLEM
@@ -657,6 +658,7 @@ private:
         vector<int> right_cand_idx;
         unsigned int right_pu_min_idx=bridge_point_idx[1];
         cout<<"\nSolving the right sub-problem"<<endl;
+        cout<<"right_min_idx: "<<right_pu_min_idx<<endl;
         if(right_pu_min_idx!=this->pu_max_idx){
             //Getting the new candidates for the right side
             right_cand_idx=this->get_candidates_idx(right_pu_min_idx,\
@@ -667,7 +669,7 @@ private:
                 this->print_point(right_cand_idx[i]);
             }
             //Calling this function recursively to solve right side
-            this->get_upper_hull(right_cand_idx);
+            //this->get_upper_hull(right_cand_idx);
         }
         return;
     }
