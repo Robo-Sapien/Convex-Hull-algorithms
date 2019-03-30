@@ -69,7 +69,7 @@ private:
         cout<<"pu_min_";print_point(pu_min_idx);
         cout<<"pl_min_";print_point(pl_min_idx);
         cout<<"pu_max_";print_point(pu_max_idx);
-        cout<<"pl_max_";print_point(pl_max_idx);
+        cout<<"pl_max_";print_point(pl_max_idx);cout<<endl;
     }
     //Function to calculate the slope give the index of the points
     float calculate_p2p_slope(int idx1,int idx2){
@@ -518,12 +518,15 @@ private:
 
         */
         //Finding the median element among the live candidate ones
+        cout<<"Finding the median x coordinate"<<endl;
         int med_idx=calculate_median(cand_idx,this->points);
         float median_x=points[med_idx].x;
+        cout<<"Median Index is: "<<med_idx<<" at x-coord: "<<median_x;
+        cout<<endl;
 
         //Now we have to calculate the upper bridge
         vector<int> bridge_point_idx;
-        bridge_point_idx=get_upper_bridge(median_x,cand_idx);
+        //bridge_point_idx=get_upper_bridge(median_x,cand_idx);
 
         //Running some test before proceeeding
 
@@ -556,6 +559,7 @@ public:
         */
         //First of all we will find the upper hull
         //Generating the candidate points which could form upper hull.
+        cout<<"Generating the UPPER-HULL Candidates"<<endl;
         vector<int> cand_idx=get_candidates_idx(this->pu_min_idx,\
                                                 this->pu_max_idx);
         //Printing the candidate indexes
@@ -563,8 +567,10 @@ public:
             cout<<"UH-Cand: ";
             this->print_point(cand_idx[i]);
         }
-        //Now calling the upper hull creator to get upper hull
 
+        //Now calling the upper hull creator to get upper hull
+        cout<<endl<<"Calling the Upper Hull function"<<endl;
+        this->get_upper_hull(cand_idx);
     }
 
 };
@@ -574,7 +580,7 @@ int main(){
     srand(14);
     vector<struct point> points;
     vector<int> points_idx;
-    for(int i=0;i<10;i++){
+    for(int i=0;i<15;i++){
         float x;//=rand()%100;
         float y;//=rand()%200;
         int idx=i;
