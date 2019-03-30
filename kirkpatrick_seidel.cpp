@@ -89,8 +89,8 @@ private:
         return slope;
     }
     //Function to get the candidate points to run the upper hull
-    vector<int> get_candidates_idx(unsigned int pu_min_idx,
-                                    unsigned int pu_max_idx){
+    vector<int> get_candidates_idx(unsigned int cur_pu_min_idx,
+                                    unsigned int cur_pu_max_idx){
         /*
         Description:
             This fucntion will give us the candidate points index on
@@ -102,28 +102,34 @@ private:
                 as compared to the min-max slope).
         USAGE:
             INPUT:
-                pu_min_idx  : the minmum bound on the x-coordinate
-                pu_max_idx  : the maximum bound on the x-coordinate
+                cur_pu_min_idx  : the minmum bound on the x-coordinate
+                cur_pu_max_idx  : the maximum bound on the x-coordinate
             OUTPUT:
                 cand_idx    : the index of the candidate points relative
                                 to the points vector.
         */
         //calculating the min-max line slope
-        float nx_slope=calculate_p2p_slope(pu_min_idx,pu_max_idx);
+        float nx_slope=calculate_p2p_slope(cur_pu_min_idx,
+                                            cur_pu_max_idx);
 
         //Creating the cand-idx vector
         vector<int> cand_idx;
         //Pushing the min and max points
-        cand_idx.push_back(pu_min_idx);
-        cand_idx.push_back(pu_max_idx);
+        cand_idx.push_back(cur_pu_min_idx);
+        cand_idx.push_back(cur_pu_max_idx);
 
         //Now traversing through points to get min-point line slope
         for(unsigned int i=0;i<points.size();i++){
             //Calculating the min-to-point line slope
-            if(i==pu_min_idx || i==pu_max_idx){
+            if(i==cur_pu_min_idx || i==cur_pu_max_idx){
                 continue;
             }
-            float np_slope=calculate_p2p_slope(pu_min_idx,i);
+            //Leaving the points who are outside this bound
+            if(points[i].x>points[cur_pu_max_idx].x ||
+                        points[i].x<points[cur_pu_min_idx].x){
+                continue;
+            }
+            float np_slope=calculate_p2p_slope(cur_pu_min_idx,i);
 
             //Accepting or rejecting the points
             if(np_slope>=nx_slope){
@@ -407,7 +413,8 @@ private:
                 rest of the arguments are as usual
             OUTPUT:
                 bridge_point_idx: the vector of index of our bridge if
-                                    it's possible.
+                                    it's possible in sorted order with
+                                    x-coordinate.
         */
         //Retreiving the median slope
         float med_slope=pair_slopes[med_slope_idx]->slope;
@@ -561,6 +568,31 @@ private:
     //////////////////////////////////////////////////////////////////
     /*                  UPPER HULL RELATED FUNCTION                 */
     //////////////////////////////////////////////////////////////////
+    //Function to append the bridge point to actual hull point
+    void append_bridge_point_to_hull(vector<int> &bridge_idx){
+        /*
+        DESCRITPION:
+            This function will append the bridge points found out
+            by the upper bridge method to the hull points.
+            This will not add if the poit already exist on hull.
+        USAGE:
+            INPUT:
+                bridge_idx  : the vecotr containing the index of bridge
+        */
+        cout<<"Appending the bridge point to the hull points\n";
+        //Appending the points on the bridge to the final hull idx
+        for(unsigned int i=0;i<bridge_idx.size();i++){
+            //Checking the existance of the bridge point in hull
+            bool not_exist;
+            not_exist=find(bridge_idx.begin(),
+                bridge_idx.end(),bridge_idx[i])==bridge_idx.end();
+
+            //Appending to the hull idx vec if dont exist
+            if(not_exist){
+                this->hull_point_idx.push_back(bridge_idx[i]);
+            }
+        }
+    }
     //Function to generate the upper hull
     void get_upper_hull(vector<int> &cand_idx){
         /*
@@ -577,6 +609,15 @@ private:
             OUTPUT:
 
         */
+        //Handling the base case here itself, otherwise infinite loop
+        if(cand_idx.size()==2){
+            //Directly appending the points to the final hull
+            this->append_bridge_point_to_hull(cand_idx);
+            return;
+        }
+
+
+        /*         MERGING STEP OF DIVIDE AND CONQUER          */
         //Finding the median element among the live candidate ones
         cout<<"Finding the median x coordinate"<<endl;
         int med_idx=calculate_median(cand_idx,this->points);
@@ -587,9 +628,48 @@ private:
         //Now we have to calculate the upper bridge
         vector<int> bridge_point_idx;
         bridge_point_idx=get_upper_bridge(median_x,cand_idx);
+        //Appending the point to the final hull index list
+        this->append_bridge_point_to_hull(bridge_point_idx);
 
-        //Running some test before proceeeding
 
+        /*       DIVISION STEP OF DIVIDE AND CONQUER             */
+
+        //SOLVING LEFT SUB-PROBLEM
+        //Calculating the new candidate for the left sub problem
+        vector<int> left_cand_idx;
+        unsigned int left_pu_max_idx=bridge_point_idx[0];
+        cout<<"\nSolving the left sub-problem"<<endl;
+        if(this->pu_min_idx!=left_pu_max_idx){
+            //Getting the index of probable point on left bridge
+            left_cand_idx=this->get_candidates_idx(this->pu_min_idx,\
+                                                    left_pu_max_idx);
+            //Printing the candidate indexes
+            for(unsigned int i=0;i<left_cand_idx.size();i++){
+                cout<<"UH-Cand: ";
+                this->print_point(left_cand_idx[i]);
+            }
+            //Calling this function recursively to solve left part
+            this->get_upper_hull(left_cand_idx);
+        }
+
+        //SOLVING RIGHT SUB-PROBLEM
+        //Calculating the new candidates for right side
+        vector<int> right_cand_idx;
+        unsigned int right_pu_min_idx=bridge_point_idx[1];
+        cout<<"\nSolving the right sub-problem"<<endl;
+        if(right_pu_min_idx!=this->pu_max_idx){
+            //Getting the new candidates for the right side
+            right_cand_idx=this->get_candidates_idx(right_pu_min_idx,\
+                                                    this->pu_max_idx);
+            //Printing the candidate indexes
+            for(unsigned int i=0;i<right_cand_idx.size();i++){
+                cout<<"UH-Cand: ";
+                this->print_point(right_cand_idx[i]);
+            }
+            //Calling this function recursively to solve right side
+            this->get_upper_hull(right_cand_idx);
+        }
+        return;
     }
 
 
