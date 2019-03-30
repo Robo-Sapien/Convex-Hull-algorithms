@@ -243,6 +243,7 @@ private:
         */
         //Getting the median slope but first doing our hack
         //Creating a dummy "points" with slope in x value
+        cout<<"Finding the median slope"<<endl;
         vector<point> slope_points;
         vector<int> points_idx;
         for(unsigned int i=0;i<pair_slopes.size();i++){
@@ -254,16 +255,20 @@ private:
         //Now we are ready with out dummy points nad index(reuse the func)
         int med_slope_idx=calculate_median(points_idx,slope_points);
         float med_slope=pair_slopes[med_slope_idx]->slope;
+        cout<<"Median slope is: "<<med_slope<<endl<<endl;
 
         //Now we will begin out splitting procedure of pairs into bucket
         for(unsigned int i=0;i<pair_slopes.size();i++){
             if(pair_slopes[i]->slope > med_slope){
+                cout<<"Putting idx: "<<i<<" in LARGE_SLOPE"<<endl;
                 LARGE_SLOPE.push_back(i);
             }
             else if(pair_slopes[i]->slope== med_slope){
+                cout<<"Putting idx: "<<i<<" in EQUAL_SLOPE"<<endl;
                 EQUAL_SLOPE.push_back(i);
             }
             else{
+                cout<<"Putting idx: "<<i<<" in SMALL_SLOPE"<<endl;
                 SMALL_SLOPE.push_back(i);
             }
         }
@@ -297,27 +302,36 @@ private:
             cout<<"Wrong leave flag\n";
             exit(0);
         }
+        cout<<"Generating the new pruned candidates\n";
         if(leave_flag==0){
+            cout<<"CODE mh>mb : "<<endl;
+            cout<<"Removing the p point of (p,q) pair from LARGE\n";
             //Remove the p from the LARGE slope ones
             for(unsigned int i=0;i<LARGE_SLOPE.size();i++){
                 struct p2p_slope *ptr=pair_slopes[LARGE_SLOPE[i]];
                 if(points[ptr->idx1].x<points[ptr->idx2].x){
+                    cout<<"Adding idx: "<<ptr->idx2<<endl;
                     new_cand_idx.push_back(ptr->idx2);
                 }
                 else{
+                    cout<<"Adding idx: "<<ptr->idx1<<endl;
                     new_cand_idx.push_back(ptr->idx1);
                 }
             }
+            cout<<"Removing the p point of (p,q) pair from EQUAL\n";
             //Removing p from the Equal also
             for(unsigned int i=0;i<EQUAL_SLOPE.size();i++){
                 struct p2p_slope *ptr=pair_slopes[EQUAL_SLOPE[i]];
                 if(points[ptr->idx1].x<points[ptr->idx2].x){
+                    cout<<"Adding idx: "<<ptr->idx2<<endl;
                     new_cand_idx.push_back(ptr->idx2);
                 }
                 else{
+                    cout<<"Adding idx: "<<ptr->idx1<<endl;
                     new_cand_idx.push_back(ptr->idx1);
                 }
             }
+            cout<<"Adding all point of (p,q) pair from SMALL\n";
             //Adding all of the SMALL ones
             for(unsigned int i=0;i<SMALL_SLOPE.size();i++){
                 struct p2p_slope *ptr=pair_slopes[SMALL_SLOPE[i]];
@@ -326,26 +340,34 @@ private:
             }
         }
         else{
+            cout<<"CODE mh<mb : "<<endl;
+            cout<<"Removing the p point of (p,q) pair from SMALL\n";
             //Removing q from the SMALL
             for(unsigned int i=0;i<SMALL_SLOPE.size();i++){
                 struct p2p_slope *ptr=pair_slopes[SMALL_SLOPE[i]];
                 if(points[ptr->idx1].x<points[ptr->idx2].x){
+                    cout<<"Adding idx: "<<ptr->idx1<<endl;
                     new_cand_idx.push_back(ptr->idx1);
                 }
                 else{
+                    cout<<"Adding idx: "<<ptr->idx2<<endl;
                     new_cand_idx.push_back(ptr->idx2);
                 }
             }
+            cout<<"Removing the p point of (p,q) pair from EQUAL\n";
             //Removing q from EQUAL also
             for(unsigned int i=0;i<EQUAL_SLOPE.size();i++){
                 struct p2p_slope *ptr=pair_slopes[EQUAL_SLOPE[i]];
                 if(points[ptr->idx1].x<points[ptr->idx2].x){
+                    cout<<"Adding idx: "<<ptr->idx1<<endl;
                     new_cand_idx.push_back(ptr->idx1);
                 }
                 else{
+                    cout<<"Adding idx: "<<ptr->idx2<<endl;
                     new_cand_idx.push_back(ptr->idx2);
                 }
             }
+            cout<<"Adding all point of (p,q) pair from LARGE\n";
             //Adding all of the LARGE
             for(unsigned int i=0;i<LARGE_SLOPE.size();i++){
                 struct p2p_slope *ptr=pair_slopes[LARGE_SLOPE[i]];
@@ -353,6 +375,12 @@ private:
                 new_cand_idx.push_back(ptr->idx2);
             }
 
+        }
+
+        //Printing all the points in new cand_idx:
+        for(unsigned int i=0;i<new_cand_idx.size();i++){
+            cout<<"new UH-Cand: ";
+            this->print_point(new_cand_idx[i]);
         }
     }
     //Finding the bridge points or the new reduced candidate points
@@ -385,6 +413,7 @@ private:
         float med_slope=pair_slopes[med_slope_idx]->slope;
 
         //Getting the maximum y-intercept possible with median slope
+        cout<<"\nFinding the maximum intercept"<<endl;
         float max_intrcpt;
         for(unsigned int i=0;i<cand_idx.size();i++){
             float intrcpt=points[cand_idx[i]].y-\
@@ -396,28 +425,43 @@ private:
                 max_intrcpt=intrcpt;
             }
         }
+        cout<<"Maximum intercept is: "<<max_intrcpt<<endl<<endl;
+
+
         //Now getting the point with MAX intercept
+        cout<<"Finding the points which makes that intercept";
+        cout<<" i.e lies on this supporting line"<<endl;
         vector<int> MAX;
         for(unsigned int i=0;i<cand_idx.size();i++){
             float intrcpt=points[cand_idx[i]].y-\
                             med_slope*points[cand_idx[i]].x;
+
+            //Here due to machine precision we could have problem
+            //alternatively we could add tolerance here.
             if(intrcpt==max_intrcpt){
+                cout<<"id of points lying on this support: "<<cand_idx[i];
+                cout<<endl;
                 MAX.push_back(cand_idx[i]);
             }
         }
+        cout<<endl;
         //Now seeing x-coordinate of points on this line
+        cout<<"Finding the min and max x of points lying on support\n";
         float min_x=points[MAX[0]].x;int min_idx=0;
         float max_x=points[MAX[0]].x;int max_idx=0;
         for(unsigned int i=1;i<MAX.size();i++){
             if(points[MAX[i]].x<min_x){
                 min_x=points[MAX[i]].x;
-                min_idx=i;
+                min_idx=MAX[i];
             }
             if(points[MAX[i]].x>max_x){
                 max_x=points[MAX[i]].x;
-                max_idx=i;
+                max_idx=MAX[i];
             }
         }
+        cout<<"max idx: "<<max_idx<<" max_x: "<<max_x<<endl;
+        cout<<"min idx: "<<min_idx<<" min_x: "<<min_x<<endl<<endl;
+
 
         //Now seeing if we have landed on the jackpot bridge points
         vector<int> bridge_point_idx;
@@ -484,7 +528,6 @@ private:
             //Calculating the sloped of the points along with some new cand
             cout<<"\nPairing points and calculating slopes\n";
             pair_slopes=get_pair_slopes(cand_idx,new_cand_idx);
-            exit(0);
             //Have to free up the p2p_slope pointers from heap
 
             //Calcualting the median slopes index and making 3 slope buckets
@@ -500,8 +543,16 @@ private:
                                                 cand_idx,new_cand_idx,\
                                                 pair_slopes,LARGE_SLOPE,\
                                                 EQUAL_SLOPE,SMALL_SLOPE);
+
             //Reinitializing the new candidate indexes as curr candidate
             cand_idx.assign(new_cand_idx.begin(),new_cand_idx.end());
+            //Freeing up the point pairs
+            for(unsigned int i=0;i<pair_slopes.size();i++){
+                free(pair_slopes[i]);
+            }
+            cout<<"#################################"<<endl;
+            cout<<"AN ITERATION OF UPPER BRIDGE DONE"<<endl;
+            cout<<"#################################"<<endl<<endl;
         }
         return bridge_point_idx;
     }
