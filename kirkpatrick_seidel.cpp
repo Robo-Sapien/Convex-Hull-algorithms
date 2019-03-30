@@ -197,15 +197,22 @@ private:
             //Filtering the points if both the points lie on same x
             if(points[idx1].x==points[idx2].x){
                 if(points[idx1].y>points[idx2].y){
+                    cout<<"point pair is verticle: removing: "<<idx2;
                     new_cand_idx.push_back(idx1);
                 }
                 else{
+                    cout<<"point pair is verticle: removing: "<<idx1;
                     new_cand_idx.push_back(idx2);
                 }
+                cout<<endl;
+                continue;
             }
 
             //Calculating the point to point slope
             float slope=calculate_p2p_slope(idx1,idx2);
+            //Printitng the pair and corresponding slope
+            cout<<"Pairing: "<<idx1<<" and "<<idx2<<" slope: "<<slope;
+            cout<<endl;
             //Adding the slope of point to the p2p_slope vector
             struct p2p_slope *slope_ptr=get_p2p_slope_entry(idx1,idx2,\
                                                             slope);
@@ -475,7 +482,9 @@ private:
             vector<int> new_cand_idx;
             vector<struct p2p_slope*> pair_slopes;
             //Calculating the sloped of the points along with some new cand
+            cout<<"\nPairing points and calculating slopes\n";
             pair_slopes=get_pair_slopes(cand_idx,new_cand_idx);
+            exit(0);
             //Have to free up the p2p_slope pointers from heap
 
             //Calcualting the median slopes index and making 3 slope buckets
@@ -526,7 +535,7 @@ private:
 
         //Now we have to calculate the upper bridge
         vector<int> bridge_point_idx;
-        //bridge_point_idx=get_upper_bridge(median_x,cand_idx);
+        bridge_point_idx=get_upper_bridge(median_x,cand_idx);
 
         //Running some test before proceeeding
 
