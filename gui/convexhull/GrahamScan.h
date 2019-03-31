@@ -8,7 +8,8 @@
 #include <vector>
 #include <stdlib.h>
 #include <algorithm>
-#include "convex_hull_utility.h"
+#include <unistd.h>
+//#include "convex_hull_utility.h"
 #include "customStack.h"
 
 using namespace std;
@@ -21,10 +22,10 @@ class GrahamScan : public ConvexHull{
     Find the reference point (bottommost leftmost point)
     */
     void findReferencePointAndSwap(vector<point> &points){
-      float ymin = points[0].y, min = 0; 
+      double ymin = points[0].y, min = 0;
       for (unsigned int i = 1; i < points.size(); i++)
       { 
-        float y = points[i].y; 
+        double y = points[i].y;
         if ((y < ymin) || (ymin == y && points[i].x < points[min].x)){
           ymin = points[i].y;
           min = i;
@@ -39,7 +40,7 @@ class GrahamScan : public ConvexHull{
     }
 
     // finds square of distance between 2 points
-    static float distanceSq(point p1, point p2) { 
+    static double distanceSq(point p1, point p2) {
       return (p1.x - p2.x)*(p1.x - p2.x) + (p1.y - p2.y)*(p1.y - p2.y); 
     } 
 
@@ -51,7 +52,7 @@ class GrahamScan : public ConvexHull{
     2 if they are anti-clockwise (angle p2 is greater than p1)
     */
     static int findOrientation(point a, point b, point c){
-      int o = (b.y - a.y) * (c.x - b.x) - (b.x - a.x) * (c.y - b.y);
+      double o = (b.y - a.y) * (c.x - b.x) - (b.x - a.x) * (c.y - b.y);
       if(o == 0){
         return 0; // collinear
       }
@@ -130,16 +131,29 @@ class GrahamScan : public ConvexHull{
       convexHull.push(points[0]);
       convexHull.push(points[1]);
       convexHull.push(points[2]);
+      vector<point> hullPoints;
       for(unsigned int i = 3; i < points.size(); i++)
       {
-        while( findOrientation(convexHull.getElementBelowTop(), convexHull.getTopElement(), points[i]) != 2){
-          convexHull.pop();
+        while( findOrientation(convexHull.getElementBelowTop(), convexHull.getTopElement(), points[i]) == 1){
+            w->drawLines(hullPoints);
+            sleep(1);
+            convexHull.pop();
         }
         convexHull.push(points[i]);
+        hullPoints = convexHull.getPoints();
+        w->drawLines(hullPoints);
+        sleep(1);
+//        for(unsigned int i=0; i<hullPoints.size(); i++){
+//            cout<<hullPoints[i].x<<" "<<hullPoints[i].y<<endl;
+//        }
+        cout<<endl;
+
       }
+       hullPoints.push_back(hullPoints[0]);
+       w->drawLines(hullPoints);
       
-//      w->drawLine(convexHull.getPoints());
-      convexHull.getPoints();
+
+//      convexHull.getPoints();
 
     }
 
@@ -156,7 +170,7 @@ class GrahamScan : public ConvexHull{
 ////    int n;
 ////    cin >> n;
 ////    vector<point> points;
-////    float x, y;
+////    double x, y;
 ////    for (size_t i = 0; i < n; i++) {
 ////      cin >> x >> y;
 ////      struct point p;

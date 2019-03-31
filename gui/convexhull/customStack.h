@@ -118,7 +118,7 @@ vector<T> customStack<T>::getPoints()
     vector<T> points;
     for(int i = 0; i <= top; i++)
     {
-        cout<< arr[i].x << " " << arr[i].y << endl;
+//        cout<< arr[i].x << " " << arr[i].y << endl;
         points.push_back(arr[i]);
     }
     return points;
