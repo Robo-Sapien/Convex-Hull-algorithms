@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "convex_hull_utility.h"
+#include <vector>
+
 
 namespace Ui {
 class MainWindow;
@@ -18,6 +21,7 @@ public:
     void addPoint(double x, double y);
     void clearData();
     void plot();
+    void drawLines(std::vector<point> points);
 
 private slots:
     void on_btn_add_clicked();

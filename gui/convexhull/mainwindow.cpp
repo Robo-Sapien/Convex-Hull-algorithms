@@ -42,15 +42,6 @@ void MainWindow::clearData()
 void MainWindow::plot()
 {
 
-    int i;
-    QCPItemLine *line[qv_x.size()];
-    for(i = 0; i < (qv_x.size() - 1); i++){
-        line[i] = new QCPItemLine(ui->plot);
-        line[i]->start->setCoords(qv_x[i], qv_y[i]);
-        line[i]->end->setCoords(qv_x[i+1], qv_y[i+1]);
-        ui->plot->addItem(line[i]);
-    }
-
 //    QCPItemLine *line = new QCPItemLine(ui->plot);
 //    line->start->setCoords(0.0, 1.0);
 //    line->end->setCoords(3.0, 0.0);
@@ -61,6 +52,20 @@ void MainWindow::plot()
     ui->plot->replot();
     ui->plot->update();
 
+}
+
+void MainWindow::drawLines(vector<point> points)
+{
+    ui->plot->clearItems();
+    QCPItemLine *line[points.size()];
+    for(unsigned int i = 0; i < (points.size() - 1); i++){
+        line[i] = new QCPItemLine(ui->plot);
+        line[i]->start->setCoords(points[i].x, points[i].y);
+        line[i]->end->setCoords(points[i+1].x, points[i+1].y);
+        ui->plot->addItem(line[i]);
+        cout<<points[i].x<<" " <<points[i].y<<endl;
+    }
+    plot();
 }
 
 void MainWindow::on_btn_add_clicked()
