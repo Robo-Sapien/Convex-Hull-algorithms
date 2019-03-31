@@ -24,7 +24,7 @@ class ConvexHull{
 protected:
     //All subclasses will inherit this variable
     vector<struct point> points;
-    vector<int> hull_point_idx;
+    vector< pair<int,int> > hull_point_pairs;
 public:
     //Defining the constructor
     ConvexHull(vector<struct point> points){

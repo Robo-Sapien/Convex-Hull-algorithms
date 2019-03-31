@@ -572,31 +572,31 @@ private:
     void append_bridge_point_to_hull(vector<int> &bridge_idx){
         /*
         DESCRITPION:
-            This function will append the bridge points found out
+            This function will append the bridge points  pair found out
             by the upper bridge method to the hull points.
-            This will not add if the poit already exist on hull.
+            This will not add if the pair already exist on hull
         USAGE:
             INPUT:
                 bridge_idx  : the vecotr containing the index of bridge
         */
-        cout<<"Appending the bridge point to the hull points\n";
-        //Appending the points on the bridge to the final hull idx
-        for(unsigned int i=0;i<bridge_idx.size();i++){
-            //Checking the existance of the bridge point in hull
-            bool not_exist;
-            not_exist=find(bridge_idx.begin(),
-                bridge_idx.end(),bridge_idx[i])==bridge_idx.end();
-
-            //Appending to the hull idx vec if dont exist
-            if(not_exist){
-                this->hull_point_idx.push_back(bridge_idx[i]);
-            }
+        //Making the pair of the points on the convex hull sorted
+        pair<int,int> hull_pair=make_pair(bridge_idx[0],bridge_idx[1]);
+        //Checking the existance of the pair on hull
+        //This should not happen i.e one pair should only come
+        //one time as the bridge.
+        bool exist=find(hull_point_pairs.begin(),hull_point_pairs.end(),\
+                        hull_pair)!=hull_point_pairs.end();
+        if(exist){
+            cout<<"Pair already exist. Some mistake is there\n";
+            exit(0);
         }
+        cout<<"Appending the bridge point to the hull points\n";
+        hull_point_pairs.push_back(hull_pair);
     }
     //Function to generate the upper hull
     void get_upper_hull(vector<int> &cand_idx,\
-                            unsigned int lower_x_idx,\
-                            unsigned int upper_x_idx){
+                            unsigned int min_x_idx,\
+                            unsigned int max_x_idx){
         /*
         DESCRIPTION:
             This function will generate the upper hull of from the given
@@ -608,11 +608,15 @@ private:
                 cand_idx    : a.dtype = vector<int>
                               b. the points on which to run the upper
                                 hull algorithm.(candidates)
+                min_x_idx   : the index of the lower bound of x-coord
+                max_x_idx   : the index of the upper bound of x-coord
+                                for this current problem.
             OUTPUT:
 
         */
         //Handling the base case here itself, otherwise infinite loop
         if(cand_idx.size()==2){
+            cout<<"Base case reached for the bridge\n"<<endl;
             //Directly appending the points to the final hull
             this->append_bridge_point_to_hull(cand_idx);
             return;
@@ -644,10 +648,11 @@ private:
         vector<int> left_cand_idx;
         unsigned int left_pu_max_idx=bridge_point_idx[0];
         cout<<"\nSolving the left sub-problem"<<endl;
+        cout<<"left_min_idx: "<<min_x_idx<<endl;
         cout<<"left_max_idx: "<<left_pu_max_idx<<endl;
-        if(lower_x_idx!=left_pu_max_idx){
+        if(min_x_idx!=left_pu_max_idx){
             //Getting the index of probable point on left bridge
-            left_cand_idx=this->get_candidates_idx(lower_x_idx,\
+            left_cand_idx=this->get_candidates_idx(min_x_idx,\
                                                     left_pu_max_idx);
             //Printing the candidate indexes
             for(unsigned int i=0;i<left_cand_idx.size();i++){
@@ -655,7 +660,7 @@ private:
                 this->print_point(left_cand_idx[i]);
             }
             //Calling this function recursively to solve left part
-            this->get_upper_hull(left_cand_idx,lower_x_idx,\
+            this->get_upper_hull(left_cand_idx,min_x_idx,\
                                                 left_pu_max_idx);
         }
 
@@ -663,12 +668,14 @@ private:
         //Calculating the new candidates for right side
         vector<int> right_cand_idx;
         unsigned int right_pu_min_idx=bridge_point_idx[1];
-        cout<<"\nSolving the right sub-problem"<<endl;
+        cout<<"\n###############################################\n";
+        cout<<"Solving the right sub-problem"<<endl;
         cout<<"right_min_idx: "<<right_pu_min_idx<<endl;
-        if(right_pu_min_idx!=upper_x_idx){
+        cout<<"right_max_idx: "<<max_x_idx<<endl;
+        if(right_pu_min_idx!=max_x_idx){
             //Getting the new candidates for the right side
             right_cand_idx=this->get_candidates_idx(right_pu_min_idx,\
-                                                    upper_x_idx);
+                                                    max_x_idx);
             //Printing the candidate indexes
             for(unsigned int i=0;i<right_cand_idx.size();i++){
                 cout<<"UH-Cand: ";
@@ -676,7 +683,7 @@ private:
             }
             //Calling this function recursively to solve right side
             this->get_upper_hull(right_cand_idx,right_pu_min_idx,\
-                                                upper_x_idx);
+                                                max_x_idx);
         }
         return;
     }
@@ -702,7 +709,7 @@ public:
             This function is the main iterface of talking for finding the
             convex world from the outside world.Internally it will call
             it's helper function to generate the convex hull and put the
-            indexes of the points in the member variable hull_point_idx.
+            indexes of the points in the member variable hull_point_pair.
         USAGE:
             No Arguments and Return value
         */
@@ -721,6 +728,18 @@ public:
         cout<<endl<<"Calling the Upper Hull function"<<endl;
         this->get_upper_hull(cand_idx,this->pu_min_idx,\
                                         this->pu_max_idx);
+
+        //Printing the upper hull index
+        cout<<"\n\n##################################################\n";
+        cout<<"Printing the pair of point on the upper hull\n";
+        cout<<"##################################################\n";
+        for(unsigned int i=0;i<hull_point_pairs.size();i++){
+            pair<int,int> hull_pair=hull_point_pairs[i];
+            cout<<"HULL PAIR:\n";
+            this->print_point(hull_pair.first);
+            this->print_point(hull_pair.second);
+            cout<<endl;
+        }
     }
 
 };
