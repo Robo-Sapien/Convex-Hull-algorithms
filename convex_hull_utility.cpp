@@ -234,31 +234,51 @@ int calculate_median(vector<int> &points_idx,\
     Heap min_heap('n',points_idx.size());
     Heap max_heap('x',points_idx.size());
 
+    //Placing one point on right side min heap
+    min_heap.insert_into_heap(0,points[0].x);
+
     //Iterating over the points vector
-    for(int i=0;i<points_idx.size();i++){
-        cout<<"inserting the first two element on left"<<endl;
+    for(int i=1;i<points_idx.size();i++){
+        //cout<<"inserting the first two element on left"<<endl;
         //Inserting an element into max heap and heapifying
         int insert_idx=points_idx[i];
         max_heap.insert_into_heap(insert_idx,points[insert_idx].x);i++;
         //If we reach to the end of the points vector
         if(i==points_idx.size()){
+            //Just manazing the topmost element of both side
+            int r_pop_idx=min_heap.pop_from_heap();
+            //inserting to left side (max heap)
+            max_heap.insert_into_heap(r_pop_idx,points[r_pop_idx].x);
+
+            //Now putting the maximum one to the right side
+            int l_pop_idx=max_heap.pop_from_heap();
+            min_heap.insert_into_heap(l_pop_idx,points[l_pop_idx].x);
             break;
         }
+        //Inserting one point for the right side min heap
         insert_idx=points_idx[i];
         max_heap.insert_into_heap(insert_idx,points[insert_idx].x);
+
+        //Poppoing from the right side min heap, the maximum ele.
+        int r_pop_idx=min_heap.pop_from_heap();
+        //Inserting to the left side to get the maximum two up
+        max_heap.insert_into_heap(r_pop_idx,points[r_pop_idx].x);
         // max_heap.print_heap();
 
-        //Poppoing the top of max heap to balance equal no. ele on
-        //both side of the heap (left and right)
-        cout<<"Balancing the left and right side of the bag\n"<<endl;
-        int pop_idx=max_heap.pop_from_heap();
+        //Now taking out two element from left to put them on right
+        //cout<<"Balancing the left and right side of the bag\n"<<endl;
+        int l_pop_idx=max_heap.pop_from_heap();
         //Pushing this element to the min heap
+        min_heap.insert_into_heap(l_pop_idx,points[l_pop_idx].x);
         // cout<<"pop_idx: "<<pop_idx<<endl;
-        min_heap.insert_into_heap(pop_idx,points[pop_idx].x);
-        min_heap.print_heap();
-        max_heap.print_heap();
+        //Again taking out one largest element from left and put to right
+        l_pop_idx=max_heap.pop_from_heap();
+        //inserting into right side
+        min_heap.insert_into_heap(l_pop_idx,points[l_pop_idx].x);
+        // min_heap.print_heap();
+        // max_heap.print_heap();
     }
-    //The the one at the top of the max heap is the median one
-    int med_idx=max_heap.pop_from_heap();
+    //The the one at the top of the min heap is the median one
+    int med_idx=min_heap.pop_from_heap();
     return med_idx;
 }
