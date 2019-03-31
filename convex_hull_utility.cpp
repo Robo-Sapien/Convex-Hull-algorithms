@@ -272,21 +272,21 @@ int calculate_median(vector<int> &points_idx,\
         int r_pop_idx=min_heap.pop_from_heap();
         //Inserting to the left side to get the maximum two up
         max_heap.insert_into_heap(r_pop_idx,points[r_pop_idx].x);
-        max_heap.print_heap();
+        //max_heap.print_heap();
 
         //Now taking out two element from left to put them on right
         //cout<<"Balancing the left and right side of the bag\n"<<endl;
         int l_pop_idx=max_heap.pop_from_heap();
         //Pushing this element to the min heap
         min_heap.insert_into_heap(l_pop_idx,points[l_pop_idx].x);
-        max_heap.print_heap();
+        //max_heap.print_heap();
         // cout<<"pop_idx: "<<pop_idx<<endl;
         //Again taking out one largest element from left and put to right
         l_pop_idx=max_heap.pop_from_heap();
         //inserting into right side
         min_heap.insert_into_heap(l_pop_idx,points[l_pop_idx].x);
-        min_heap.print_heap();
-        max_heap.print_heap();
+        // min_heap.print_heap();
+        // max_heap.print_heap();
     }
     //The the one at the top of the min heap is the median one
     int med_idx=min_heap.pop_from_heap();

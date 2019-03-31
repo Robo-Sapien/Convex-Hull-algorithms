@@ -451,7 +451,9 @@ private:
 
             //Here due to machine precision we could have problem
             //alternatively we could add tolerance here.
-            if(intrcpt==max_intrcpt){
+            if((intrcpt>max_intrcpt && intrcpt-max_intrcpt<0.0001)
+                || (intrcpt<max_intrcpt && max_intrcpt-intrcpt<0.0001)
+                || intrcpt==max_intrcpt){
                 cout<<"id of points lying on this support: "<<cand_idx[i];
                 cout<<endl;
                 MAX.push_back(cand_idx[i]);
