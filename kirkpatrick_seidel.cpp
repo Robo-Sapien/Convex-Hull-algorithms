@@ -72,7 +72,7 @@ private:
         cout<<"pl_max_";print_point(pl_max_idx);cout<<endl;
     }
     //Function to calculate the slope give the index of the points
-    float calculate_p2p_slope(int idx1,int idx2){
+    double calculate_p2p_slope(int idx1,int idx2){
         /*
         DESCRIPTION:
             This function will calcualte the slope from the x-axis
@@ -84,8 +84,8 @@ private:
             OUTPUT:
                 slope   :the slope of the line connecting idx1 nad idx2
         */
-        float slope=(points[idx2].y-points[idx1].y)/\
-                    (points[idx2].x-points[idx1].x);
+        double slope=(double)(points[idx2].y-points[idx1].y)/\
+                    (double)(points[idx2].x-points[idx1].x);
         return slope;
     }
     //Function to get the candidate points to run the upper hull
@@ -112,7 +112,7 @@ private:
                                 to the points vector.
         */
         //calculating the min-max line slope
-        float nx_slope=calculate_p2p_slope(cur_pu_min_idx,
+        double nx_slope=calculate_p2p_slope(cur_pu_min_idx,
                                             cur_pu_max_idx);
 
         //Creating the cand-idx vector
@@ -132,7 +132,7 @@ private:
                         points[i].x<points[cur_pu_min_idx].x){
                 continue;
             }
-            float np_slope=calculate_p2p_slope(cur_pu_min_idx,i);
+            double np_slope=calculate_p2p_slope(cur_pu_min_idx,i);
 
             //Accepting or rejecting the points
             if(upside && np_slope>=nx_slope){
@@ -151,7 +151,7 @@ private:
     /*               UPPER BRIDGE RELATED FUNCTIONS                 */
     ///////////////////////////////////////////////////////////////////
     //Initializing the p2p slope struct
-    struct p2p_slope*get_p2p_slope_entry(int idx1,int idx2,float slope){
+    struct p2p_slope*get_p2p_slope_entry(int idx1,int idx2,double slope){
         /*
         DESCRIPTION:
             This functio will dynamically allocate the struct and assign
@@ -221,7 +221,7 @@ private:
             }
 
             //Calculating the point to point slope
-            float slope=calculate_p2p_slope(idx1,idx2);
+            double slope=calculate_p2p_slope(idx1,idx2);
             //Printitng the pair and corresponding slope
             cout<<"Pairing: "<<idx1<<" and "<<idx2<<" slope: "<<slope;
             cout<<endl;
@@ -266,7 +266,7 @@ private:
         }
         //Now we are ready with out dummy points nad index(reuse the func)
         int med_slope_idx=calculate_median(points_idx,slope_points);
-        float med_slope=pair_slopes[med_slope_idx]->slope;
+        double med_slope=pair_slopes[med_slope_idx]->slope;
         cout<<"Median slope is: "<<med_slope<<endl<<endl;
 
         //Now we will begin out splitting procedure of pairs into bucket
@@ -423,14 +423,14 @@ private:
                                     x-coordinate.
         */
         //Retreiving the median slope
-        float med_slope=pair_slopes[med_slope_idx]->slope;
+        double med_slope=pair_slopes[med_slope_idx]->slope;
 
         //Getting the maximum y-intercept possible with median slope
         cout<<"\nFinding the maximum intercept"<<endl;
         float max_intrcpt;
         for(unsigned int i=0;i<cand_idx.size();i++){
-            float intrcpt=points[cand_idx[i]].y-\
-                                med_slope*points[cand_idx[i]].x;
+            double intrcpt=(double)points[cand_idx[i]].y-\
+                                med_slope*(double)points[cand_idx[i]].x;
             if(i==0){
                 max_intrcpt=intrcpt;
             }
@@ -446,13 +446,14 @@ private:
         cout<<" i.e lies on this supporting line"<<endl;
         vector<int> MAX;
         for(unsigned int i=0;i<cand_idx.size();i++){
-            float intrcpt=points[cand_idx[i]].y-\
-                            med_slope*points[cand_idx[i]].x;
+            double intrcpt=(double)points[cand_idx[i]].y-\
+                            med_slope*(double)points[cand_idx[i]].x;
 
             //Here due to machine precision we could have problem
             //alternatively we could add tolerance here.
-            if((intrcpt>max_intrcpt && intrcpt-max_intrcpt<0.0001)
-                || (intrcpt<max_intrcpt && max_intrcpt-intrcpt<0.0001)
+            double tolerance=0.000001;
+            if((intrcpt>max_intrcpt && intrcpt-max_intrcpt<tolerance)
+                || (intrcpt<max_intrcpt && max_intrcpt-intrcpt<tolerance)
                 || intrcpt==max_intrcpt){
                 cout<<"id of points lying on this support: "<<cand_idx[i];
                 cout<<endl;
@@ -840,6 +841,9 @@ public:
         this->get_upper_hull(cand_idx,
                                 this->pl_min_idx,
                                 this->pl_max_idx);
+
+        //Correcting the hacking done in the points (calling same func)
+        transform_lowers_to_upper(cand_idx_copy);
 
         /////////////////////////////////////////////////////////////
         /*            JOINING UPPER AND LOWER HULL                */

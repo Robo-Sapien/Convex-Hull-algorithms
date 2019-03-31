@@ -13,7 +13,7 @@ Describing the data structure to hold the slope of pair of points
 struct p2p_slope{
     int idx1;
     int idx2;
-    float slope;
+    double slope;
 };
 
 /*
