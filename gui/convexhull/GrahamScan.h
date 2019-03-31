@@ -30,12 +30,13 @@ class GrahamScan : public ConvexHull{
           ymin = points[i].y;
           min = i;
         }
-      } 
+      }
       // Place the bottom-most point at first position
       point temp = points[0];
       points[0] = points[min];
       points[min] = temp;
       referencePoint = points[0];
+
       return;
     }
 
@@ -120,7 +121,6 @@ class GrahamScan : public ConvexHull{
     void runGrahamScan(vector<point> &points, MainWindow *w){
       
       findReferencePointAndSwap(points);
-      
       // sort the points according to the polar angle with respect to the center
       // and line parallel to x-axis.
       qsort(&points[1], points.size() - 1, sizeof(point), compare);
@@ -135,12 +135,14 @@ class GrahamScan : public ConvexHull{
       for(unsigned int i = 3; i < points.size(); i++)
       {
         while( findOrientation(convexHull.getElementBelowTop(), convexHull.getTopElement(), points[i]) == 1){
+            w->clearLines();
             w->drawLines(hullPoints);
             sleep(1);
             convexHull.pop();
         }
         convexHull.push(points[i]);
         hullPoints = convexHull.getPoints();
+        w->clearLines();
         w->drawLines(hullPoints);
         sleep(1);
 //        for(unsigned int i=0; i<hullPoints.size(); i++){
@@ -150,6 +152,7 @@ class GrahamScan : public ConvexHull{
 
       }
        hullPoints.push_back(hullPoints[0]);
+       w->clearLines();
        w->drawLines(hullPoints);
       
 

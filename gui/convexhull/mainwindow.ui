@@ -33,6 +33,9 @@
       <height>27</height>
      </rect>
     </property>
+    <property name="singleStep">
+     <double>0.100000000000000</double>
+    </property>
    </widget>
    <widget class="QDoubleSpinBox" name="bx_y">
     <property name="geometry">
@@ -42,6 +45,9 @@
       <width>76</width>
       <height>27</height>
      </rect>
+    </property>
+    <property name="singleStep">
+     <double>0.100000000000000</double>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_add">
@@ -112,14 +118,27 @@
    <widget class="QPushButton" name="btn_GrahamScan">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>40</x>
       <y>520</y>
-      <width>251</width>
+      <width>181</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>Run Graham's Scan</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_KPS">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>520</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kirkpatrick Siedel</string>
     </property>
    </widget>
   </widget>

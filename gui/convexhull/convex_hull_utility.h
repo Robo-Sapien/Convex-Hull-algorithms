@@ -1,3 +1,6 @@
+#ifndef UTILITY_H
+#define UTILITY_H
+
 #include <vector>
 using namespace std;
 /*
@@ -13,7 +16,7 @@ Describing the data structure to hold the slope of pair of points
 struct p2p_slope{
     int idx1;
     int idx2;
-    float slope;
+    double slope;
 };
 
 /*
@@ -24,6 +27,11 @@ class ConvexHull{
 protected:
     //All subclasses will inherit this variable
     vector<struct point> points;
+    vector< pair<int,int> > hull_point_pairs;
+
+//public:
+//    MainWindow *window;
+
 public:
     //Defining the constructor
     ConvexHull(vector<struct point> points){
@@ -69,3 +77,5 @@ Function for finding the median element using the heap in O(N)
 */
 int calculate_median(vector<int> &points_idx,\
                         vector<struct point>&points);
+
+#endif

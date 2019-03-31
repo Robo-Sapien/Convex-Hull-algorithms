@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "GrahamScan.h"
+#include "kirkpatrick_seidel.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -56,7 +57,7 @@ void MainWindow::plot()
 
 void MainWindow::drawLines(vector<point> points)
 {
-    ui->plot->clearItems();
+//    ui->plot->clearItems();
     QCPItemLine *line[points.size()];
     for(unsigned int i = 0; i < (points.size() - 1); i++){
         line[i] = new QCPItemLine(ui->plot);
@@ -65,6 +66,12 @@ void MainWindow::drawLines(vector<point> points)
         ui->plot->addItem(line[i]);
         cout<<points[i].x<<" " <<points[i].y<<endl;
     }
+    plot();
+}
+
+void MainWindow::clearLines()
+{
+    ui->plot->clearItems();
     plot();
 }
 
@@ -99,7 +106,7 @@ void MainWindow::on_btn_zoomFull_clicked()
 void MainWindow::on_btn_GrahamScan_clicked()
 {
     std::vector<point> points;
-    for(int i = 0; i < (qv_x.size() - 1); i++){
+    for(int i = 0; i < qv_x.size(); i++){
         struct point p;
             p.x = qv_x[i];
             p.y = qv_y[i];
@@ -107,4 +114,26 @@ void MainWindow::on_btn_GrahamScan_clicked()
     }
     GrahamScan *obj = new GrahamScan(points);
     obj->runGrahamScan(points, this);
+}
+
+void MainWindow::on_btn_KPS_clicked()
+{
+    std::vector<point> points;
+    for(int i = 0; i < qv_x.size(); i++){
+        struct point p;
+            p.x = qv_x[i];
+            p.y = qv_y[i];
+            points.push_back(p);
+    }
+
+    Kirkpatrick_Seidel *MyKPS = new Kirkpatrick_Seidel(points, this);
+    MyKPS->put_a_hull_on_points();
+//    for(unsigned int i = 0; i< MyKPS->hull_point_pairs.size(); i++){
+//        int index1 = MyKPS->hull_point_pairs[i].first;
+//        int index2 = MyKPS->hull_point_pairs[i].second;
+//        MyKPS->print_point(index1);
+//        MyKPS->print_point(index2);
+//        cout<<endl;
+//    }
+
 }

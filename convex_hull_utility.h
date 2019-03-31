@@ -4,8 +4,8 @@ using namespace std;
 Defining the structure to hold the point
 */
 struct point{
-    float x;
-    float y;
+    double x;
+    double y;
 };
 /*
 Describing the data structure to hold the slope of pair of points

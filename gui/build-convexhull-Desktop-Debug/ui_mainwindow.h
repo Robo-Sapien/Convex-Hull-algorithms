@@ -39,6 +39,7 @@ public:
     QLabel *label_2;
     QPushButton *btn_zoomFull;
     QPushButton *btn_GrahamScan;
+    QPushButton *btn_KPS;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -56,9 +57,11 @@ public:
         bx_x = new QDoubleSpinBox(centralWidget);
         bx_x->setObjectName(QStringLiteral("bx_x"));
         bx_x->setGeometry(QRect(60, 460, 76, 27));
+        bx_x->setSingleStep(0.1);
         bx_y = new QDoubleSpinBox(centralWidget);
         bx_y->setObjectName(QStringLiteral("bx_y"));
         bx_y->setGeometry(QRect(200, 460, 76, 27));
+        bx_y->setSingleStep(0.1);
         btn_add = new QPushButton(centralWidget);
         btn_add->setObjectName(QStringLiteral("btn_add"));
         btn_add->setGeometry(QRect(330, 460, 96, 27));
@@ -76,7 +79,10 @@ public:
         btn_zoomFull->setGeometry(QRect(560, 460, 96, 27));
         btn_GrahamScan = new QPushButton(centralWidget);
         btn_GrahamScan->setObjectName(QStringLiteral("btn_GrahamScan"));
-        btn_GrahamScan->setGeometry(QRect(210, 520, 251, 41));
+        btn_GrahamScan->setGeometry(QRect(40, 520, 181, 41));
+        btn_KPS = new QPushButton(centralWidget);
+        btn_KPS->setObjectName(QStringLiteral("btn_KPS"));
+        btn_KPS->setGeometry(QRect(260, 520, 171, 41));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -103,6 +109,7 @@ public:
         label_2->setText(QApplication::translate("MainWindow", "y", Q_NULLPTR));
         btn_zoomFull->setText(QApplication::translate("MainWindow", "Zoom Full", Q_NULLPTR));
         btn_GrahamScan->setText(QApplication::translate("MainWindow", "Run Graham's Scan", Q_NULLPTR));
+        btn_KPS->setText(QApplication::translate("MainWindow", "Kirkpatrick Siedel", Q_NULLPTR));
     } // retranslateUi
 
 };

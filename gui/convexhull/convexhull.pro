@@ -34,7 +34,8 @@ HEADERS += \
     qcustomplot.h \
     convex_hull_utility.h \
     customStack.h \
-    GrahamScan.h
+    GrahamScan.h \
+    kirkpatrick_seidel.h
 
 FORMS += \
         mainwindow.ui

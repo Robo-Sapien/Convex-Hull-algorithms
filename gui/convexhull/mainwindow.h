@@ -22,6 +22,7 @@ public:
     void clearData();
     void plot();
     void drawLines(std::vector<point> points);
+    void clearLines();
 
 private slots:
     void on_btn_add_clicked();
@@ -33,6 +34,8 @@ private slots:
     void on_btn_zoomFull_clicked();
 
     void on_btn_GrahamScan_clicked();
+
+    void on_btn_KPS_clicked();
 
 private:
     Ui::MainWindow *ui;
