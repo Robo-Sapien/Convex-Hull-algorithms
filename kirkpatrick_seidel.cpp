@@ -9,8 +9,8 @@ using namespace std;
 class Kirkpatrick_Seidel: public ConvexHull{
 private:
     //Extremum points variable
-    unsigned int pu_min_idx;     //index of uppermost minimum x-coord point
-    unsigned int pu_max_idx;     //index of uppermost maximum x-coord point
+    unsigned int pu_min_idx;     //index of uppermost min x-coord point
+    unsigned int pu_max_idx;     //index of uppermost max x-coord point
     unsigned int pl_min_idx;     //index of lowermost min x-coord point
     unsigned int pl_max_idx;     //index of lowermost max x-coord point
 
@@ -90,7 +90,8 @@ private:
     }
     //Function to get the candidate points to run the upper hull
     vector<int> get_candidates_idx(unsigned int cur_pu_min_idx,
-                                    unsigned int cur_pu_max_idx){
+                                    unsigned int cur_pu_max_idx,
+                                    bool upside){
         /*
         Description:
             This fucntion will give us the candidate points index on
@@ -104,6 +105,8 @@ private:
             INPUT:
                 cur_pu_min_idx  : the minmum bound on the x-coordinate
                 cur_pu_max_idx  : the maximum bound on the x-coordinate
+                upside          : whether we want candidates for upper
+                                    hull or lower hull.
             OUTPUT:
                 cand_idx    : the index of the candidate points relative
                                 to the points vector.
@@ -132,7 +135,10 @@ private:
             float np_slope=calculate_p2p_slope(cur_pu_min_idx,i);
 
             //Accepting or rejecting the points
-            if(np_slope>=nx_slope){
+            if(upside && np_slope>=nx_slope){
+                cand_idx.push_back(i);
+            }
+            else if(!upside && np_slope<nx_slope){
                 cand_idx.push_back(i);
             }
         }
@@ -652,8 +658,10 @@ private:
         cout<<"left_max_idx: "<<left_pu_max_idx<<endl;
         if(min_x_idx!=left_pu_max_idx){
             //Getting the index of probable point on left bridge
+            bool upside=true;
             left_cand_idx=this->get_candidates_idx(min_x_idx,\
-                                                    left_pu_max_idx);
+                                                    left_pu_max_idx,
+                                                    upside);
             //Printing the candidate indexes
             for(unsigned int i=0;i<left_cand_idx.size();i++){
                 cout<<"UH-Cand: ";
@@ -674,8 +682,10 @@ private:
         cout<<"right_max_idx: "<<max_x_idx<<endl;
         if(right_pu_min_idx!=max_x_idx){
             //Getting the new candidates for the right side
+            bool upside=true;
             right_cand_idx=this->get_candidates_idx(right_pu_min_idx,\
-                                                    max_x_idx);
+                                                    max_x_idx,
+                                                    upside);
             //Printing the candidate indexes
             for(unsigned int i=0;i<right_cand_idx.size();i++){
                 cout<<"UH-Cand: ";
@@ -688,6 +698,47 @@ private:
         return;
     }
 
+
+    /////////////////////////////////////////////////////////////////
+    /*                  LOWER HULL RELATED FUNCTION                */
+    /////////////////////////////////////////////////////////////////
+    //Function for transforming out lower hull to upper hull
+    vector<int> transform_lowers_to_upper(
+                                        vector<int> &cand_idx){
+        /*
+        DESCRIPTION:
+            This function will reflect the points on the lower side
+            of convex hull above the pl_min and pl_max line,
+            and then solve the problem using upper convex hull.
+
+            But in the process we will modify the index of actual point
+            coordinate so we will temporatrily keep a correct copy
+            of points and correct it later.
+        USAGE:
+            INPUT:
+                cand_idx    : the index of candidates in the lower hull,
+                                also for whome we have to make the
+                                reflection.
+            OUTPUT:
+                cand_copy : a copy of the point vector to restore the
+                                changes we are going to do.
+        */
+        //Copying the points first into a copy vector
+        vector<int> cand_copy;
+
+        //Now we have to reflect the coordinate of candidates about
+        //the pl_min and pl_max line. It's enough to reflect around
+        //x-axis.
+        for(unsigned int i=0;i<cand_idx.size();i++){
+            //Saving index of all current candidate for correcting later
+            cand_copy.push_back(cand_idx[i]);
+
+            //Reflecting the candidate points about x-axis
+            points[cand_idx[i]].y=(-1*points[cand_idx[i]].y);
+            //There are no chages in the x-coordinate of the cand
+        }
+        return cand_copy;
+    }
 
 public:
     //Defining the constructor
@@ -702,6 +753,25 @@ public:
         cout<<points[idx].x<<","<<points[idx].y<<endl;
     }
 
+    //Function for printing the pair of points on HULL
+    void print_pairs_on_hull(){
+        /*
+        DESCRIPTION:
+            This function will allow the outside world to print the
+            pair of points on the hull.
+        */
+        cout<<"\n\n##################################################\n";
+        cout<<"Printing the pair of point on the convex hull\n";
+        cout<<"##################################################\n";
+        for(unsigned int i=0;i<hull_point_pairs.size();i++){
+            pair<int,int> hull_pair=hull_point_pairs[i];
+            cout<<"HULL PAIR:\n";
+            this->print_point(hull_pair.first);
+            this->print_point(hull_pair.second);
+            cout<<endl;
+        }
+    }
+
     //Public function to generate the convex hull
     void put_a_hull_on_points(){
         /*
@@ -709,15 +779,22 @@ public:
             This function is the main iterface of talking for finding the
             convex world from the outside world.Internally it will call
             it's helper function to generate the convex hull and put the
-            indexes of the points in the member variable hull_point_pair.
+            indexes of the points in the member variable hull_point_pairs
         USAGE:
             No Arguments and Return value
         */
-        //First of all we will find the upper hull
+
+        //////////////////////////////////////////////////////////////
+        /*                 UPPER HULL GENERATION                    */
+        //////////////////////////////////////////////////////////////
         //Generating the candidate points which could form upper hull.
+        cout<<"////////////////////////////////////\n";
         cout<<"Generating the UPPER-HULL Candidates"<<endl;
+        cout<<"////////////////////////////////////\n";
+        bool upside=true;
         vector<int> cand_idx=get_candidates_idx(this->pu_min_idx,\
-                                                this->pu_max_idx);
+                                                this->pu_max_idx,
+                                                upside);
         //Printing the candidate indexes
         for(unsigned int i=0;i<cand_idx.size();i++){
             cout<<"UH-Cand: ";
@@ -730,16 +807,61 @@ public:
                                         this->pu_max_idx);
 
         //Printing the upper hull index
-        cout<<"\n\n##################################################\n";
-        cout<<"Printing the pair of point on the upper hull\n";
-        cout<<"##################################################\n";
-        for(unsigned int i=0;i<hull_point_pairs.size();i++){
-            pair<int,int> hull_pair=hull_point_pairs[i];
-            cout<<"HULL PAIR:\n";
-            this->print_point(hull_pair.first);
-            this->print_point(hull_pair.second);
-            cout<<endl;
+        this->print_pairs_on_hull();
+
+        //////////////////////////////////////////////////////////////
+        /*              LOWER HULL GENERATION                       */
+        //////////////////////////////////////////////////////////////
+        //generate the candidates for the lower hull
+        cout<<endl<<endl;
+        cout<<"////////////////////////////////////\n";
+        cout<<"Generating the LOWER-HULL candidates"<<endl;
+        cout<<"////////////////////////////////////\n";
+        //Resetting our upside flag to represent we want lower hull cand
+        upside=false;
+        cand_idx.clear();
+        cand_idx=get_candidates_idx(this->pl_min_idx,this->pl_max_idx,
+                                    upside);
+        //Printing the index of candidate
+        for(unsigned int i=0;i<cand_idx.size();i++){
+            cout<<"LH-Cand: ";
+            this->print_point(cand_idx[i]);
         }
+
+        //Now we will hack our system to generate use model
+        //lower hull probelm to upper hull problem.
+        vector<int>cand_idx_copy;
+        cout<<"Hacking the lower hull as upper hull\n";
+        cand_idx_copy=transform_lowers_to_upper(cand_idx);
+        //Calling the upper hull function on this hacked points
+        cout<<"Calling the upper hull function on hacked points"<<endl;
+        this->get_upper_hull(cand_idx,
+                                this->pl_min_idx,
+                                this->pl_max_idx);
+
+        /////////////////////////////////////////////////////////////
+        /*            JOINING UPPER AND LOWER HULL                */
+        /////////////////////////////////////////////////////////////
+        //Adding the pl and pu points to the hull also if they are diff
+        //Joining the left side of upper hull to lower hull.
+        if(this->pu_min_idx!=this->pl_min_idx){
+            //Making a pair of point to join the upper hull to lower
+            pair<int,int> hull_pair;
+            hull_pair=make_pair(this->pl_min_idx,this->pu_min_idx);
+            //Adding this pair to the hull pair vector
+            this->hull_point_pairs.push_back(hull_pair);
+        }
+        //Sewing the right side of upper hull to lower hull
+        if(this->pu_max_idx!=this->pl_max_idx){
+            //Joing the upper and lower hull
+            pair<int,int> hull_pair;
+            hull_pair=make_pair(this->pl_max_idx,this->pu_max_idx);
+            //Adding this pair to upper hull
+            this->hull_point_pairs.push_back(hull_pair);
+        }
+
+        //Finally printing all the pair of points on hull
+        this->print_pairs_on_hull();
     }
 
 };

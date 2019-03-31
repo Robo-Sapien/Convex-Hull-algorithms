@@ -94,7 +94,7 @@ void Heap::swap_elements(int pos1,int pos2){
     */
     //Saving the temporary
     int temp_idx=idx_heap[pos1];
-    int temp_val=val_heap[pos1];
+    float temp_val=val_heap[pos1];
 
     //Swapping the pos2 in pos1
     idx_heap[pos1]=idx_heap[pos2];
@@ -132,7 +132,7 @@ int Heap::pop_from_heap(){
         //Retreiving the value of parent and its child
         int cid1=2*pid+1;
         int cid2=2*pid+2;
-        int valp=val_heap[pid];
+        float valp=val_heap[pid];
 
         //if this is max heap and parent's val is less than either of
         //child
@@ -141,8 +141,13 @@ int Heap::pop_from_heap(){
             break;
         }
         else if(cid2>this->last_pos){
+            // cout<<"lpos: "<<this->last_pos<<endl;
+            // cout<<"cid1: "<<cid1<<endl;
+            // cout<<this->heap_type<<endl;
+            // cout<<"valp: "<<valp<<endl;
+            // cout<<val_heap[cid1]<<endl;
             //if one first child exist and second dont
-            int val1=val_heap[cid1];
+            float val1=val_heap[cid1];
             //If this is max heap and the value of child is greater
             if(this->heap_type=='x' && valp<val1){
                 this->swap_elements(cid1,pid);
@@ -245,6 +250,7 @@ int calculate_median(vector<int> &points_idx,\
         max_heap.insert_into_heap(insert_idx,points[insert_idx].x);i++;
         //If we reach to the end of the points vector
         if(i==points_idx.size()){
+            //cout<<"i: "<<i;
             //Just manazing the topmost element of both side
             int r_pop_idx=min_heap.pop_from_heap();
             //inserting to left side (max heap)
@@ -253,6 +259,9 @@ int calculate_median(vector<int> &points_idx,\
             //Now putting the maximum one to the right side
             int l_pop_idx=max_heap.pop_from_heap();
             min_heap.insert_into_heap(l_pop_idx,points[l_pop_idx].x);
+
+            //min_heap.print_heap();
+            //max_heap.print_heap();
             break;
         }
         //Inserting one point for the right side min heap
@@ -263,20 +272,21 @@ int calculate_median(vector<int> &points_idx,\
         int r_pop_idx=min_heap.pop_from_heap();
         //Inserting to the left side to get the maximum two up
         max_heap.insert_into_heap(r_pop_idx,points[r_pop_idx].x);
-        // max_heap.print_heap();
+        max_heap.print_heap();
 
         //Now taking out two element from left to put them on right
         //cout<<"Balancing the left and right side of the bag\n"<<endl;
         int l_pop_idx=max_heap.pop_from_heap();
         //Pushing this element to the min heap
         min_heap.insert_into_heap(l_pop_idx,points[l_pop_idx].x);
+        max_heap.print_heap();
         // cout<<"pop_idx: "<<pop_idx<<endl;
         //Again taking out one largest element from left and put to right
         l_pop_idx=max_heap.pop_from_heap();
         //inserting into right side
         min_heap.insert_into_heap(l_pop_idx,points[l_pop_idx].x);
-        // min_heap.print_heap();
-        // max_heap.print_heap();
+        min_heap.print_heap();
+        max_heap.print_heap();
     }
     //The the one at the top of the min heap is the median one
     int med_idx=min_heap.pop_from_heap();
