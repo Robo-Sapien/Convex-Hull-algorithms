@@ -90,8 +90,7 @@ private:
     }
     //Function to get the candidate points to run the upper hull
     vector<int> get_candidates_idx(unsigned int cur_pu_min_idx,
-                                    unsigned int cur_pu_max_idx,
-                                    bool upside){
+                                    unsigned int cur_pu_max_idx){
         /*
         Description:
             This fucntion will give us the candidate points index on
@@ -105,8 +104,6 @@ private:
             INPUT:
                 cur_pu_min_idx  : the minmum bound on the x-coordinate
                 cur_pu_max_idx  : the maximum bound on the x-coordinate
-                upside          : whether we want candidates for upper
-                                    hull or lower hull.
             OUTPUT:
                 cand_idx    : the index of the candidate points relative
                                 to the points vector.
@@ -135,10 +132,7 @@ private:
             double np_slope=calculate_p2p_slope(cur_pu_min_idx,i);
 
             //Accepting or rejecting the points
-            if(upside && np_slope>=nx_slope){
-                cand_idx.push_back(i);
-            }
-            else if(!upside && np_slope<nx_slope){
+            if(np_slope>=nx_slope){
                 cand_idx.push_back(i);
             }
         }
@@ -661,10 +655,9 @@ private:
         cout<<"left_max_idx: "<<left_pu_max_idx<<endl;
         if(min_x_idx!=left_pu_max_idx){
             //Getting the index of probable point on left bridge
-            bool upside=true;
+            //bool upside=true;
             left_cand_idx=this->get_candidates_idx(min_x_idx,\
-                                                    left_pu_max_idx,
-                                                    upside);
+                                                    left_pu_max_idx);
             //Printing the candidate indexes
             for(unsigned int i=0;i<left_cand_idx.size();i++){
                 cout<<"UH-Cand: ";
@@ -685,10 +678,9 @@ private:
         cout<<"right_max_idx: "<<max_x_idx<<endl;
         if(right_pu_min_idx!=max_x_idx){
             //Getting the new candidates for the right side
-            bool upside=true;
+            //bool upside=true;
             right_cand_idx=this->get_candidates_idx(right_pu_min_idx,\
-                                                    max_x_idx,
-                                                    upside);
+                                                    max_x_idx);
             //Printing the candidate indexes
             for(unsigned int i=0;i<right_cand_idx.size();i++){
                 cout<<"UH-Cand: ";
@@ -706,8 +698,7 @@ private:
     /*                  LOWER HULL RELATED FUNCTION                */
     /////////////////////////////////////////////////////////////////
     //Function for transforming out lower hull to upper hull
-    vector<int> transform_lowers_to_upper(
-                                        vector<int> &cand_idx){
+    void transform_lowers_to_upper(){
         /*
         DESCRIPTION:
             This function will reflect the points on the lower side
@@ -717,30 +708,15 @@ private:
             But in the process we will modify the index of actual point
             coordinate so we will temporatrily keep a correct copy
             of points and correct it later.
-        USAGE:
-            INPUT:
-                cand_idx    : the index of candidates in the lower hull,
-                                also for whome we have to make the
-                                reflection.
-            OUTPUT:
-                cand_copy : a copy of the point vector to restore the
-                                changes we are going to do.
         */
-        //Copying the points first into a copy vector
-        vector<int> cand_copy;
-
         //Now we have to reflect the coordinate of candidates about
         //the pl_min and pl_max line. It's enough to reflect around
         //x-axis.
-        for(unsigned int i=0;i<cand_idx.size();i++){
-            //Saving index of all current candidate for correcting later
-            cand_copy.push_back(cand_idx[i]);
-
+        for(unsigned int i=0;i<points.size();i++){
             //Reflecting the candidate points about x-axis
-            points[cand_idx[i]].y=(-1*points[cand_idx[i]].y);
+            points[i].y=(-1*points[i].y);
             //There are no chages in the x-coordinate of the cand
         }
-        return cand_copy;
     }
 
 public:
@@ -794,10 +770,9 @@ public:
         cout<<"////////////////////////////////////\n";
         cout<<"Generating the UPPER-HULL Candidates"<<endl;
         cout<<"////////////////////////////////////\n";
-        bool upside=true;
+        //bool upside=true;
         vector<int> cand_idx=get_candidates_idx(this->pu_min_idx,\
-                                                this->pu_max_idx,
-                                                upside);
+                                                this->pu_max_idx);
         //Printing the candidate indexes
         for(unsigned int i=0;i<cand_idx.size();i++){
             cout<<"UH-Cand: ";
@@ -820,22 +795,22 @@ public:
         cout<<"////////////////////////////////////\n";
         cout<<"Generating the LOWER-HULL candidates"<<endl;
         cout<<"////////////////////////////////////\n";
+
+        //Now we will hack our system to generate use model
+        //lower hull probelm to upper hull problem.
+        cout<<"Hacking the lower hull as upper hull\n";
+        transform_lowers_to_upper();
+
         //Resetting our upside flag to represent we want lower hull cand
-        upside=false;
+        //upside=false;
         cand_idx.clear();
-        cand_idx=get_candidates_idx(this->pl_min_idx,this->pl_max_idx,
-                                    upside);
+        cand_idx=get_candidates_idx(this->pl_min_idx,this->pl_max_idx);
         //Printing the index of candidate
         for(unsigned int i=0;i<cand_idx.size();i++){
             cout<<"LH-Cand: ";
             this->print_point(cand_idx[i]);
         }
 
-        //Now we will hack our system to generate use model
-        //lower hull probelm to upper hull problem.
-        vector<int>cand_idx_copy;
-        cout<<"Hacking the lower hull as upper hull\n";
-        cand_idx_copy=transform_lowers_to_upper(cand_idx);
         //Calling the upper hull function on this hacked points
         cout<<"Calling the upper hull function on hacked points"<<endl;
         this->get_upper_hull(cand_idx,
@@ -843,7 +818,7 @@ public:
                                 this->pl_max_idx);
 
         //Correcting the hacking done in the points (calling same func)
-        transform_lowers_to_upper(cand_idx_copy);
+        transform_lowers_to_upper();
 
         /////////////////////////////////////////////////////////////
         /*            JOINING UPPER AND LOWER HULL                */
@@ -877,7 +852,7 @@ int main(){
     srand(14);
     vector<struct point> points;
     vector<int> points_idx;
-    for(int i=0;i<15;i++){
+    for(int i=0;i<22;i++){
         float x;//=rand()%100;
         float y;//=rand()%200;
         int idx=i;
