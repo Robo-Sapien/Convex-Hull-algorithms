@@ -137,3 +137,15 @@ void MainWindow::on_btn_KPS_clicked()
 //    }
 
 }
+
+void MainWindow::on_btn_JarvisMarch_clicked()
+{
+    std::vector<point> points;
+    for(int i = 0; i < qv_x.size(); i++){
+        struct point p;
+            p.x = qv_x[i];
+            p.y = qv_y[i];
+            points.push_back(p);
+    }
+
+}
