@@ -14,7 +14,40 @@ double findAngle(point a, point b, point c);
 
 void runJarvisMarch(vector<point> &points)
 {
-	vector< pair<int,int> > hull_point_pairs;
+	indexOfLeftMostPoint(points);
+
+	//vector< pair<int,int> > hull_point_pairs;
+
+	//find next point
+	//push (0,nextpoint) pair 
+
+	int orientedPoints[points.size()];
+
+	orientedPoints[0] = 0;
+	orientedPoints[1] = ;
+
+
+	int i=1;
+	double max_angle = 0;
+	double angle;
+	struct point p0 = points[0];
+	do
+	{
+		max = 0;
+		i++;
+		for (int j=0;j<points.size();j++)
+		{
+			angle = findAngle(points[orientedPoints[i-2]],points[orientedPoints[i-1]],points[orientedPoints[j]]);
+			if(angle > max_angle)
+			{
+				max_angle = angle;
+				orientedPoints[i] = points[j];
+
+			}
+
+		}
+	} while((orientedPoints[i].x != p0.x) && (orientedPoints[i].y != p0.y));
+
 
 
 }
@@ -54,6 +87,23 @@ void indexOfLeftMostPoint(vector<point> &points)
   	points[index] = temp;
 
 	return;
+}
+
+int findOrientation(point a, point b, point c)
+{
+  int value = (b.y - a.y) * (c.x - b.x) - (b.x - a.x) * (c.y - b.y);
+  if(value == 0)
+  {
+    return 0; // collinear
+  }
+  if(value < 0)
+  {
+    return 2; // counter-clockwise
+  } 
+  else 
+  {
+    return 1; // clockwise
+  }
 }
 
 int main()
