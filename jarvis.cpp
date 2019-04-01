@@ -9,12 +9,14 @@ struct point
 	double y;
 };
 
-void indexOfLeftMostPoint(vector<point> &points);
+int indexOfLeftMostPoint(vector<point> &points);
 double findAngle(point a, point b, point c);
+int secondPointIndex(vector<point> &points);
+int findOrientation(point a, point b, point c);
 
 void runJarvisMarch(vector<point> &points)
 {
-	indexOfLeftMostPoint(points);
+	int indexToBeSwapped = indexOfLeftMostPoint(points);
 
 	//vector< pair<int,int> > hull_point_pairs;
 
@@ -24,32 +26,78 @@ void runJarvisMarch(vector<point> &points)
 	int orientedPoints[points.size()];
 
 	orientedPoints[0] = 0;
-	orientedPoints[1] = ;
+	orientedPoints[1] = secondPointIndex(points);
+	//orientedPoints[1] = 1;
 
 
 	int i=1;
 	double max_angle = 0;
 	double angle;
+	int nPointsInHull=1;
 	struct point p0 = points[0];
 	do
 	{
-		max = 0;
+		max_angle = 0;
 		i++;
+		//printf("%d\n",i);
 		for (int j=0;j<points.size();j++)
 		{
-			angle = findAngle(points[orientedPoints[i-2]],points[orientedPoints[i-1]],points[orientedPoints[j]]);
+			//printf("%d\n",i);
+			angle = findAngle(points[orientedPoints[i-2]],points[orientedPoints[i-1]],points[j]);
 			if(angle > max_angle)
 			{
 				max_angle = angle;
-				orientedPoints[i] = points[j];
+				orientedPoints[i] = j;
 
+				//printf("%d\n",j);
 			}
 
 		}
-	} while((orientedPoints[i].x != p0.x) && (orientedPoints[i].y != p0.y));
+	nPointsInHull++;
+	//printf("%f\n",points[orientedPoints[i]].x);	
+	} while((points[orientedPoints[i]].x != p0.x) || (points[orientedPoints[i]].y != p0.y));
 
+	//printf("%d\n",nPointsInHull);
+	
+	for(i=0;i<nPointsInHull;i++)
+	{
+		if(orientedPoints[i]==indexToBeSwapped)
+		{
+			orientedPoints[i]=0;
+			break;
+		}
+	}
+	orientedPoints[0] = indexToBeSwapped;
 
+	for(i=0;i<nPointsInHull;i++)
+	{
+		printf("%d ",orientedPoints[i]);
+	}
 
+}
+
+int secondPointIndex(vector<point> &points)
+{
+	//point second_Point;
+	int index;
+
+	for(int i=1;i<points.size();i++)
+	{	
+		int count = 0;
+		for(int j=0;j<points.size();j++)
+		{
+			int orientation = findOrientation(points[0],points[i],points[j]);
+			if(orientation ==0 || orientation==1)
+				count++;
+		}
+		if(count == points.size())
+		{
+			index = i;
+			break;
+		}
+	}
+	//second_Point = points[i];
+	return index;
 }
 
 double findAngle(point a, point b, point c)
@@ -66,7 +114,7 @@ double findAngle(point a, point b, point c)
 	return angle;
 }
 
-void indexOfLeftMostPoint(vector<point> &points)
+int indexOfLeftMostPoint(vector<point> &points)
 {
 	double next;
 	double small = points[0].x;
@@ -86,7 +134,7 @@ void indexOfLeftMostPoint(vector<point> &points)
   	points[0] = points[index];
   	points[index] = temp;
 
-	return;
+	return index;
 }
 
 int findOrientation(point a, point b, point c)
@@ -121,6 +169,8 @@ int main()
 	  points.push_back(p);
 	 }
 	 cout<<endl;
+
+	 runJarvisMarch(points);
 
 	return 0;
 }
