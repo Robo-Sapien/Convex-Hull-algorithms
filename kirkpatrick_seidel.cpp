@@ -1,3 +1,6 @@
+#include <algorithm>
+#include <climits>
+#include <cstdlib>
 #include "kirkpatrick_seidel.h"
 using namespace std;
 
@@ -6,13 +9,13 @@ using namespace std;
 /*                       PUBLIC FUNCTION                          */
 /*================================================================*/
 //printing the index and location of point
-void Kirkpatrick_Seidel:print_point(int idx){
+void Kirkpatrick_Seidel::print_point(int idx){
     cout<<"idx:"<<idx<<" at location: ";
     cout<<points[idx].x<<","<<points[idx].y<<endl;
 }
 
 //Function for printing the pair of points on HULL
-void Kirkpatrick_Seidel:print_pairs_on_hull(){
+void Kirkpatrick_Seidel::print_pairs_on_hull(){
     /*
     DESCRIPTION:
     This function will allow the outside world to print the
@@ -31,7 +34,7 @@ void Kirkpatrick_Seidel:print_pairs_on_hull(){
 }
 
 //Public function to generate the convex hull
-void Kirkpatrick_Seidel:put_a_hull_on_points(){
+void Kirkpatrick_Seidel::put_a_hull_on_points(){
         /*
         DESCRIPTION:
             This function is the main iterface of talking for finding the
@@ -133,7 +136,7 @@ void Kirkpatrick_Seidel:put_a_hull_on_points(){
 /*               GENEREAL UTILITY FUNCTION                      */
 //////////////////////////////////////////////////////////////////
 //Function for finding the extremum points
-void Kirkpatrick_Seidel:get_extremum_points(){
+void Kirkpatrick_Seidel::get_extremum_points(){
     cout<<"Finding the extremum points"<<endl;
     //Initializing the min and max value of x-coordinate of points
     float min_x=INT_MAX;
@@ -187,7 +190,7 @@ void Kirkpatrick_Seidel:get_extremum_points(){
     cout<<"pl_max_";print_point(pl_max_idx);cout<<endl;
 }
 //Function to calculate the slope give the index of the points
-double Kirkpatrick_Seidel:calculate_p2p_slope(int idx1,int idx2){
+double Kirkpatrick_Seidel::calculate_p2p_slope(int idx1,int idx2){
     /*
     DESCRIPTION:
         This function will calcualte the slope from the x-axis
@@ -204,7 +207,7 @@ double Kirkpatrick_Seidel:calculate_p2p_slope(int idx1,int idx2){
     return slope;
 }
 //Function to get the candidate points to run the upper hull
-vector<int> Kirkpatrick_Seidel:get_candidates_idx(
+vector<int> Kirkpatrick_Seidel::get_candidates_idx(
                                 unsigned int cur_pu_min_idx,
                                 unsigned int cur_pu_max_idx){
     /*
@@ -261,7 +264,7 @@ vector<int> Kirkpatrick_Seidel:get_candidates_idx(
 /*               UPPER BRIDGE RELATED FUNCTIONS                 */
 ///////////////////////////////////////////////////////////////////
 //Initializing the p2p slope struct
-struct p2p_slope*Kirkpatrick_Seidel:get_p2p_slope_entry(int idx1,
+struct p2p_slope*Kirkpatrick_Seidel::get_p2p_slope_entry(int idx1,
                                             int idx2,double slope){
     /*
     DESCRIPTION:
@@ -287,7 +290,7 @@ struct p2p_slope*Kirkpatrick_Seidel:get_p2p_slope_entry(int idx1,
     return slope_ptr;
 }
 //Calculating the slope of pair of points
-vector<p2p_slope*> Kirkpatrick_Seidel:get_pair_slopes(
+vector<p2p_slope*> Kirkpatrick_Seidel::get_pair_slopes(
                                     vector<int> &cand_idx,\
                                     vector<int> &new_cand_idx){
     /*
@@ -346,7 +349,7 @@ vector<p2p_slope*> Kirkpatrick_Seidel:get_pair_slopes(
     return pair_slopes;
 }
 //Function to calculate the median slope pair
-int Kirkpatrick_Seidel:fill_slope_bucket(
+int Kirkpatrick_Seidel::fill_slope_bucket(
                         vector<struct p2p_slope*> &pair_slopes,\
                         vector<int> &LARGE_SLOPE,\
                         vector<int> &EQUAL_SLOPE,\
@@ -401,7 +404,7 @@ int Kirkpatrick_Seidel:fill_slope_bucket(
     return med_slope_idx;
 }
 //Function for filling the new cand_idx
-void Kirkpatrick_Seidel:generate_new_cand_idx(int leave_flag,\
+void Kirkpatrick_Seidel::generate_new_cand_idx(int leave_flag,\
                                     vector<int> &new_cand_idx,\
                             vector<struct p2p_slope*> &pair_slopes,\
                                     vector<int> &LARGE_SLOPE,\
@@ -509,7 +512,7 @@ void Kirkpatrick_Seidel:generate_new_cand_idx(int leave_flag,\
     }
 }
 //Finding the bridge points or the new reduced candidate points
-vector<int> Kirkpatrick_Seidel:get_bridge_or_candidate(
+vector<int> Kirkpatrick_Seidel::get_bridge_or_candidate(
                                     float med_x,int med_slope_idx,\
                                     vector<int> &cand_idx,\
                                     vector<int> &new_cand_idx,\
@@ -618,7 +621,7 @@ vector<int> Kirkpatrick_Seidel:get_bridge_or_candidate(
     return bridge_point_idx;
 }
 //Function to calculate the upper bridge
-vector<int> Kirkpatrick_Seidel:get_upper_bridge(float med_x,
+vector<int> Kirkpatrick_Seidel::get_upper_bridge(float med_x,
                                             vector<int> &cand_idx){
     /*
     DESCRIPTION:
@@ -693,7 +696,7 @@ vector<int> Kirkpatrick_Seidel:get_upper_bridge(float med_x,
 /*                  UPPER HULL RELATED FUNCTION                 */
 //////////////////////////////////////////////////////////////////
 //Function to append the bridge point to actual hull point
-void Kirkpatrick_Seidel:append_bridge_point_to_hull(
+void Kirkpatrick_Seidel::append_bridge_point_to_hull(
                                     vector<int> &bridge_idx){
     /*
     DESCRITPION:
@@ -719,7 +722,7 @@ void Kirkpatrick_Seidel:append_bridge_point_to_hull(
     hull_point_pairs.push_back(hull_pair);
 }
 //Function to generate the upper hull
-void Kirkpatrick_Seidel:get_upper_hull(vector<int> &cand_idx,\
+void Kirkpatrick_Seidel::get_upper_hull(vector<int> &cand_idx,\
                         unsigned int min_x_idx,\
                         unsigned int max_x_idx){
     /*
@@ -817,7 +820,7 @@ void Kirkpatrick_Seidel:get_upper_hull(vector<int> &cand_idx,\
 /*                  LOWER HULL RELATED FUNCTION                */
 /////////////////////////////////////////////////////////////////
 //Function for transforming out lower hull to upper hull
-void Kirkpatrick_Seidel:transform_lowers_to_upper(){
+void Kirkpatrick_Seidel::transform_lowers_to_upper(){
     /*
     DESCRIPTION:
         This function will reflect the points on the lower side
@@ -836,35 +839,4 @@ void Kirkpatrick_Seidel:transform_lowers_to_upper(){
         points[i].y=(-1*points[i].y);
         //There are no chages in the x-coordinate of the cand
     }
-}
-
-
-
-int main(){
-    //Initializing the points
-    srand(14);
-    vector<struct point> points;
-    vector<int> points_idx;
-    for(int i=0;i<22;i++){
-        float x;//=rand()%100;
-        float y;//=rand()%200;
-        int idx=i;
-        cin>>x>>y;
-        struct point p;
-        p.x=x;
-        p.y=y;
-        points.push_back(p);
-        points_idx.push_back(idx);
-        cout<<"idx: "<<idx<<" point: x:"<<p.x<<", y:"<<p.y<<endl;
-    }
-
-    //Creating the class and initializig the points
-    Kirkpatrick_Seidel MyKPS(points);
-
-    //Testing the median finding algorithm
-    //int med_idx=calculate_median(points_idx,points);
-    //cout<<"med_idx: "<<med_idx<<endl;
-
-    //Testing the Upper hull
-    MyKPS.put_a_hull_on_points();
 }

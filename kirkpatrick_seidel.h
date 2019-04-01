@@ -1,8 +1,5 @@
-#include <iostream>
-#include <algorithm>
 #include <vector>
-#include <climits>
-#include <cstdlib>
+#include <iostream>
 #include "convex_hull_utility.h"
 using namespace std;
 
@@ -84,6 +81,5 @@ private:
     /////////////////////////////////////////////////////////////////
     //Function for transforming out lower hull to upper hull
     void transform_lowers_to_upper();
-
 
 };
