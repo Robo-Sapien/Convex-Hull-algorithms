@@ -113,6 +113,9 @@ void Kirkpatrick_Seidel::put_a_hull_on_points(){
             hull_pair=make_pair(this->pl_min_idx,this->pu_min_idx);
             //Adding this pair to the hull pair vector
             this->hull_point_pairs.push_back(hull_pair);
+
+            //Drawing the connecting bridge
+            this->draw_bridge(this->pl_min_idx,this->pu_min_idx);
         }
         //Sewing the right side of upper hull to lower hull
         if(this->pu_max_idx!=this->pl_max_idx){
@@ -121,12 +124,39 @@ void Kirkpatrick_Seidel::put_a_hull_on_points(){
             hull_pair=make_pair(this->pl_max_idx,this->pu_max_idx);
             //Adding this pair to upper hull
             this->hull_point_pairs.push_back(hull_pair);
+
+            //Drawing the connecting bridge
+            this->draw_bridge(this->pl_min_idx,this->pu_min_idx);
         }
 
         //Finally printing all the pair of points on hull
         this->print_pairs_on_hull();
     }
 
+//This function will be used to display points on the convex hull
+void Kirkpatrick_Seidel::draw_bridge(int idx1,int idx2){
+    /*
+    DESCRIPTION:
+        This function will display a line between the points
+        idx1 and idx2.
+    USAGE:
+        INPUT:
+            idx1    : the index of first bridge point
+            idx2    : the index of second bridge point
+    */
+    //Displaying this bridge on the gui using the reference of the window
+    //Creating a vector of points to display
+    vector<struct point> display_points;
+    struct point p1,p2;
+    //Copying the location of point on these local copy
+    p1=this->points[idx1];
+    p2=this->points[idx2];
+    //Pushing these points on the vector
+    display_points.push_back(p1);
+    display_points.push_back(p2);
+    //Calling the display function to draw these line on gui
+    this->w->draw_lines(display_points);
+}
 
 /*================================================================*/
 /*                       PUBLIC FUNCTION                          */
@@ -708,7 +738,9 @@ void Kirkpatrick_Seidel::append_bridge_point_to_hull(
     DESCRITPION:
         This function will append the bridge points  pair found out
         by the upper bridge method to the hull points.
-        This will not add if the pair already exist on hull
+        This will not add if the pair already exist on hull.
+
+        Also this will display the bridge line on the GUI window.
     USAGE:
         INPUT:
             bridge_idx  : the vecotr containing the index of bridge
@@ -726,6 +758,9 @@ void Kirkpatrick_Seidel::append_bridge_point_to_hull(
     }
     cout<<"Appending the bridge point to the hull points\n";
     hull_point_pairs.push_back(hull_pair);
+
+    //Displaying these points on the gui
+    this->draw_bridge(bridge_idx[0],bridge_idx[1]);
 }
 //Function to generate the upper hull
 void Kirkpatrick_Seidel::get_upper_hull(vector<int> &cand_idx,\

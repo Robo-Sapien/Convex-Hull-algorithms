@@ -16,6 +16,8 @@ public:
     void print_pairs_on_hull();
     //Public function to generate the convex hull
     void put_a_hull_on_points();
+    //Function to draw the bridge line
+    draw_bridge(int idx1,int idx2)
 
 private:
     //Extremum points variable
