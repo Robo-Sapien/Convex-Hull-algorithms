@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector> 
 #include <cmath>
+#include <unistd.h>
 #include "jarvis.h"
 
 
@@ -24,10 +25,13 @@ void Jarvis::runJarvisMarch(vector<point> &points, MainWindow *w)
 
 	orientedPoints[0] = 0;
 	gui_points.push_back(points[orientedPoints[0]]);
+    w->clearLines();
+    w->drawLines(gui_points);
 
 	orientedPoints[1] = secondPointIndex(points);
 	gui_points.push_back(points[orientedPoints[1]]);
-
+    w->clearLines();
+    w->drawLines(gui_points);
 	//orientedPoints[1] = 1;
 
 
@@ -55,6 +59,9 @@ void Jarvis::runJarvisMarch(vector<point> &points, MainWindow *w)
 
 		}
 	gui_points.push_back(points[orientedPoints[i]]);
+    w->clearLines();
+    w->drawLines(gui_points);
+    sleep(1);
 
 
 	nPointsInHull++;
