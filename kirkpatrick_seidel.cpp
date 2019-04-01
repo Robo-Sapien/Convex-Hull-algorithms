@@ -544,7 +544,7 @@ vector<int> Kirkpatrick_Seidel::get_bridge_or_candidate(
 
     //Getting the maximum y-intercept possible with median slope
     cout<<"\nFinding the maximum intercept"<<endl;
-    float max_intrcpt;
+    double max_intrcpt;
     for(unsigned int i=0;i<cand_idx.size();i++){
         double intrcpt=(double)points[cand_idx[i]].y-\
                             med_slope*(double)points[cand_idx[i]].x;
@@ -662,6 +662,12 @@ vector<int> Kirkpatrick_Seidel::get_upper_bridge(float med_x,
         //Calculating the sloped of the points along with some new cand
         cout<<"\nPairing points and calculating slopes\n";
         pair_slopes=get_pair_slopes(cand_idx,new_cand_idx);
+        //Handling the case when number of no pair of points are formed
+        if(pair_slopes.size()==0){
+            //Reinitializing the new candidate indexes as curr candidate
+            cand_idx.assign(new_cand_idx.begin(),new_cand_idx.end());
+            continue;
+        }
         //Have to free up the p2p_slope pointers from heap
 
         //Calcualting the median slopes index and making 3 slope buckets

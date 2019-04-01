@@ -1,22 +1,19 @@
-#include <bits/stdc++.h> 
+//#include <bits/stdc++.h>
+#include <iostream>
+#include <vector> 
 #include <cmath>
+#include "jarvis.h"
+
 
 using namespace std;
 
-struct point
-{
-	double x;
-	double y;
-};
 
-int indexOfLeftMostPoint(vector<point> &points);
-double findAngle(point a, point b, point c);
-int secondPointIndex(vector<point> &points);
-int findOrientation(point a, point b, point c);
-
-void runJarvisMarch(vector<point> &points)
+void Jarvis::runJarvisMarch(vector<point> &points)
 {
 	int indexToBeSwapped = indexOfLeftMostPoint(points);
+
+	vector<point> gui_points;
+
 
 	//vector< pair<int,int> > hull_point_pairs;
 
@@ -26,7 +23,11 @@ void runJarvisMarch(vector<point> &points)
 	int orientedPoints[points.size()];
 
 	orientedPoints[0] = 0;
+	gui_points.push_back(points[orientedPoints[0]]);
+
 	orientedPoints[1] = secondPointIndex(points);
+	gui_points.push_back(points[orientedPoints[1]]);
+
 	//orientedPoints[1] = 1;
 
 
@@ -53,8 +54,11 @@ void runJarvisMarch(vector<point> &points)
 			}
 
 		}
+	gui_points.push_back(points[orientedPoints[i]]);
+
+
 	nPointsInHull++;
-	//printf("%f\n",points[orientedPoints[i]].x);	
+
 	} while((points[orientedPoints[i]].x != p0.x) || (points[orientedPoints[i]].y != p0.y));
 
 	//printf("%d\n",nPointsInHull);
@@ -71,12 +75,18 @@ void runJarvisMarch(vector<point> &points)
 
 	for(i=0;i<nPointsInHull;i++)
 	{
-		printf("%d ",orientedPoints[i]);
+		cout<<orientedPoints[i]<<" ";
 	}
+	cout<<endl;
+
+	for(i=0;i<gui_points.size();i++)
+    {
+        cout<<gui_points[i].x<<" "<<gui_points[i].y<<endl;
+    }
 
 }
 
-int secondPointIndex(vector<point> &points)
+int Jarvis::secondPointIndex(vector<point> &points)
 {
 	//point second_Point;
 	int index;
@@ -100,7 +110,7 @@ int secondPointIndex(vector<point> &points)
 	return index;
 }
 
-double findAngle(point a, point b, point c)
+double Jarvis::findAngle(point a, point b, point c)
 {
 	double vector1_icap = a.x-b.x;
 	double vector1_jcap = a.y-b.y;
@@ -114,7 +124,7 @@ double findAngle(point a, point b, point c)
 	return angle;
 }
 
-int indexOfLeftMostPoint(vector<point> &points)
+int Jarvis::indexOfLeftMostPoint(vector<point> &points)
 {
 	double next;
 	double small = points[0].x;
@@ -137,7 +147,7 @@ int indexOfLeftMostPoint(vector<point> &points)
 	return index;
 }
 
-int findOrientation(point a, point b, point c)
+int Jarvis::findOrientation(point a, point b, point c)
 {
   int value = (b.y - a.y) * (c.x - b.x) - (b.x - a.x) * (c.y - b.y);
   if(value == 0)
@@ -154,6 +164,7 @@ int findOrientation(point a, point b, point c)
   }
 }
 
+
 int main()
 {
 	int n;
@@ -169,8 +180,8 @@ int main()
 	  points.push_back(p);
 	 }
 	 cout<<endl;
-
-	 runJarvisMarch(points);
+	 Jarvis *ob = new Jarvis(points);
+	 ob->runJarvisMarch(points);
 
 	return 0;
 }
