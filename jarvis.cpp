@@ -8,9 +8,9 @@
 using namespace std;
 
 
-void Jarvis::runJarvisMarch(vector<point> &points)
+void Jarvis::runJarvisMarch()
 {
-	int indexToBeSwapped = indexOfLeftMostPoint(points);
+	int indexToBeSwapped = indexOfLeftMostPoint();
 
 	vector<point> gui_points;
 
@@ -25,7 +25,7 @@ void Jarvis::runJarvisMarch(vector<point> &points)
 	orientedPoints[0] = 0;
 	gui_points.push_back(points[orientedPoints[0]]);
 
-	orientedPoints[1] = secondPointIndex(points);
+	orientedPoints[1] = secondPointIndex();
 	gui_points.push_back(points[orientedPoints[1]]);
 
 	//orientedPoints[1] = 1;
@@ -86,24 +86,23 @@ void Jarvis::runJarvisMarch(vector<point> &points)
 
 }
 
-int Jarvis::secondPointIndex(vector<point> &points)
+int Jarvis::secondPointIndex()
 {
 	//point second_Point;
 	int index;
+	point randomUpper;
+	randomUpper.x=points[0].x;
+	randomUpper.y=points[0].y+1;
+	double angle;
+	double minAngle=4.14;
 
 	for(int i=1;i<points.size();i++)
 	{	
-		int count = 0;
-		for(int j=0;j<points.size();j++)
+		angle = findAngle(randomUpper,points[0],points[i]);
+		if(minAngle > angle)
 		{
-			int orientation = findOrientation(points[0],points[i],points[j]);
-			if(orientation ==0 || orientation==1)
-				count++;
-		}
-		if(count == points.size())
-		{
+			minAngle = angle;
 			index = i;
-			break;
 		}
 	}
 	//second_Point = points[i];
@@ -124,7 +123,7 @@ double Jarvis::findAngle(point a, point b, point c)
 	return angle;
 }
 
-int Jarvis::indexOfLeftMostPoint(vector<point> &points)
+int Jarvis::indexOfLeftMostPoint()
 {
 	double next;
 	double small = points[0].x;
@@ -147,23 +146,6 @@ int Jarvis::indexOfLeftMostPoint(vector<point> &points)
 	return index;
 }
 
-int Jarvis::findOrientation(point a, point b, point c)
-{
-  int value = (b.y - a.y) * (c.x - b.x) - (b.x - a.x) * (c.y - b.y);
-  if(value == 0)
-  {
-    return 0; // collinear
-  }
-  if(value < 0)
-  {
-    return 2; // counter-clockwise
-  } 
-  else 
-  {
-    return 1; // clockwise
-  }
-}
-
 
 int main()
 {
@@ -181,7 +163,7 @@ int main()
 	 }
 	 cout<<endl;
 	 Jarvis *ob = new Jarvis(points);
-	 ob->runJarvisMarch(points);
+	 ob->runJarvisMarch();
 
 	return 0;
 }
