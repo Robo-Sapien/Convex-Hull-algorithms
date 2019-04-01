@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "GrahamScan.h"
 #include "kirkpatrick_seidel.h"
+#include "jarvis.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -147,5 +148,7 @@ void MainWindow::on_btn_JarvisMarch_clicked()
             p.y = qv_y[i];
             points.push_back(p);
     }
+    Jarvis *obj = new Jarvis(points);
+    obj->runJarvisMarch(points, this);
 
 }

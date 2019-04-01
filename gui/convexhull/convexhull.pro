@@ -27,7 +27,8 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     qcustomplot.cpp \
-    convex_hull_utility.cpp
+    convex_hull_utility.cpp \
+    jarvis.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -35,7 +36,8 @@ HEADERS += \
     convex_hull_utility.h \
     customStack.h \
     GrahamScan.h \
-    kirkpatrick_seidel.h
+    kirkpatrick_seidel.h \
+    jarvis.h
 
 FORMS += \
         mainwindow.ui
