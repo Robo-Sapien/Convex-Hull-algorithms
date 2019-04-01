@@ -14,12 +14,6 @@ void Jarvis::runJarvisMarch()
 
 	vector<point> gui_points;
 
-
-	//vector< pair<int,int> > hull_point_pairs;
-
-	//find next point
-	//push (0,nextpoint) pair 
-
 	int orientedPoints[points.size()];
 
 	orientedPoints[0] = 0;
@@ -27,9 +21,6 @@ void Jarvis::runJarvisMarch()
 
 	orientedPoints[1] = secondPointIndex();
 	gui_points.push_back(points[orientedPoints[1]]);
-
-	//orientedPoints[1] = 1;
-
 
 	int i=1;
 	double max_angle = 0;
@@ -49,8 +40,6 @@ void Jarvis::runJarvisMarch()
 			{
 				max_angle = angle;
 				orientedPoints[i] = j;
-
-				//printf("%d\n",j);
 			}
 
 		}
@@ -60,8 +49,6 @@ void Jarvis::runJarvisMarch()
 	nPointsInHull++;
 
 	} while((points[orientedPoints[i]].x != p0.x) || (points[orientedPoints[i]].y != p0.y));
-
-	//printf("%d\n",nPointsInHull);
 	
 	for(i=0;i<nPointsInHull;i++)
 	{
@@ -88,7 +75,7 @@ void Jarvis::runJarvisMarch()
 
 int Jarvis::secondPointIndex()
 {
-	//point second_Point;
+
 	int index;
 	point randomUpper;
 	randomUpper.x=points[0].x;
@@ -105,7 +92,7 @@ int Jarvis::secondPointIndex()
 			index = i;
 		}
 	}
-	//second_Point = points[i];
+	
 	return index;
 }
 
