@@ -126,7 +126,7 @@ void MainWindow::on_btn_KPS_clicked()
             p.y = qv_y[i];
             points.push_back(p);
     }
-
+    clearLines();
     Kirkpatrick_Seidel *MyKPS = new Kirkpatrick_Seidel(points, this);
     MyKPS->put_a_hull_on_points();
 //    for(unsigned int i = 0; i< MyKPS->hull_point_pairs.size(); i++){

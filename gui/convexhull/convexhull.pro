@@ -28,7 +28,8 @@ SOURCES += \
         mainwindow.cpp \
     qcustomplot.cpp \
     convex_hull_utility.cpp \
-    jarvis.cpp
+    jarvis.cpp \
+    kirkpatrick_seidel.cpp
 
 HEADERS += \
         mainwindow.h \

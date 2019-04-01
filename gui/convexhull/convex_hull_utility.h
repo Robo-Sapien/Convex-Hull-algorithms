@@ -51,7 +51,7 @@ are ordered according to their x-coordinate.
 class Heap{
 private:
     int *idx_heap;            //the heap having the index of point
-    float *val_heap;          //value to compare while heapifying
+    double *val_heap;          //value to compare while heapifying
     int last_pos;             //saving the position of last entry
 
     void swap_elements(int pos1,int pos2);
@@ -65,7 +65,7 @@ public:
 
     //Defining the function supported in the heap.
     //Function to insert an element to the heap and then heapify
-    void insert_into_heap(int idx,float value);
+    void insert_into_heap(int idx,double value);
     //Function to remove the topmost element from the heap and heapify
     int pop_from_heap();
     //Function for printing the heap, for debugging purpose
