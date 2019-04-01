@@ -139,8 +139,8 @@ void Kirkpatrick_Seidel::put_a_hull_on_points(){
 void Kirkpatrick_Seidel::get_extremum_points(){
     cout<<"Finding the extremum points"<<endl;
     //Initializing the min and max value of x-coordinate of points
-    float min_x=INT_MAX;
-    float max_x=INT_MIN;
+    double min_x=INT_MAX;
+    double max_x=INT_MIN;
 
     for(unsigned int i=0;i<points.size();i++){
         //Finding the minimum bound of the points
@@ -513,7 +513,7 @@ void Kirkpatrick_Seidel::generate_new_cand_idx(int leave_flag,\
 }
 //Finding the bridge points or the new reduced candidate points
 vector<int> Kirkpatrick_Seidel::get_bridge_or_candidate(
-                                    float med_x,int med_slope_idx,\
+                                    double med_x,int med_slope_idx,\
                                     vector<int> &cand_idx,\
                                     vector<int> &new_cand_idx,\
                             vector<struct p2p_slope*> &pair_slopes,\
@@ -580,8 +580,8 @@ vector<int> Kirkpatrick_Seidel::get_bridge_or_candidate(
     cout<<endl;
     //Now seeing x-coordinate of points on this line
     cout<<"Finding the min and max x of points lying on support\n";
-    float min_x=points[MAX[0]].x;int min_idx=MAX[0];
-    float max_x=points[MAX[0]].x;int max_idx=MAX[0];
+    double min_x=points[MAX[0]].x;int min_idx=MAX[0];
+    double max_x=points[MAX[0]].x;int max_idx=MAX[0];
     for(unsigned int i=1;i<MAX.size();i++){
         if(points[MAX[i]].x<min_x){
             min_x=points[MAX[i]].x;
@@ -621,7 +621,7 @@ vector<int> Kirkpatrick_Seidel::get_bridge_or_candidate(
     return bridge_point_idx;
 }
 //Function to calculate the upper bridge
-vector<int> Kirkpatrick_Seidel::get_upper_bridge(float med_x,
+vector<int> Kirkpatrick_Seidel::get_upper_bridge(double med_x,
                                             vector<int> &cand_idx){
     /*
     DESCRIPTION:
@@ -761,7 +761,7 @@ void Kirkpatrick_Seidel::get_upper_hull(vector<int> &cand_idx,\
     //Finding the median element among the live candidate ones
     cout<<"Finding the median x coordinate"<<endl;
     int med_idx=calculate_median(cand_idx,this->points);
-    float median_x=points[med_idx].x;
+    double median_x=points[med_idx].x;
     cout<<"Median Index is: "<<med_idx<<" at x-coord: "<<median_x;
     cout<<endl;
 
