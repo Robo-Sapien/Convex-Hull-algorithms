@@ -21,8 +21,8 @@ private:
     void get_extremum_points(){
         cout<<"Finding the extremum points"<<endl;
         //Initializing the min and max value of x-coordinate of points
-        int min_x=INT_MAX;
-        int max_x=INT_MIN;
+        float min_x=INT_MAX;
+        float max_x=INT_MIN;
 
         for(unsigned int i=0;i<points.size();i++){
             //Finding the minimum bound of the points
@@ -516,21 +516,21 @@ private:
         //Initializing the bridge vector
         vector<int> bridge_point_idx;
 
-        //Handling the base case
-        if(cand_idx.size()==2){
-            if(points[cand_idx[0]].x<points[cand_idx[1]].x){
-                bridge_point_idx.push_back(cand_idx[0]);
-                bridge_point_idx.push_back(cand_idx[1]);
-            }
-            else{
-                bridge_point_idx.push_back(cand_idx[1]);
-                bridge_point_idx.push_back(cand_idx[0]);
-            }
-            return bridge_point_idx;
-        }
-
         //Now getting the bridges from the set of upper points
         while(bridge_point_idx.size()!=2){
+            //Handling the base case when only two points are in candidate
+            if(cand_idx.size()==2){
+                if(points[cand_idx[0]].x<points[cand_idx[1]].x){
+                    bridge_point_idx.push_back(cand_idx[0]);
+                    bridge_point_idx.push_back(cand_idx[1]);
+                }
+                else{
+                    bridge_point_idx.push_back(cand_idx[1]);
+                    bridge_point_idx.push_back(cand_idx[0]);
+                }
+                return bridge_point_idx;
+            }
+
             //Calculating the slopes
             //Initializing the vector for the next set of candidaates idx
             vector<int> new_cand_idx;
@@ -639,9 +639,6 @@ private:
         bridge_point_idx=get_upper_bridge(median_x,cand_idx);
         //Appending the point to the final hull index list
         this->append_bridge_point_to_hull(bridge_point_idx);
-
-        int temp;
-        cin>>temp;
 
 
         /*       DIVISION STEP OF DIVIDE AND CONQUER             */
