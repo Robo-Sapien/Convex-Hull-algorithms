@@ -37,6 +37,8 @@ private slots:
 
     void on_btn_KPS_clicked();
 
+    void on_btn_JarvisMarch_clicked();
+
 private:
     Ui::MainWindow *ui;
 

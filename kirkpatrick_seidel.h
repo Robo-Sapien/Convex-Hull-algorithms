@@ -6,7 +6,10 @@ using namespace std;
 class Kirkpatrick_Seidel: public ConvexHull{
 public:
     //Defining the constructor
-    Kirkpatrick_Seidel(vector<struct point> points):ConvexHull(points){
+    Kirkpatrick_Seidel(vector<struct point> points,MainWindow *w)\
+                                            :ConvexHull(points){
+        //Initializing the gui window reference
+        this->w=w;
         cout<<"\nPoints Initialized"<<endl;
         this->get_extremum_points();
     }
@@ -16,6 +19,8 @@ public:
     void print_pairs_on_hull();
     //Public function to generate the convex hull
     void put_a_hull_on_points();
+    //Function to draw the bridge line
+    void draw_bridge(int idx1,int idx2);
 
 private:
     //Extremum points variable
@@ -56,7 +61,7 @@ private:
                                 vector<int> &EQUAL_SLOPE,\
                                 vector<int> &SMALL_SLOPE);
     //Finding the bridge points or the new reduced candidate points
-    vector<int> get_bridge_or_candidate(float med_x,int med_slope_idx,\
+    vector<int> get_bridge_or_candidate(double med_x,int med_slope_idx,\
                                 vector<int> &cand_idx,\
                                 vector<int> &new_cand_idx,\
                                 vector<struct p2p_slope*> &pair_slopes,\
@@ -64,7 +69,7 @@ private:
                                 vector<int> &EQUAL_SLOPE,\
                                 vector<int> &SMALL_SLOPE);
     //Function to calculate the upper bridge
-    vector<int> get_upper_bridge(float med_x,vector<int> &cand_idx);
+    vector<int> get_upper_bridge(double med_x,vector<int> &cand_idx);
 
     //////////////////////////////////////////////////////////////////
     /*                  UPPER HULL RELATED FUNCTION                 */

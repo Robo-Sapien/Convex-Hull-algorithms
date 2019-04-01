@@ -29,7 +29,7 @@ Heap::Heap(char heap_type,int heap_size){
 
     //Initializing the heap array to contain the index of the
     idx_heap=(int *)malloc(sizeof(int)*heap_size);
-    val_heap=(float *)malloc(sizeof(float)*heap_size);
+    val_heap=(double *)malloc(sizeof(double)*heap_size);
 }
 Heap::~Heap(){
     /*
@@ -41,7 +41,7 @@ Heap::~Heap(){
     free(this->val_heap);
 }
 //Implementing the insertion function
-void Heap::insert_into_heap(int idx,float value){
+void Heap::insert_into_heap(int idx,double value){
     /*
     Description:
         This function will insert an elemnt into heap and then heapify
@@ -94,7 +94,7 @@ void Heap::swap_elements(int pos1,int pos2){
     */
     //Saving the temporary
     int temp_idx=idx_heap[pos1];
-    float temp_val=val_heap[pos1];
+    double temp_val=val_heap[pos1];
 
     //Swapping the pos2 in pos1
     idx_heap[pos1]=idx_heap[pos2];
@@ -132,7 +132,7 @@ int Heap::pop_from_heap(){
         //Retreiving the value of parent and its child
         int cid1=2*pid+1;
         int cid2=2*pid+2;
-        float valp=val_heap[pid];
+        double valp=val_heap[pid];
 
         //if this is max heap and parent's val is less than either of
         //child
@@ -147,7 +147,7 @@ int Heap::pop_from_heap(){
             // cout<<"valp: "<<valp<<endl;
             // cout<<val_heap[cid1]<<endl;
             //if one first child exist and second dont
-            float val1=val_heap[cid1];
+            double val1=val_heap[cid1];
             //If this is max heap and the value of child is greater
             if(this->heap_type=='x' && valp<val1){
                 this->swap_elements(cid1,pid);

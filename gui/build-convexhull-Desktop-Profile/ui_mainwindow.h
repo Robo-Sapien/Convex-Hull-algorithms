@@ -40,6 +40,7 @@ public:
     QPushButton *btn_zoomFull;
     QPushButton *btn_GrahamScan;
     QPushButton *btn_KPS;
+    QPushButton *btn_JarvisMarch;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -79,10 +80,13 @@ public:
         btn_zoomFull->setGeometry(QRect(560, 460, 96, 27));
         btn_GrahamScan = new QPushButton(centralWidget);
         btn_GrahamScan->setObjectName(QStringLiteral("btn_GrahamScan"));
-        btn_GrahamScan->setGeometry(QRect(40, 520, 181, 41));
+        btn_GrahamScan->setGeometry(QRect(20, 520, 181, 41));
         btn_KPS = new QPushButton(centralWidget);
         btn_KPS->setObjectName(QStringLiteral("btn_KPS"));
-        btn_KPS->setGeometry(QRect(260, 520, 171, 41));
+        btn_KPS->setGeometry(QRect(470, 520, 181, 41));
+        btn_JarvisMarch = new QPushButton(centralWidget);
+        btn_JarvisMarch->setObjectName(QStringLiteral("btn_JarvisMarch"));
+        btn_JarvisMarch->setGeometry(QRect(260, 520, 151, 41));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -109,7 +113,8 @@ public:
         label_2->setText(QApplication::translate("MainWindow", "y", Q_NULLPTR));
         btn_zoomFull->setText(QApplication::translate("MainWindow", "Zoom Full", Q_NULLPTR));
         btn_GrahamScan->setText(QApplication::translate("MainWindow", "Run Graham's Scan", Q_NULLPTR));
-        btn_KPS->setText(QApplication::translate("MainWindow", "Kirkpatrick Siedel", Q_NULLPTR));
+        btn_KPS->setText(QApplication::translate("MainWindow", "Run Kirkpatrick Siedel", Q_NULLPTR));
+        btn_JarvisMarch->setText(QApplication::translate("MainWindow", "Run Jarvis March", Q_NULLPTR));
     } // retranslateUi
 
 };

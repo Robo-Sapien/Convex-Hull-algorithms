@@ -53,12 +53,16 @@ OBJECTS_DIR   = ./
 SOURCES       = ../convexhull/main.cpp \
 		../convexhull/mainwindow.cpp \
 		../convexhull/qcustomplot.cpp \
-		../convexhull/convex_hull_utility.cpp moc_mainwindow.cpp \
+		../convexhull/convex_hull_utility.cpp \
+		../convexhull/jarvis.cpp \
+		../convexhull/kirkpatrick_seidel.cpp moc_mainwindow.cpp \
 		moc_qcustomplot.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		qcustomplot.o \
 		convex_hull_utility.o \
+		jarvis.o \
+		kirkpatrick_seidel.o \
 		moc_mainwindow.o \
 		moc_qcustomplot.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -115,6 +119,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		../convexhull/.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -141,10 +146,13 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../convexhull/convex_hull_utility.h \
 		../convexhull/customStack.h \
 		../convexhull/GrahamScan.h \
-		../convexhull/kirkpatrick_seidel.h ../convexhull/main.cpp \
+		../convexhull/kirkpatrick_seidel.h \
+		../convexhull/jarvis.h ../convexhull/main.cpp \
 		../convexhull/mainwindow.cpp \
 		../convexhull/qcustomplot.cpp \
-		../convexhull/convex_hull_utility.cpp
+		../convexhull/convex_hull_utility.cpp \
+		../convexhull/jarvis.cpp \
+		../convexhull/kirkpatrick_seidel.cpp
 QMAKE_TARGET  = convexhull
 DESTDIR       = 
 TARGET        = convexhull
@@ -211,6 +219,7 @@ Makefile: ../convexhull/convexhull.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/lin
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -292,6 +301,7 @@ Makefile: ../convexhull/convexhull.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/lin
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
@@ -333,8 +343,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../convexhull/mainwindow.h ../convexhull/qcustomplot.h ../convexhull/convex_hull_utility.h ../convexhull/customStack.h ../convexhull/GrahamScan.h ../convexhull/kirkpatrick_seidel.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../convexhull/main.cpp ../convexhull/mainwindow.cpp ../convexhull/qcustomplot.cpp ../convexhull/convex_hull_utility.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../convexhull/mainwindow.h ../convexhull/qcustomplot.h ../convexhull/convex_hull_utility.h ../convexhull/customStack.h ../convexhull/GrahamScan.h ../convexhull/kirkpatrick_seidel.h ../convexhull/jarvis.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../convexhull/main.cpp ../convexhull/mainwindow.cpp ../convexhull/qcustomplot.cpp ../convexhull/convex_hull_utility.cpp ../convexhull/jarvis.cpp ../convexhull/kirkpatrick_seidel.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../convexhull/mainwindow.ui $(DISTDIR)/
 
 
@@ -408,9 +418,11 @@ main.o: ../convexhull/main.cpp ../convexhull/mainwindow.h \
 mainwindow.o: ../convexhull/mainwindow.cpp ../convexhull/mainwindow.h \
 		../convexhull/convex_hull_utility.h \
 		ui_mainwindow.h \
+		../convexhull/qcustomplot.h \
 		../convexhull/GrahamScan.h \
 		../convexhull/customStack.h \
-		../convexhull/kirkpatrick_seidel.h
+		../convexhull/kirkpatrick_seidel.h \
+		../convexhull/jarvis.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../convexhull/mainwindow.cpp
 
 qcustomplot.o: ../convexhull/qcustomplot.cpp ../convexhull/qcustomplot.h
@@ -418,6 +430,16 @@ qcustomplot.o: ../convexhull/qcustomplot.cpp ../convexhull/qcustomplot.h
 
 convex_hull_utility.o: ../convexhull/convex_hull_utility.cpp ../convexhull/convex_hull_utility.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o convex_hull_utility.o ../convexhull/convex_hull_utility.cpp
+
+jarvis.o: ../convexhull/jarvis.cpp ../convexhull/jarvis.h \
+		../convexhull/convex_hull_utility.h \
+		../convexhull/mainwindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o jarvis.o ../convexhull/jarvis.cpp
+
+kirkpatrick_seidel.o: ../convexhull/kirkpatrick_seidel.cpp ../convexhull/kirkpatrick_seidel.h \
+		../convexhull/convex_hull_utility.h \
+		../convexhull/mainwindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o kirkpatrick_seidel.o ../convexhull/kirkpatrick_seidel.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
