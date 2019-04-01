@@ -1,24 +1,26 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
+#include <climits>
 #include "kirkpatrick_seidel.h"
 
 int main(){
     //Initializing the points
-    srand(14);
+    srand(4);
     vector<struct point> points;
     vector<int> points_idx;
-    for(int i=0;i<22;i++){
-        float x;//=rand()%100;
-        float y;//=rand()%200;
+    int range=100000;
+    for(int i=0;i<range;i++){
+        float x=((float)(rand()%range))/7.0;
+        float y=((float)(rand()%range))/7.0;
         int idx=i;
-        cin>>x>>y;
+        //cin>>x>>y;
         struct point p;
         p.x=x;
         p.y=y;
         points.push_back(p);
         points_idx.push_back(idx);
-        cout<<"idx: "<<idx<<" point: x:"<<p.x<<", y:"<<p.y<<endl;
+        //cout<<"idx: "<<idx<<" point: x:"<<p.x<<", y:"<<p.y<<endl;
     }
 
     //Creating the class and initializig the points
