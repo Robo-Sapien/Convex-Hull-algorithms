@@ -56,7 +56,7 @@ private:
                                 vector<int> &EQUAL_SLOPE,\
                                 vector<int> &SMALL_SLOPE);
     //Finding the bridge points or the new reduced candidate points
-    vector<int> get_bridge_or_candidate(float med_x,int med_slope_idx,\
+    vector<int> get_bridge_or_candidate(double med_x,int med_slope_idx,\
                                 vector<int> &cand_idx,\
                                 vector<int> &new_cand_idx,\
                                 vector<struct p2p_slope*> &pair_slopes,\
@@ -64,7 +64,7 @@ private:
                                 vector<int> &EQUAL_SLOPE,\
                                 vector<int> &SMALL_SLOPE);
     //Function to calculate the upper bridge
-    vector<int> get_upper_bridge(float med_x,vector<int> &cand_idx);
+    vector<int> get_upper_bridge(double med_x,vector<int> &cand_idx);
 
     //////////////////////////////////////////////////////////////////
     /*                  UPPER HULL RELATED FUNCTION                 */

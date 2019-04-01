@@ -6,13 +6,13 @@
 
 int main(){
     //Initializing the points
-    srand(4);
+    srand(14);
     vector<struct point> points;
     vector<int> points_idx;
     int range=100000;
     for(int i=0;i<range;i++){
-        float x=((float)(rand()%range))/7.0;
-        float y=((float)(rand()%range))/7.0;
+        double x=((double)(rand()%range))/7.0;
+        double y=((double)(rand()%range))/7.0;
         int idx=i;
         //cin>>x>>y;
         struct point p;
