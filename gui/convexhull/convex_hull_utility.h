@@ -29,9 +29,6 @@ protected:
     vector<struct point> points;
     vector< pair<int,int> > hull_point_pairs;
 
-//public:
-//    MainWindow *window;
-
 public:
     //Defining the constructor
     ConvexHull(vector<struct point> points){
