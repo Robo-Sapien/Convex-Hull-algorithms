@@ -7,6 +7,7 @@ using namespace std;
 
 class Kirkpatrick_Seidel: public ConvexHull{
 public:
+    MainWindow *w;
     //Defining the constructor
     Kirkpatrick_Seidel(vector<struct point> points,MainWindow *w)\
                                             :ConvexHull(points){
