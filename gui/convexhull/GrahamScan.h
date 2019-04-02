@@ -18,7 +18,7 @@ struct point referencePoint;
 
 class GrahamScan : public ConvexHull{
   private:
-    /*
+    /**
     Find the reference point (bottommost leftmost point)
     */
     void findReferencePointAndSwap(vector<point> &points){
@@ -45,7 +45,7 @@ class GrahamScan : public ConvexHull{
       return (p1.x - p2.x)*(p1.x - p2.x) + (p1.y - p2.y)*(p1.y - p2.y); 
     } 
 
-    /*
+    /**
     Find the orientation of th 2 points with respect to the center
     it returns 
     0 if they are collinear, 
@@ -64,7 +64,7 @@ class GrahamScan : public ConvexHull{
       }
     }
 
-    /*
+    /**
     custom caomparison function for sorting the points according to the polar angle.
     returns -1 if v1 < v2, and 1 if v1 > v2
     */
@@ -88,7 +88,7 @@ class GrahamScan : public ConvexHull{
       } 
     }
 
-    /*
+    /**
     If two points mak the same polar angle with the eference point, 
     remove the one with the smaller distance from reference point
     */
@@ -114,7 +114,7 @@ class GrahamScan : public ConvexHull{
 
     }
 
-    /*
+    /**
     runs the graham's scan algorithm on the vector of points and displays the
     convexhull in the GUI.
     */

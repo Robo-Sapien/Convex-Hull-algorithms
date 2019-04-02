@@ -32,7 +32,7 @@ private:
     unsigned int pl_max_idx;     //index of lowermost max x-coord point
 
     ///////////////////////////////////////////////////////////////////
-    /*               GENEREAL UTILITY FUNCTION                      */
+    /**               GENEREAL UTILITY FUNCTION                      */
     //////////////////////////////////////////////////////////////////
     //Function for finding the extremum points
     void get_extremum_points();
@@ -43,7 +43,7 @@ private:
                                     unsigned int cur_pu_max_idx);
 
     ///////////////////////////////////////////////////////////////////
-    /*               UPPER BRIDGE RELATED FUNCTIONS                 */
+    /**               UPPER BRIDGE RELATED FUNCTIONS                 */
     ///////////////////////////////////////////////////////////////////
     //Initializing the p2p slope struct
     struct p2p_slope*get_p2p_slope_entry(int idx1,int idx2,double slope);
@@ -74,7 +74,7 @@ private:
     vector<int> get_upper_bridge(double med_x,vector<int> &cand_idx);
 
     //////////////////////////////////////////////////////////////////
-    /*                  UPPER HULL RELATED FUNCTION                 */
+    /**                  UPPER HULL RELATED FUNCTION                 */
     //////////////////////////////////////////////////////////////////
     //Function to append the bridge point to actual hull point
     void append_bridge_point_to_hull(vector<int> &bridge_idx);
@@ -84,7 +84,7 @@ private:
                             unsigned int max_x_idx);
 
     /////////////////////////////////////////////////////////////////
-    /*                  LOWER HULL RELATED FUNCTION                */
+    /**                  LOWER HULL RELATED FUNCTION                */
     /////////////////////////////////////////////////////////////////
     //Function for transforming out lower hull to upper hull
     void transform_lowers_to_upper();

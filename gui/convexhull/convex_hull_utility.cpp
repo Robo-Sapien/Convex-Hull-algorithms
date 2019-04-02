@@ -5,12 +5,12 @@
 using namespace std;
 
 
-/*
+/**
 implementing the heap related function as defined in header file
 */
 //Defining the constructor function
 Heap::Heap(char heap_type,int heap_size){
-    /*
+    /**
     Description:
         The constructor for creating the heap.
     USAGE:
@@ -32,7 +32,7 @@ Heap::Heap(char heap_type,int heap_size){
     val_heap=(double *)malloc(sizeof(double)*heap_size);
 }
 Heap::~Heap(){
-    /*
+    /**
     Description:
         Destructor for the heap, freeing the dynamically allocatted
         area in heap used for this "heap"
@@ -42,7 +42,7 @@ Heap::~Heap(){
 }
 //Implementing the insertion function
 void Heap::insert_into_heap(int idx,double value){
-    /*
+    /**
     Description:
         This function will insert an elemnt into heap and then heapify
         to maintain all the proterty of the heap.
@@ -88,7 +88,7 @@ void Heap::insert_into_heap(int idx,double value){
     }
 }
 void Heap::swap_elements(int pos1,int pos2){
-    /*
+    /**
     This function will swap the elements present in at pos1 and pos2
     in both idx and val heap simultaneously.
     */
@@ -105,7 +105,7 @@ void Heap::swap_elements(int pos1,int pos2){
 }
 //Implementing the deletion function
 int Heap::pop_from_heap(){
-    /*
+    /**
     Description:
         This function will pop the first element from the heap and
         do the cleanup after that. Also it returns the index of the
@@ -193,7 +193,7 @@ int Heap::pop_from_heap(){
     return pop_idx;
 }
 void Heap::print_heap(){
-    /*
+    /**
     Description:
         This function will print the elements presently in the heap
         for the debuggin purpose only.
@@ -205,12 +205,12 @@ void Heap::print_heap(){
     cout<<endl;
 }
 
-/*
+/**
 Median calculation function using the mean heap
 */
 int calculate_median(vector<int> &points_idx,\
                         vector<struct point> &points){
-    /*
+    /**
     Description:
         This function calcualte the median point according to x_coord
         in O(N) using the max and min heap.

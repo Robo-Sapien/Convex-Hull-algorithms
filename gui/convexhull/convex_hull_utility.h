@@ -3,14 +3,14 @@
 
 #include <vector>
 using namespace std;
-/*
+/**
 Defining the structure to hold the point
 */
 struct point{
     double x;
     double y;
 };
-/*
+/**
 Describing the data structure to hold the slope of pair of points
 */
 struct p2p_slope{
@@ -19,7 +19,7 @@ struct p2p_slope{
     double slope;
 };
 
-/*
+/**
 Defining the class which will serve as template to all the three
 implementation of the Convex Hull algorithm
 */
@@ -43,7 +43,7 @@ public:
     }
 };
 
-/*
+/**
 Defining the template for the Min and Max Heap class which will be used
 for finding the Median of a range of points according to their when they
 are ordered according to their x-coordinate.
@@ -72,7 +72,7 @@ public:
     void print_heap();
 };
 
-/*
+/**
 Function for finding the median element using the heap in O(N)
 */
 int calculate_median(vector<int> &points_idx,\
