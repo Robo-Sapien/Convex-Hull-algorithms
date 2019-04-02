@@ -39,7 +39,8 @@ struct \mbox{\hyperlink{structp2p__slope}{p2p\+\_\+slope}} $\ast$ \mbox{\hyperli
 \item 
 vector$<$ \mbox{\hyperlink{structp2p__slope}{p2p\+\_\+slope}} $\ast$ $>$ \mbox{\hyperlink{classKirkpatrick__Seidel_a403fd3696ad1a6b7dedb75cb8f5eaab7}{get\+\_\+pair\+\_\+slopes}} (vector$<$ int $>$ \&cand\+\_\+idx, vector$<$ int $>$ \&new\+\_\+cand\+\_\+idx)
 \item 
-int \mbox{\hyperlink{classKirkpatrick__Seidel_afa21506d3cd0d121b337145af844191a}{fill\+\_\+slope\+\_\+bucket}} (vector$<$ struct \mbox{\hyperlink{structp2p__slope}{p2p\+\_\+slope}} $\ast$ $>$ \&pair\+\_\+slopes, vector$<$ int $>$ \&L\+A\+R\+G\+E\+\_\+\+S\+L\+O\+PE, vector$<$ int $>$ \&E\+Q\+U\+A\+L\+\_\+\+S\+L\+O\+PE, vector$<$ int $>$ \&S\+M\+A\+L\+L\+\_\+\+S\+L\+O\+PE)
+\mbox{\Hypertarget{classKirkpatrick__Seidel_afa21506d3cd0d121b337145af844191a}\label{classKirkpatrick__Seidel_afa21506d3cd0d121b337145af844191a}} 
+int {\bfseries fill\+\_\+slope\+\_\+bucket} (vector$<$ struct \mbox{\hyperlink{structp2p__slope}{p2p\+\_\+slope}} $\ast$ $>$ \&pair\+\_\+slopes, vector$<$ int $>$ \&L\+A\+R\+G\+E\+\_\+\+S\+L\+O\+PE, vector$<$ int $>$ \&E\+Q\+U\+A\+L\+\_\+\+S\+L\+O\+PE, vector$<$ int $>$ \&S\+M\+A\+L\+L\+\_\+\+S\+L\+O\+PE)
 \item 
 void \mbox{\hyperlink{classKirkpatrick__Seidel_ab93d5d2d8b237254490a31a48479489c}{generate\+\_\+new\+\_\+cand\+\_\+idx}} (int leave\+\_\+flag, vector$<$ int $>$ \&new\+\_\+cand\+\_\+idx, vector$<$ struct \mbox{\hyperlink{structp2p__slope}{p2p\+\_\+slope}} $\ast$ $>$ \&pair\+\_\+slopes, vector$<$ int $>$ \&L\+A\+R\+G\+E\+\_\+\+S\+L\+O\+PE, vector$<$ int $>$ \&E\+Q\+U\+A\+L\+\_\+\+S\+L\+O\+PE, vector$<$ int $>$ \&S\+M\+A\+L\+L\+\_\+\+S\+L\+O\+PE)
 \item 
@@ -74,7 +75,7 @@ unsigned int {\bfseries pl\+\_\+max\+\_\+idx}
 \doxysubsection{Detailed Description}
 
 
-Definition at line 7 of file kirkpatrick\+\_\+seidel.\+h.
+Definition at line 8 of file kirkpatrick\+\_\+seidel.\+h.
 
 
 
@@ -85,33 +86,37 @@ Definition at line 7 of file kirkpatrick\+\_\+seidel.\+h.
 \doxysubsubsection{\texorpdfstring{append\_bridge\_point\_to\_hull()}{append\_bridge\_point\_to\_hull()}}
 {\footnotesize\ttfamily void Kirkpatrick\+\_\+\+Seidel\+::append\+\_\+bridge\+\_\+point\+\_\+to\+\_\+hull (\begin{DoxyParamCaption}\item[{vector$<$ int $>$ \&}]{bridge\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-U\+P\+P\+ER H\+U\+LL R\+E\+L\+A\+T\+ED F\+U\+N\+C\+T\+I\+ON ~\newline
- D\+E\+S\+C\+R\+I\+T\+P\+I\+ON\+: This function will append the bridge points pair found out by the upper bridge method to the hull points. This will not add if the pair already exist on hull.
+This function will append the bridge points pair found out by the upper bridge method to the hull points. This will not add if the pair already exist on hull.
 
-Also this will display the bridge line on the G\+UI window. U\+S\+A\+GE\+: I\+N\+P\+UT\+: bridge\+\_\+idx \+: the vecotr containing the index of bridge
+Also this will display the bridge line on the G\+UI window.
 
-Definition at line 743 of file kirkpatrick\+\_\+seidel.\+cpp.
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em bridge\+\_\+idx} & \+: the vecotr containing the index of bridge\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 740 of file kirkpatrick\+\_\+seidel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{744                                                             \{}
-\DoxyCodeLine{756     \textcolor{comment}{//Making the pair of the points on the convex hull sorted}}
-\DoxyCodeLine{757     pair<int,int> hull\_pair=make\_pair(bridge\_idx[0],bridge\_idx[1]);}
-\DoxyCodeLine{758     \textcolor{comment}{//Checking the existance of the pair on hull}}
-\DoxyCodeLine{759     \textcolor{comment}{//This should not happen i.e one pair should only come}}
-\DoxyCodeLine{760     \textcolor{comment}{//one time as the bridge.}}
-\DoxyCodeLine{761     \textcolor{keywordtype}{bool} exist=find(hull\_point\_pairs.begin(),hull\_point\_pairs.end(),\(\backslash\)}
-\DoxyCodeLine{762                     hull\_pair)!=hull\_point\_pairs.end();}
-\DoxyCodeLine{763     \textcolor{keywordflow}{if}(exist)\{}
-\DoxyCodeLine{764         cout<<\textcolor{stringliteral}{"Pair already exist. Some mistake is there\(\backslash\)n"};}
-\DoxyCodeLine{765         exit(0);}
-\DoxyCodeLine{766     \}}
-\DoxyCodeLine{767     cout<<\textcolor{stringliteral}{"Appending the bridge point to the hull points\(\backslash\)n"};}
-\DoxyCodeLine{768     hull\_point\_pairs.push\_back(hull\_pair);}
-\DoxyCodeLine{769 }
-\DoxyCodeLine{770     \textcolor{comment}{//Displaying these points on the gui}}
-\DoxyCodeLine{771     \textcolor{comment}{//this-\/>draw\_bridge(bridge\_idx[0],bridge\_idx[1]);}}
-\DoxyCodeLine{772 \}}
+\DoxyCodeLine{741                                                             \{}
+\DoxyCodeLine{751     \textcolor{comment}{//Making the pair of the points on the convex hull sorted}}
+\DoxyCodeLine{752     pair<int,int> hull\_pair=make\_pair(bridge\_idx[0],bridge\_idx[1]);}
+\DoxyCodeLine{753     \textcolor{comment}{//Checking the existance of the pair on hull}}
+\DoxyCodeLine{754     \textcolor{comment}{//This should not happen i.e one pair should only come}}
+\DoxyCodeLine{755     \textcolor{comment}{//one time as the bridge.}}
+\DoxyCodeLine{756     \textcolor{keywordtype}{bool} exist=find(hull\_point\_pairs.begin(),hull\_point\_pairs.end(),\(\backslash\)}
+\DoxyCodeLine{757                     hull\_pair)!=hull\_point\_pairs.end();}
+\DoxyCodeLine{758     \textcolor{keywordflow}{if}(exist)\{}
+\DoxyCodeLine{759         cout<<\textcolor{stringliteral}{"Pair already exist. Some mistake is there\(\backslash\)n"};}
+\DoxyCodeLine{760         exit(0);}
+\DoxyCodeLine{761     \}}
+\DoxyCodeLine{762     cout<<\textcolor{stringliteral}{"Appending the bridge point to the hull points\(\backslash\)n"};}
+\DoxyCodeLine{763     hull\_point\_pairs.push\_back(hull\_pair);}
+\DoxyCodeLine{764 }
+\DoxyCodeLine{765 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classKirkpatrick__Seidel_a180f5fcebe4744b99ee618066b819764}\label{classKirkpatrick__Seidel_a180f5fcebe4744b99ee618066b819764}} 
@@ -120,17 +125,27 @@ Definition at line 743 of file kirkpatrick\+\_\+seidel.\+cpp.
 \doxysubsubsection{\texorpdfstring{calculate\_p2p\_slope()}{calculate\_p2p\_slope()}}
 {\footnotesize\ttfamily double Kirkpatrick\+\_\+\+Seidel\+::calculate\+\_\+p2p\+\_\+slope (\begin{DoxyParamCaption}\item[{int}]{idx1,  }\item[{int}]{idx2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-D\+E\+S\+C\+R\+I\+P\+T\+I\+ON\+: This function will calcualte the slope from the x-\/axis from the line made by the points at idx1 and idx2; U\+S\+A\+GE\+: I\+N\+P\+UT\+: idx1 \+: the index of the first point idx2 \+: the index of the second point O\+U\+T\+P\+UT\+: slope \+:the slope of the line connecting idx1 nad idx2
+This function will calcualte the slope from the x-\/axis from the line made by the points at idx1 and idx2; 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em idx1} & \+: the index of the first point \\
+\hline
+\mbox{\texttt{ in}}  & {\em idx2} & \+: the index of the second point\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+slope \+:the slope of the line connecting idx1 nad idx2
+\end{DoxyReturn}
 
-Definition at line 231 of file kirkpatrick\+\_\+seidel.\+cpp.
+
+Definition at line 236 of file kirkpatrick\+\_\+seidel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{231                                                                \{}
-\DoxyCodeLine{243     \textcolor{keywordtype}{double} slope=(double)(points[idx2].y-\/points[idx1].y)/\(\backslash\)}
-\DoxyCodeLine{244                 (double)(points[idx2].x-\/points[idx1].x);}
-\DoxyCodeLine{245     \textcolor{keywordflow}{return} slope;}
-\DoxyCodeLine{246 \}}
+\DoxyCodeLine{236                                                                \{}
+\DoxyCodeLine{245     \textcolor{keywordtype}{double} slope=(double)(points[idx2].y-\/points[idx1].y)/\(\backslash\)}
+\DoxyCodeLine{246                 (double)(points[idx2].x-\/points[idx1].x);}
+\DoxyCodeLine{247     \textcolor{keywordflow}{return} slope;}
+\DoxyCodeLine{248 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classKirkpatrick__Seidel_a3580c52f1f0cf27589ce8fa39f7af669}\label{classKirkpatrick__Seidel_a3580c52f1f0cf27589ce8fa39f7af669}} 
@@ -139,83 +154,35 @@ Definition at line 231 of file kirkpatrick\+\_\+seidel.\+cpp.
 \doxysubsubsection{\texorpdfstring{draw\_bridge()}{draw\_bridge()}}
 {\footnotesize\ttfamily void Kirkpatrick\+\_\+\+Seidel\+::draw\+\_\+bridge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-D\+E\+S\+C\+R\+I\+P\+T\+I\+ON\+: This function will display the bridges as they were generated U\+S\+A\+GE\+:
+This fucntion will draw the lines on the hull in the order they were generated by the kirkpatrick siedel algorithm.
 
-Definition at line 141 of file kirkpatrick\+\_\+seidel.\+cpp.
+This is the only place where the gui object reference is used.
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{141                                     \{}
-\DoxyCodeLine{147     \textcolor{comment}{//Displaying this bridge on the gui using the reference of the window}}
-\DoxyCodeLine{148     \textcolor{comment}{//Creating a vector of points to display}}
-\DoxyCodeLine{149     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<this-\/>hull\_point\_pairs.size();i++)\{}
-\DoxyCodeLine{150         \textcolor{comment}{//Getting the index}}
-\DoxyCodeLine{151         \textcolor{keywordtype}{int} idx1=this-\/>hull\_point\_pairs[i].first;}
-\DoxyCodeLine{152         \textcolor{keywordtype}{int} idx2=this-\/>hull\_point\_pairs[i].second;}
-\DoxyCodeLine{153 }
-\DoxyCodeLine{154         \textcolor{comment}{//Creating the vector of points}}
-\DoxyCodeLine{155         vector<struct point> display\_points;}
-\DoxyCodeLine{156         \textcolor{keyword}{struct }\mbox{\hyperlink{structpoint}{point}} p1,p2;}
-\DoxyCodeLine{157         \textcolor{comment}{//Copying the location of point on these local copy}}
-\DoxyCodeLine{158         p1=this-\/>points[idx1];}
-\DoxyCodeLine{159         p2=this-\/>points[idx2];}
-\DoxyCodeLine{160         \textcolor{comment}{//Pushing these points on the vector}}
-\DoxyCodeLine{161         display\_points.push\_back(p1);}
-\DoxyCodeLine{162         display\_points.push\_back(p2);}
-\DoxyCodeLine{163         \textcolor{comment}{//Calling the display function to draw these line on gui}}
-\DoxyCodeLine{164         this-\/>w-\/>drawLines(display\_points);}
-\DoxyCodeLine{165         sleep(1);}
-\DoxyCodeLine{166     \}}
-\DoxyCodeLine{167 \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classKirkpatrick__Seidel_afa21506d3cd0d121b337145af844191a}\label{classKirkpatrick__Seidel_afa21506d3cd0d121b337145af844191a}} 
-\index{Kirkpatrick\_Seidel@{Kirkpatrick\_Seidel}!fill\_slope\_bucket@{fill\_slope\_bucket}}
-\index{fill\_slope\_bucket@{fill\_slope\_bucket}!Kirkpatrick\_Seidel@{Kirkpatrick\_Seidel}}
-\doxysubsubsection{\texorpdfstring{fill\_slope\_bucket()}{fill\_slope\_bucket()}}
-{\footnotesize\ttfamily int Kirkpatrick\+\_\+\+Seidel\+::fill\+\_\+slope\+\_\+bucket (\begin{DoxyParamCaption}\item[{vector$<$ struct \mbox{\hyperlink{structp2p__slope}{p2p\+\_\+slope}} $\ast$ $>$ \&}]{pair\+\_\+slopes,  }\item[{vector$<$ int $>$ \&}]{L\+A\+R\+G\+E\+\_\+\+S\+L\+O\+PE,  }\item[{vector$<$ int $>$ \&}]{E\+Q\+U\+A\+L\+\_\+\+S\+L\+O\+PE,  }\item[{vector$<$ int $>$ \&}]{S\+M\+A\+L\+L\+\_\+\+S\+L\+O\+PE }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-Description\+: This function will wrap the process of calcualtin of the median slope pair. Under the hood it will use the old calcuate median function for this median also. Its a hack. U\+S\+A\+GE\+: I\+N\+P\+UT\+: pair\+\_\+slopes \+: the vector containg the slopes of each pair L\+A\+R\+G\+E\+\_\+\+S\+L\+O\+PE \+: the index of pairs with large slope E\+Q\+U\+A\+L\+\_\+\+S\+L\+O\+PE \+: the index of pairs with equal slope to med S\+M\+A\+L\+L\+\_\+\+S\+L\+O\+PE \+: the index of pairs with smallar slope O\+U\+T\+P\+UT\+: med\+\_\+slope\+\_\+idx\+: the index of the median slope guy in pairs
-
-Definition at line 390 of file kirkpatrick\+\_\+seidel.\+cpp.
+Definition at line 138 of file kirkpatrick\+\_\+seidel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{394                                                  \{}
-\DoxyCodeLine{410     \textcolor{comment}{//Getting the median slope but first doing our hack}}
-\DoxyCodeLine{411     \textcolor{comment}{//Creating a dummy "points" with slope in x value}}
-\DoxyCodeLine{412     cout<<\textcolor{stringliteral}{"Finding the median slope"}<<endl;}
-\DoxyCodeLine{413     vector<point> slope\_points;}
-\DoxyCodeLine{414     vector<int> points\_idx;}
-\DoxyCodeLine{415     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<pair\_slopes.size();i++)\{}
-\DoxyCodeLine{416         \textcolor{keyword}{struct }\mbox{\hyperlink{structpoint}{point}} pt;}
-\DoxyCodeLine{417         pt.x=pair\_slopes[i]-\/>slope;}
-\DoxyCodeLine{418         slope\_points.push\_back(pt);}
-\DoxyCodeLine{419         points\_idx.push\_back(i);}
-\DoxyCodeLine{420     \}}
-\DoxyCodeLine{421     \textcolor{comment}{//Now we are ready with out dummy points nad index(reuse the func)}}
-\DoxyCodeLine{422     \textcolor{keywordtype}{int} med\_slope\_idx=calculate\_median(points\_idx,slope\_points);}
-\DoxyCodeLine{423     \textcolor{keywordtype}{double} med\_slope=pair\_slopes[med\_slope\_idx]-\/>slope;}
-\DoxyCodeLine{424     cout<<\textcolor{stringliteral}{"Median slope is: "}<<med\_slope<<endl<<endl;}
-\DoxyCodeLine{425 }
-\DoxyCodeLine{426     \textcolor{comment}{//Now we will begin out splitting procedure of pairs into bucket}}
-\DoxyCodeLine{427     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<pair\_slopes.size();i++)\{}
-\DoxyCodeLine{428         \textcolor{keywordflow}{if}(pair\_slopes[i]-\/>slope > med\_slope)\{}
-\DoxyCodeLine{429             cout<<\textcolor{stringliteral}{"Putting idx: "}<<i<<\textcolor{stringliteral}{" in LARGE\_SLOPE"}<<endl;}
-\DoxyCodeLine{430             LARGE\_SLOPE.push\_back(i);}
-\DoxyCodeLine{431         \}}
-\DoxyCodeLine{432         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(pair\_slopes[i]-\/>slope== med\_slope)\{}
-\DoxyCodeLine{433             cout<<\textcolor{stringliteral}{"Putting idx: "}<<i<<\textcolor{stringliteral}{" in EQUAL\_SLOPE"}<<endl;}
-\DoxyCodeLine{434             EQUAL\_SLOPE.push\_back(i);}
-\DoxyCodeLine{435         \}}
-\DoxyCodeLine{436         \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{437             cout<<\textcolor{stringliteral}{"Putting idx: "}<<i<<\textcolor{stringliteral}{" in SMALL\_SLOPE"}<<endl;}
-\DoxyCodeLine{438             SMALL\_SLOPE.push\_back(i);}
-\DoxyCodeLine{439         \}}
-\DoxyCodeLine{440     \}}
-\DoxyCodeLine{441 }
-\DoxyCodeLine{442     \textcolor{keywordflow}{return} med\_slope\_idx;}
-\DoxyCodeLine{443 \}}
+\DoxyCodeLine{138                                     \{}
+\DoxyCodeLine{145     \textcolor{comment}{//Displaying this bridge on the gui using the reference of the window}}
+\DoxyCodeLine{146     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<this-\/>hull\_point\_pairs.size();i++)\{}
+\DoxyCodeLine{147         \textcolor{comment}{//Getting the index}}
+\DoxyCodeLine{148         \textcolor{keywordtype}{int} idx1=this-\/>hull\_point\_pairs[i].first;}
+\DoxyCodeLine{149         \textcolor{keywordtype}{int} idx2=this-\/>hull\_point\_pairs[i].second;}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151         \textcolor{comment}{//Creating the vector of points}}
+\DoxyCodeLine{152         vector<struct point> display\_points;}
+\DoxyCodeLine{153         \textcolor{keyword}{struct }\mbox{\hyperlink{structpoint}{point}} p1,p2;}
+\DoxyCodeLine{154         \textcolor{comment}{//Copying the location of point on these local copy}}
+\DoxyCodeLine{155         p1=this-\/>points[idx1];}
+\DoxyCodeLine{156         p2=this-\/>points[idx2];}
+\DoxyCodeLine{157         \textcolor{comment}{//Pushing these points on the vector}}
+\DoxyCodeLine{158         display\_points.push\_back(p1);}
+\DoxyCodeLine{159         display\_points.push\_back(p2);}
+\DoxyCodeLine{160         \textcolor{comment}{//Calling the display function to draw these line on gui}}
+\DoxyCodeLine{161         this-\/>w-\/>drawLines(display\_points);}
+\DoxyCodeLine{162         sleep(1);}
+\DoxyCodeLine{163     \}}
+\DoxyCodeLine{164 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classKirkpatrick__Seidel_ab93d5d2d8b237254490a31a48479489c}\label{classKirkpatrick__Seidel_ab93d5d2d8b237254490a31a48479489c}} 
@@ -224,98 +191,118 @@ Definition at line 390 of file kirkpatrick\+\_\+seidel.\+cpp.
 \doxysubsubsection{\texorpdfstring{generate\_new\_cand\_idx()}{generate\_new\_cand\_idx()}}
 {\footnotesize\ttfamily void Kirkpatrick\+\_\+\+Seidel\+::generate\+\_\+new\+\_\+cand\+\_\+idx (\begin{DoxyParamCaption}\item[{int}]{leave\+\_\+flag,  }\item[{vector$<$ int $>$ \&}]{new\+\_\+cand\+\_\+idx,  }\item[{vector$<$ struct \mbox{\hyperlink{structp2p__slope}{p2p\+\_\+slope}} $\ast$ $>$ \&}]{pair\+\_\+slopes,  }\item[{vector$<$ int $>$ \&}]{L\+A\+R\+G\+E\+\_\+\+S\+L\+O\+PE,  }\item[{vector$<$ int $>$ \&}]{E\+Q\+U\+A\+L\+\_\+\+S\+L\+O\+PE,  }\item[{vector$<$ int $>$ \&}]{S\+M\+A\+L\+L\+\_\+\+S\+L\+O\+PE }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Description\+: This function will generate the new candidate points leaving 1/4th of them either from the L\+A\+R\+GE or from S\+M\+A\+LL S\+L\+O\+PE indexes based on the the condition mentioned int leave\+\_\+flag. U\+S\+A\+GE\+: I\+N\+P\+UT\+: leave\+\_\+flag \+: 0/1 -\/ if 0 then remove p from L\+A\+R\+GE if 1 then remove q from the S\+M\+A\+LL of the (p,q) sorted pair. rest of the arguments are same meaning. O\+U\+T\+P\+UT\+: new\+\_\+cand\+\_\+idx\+: the list will be filled with the new candidate points for the next itr.
+This function will generate the new candidate points leaving 1/4th of them either from the L\+A\+R\+GE or from S\+M\+A\+LL S\+L\+O\+PE indexes based on the the condition mentioned int leave\+\_\+flag.
 
-Definition at line 445 of file kirkpatrick\+\_\+seidel.\+cpp.
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em leave\+\_\+flag} & \+: 0/1 -\/ if 0 then remove p from L\+A\+R\+GE if 1 then remove q from the S\+M\+A\+LL of the (p,q) sorted pair. \\
+\hline
+\mbox{\texttt{ out}}  & {\em new\+\_\+cand\+\_\+idx} & the vector which contain the idx of new cand \\
+\hline
+\mbox{\texttt{ in}}  & {\em pair\+\_\+slopes} & \+: the vector containg the slopes of each pair \\
+\hline
+\mbox{\texttt{ in}}  & {\em L\+A\+R\+G\+E\+\_\+\+S\+L\+O\+PE} & \+: the index of pairs with large slope \\
+\hline
+\mbox{\texttt{ in}}  & {\em E\+Q\+U\+A\+L\+\_\+\+S\+L\+O\+PE} & \+: the index of pairs with equal slope to med \\
+\hline
+\mbox{\texttt{ in}}  & {\em S\+M\+A\+L\+L\+\_\+\+S\+L\+O\+PE} & \+: the index of pairs with smallar slope\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new\+\_\+cand\+\_\+idx\+: the list will be filled with the new candidate points for the next itr.
+\end{DoxyReturn}
+
+
+Definition at line 439 of file kirkpatrick\+\_\+seidel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{450                                                              \{}
-\DoxyCodeLine{467     \textcolor{keywordflow}{if}(leave\_flag!=0 \&\& leave\_flag!=1)\{}
-\DoxyCodeLine{468         cout<<\textcolor{stringliteral}{"Wrong leave flag\(\backslash\)n"};}
-\DoxyCodeLine{469         exit(0);}
-\DoxyCodeLine{470     \}}
-\DoxyCodeLine{471     cout<<\textcolor{stringliteral}{"Generating the new pruned candidates\(\backslash\)n"};}
-\DoxyCodeLine{472     \textcolor{keywordflow}{if}(leave\_flag==0)\{}
-\DoxyCodeLine{473         cout<<\textcolor{stringliteral}{"CODE mh>mb : "}<<endl;}
-\DoxyCodeLine{474         cout<<\textcolor{stringliteral}{"Removing the p point of (p,q) pair from LARGE\(\backslash\)n"};}
-\DoxyCodeLine{475         \textcolor{comment}{//Remove the p from the LARGE slope ones}}
-\DoxyCodeLine{476         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<LARGE\_SLOPE.size();i++)\{}
-\DoxyCodeLine{477             \textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}} *ptr=pair\_slopes[LARGE\_SLOPE[i]];}
-\DoxyCodeLine{478             \textcolor{keywordflow}{if}(points[ptr-\/>idx1].x<points[ptr-\/>idx2].x)\{}
-\DoxyCodeLine{479                 cout<<\textcolor{stringliteral}{"Adding idx: "}<<ptr-\/>idx2<<endl;}
-\DoxyCodeLine{480                 new\_cand\_idx.push\_back(ptr-\/>idx2);}
+\DoxyCodeLine{444                                                              \{}
+\DoxyCodeLine{463     \textcolor{keywordflow}{if}(leave\_flag!=0 \&\& leave\_flag!=1)\{}
+\DoxyCodeLine{464         cout<<\textcolor{stringliteral}{"Wrong leave flag\(\backslash\)n"};}
+\DoxyCodeLine{465         exit(0);}
+\DoxyCodeLine{466     \}}
+\DoxyCodeLine{467     cout<<\textcolor{stringliteral}{"Generating the new pruned candidates\(\backslash\)n"};}
+\DoxyCodeLine{468     \textcolor{keywordflow}{if}(leave\_flag==0)\{}
+\DoxyCodeLine{469         cout<<\textcolor{stringliteral}{"CODE mh>mb : "}<<endl;}
+\DoxyCodeLine{470         cout<<\textcolor{stringliteral}{"Removing the p point of (p,q) pair from LARGE\(\backslash\)n"};}
+\DoxyCodeLine{471         \textcolor{comment}{//Remove the p from the LARGE slope ones}}
+\DoxyCodeLine{472         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<LARGE\_SLOPE.size();i++)\{}
+\DoxyCodeLine{473             \textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}} *ptr=pair\_slopes[LARGE\_SLOPE[i]];}
+\DoxyCodeLine{474             \textcolor{keywordflow}{if}(points[ptr-\/>idx1].x<points[ptr-\/>idx2].x)\{}
+\DoxyCodeLine{475                 cout<<\textcolor{stringliteral}{"Adding idx: "}<<ptr-\/>idx2<<endl;}
+\DoxyCodeLine{476                 new\_cand\_idx.push\_back(ptr-\/>idx2);}
+\DoxyCodeLine{477             \}}
+\DoxyCodeLine{478             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{479                 cout<<\textcolor{stringliteral}{"Adding idx: "}<<ptr-\/>idx1<<endl;}
+\DoxyCodeLine{480                 new\_cand\_idx.push\_back(ptr-\/>idx1);}
 \DoxyCodeLine{481             \}}
-\DoxyCodeLine{482             \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{483                 cout<<\textcolor{stringliteral}{"Adding idx: "}<<ptr-\/>idx1<<endl;}
-\DoxyCodeLine{484                 new\_cand\_idx.push\_back(ptr-\/>idx1);}
-\DoxyCodeLine{485             \}}
-\DoxyCodeLine{486         \}}
-\DoxyCodeLine{487         cout<<\textcolor{stringliteral}{"Removing the p point of (p,q) pair from EQUAL\(\backslash\)n"};}
-\DoxyCodeLine{488         \textcolor{comment}{//Removing p from the Equal also}}
-\DoxyCodeLine{489         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<EQUAL\_SLOPE.size();i++)\{}
-\DoxyCodeLine{490             \textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}} *ptr=pair\_slopes[EQUAL\_SLOPE[i]];}
-\DoxyCodeLine{491             \textcolor{keywordflow}{if}(points[ptr-\/>idx1].x<points[ptr-\/>idx2].x)\{}
-\DoxyCodeLine{492                 cout<<\textcolor{stringliteral}{"Adding idx: "}<<ptr-\/>idx2<<endl;}
-\DoxyCodeLine{493                 new\_cand\_idx.push\_back(ptr-\/>idx2);}
+\DoxyCodeLine{482         \}}
+\DoxyCodeLine{483         cout<<\textcolor{stringliteral}{"Removing the p point of (p,q) pair from EQUAL\(\backslash\)n"};}
+\DoxyCodeLine{484         \textcolor{comment}{//Removing p from the Equal also}}
+\DoxyCodeLine{485         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<EQUAL\_SLOPE.size();i++)\{}
+\DoxyCodeLine{486             \textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}} *ptr=pair\_slopes[EQUAL\_SLOPE[i]];}
+\DoxyCodeLine{487             \textcolor{keywordflow}{if}(points[ptr-\/>idx1].x<points[ptr-\/>idx2].x)\{}
+\DoxyCodeLine{488                 cout<<\textcolor{stringliteral}{"Adding idx: "}<<ptr-\/>idx2<<endl;}
+\DoxyCodeLine{489                 new\_cand\_idx.push\_back(ptr-\/>idx2);}
+\DoxyCodeLine{490             \}}
+\DoxyCodeLine{491             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{492                 cout<<\textcolor{stringliteral}{"Adding idx: "}<<ptr-\/>idx1<<endl;}
+\DoxyCodeLine{493                 new\_cand\_idx.push\_back(ptr-\/>idx1);}
 \DoxyCodeLine{494             \}}
-\DoxyCodeLine{495             \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{496                 cout<<\textcolor{stringliteral}{"Adding idx: "}<<ptr-\/>idx1<<endl;}
-\DoxyCodeLine{497                 new\_cand\_idx.push\_back(ptr-\/>idx1);}
-\DoxyCodeLine{498             \}}
-\DoxyCodeLine{499         \}}
-\DoxyCodeLine{500         cout<<\textcolor{stringliteral}{"Adding all point of (p,q) pair from SMALL\(\backslash\)n"};}
-\DoxyCodeLine{501         \textcolor{comment}{//Adding all of the SMALL ones}}
-\DoxyCodeLine{502         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<SMALL\_SLOPE.size();i++)\{}
-\DoxyCodeLine{503             \textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}} *ptr=pair\_slopes[SMALL\_SLOPE[i]];}
-\DoxyCodeLine{504             new\_cand\_idx.push\_back(ptr-\/>idx1);}
-\DoxyCodeLine{505             new\_cand\_idx.push\_back(ptr-\/>idx2);}
-\DoxyCodeLine{506         \}}
-\DoxyCodeLine{507     \}}
-\DoxyCodeLine{508     \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{509         cout<<\textcolor{stringliteral}{"CODE mh<mb : "}<<endl;}
-\DoxyCodeLine{510         cout<<\textcolor{stringliteral}{"Removing the p point of (p,q) pair from SMALL\(\backslash\)n"};}
-\DoxyCodeLine{511         \textcolor{comment}{//Removing q from the SMALL}}
-\DoxyCodeLine{512         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<SMALL\_SLOPE.size();i++)\{}
-\DoxyCodeLine{513             \textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}} *ptr=pair\_slopes[SMALL\_SLOPE[i]];}
-\DoxyCodeLine{514             \textcolor{keywordflow}{if}(points[ptr-\/>idx1].x<points[ptr-\/>idx2].x)\{}
-\DoxyCodeLine{515                 cout<<\textcolor{stringliteral}{"Adding idx: "}<<ptr-\/>idx1<<endl;}
-\DoxyCodeLine{516                 new\_cand\_idx.push\_back(ptr-\/>idx1);}
+\DoxyCodeLine{495         \}}
+\DoxyCodeLine{496         cout<<\textcolor{stringliteral}{"Adding all point of (p,q) pair from SMALL\(\backslash\)n"};}
+\DoxyCodeLine{497         \textcolor{comment}{//Adding all of the SMALL ones}}
+\DoxyCodeLine{498         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<SMALL\_SLOPE.size();i++)\{}
+\DoxyCodeLine{499             \textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}} *ptr=pair\_slopes[SMALL\_SLOPE[i]];}
+\DoxyCodeLine{500             new\_cand\_idx.push\_back(ptr-\/>idx1);}
+\DoxyCodeLine{501             new\_cand\_idx.push\_back(ptr-\/>idx2);}
+\DoxyCodeLine{502         \}}
+\DoxyCodeLine{503     \}}
+\DoxyCodeLine{504     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{505         cout<<\textcolor{stringliteral}{"CODE mh<mb : "}<<endl;}
+\DoxyCodeLine{506         cout<<\textcolor{stringliteral}{"Removing the p point of (p,q) pair from SMALL\(\backslash\)n"};}
+\DoxyCodeLine{507         \textcolor{comment}{//Removing q from the SMALL}}
+\DoxyCodeLine{508         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<SMALL\_SLOPE.size();i++)\{}
+\DoxyCodeLine{509             \textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}} *ptr=pair\_slopes[SMALL\_SLOPE[i]];}
+\DoxyCodeLine{510             \textcolor{keywordflow}{if}(points[ptr-\/>idx1].x<points[ptr-\/>idx2].x)\{}
+\DoxyCodeLine{511                 cout<<\textcolor{stringliteral}{"Adding idx: "}<<ptr-\/>idx1<<endl;}
+\DoxyCodeLine{512                 new\_cand\_idx.push\_back(ptr-\/>idx1);}
+\DoxyCodeLine{513             \}}
+\DoxyCodeLine{514             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{515                 cout<<\textcolor{stringliteral}{"Adding idx: "}<<ptr-\/>idx2<<endl;}
+\DoxyCodeLine{516                 new\_cand\_idx.push\_back(ptr-\/>idx2);}
 \DoxyCodeLine{517             \}}
-\DoxyCodeLine{518             \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{519                 cout<<\textcolor{stringliteral}{"Adding idx: "}<<ptr-\/>idx2<<endl;}
-\DoxyCodeLine{520                 new\_cand\_idx.push\_back(ptr-\/>idx2);}
-\DoxyCodeLine{521             \}}
-\DoxyCodeLine{522         \}}
-\DoxyCodeLine{523         cout<<\textcolor{stringliteral}{"Removing the p point of (p,q) pair from EQUAL\(\backslash\)n"};}
-\DoxyCodeLine{524         \textcolor{comment}{//Removing q from EQUAL also}}
-\DoxyCodeLine{525         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<EQUAL\_SLOPE.size();i++)\{}
-\DoxyCodeLine{526             \textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}} *ptr=pair\_slopes[EQUAL\_SLOPE[i]];}
-\DoxyCodeLine{527             \textcolor{keywordflow}{if}(points[ptr-\/>idx1].x<points[ptr-\/>idx2].x)\{}
-\DoxyCodeLine{528                 cout<<\textcolor{stringliteral}{"Adding idx: "}<<ptr-\/>idx1<<endl;}
-\DoxyCodeLine{529                 new\_cand\_idx.push\_back(ptr-\/>idx1);}
+\DoxyCodeLine{518         \}}
+\DoxyCodeLine{519         cout<<\textcolor{stringliteral}{"Removing the p point of (p,q) pair from EQUAL\(\backslash\)n"};}
+\DoxyCodeLine{520         \textcolor{comment}{//Removing q from EQUAL also}}
+\DoxyCodeLine{521         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<EQUAL\_SLOPE.size();i++)\{}
+\DoxyCodeLine{522             \textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}} *ptr=pair\_slopes[EQUAL\_SLOPE[i]];}
+\DoxyCodeLine{523             \textcolor{keywordflow}{if}(points[ptr-\/>idx1].x<points[ptr-\/>idx2].x)\{}
+\DoxyCodeLine{524                 cout<<\textcolor{stringliteral}{"Adding idx: "}<<ptr-\/>idx1<<endl;}
+\DoxyCodeLine{525                 new\_cand\_idx.push\_back(ptr-\/>idx1);}
+\DoxyCodeLine{526             \}}
+\DoxyCodeLine{527             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{528                 cout<<\textcolor{stringliteral}{"Adding idx: "}<<ptr-\/>idx2<<endl;}
+\DoxyCodeLine{529                 new\_cand\_idx.push\_back(ptr-\/>idx2);}
 \DoxyCodeLine{530             \}}
-\DoxyCodeLine{531             \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{532                 cout<<\textcolor{stringliteral}{"Adding idx: "}<<ptr-\/>idx2<<endl;}
-\DoxyCodeLine{533                 new\_cand\_idx.push\_back(ptr-\/>idx2);}
-\DoxyCodeLine{534             \}}
-\DoxyCodeLine{535         \}}
-\DoxyCodeLine{536         cout<<\textcolor{stringliteral}{"Adding all point of (p,q) pair from LARGE\(\backslash\)n"};}
-\DoxyCodeLine{537         \textcolor{comment}{//Adding all of the LARGE}}
-\DoxyCodeLine{538         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<LARGE\_SLOPE.size();i++)\{}
-\DoxyCodeLine{539             \textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}} *ptr=pair\_slopes[LARGE\_SLOPE[i]];}
-\DoxyCodeLine{540             new\_cand\_idx.push\_back(ptr-\/>idx1);}
-\DoxyCodeLine{541             new\_cand\_idx.push\_back(ptr-\/>idx2);}
-\DoxyCodeLine{542         \}}
-\DoxyCodeLine{543 }
-\DoxyCodeLine{544     \}}
-\DoxyCodeLine{545 }
-\DoxyCodeLine{546     \textcolor{comment}{//Printing all the points in new cand\_idx:}}
-\DoxyCodeLine{547     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<new\_cand\_idx.size();i++)\{}
-\DoxyCodeLine{548         cout<<\textcolor{stringliteral}{"new UH-\/Cand: "};}
-\DoxyCodeLine{549         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(new\_cand\_idx[i]);}
-\DoxyCodeLine{550     \}}
-\DoxyCodeLine{551 \}}
+\DoxyCodeLine{531         \}}
+\DoxyCodeLine{532         cout<<\textcolor{stringliteral}{"Adding all point of (p,q) pair from LARGE\(\backslash\)n"};}
+\DoxyCodeLine{533         \textcolor{comment}{//Adding all of the LARGE}}
+\DoxyCodeLine{534         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<LARGE\_SLOPE.size();i++)\{}
+\DoxyCodeLine{535             \textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}} *ptr=pair\_slopes[LARGE\_SLOPE[i]];}
+\DoxyCodeLine{536             new\_cand\_idx.push\_back(ptr-\/>idx1);}
+\DoxyCodeLine{537             new\_cand\_idx.push\_back(ptr-\/>idx2);}
+\DoxyCodeLine{538         \}}
+\DoxyCodeLine{539 }
+\DoxyCodeLine{540     \}}
+\DoxyCodeLine{541 }
+\DoxyCodeLine{542     \textcolor{comment}{//Printing all the points in new cand\_idx:}}
+\DoxyCodeLine{543     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<new\_cand\_idx.size();i++)\{}
+\DoxyCodeLine{544         cout<<\textcolor{stringliteral}{"new UH-\/Cand: "};}
+\DoxyCodeLine{545         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(new\_cand\_idx[i]);}
+\DoxyCodeLine{546     \}}
+\DoxyCodeLine{547 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classKirkpatrick__Seidel_a88715575474aaae15641eb578e94933d}\label{classKirkpatrick__Seidel_a88715575474aaae15641eb578e94933d}} 
@@ -324,96 +311,120 @@ Definition at line 445 of file kirkpatrick\+\_\+seidel.\+cpp.
 \doxysubsubsection{\texorpdfstring{get\_bridge\_or\_candidate()}{get\_bridge\_or\_candidate()}}
 {\footnotesize\ttfamily vector$<$ int $>$ Kirkpatrick\+\_\+\+Seidel\+::get\+\_\+bridge\+\_\+or\+\_\+candidate (\begin{DoxyParamCaption}\item[{double}]{med\+\_\+x,  }\item[{int}]{med\+\_\+slope\+\_\+idx,  }\item[{vector$<$ int $>$ \&}]{cand\+\_\+idx,  }\item[{vector$<$ int $>$ \&}]{new\+\_\+cand\+\_\+idx,  }\item[{vector$<$ struct \mbox{\hyperlink{structp2p__slope}{p2p\+\_\+slope}} $\ast$ $>$ \&}]{pair\+\_\+slopes,  }\item[{vector$<$ int $>$ \&}]{L\+A\+R\+G\+E\+\_\+\+S\+L\+O\+PE,  }\item[{vector$<$ int $>$ \&}]{E\+Q\+U\+A\+L\+\_\+\+S\+L\+O\+PE,  }\item[{vector$<$ int $>$ \&}]{S\+M\+A\+L\+L\+\_\+\+S\+L\+O\+PE }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-D\+E\+S\+C\+R\+I\+P\+T\+I\+ON\+: This function will find a supporting line with median slope and check if two points on the opposite side of median point lies on that line(if one on line we will use as bridge). Then return the index of both the point in the vector
+This function will find a supporting line with median slope and check if two points on the opposite side of median point lies on that line(if one on line we will use as bridge). Then return the index of both the point in the vector
 
-Otherwise make a reduced set of new\+\_\+cand\+\_\+idx and return empty vector to indicate applying recursion. U\+S\+A\+GE\+: I\+N\+P\+UT\+: med\+\_\+x \+: the x-\/coordinate of the median point med\+\_\+slope\+\_\+idx \+: the index of pair with med slope rest of the arguments are as usual O\+U\+T\+P\+UT\+: bridge\+\_\+point\+\_\+idx\+: the vector of index of our bridge if it\textquotesingle{}s possible in sorted order with x-\/coordinate.
+Otherwise make a reduced set of new\+\_\+cand\+\_\+idx and return empty vector to indicate applying recursion.
 
-Definition at line 553 of file kirkpatrick\+\_\+seidel.\+cpp.
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em med\+\_\+x} & \+: the x-\/coordinate of the median point \\
+\hline
+\mbox{\texttt{ in}}  & {\em med\+\_\+slope\+\_\+idx} & \+: the index of pair with med slope \\
+\hline
+\mbox{\texttt{ in}}  & {\em cand\+\_\+idx} & \+: the index of the current candidates \\
+\hline
+\mbox{\texttt{ out}}  & {\em new\+\_\+cand\+\_\+idx} & the vector which contain the idx of new cand \\
+\hline
+\mbox{\texttt{ in}}  & {\em pair\+\_\+slopes} & \+: the vector containg the slopes of each pair \\
+\hline
+\mbox{\texttt{ in}}  & {\em L\+A\+R\+G\+E\+\_\+\+S\+L\+O\+PE} & \+: the index of pairs with large slope \\
+\hline
+\mbox{\texttt{ in}}  & {\em E\+Q\+U\+A\+L\+\_\+\+S\+L\+O\+PE} & \+: the index of pairs with equal slope to med \\
+\hline
+\mbox{\texttt{ in}}  & {\em S\+M\+A\+L\+L\+\_\+\+S\+L\+O\+PE} & \+: the index of pairs with smallar slope\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bridge\+\_\+point\+\_\+idx\+: the vector of index of our bridge if it\textquotesingle{}s possible in sorted order with x-\/coordinate.
+\end{DoxyReturn}
+
+
+Definition at line 549 of file kirkpatrick\+\_\+seidel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{560                                                              \{}
-\DoxyCodeLine{580     \textcolor{comment}{//Retreiving the median slope}}
-\DoxyCodeLine{581     \textcolor{keywordtype}{double} med\_slope=pair\_slopes[med\_slope\_idx]-\/>slope;}
-\DoxyCodeLine{582 }
-\DoxyCodeLine{583     \textcolor{comment}{//Getting the maximum y-\/intercept possible with median slope}}
-\DoxyCodeLine{584     cout<<\textcolor{stringliteral}{"\(\backslash\)nFinding the maximum intercept"}<<endl;}
-\DoxyCodeLine{585     \textcolor{keywordtype}{double} max\_intrcpt;}
-\DoxyCodeLine{586     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<cand\_idx.size();i++)\{}
-\DoxyCodeLine{587         \textcolor{keywordtype}{double} intrcpt=(double)points[cand\_idx[i]].y-\/\(\backslash\)}
-\DoxyCodeLine{588                             med\_slope*(\textcolor{keywordtype}{double})points[cand\_idx[i]].x;}
-\DoxyCodeLine{589         \textcolor{keywordflow}{if}(i==0)\{}
-\DoxyCodeLine{590             max\_intrcpt=intrcpt;}
-\DoxyCodeLine{591         \}}
-\DoxyCodeLine{592         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(intrcpt>max\_intrcpt)\{}
-\DoxyCodeLine{593             max\_intrcpt=intrcpt;}
-\DoxyCodeLine{594         \}}
-\DoxyCodeLine{595     \}}
-\DoxyCodeLine{596     cout<<\textcolor{stringliteral}{"Maximum intercept is: "}<<max\_intrcpt<<endl<<endl;}
+\DoxyCodeLine{556                                                              \{}
+\DoxyCodeLine{579     \textcolor{comment}{//Retreiving the median slope}}
+\DoxyCodeLine{580     \textcolor{keywordtype}{double} med\_slope=pair\_slopes[med\_slope\_idx]-\/>slope;}
+\DoxyCodeLine{581 }
+\DoxyCodeLine{582     \textcolor{comment}{//Getting the maximum y-\/intercept possible with median slope}}
+\DoxyCodeLine{583     cout<<\textcolor{stringliteral}{"\(\backslash\)nFinding the maximum intercept"}<<endl;}
+\DoxyCodeLine{584     \textcolor{keywordtype}{double} max\_intrcpt;}
+\DoxyCodeLine{585     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<cand\_idx.size();i++)\{}
+\DoxyCodeLine{586         \textcolor{keywordtype}{double} intrcpt=(double)points[cand\_idx[i]].y-\/\(\backslash\)}
+\DoxyCodeLine{587                             med\_slope*(\textcolor{keywordtype}{double})points[cand\_idx[i]].x;}
+\DoxyCodeLine{588         \textcolor{keywordflow}{if}(i==0)\{}
+\DoxyCodeLine{589             max\_intrcpt=intrcpt;}
+\DoxyCodeLine{590         \}}
+\DoxyCodeLine{591         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(intrcpt>max\_intrcpt)\{}
+\DoxyCodeLine{592             max\_intrcpt=intrcpt;}
+\DoxyCodeLine{593         \}}
+\DoxyCodeLine{594     \}}
+\DoxyCodeLine{595     cout<<\textcolor{stringliteral}{"Maximum intercept is: "}<<max\_intrcpt<<endl<<endl;}
+\DoxyCodeLine{596 }
 \DoxyCodeLine{597 }
-\DoxyCodeLine{598 }
-\DoxyCodeLine{599     \textcolor{comment}{//Now getting the point with MAX intercept}}
-\DoxyCodeLine{600     cout<<\textcolor{stringliteral}{"Finding the points which makes that intercept"};}
-\DoxyCodeLine{601     cout<<\textcolor{stringliteral}{" i.e lies on this supporting line"}<<endl;}
-\DoxyCodeLine{602     vector<int> MAX;}
-\DoxyCodeLine{603     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<cand\_idx.size();i++)\{}
-\DoxyCodeLine{604         \textcolor{keywordtype}{double} intrcpt=(double)points[cand\_idx[i]].y-\/\(\backslash\)}
-\DoxyCodeLine{605                         med\_slope*(\textcolor{keywordtype}{double})points[cand\_idx[i]].x;}
-\DoxyCodeLine{606 }
-\DoxyCodeLine{607         \textcolor{comment}{//Here due to machine precision we could have problem}}
-\DoxyCodeLine{608         \textcolor{comment}{//alternatively we could add tolerance here.}}
-\DoxyCodeLine{609         \textcolor{keywordtype}{double} tolerance=0.000001;}
-\DoxyCodeLine{610         \textcolor{keywordflow}{if}((intrcpt>max\_intrcpt \&\& intrcpt-\/max\_intrcpt<tolerance)}
-\DoxyCodeLine{611             || (intrcpt<max\_intrcpt \&\& max\_intrcpt-\/intrcpt<tolerance)}
-\DoxyCodeLine{612             || intrcpt==max\_intrcpt)\{}
-\DoxyCodeLine{613             cout<<\textcolor{stringliteral}{"id of points lying on this support: "}<<cand\_idx[i];}
-\DoxyCodeLine{614             cout<<endl;}
-\DoxyCodeLine{615             MAX.push\_back(cand\_idx[i]);}
-\DoxyCodeLine{616         \}}
-\DoxyCodeLine{617     \}}
-\DoxyCodeLine{618     cout<<endl;}
-\DoxyCodeLine{619     \textcolor{comment}{//Now seeing x-\/coordinate of points on this line}}
-\DoxyCodeLine{620     cout<<\textcolor{stringliteral}{"Finding the min and max x of points lying on support\(\backslash\)n"};}
-\DoxyCodeLine{621     \textcolor{keywordtype}{double} min\_x=points[MAX[0]].x;\textcolor{keywordtype}{int} min\_idx=MAX[0];}
-\DoxyCodeLine{622     \textcolor{keywordtype}{double} max\_x=points[MAX[0]].x;\textcolor{keywordtype}{int} max\_idx=MAX[0];}
-\DoxyCodeLine{623     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=1;i<MAX.size();i++)\{}
-\DoxyCodeLine{624         \textcolor{keywordflow}{if}(points[MAX[i]].x<min\_x)\{}
-\DoxyCodeLine{625             min\_x=points[MAX[i]].x;}
-\DoxyCodeLine{626             min\_idx=MAX[i];}
-\DoxyCodeLine{627         \}}
-\DoxyCodeLine{628         \textcolor{keywordflow}{if}(points[MAX[i]].x>max\_x)\{}
-\DoxyCodeLine{629             max\_x=points[MAX[i]].x;}
-\DoxyCodeLine{630             max\_idx=MAX[i];}
-\DoxyCodeLine{631         \}}
-\DoxyCodeLine{632     \}}
-\DoxyCodeLine{633     cout<<\textcolor{stringliteral}{"max idx: "}<<max\_idx<<\textcolor{stringliteral}{" max\_x: "}<<max\_x<<endl;}
-\DoxyCodeLine{634     cout<<\textcolor{stringliteral}{"min idx: "}<<min\_idx<<\textcolor{stringliteral}{" min\_x: "}<<min\_x<<endl<<endl;}
+\DoxyCodeLine{598     \textcolor{comment}{//Now getting the point with MAX intercept}}
+\DoxyCodeLine{599     cout<<\textcolor{stringliteral}{"Finding the points which makes that intercept"};}
+\DoxyCodeLine{600     cout<<\textcolor{stringliteral}{" i.e lies on this supporting line"}<<endl;}
+\DoxyCodeLine{601     vector<int> MAX;}
+\DoxyCodeLine{602     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<cand\_idx.size();i++)\{}
+\DoxyCodeLine{603         \textcolor{keywordtype}{double} intrcpt=(double)points[cand\_idx[i]].y-\/\(\backslash\)}
+\DoxyCodeLine{604                         med\_slope*(\textcolor{keywordtype}{double})points[cand\_idx[i]].x;}
+\DoxyCodeLine{605 }
+\DoxyCodeLine{606         \textcolor{comment}{//Here due to machine precision we could have problem}}
+\DoxyCodeLine{607         \textcolor{comment}{//alternatively we could add tolerance here.}}
+\DoxyCodeLine{608         \textcolor{keywordtype}{double} tolerance=0.000001;}
+\DoxyCodeLine{609         \textcolor{keywordflow}{if}((intrcpt>max\_intrcpt \&\& intrcpt-\/max\_intrcpt<tolerance)}
+\DoxyCodeLine{610             || (intrcpt<max\_intrcpt \&\& max\_intrcpt-\/intrcpt<tolerance)}
+\DoxyCodeLine{611             || intrcpt==max\_intrcpt)\{}
+\DoxyCodeLine{612             cout<<\textcolor{stringliteral}{"id of points lying on this support: "}<<cand\_idx[i];}
+\DoxyCodeLine{613             cout<<endl;}
+\DoxyCodeLine{614             MAX.push\_back(cand\_idx[i]);}
+\DoxyCodeLine{615         \}}
+\DoxyCodeLine{616     \}}
+\DoxyCodeLine{617     cout<<endl;}
+\DoxyCodeLine{618     \textcolor{comment}{//Now seeing x-\/coordinate of points on this line}}
+\DoxyCodeLine{619     cout<<\textcolor{stringliteral}{"Finding the min and max x of points lying on support\(\backslash\)n"};}
+\DoxyCodeLine{620     \textcolor{keywordtype}{double} min\_x=points[MAX[0]].x;\textcolor{keywordtype}{int} min\_idx=MAX[0];}
+\DoxyCodeLine{621     \textcolor{keywordtype}{double} max\_x=points[MAX[0]].x;\textcolor{keywordtype}{int} max\_idx=MAX[0];}
+\DoxyCodeLine{622     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=1;i<MAX.size();i++)\{}
+\DoxyCodeLine{623         \textcolor{keywordflow}{if}(points[MAX[i]].x<min\_x)\{}
+\DoxyCodeLine{624             min\_x=points[MAX[i]].x;}
+\DoxyCodeLine{625             min\_idx=MAX[i];}
+\DoxyCodeLine{626         \}}
+\DoxyCodeLine{627         \textcolor{keywordflow}{if}(points[MAX[i]].x>max\_x)\{}
+\DoxyCodeLine{628             max\_x=points[MAX[i]].x;}
+\DoxyCodeLine{629             max\_idx=MAX[i];}
+\DoxyCodeLine{630         \}}
+\DoxyCodeLine{631     \}}
+\DoxyCodeLine{632     cout<<\textcolor{stringliteral}{"max idx: "}<<max\_idx<<\textcolor{stringliteral}{" max\_x: "}<<max\_x<<endl;}
+\DoxyCodeLine{633     cout<<\textcolor{stringliteral}{"min idx: "}<<min\_idx<<\textcolor{stringliteral}{" min\_x: "}<<min\_x<<endl<<endl;}
+\DoxyCodeLine{634 }
 \DoxyCodeLine{635 }
-\DoxyCodeLine{636 }
-\DoxyCodeLine{637     \textcolor{comment}{//Now seeing if we have landed on the jackpot bridge points}}
-\DoxyCodeLine{638     vector<int> bridge\_point\_idx;}
-\DoxyCodeLine{639     \textcolor{keywordflow}{if}(min\_x<=med\_x \&\& max\_x>med\_x)\{}
-\DoxyCodeLine{640         cout<<\textcolor{stringliteral}{"Jackpot! Got a Bridge Line!!"}<<endl;}
-\DoxyCodeLine{641         bridge\_point\_idx.push\_back(min\_idx);}
-\DoxyCodeLine{642         bridge\_point\_idx.push\_back(max\_idx);}
-\DoxyCodeLine{643         \textcolor{keywordflow}{return} bridge\_point\_idx;}
-\DoxyCodeLine{644     \}}
-\DoxyCodeLine{645     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(max\_x<=med\_x)\{\textcolor{comment}{//the support line has point on left of med}}
-\DoxyCodeLine{646         \textcolor{comment}{//So we could remove p from (p,q) whose slope is greater than}}
-\DoxyCodeLine{647         \textcolor{comment}{//median slope, since mpq>mh>mb cuz on left.}}
-\DoxyCodeLine{648         \textcolor{keywordtype}{int} leave\_flag=0;}
-\DoxyCodeLine{649         \mbox{\hyperlink{classKirkpatrick__Seidel_ab93d5d2d8b237254490a31a48479489c}{generate\_new\_cand\_idx}}(leave\_flag,new\_cand\_idx,\(\backslash\)}
-\DoxyCodeLine{650                                 pair\_slopes,LARGE\_SLOPE,\(\backslash\)}
-\DoxyCodeLine{651                                 EQUAL\_SLOPE,SMALL\_SLOPE);}
-\DoxyCodeLine{652     \}}
-\DoxyCodeLine{653     \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{654         \textcolor{keywordtype}{int} leave\_flag=1;}
-\DoxyCodeLine{655         \mbox{\hyperlink{classKirkpatrick__Seidel_ab93d5d2d8b237254490a31a48479489c}{generate\_new\_cand\_idx}}(leave\_flag,new\_cand\_idx,\(\backslash\)}
-\DoxyCodeLine{656                                 pair\_slopes,LARGE\_SLOPE,\(\backslash\)}
-\DoxyCodeLine{657                                 EQUAL\_SLOPE,SMALL\_SLOPE);}
-\DoxyCodeLine{658     \}}
-\DoxyCodeLine{659     \textcolor{keywordflow}{return} bridge\_point\_idx;}
-\DoxyCodeLine{660 \}}
+\DoxyCodeLine{636     \textcolor{comment}{//Now seeing if we have landed on the jackpot bridge points}}
+\DoxyCodeLine{637     vector<int> bridge\_point\_idx;}
+\DoxyCodeLine{638     \textcolor{keywordflow}{if}(min\_x<=med\_x \&\& max\_x>med\_x)\{}
+\DoxyCodeLine{639         cout<<\textcolor{stringliteral}{"Jackpot! Got a Bridge Line!!"}<<endl;}
+\DoxyCodeLine{640         bridge\_point\_idx.push\_back(min\_idx);}
+\DoxyCodeLine{641         bridge\_point\_idx.push\_back(max\_idx);}
+\DoxyCodeLine{642         \textcolor{keywordflow}{return} bridge\_point\_idx;}
+\DoxyCodeLine{643     \}}
+\DoxyCodeLine{644     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(max\_x<=med\_x)\{\textcolor{comment}{//the support line has point on left of med}}
+\DoxyCodeLine{645         \textcolor{comment}{//So we could remove p from (p,q) whose slope is greater than}}
+\DoxyCodeLine{646         \textcolor{comment}{//median slope, since mpq>mh>mb cuz on left.}}
+\DoxyCodeLine{647         \textcolor{keywordtype}{int} leave\_flag=0;}
+\DoxyCodeLine{648         \mbox{\hyperlink{classKirkpatrick__Seidel_ab93d5d2d8b237254490a31a48479489c}{generate\_new\_cand\_idx}}(leave\_flag,new\_cand\_idx,\(\backslash\)}
+\DoxyCodeLine{649                                 pair\_slopes,LARGE\_SLOPE,\(\backslash\)}
+\DoxyCodeLine{650                                 EQUAL\_SLOPE,SMALL\_SLOPE);}
+\DoxyCodeLine{651     \}}
+\DoxyCodeLine{652     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{653         \textcolor{keywordtype}{int} leave\_flag=1;}
+\DoxyCodeLine{654         \mbox{\hyperlink{classKirkpatrick__Seidel_ab93d5d2d8b237254490a31a48479489c}{generate\_new\_cand\_idx}}(leave\_flag,new\_cand\_idx,\(\backslash\)}
+\DoxyCodeLine{655                                 pair\_slopes,LARGE\_SLOPE,\(\backslash\)}
+\DoxyCodeLine{656                                 EQUAL\_SLOPE,SMALL\_SLOPE);}
+\DoxyCodeLine{657     \}}
+\DoxyCodeLine{658     \textcolor{keywordflow}{return} bridge\_point\_idx;}
+\DoxyCodeLine{659 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classKirkpatrick__Seidel_a3469702d1b4f11eb2d52d8bd29a9f3a8}\label{classKirkpatrick__Seidel_a3469702d1b4f11eb2d52d8bd29a9f3a8}} 
@@ -422,15 +433,27 @@ Definition at line 553 of file kirkpatrick\+\_\+seidel.\+cpp.
 \doxysubsubsection{\texorpdfstring{get\_candidates\_idx()}{get\_candidates\_idx()}}
 {\footnotesize\ttfamily vector$<$ int $>$ Kirkpatrick\+\_\+\+Seidel\+::get\+\_\+candidates\+\_\+idx (\begin{DoxyParamCaption}\item[{unsigned int}]{cur\+\_\+pu\+\_\+min\+\_\+idx,  }\item[{unsigned int}]{cur\+\_\+pu\+\_\+max\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Description\+: This fucntion will give us the candidate points index on which we have to run the hull algorithm.
+This fucntion will give us the candidate points index on which we have to run the hull algorithm.
 
-Idea\+: All the points which are above the min-\/max connecting line will be candidate (ie. greater min-\/point slope as compared to the min-\/max slope). U\+S\+A\+GE\+: I\+N\+P\+UT\+: cur\+\_\+pu\+\_\+min\+\_\+idx \+: the minmum bound on the x-\/coordinate cur\+\_\+pu\+\_\+max\+\_\+idx \+: the maximum bound on the x-\/coordinate O\+U\+T\+P\+UT\+: cand\+\_\+idx \+: the index of the candidate points relative to the points vector.
+Idea\+: All the points which are above the min-\/max connecting line will be candidate (ie. greater min-\/point slope as compared to the min-\/max slope).
 
-Definition at line 248 of file kirkpatrick\+\_\+seidel.\+cpp.
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cur\+\_\+pu\+\_\+min\+\_\+idx} & \+: the minmum bound on the x-\/coordinate \\
+\hline
+\mbox{\texttt{ in}}  & {\em cur\+\_\+pu\+\_\+max\+\_\+idx} & \+: the maximum bound on the x-\/coordinate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cand\+\_\+idx \+: the index of the candidate points relative to the points vector.
+\end{DoxyReturn}
+
+
+Definition at line 250 of file kirkpatrick\+\_\+seidel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{250                                                             \{}
+\DoxyCodeLine{252                                                             \{}
 \DoxyCodeLine{268     \textcolor{comment}{//calculating the min-\/max line slope}}
 \DoxyCodeLine{269     \textcolor{keywordtype}{double} nx\_slope=\mbox{\hyperlink{classKirkpatrick__Seidel_a180f5fcebe4744b99ee618066b819764}{calculate\_p2p\_slope}}(cur\_pu\_min\_idx,}
 \DoxyCodeLine{270                                         cur\_pu\_max\_idx);}
@@ -470,70 +493,67 @@ Definition at line 248 of file kirkpatrick\+\_\+seidel.\+cpp.
 \doxysubsubsection{\texorpdfstring{get\_extremum\_points()}{get\_extremum\_points()}}
 {\footnotesize\ttfamily void Kirkpatrick\+\_\+\+Seidel\+::get\+\_\+extremum\+\_\+points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-G\+E\+N\+E\+R\+E\+AL U\+T\+I\+L\+I\+TY F\+U\+N\+C\+T\+I\+ON ~\newline
+This function will find out the extreme point from the whole data points, which will serve as our one of the corners of upper\+\_\+min\+\_\+x, upper\+\_\+max\+\_\+x, lower\+\_\+min\+\_\+x, lower\+\_\+max\+\_\+x.
 
+After finding the extreme points it will update their value in it\textquotesingle{}s member variable of this class.
 
-================================================================P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+ON ~\newline
- ================================================================G\+E\+N\+E\+R\+E\+AL U\+T\+I\+L\+I\+TY F\+U\+N\+C\+T\+I\+ON ~\newline
- 
-
-Definition at line 177 of file kirkpatrick\+\_\+seidel.\+cpp.
+Definition at line 174 of file kirkpatrick\+\_\+seidel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{177                                             \{}
-\DoxyCodeLine{178     cout<<\textcolor{stringliteral}{"Finding the extremum points"}<<endl;}
-\DoxyCodeLine{179     \textcolor{comment}{//Initializing the min and max value of x-\/coordinate of points}}
-\DoxyCodeLine{180     \textcolor{keywordtype}{double} min\_x=INT\_MAX;}
-\DoxyCodeLine{181     \textcolor{keywordtype}{double} max\_x=INT\_MIN;}
-\DoxyCodeLine{182 }
-\DoxyCodeLine{183     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<points.size();i++)\{}
-\DoxyCodeLine{184         \textcolor{comment}{//Finding the minimum bound of the points}}
-\DoxyCodeLine{185         \textcolor{keywordflow}{if}(points[i].x<min\_x)\{}
-\DoxyCodeLine{186             \textcolor{comment}{//Updating the estimate of minumum x-\/coordinate}}
-\DoxyCodeLine{187             min\_x=points[i].x;}
-\DoxyCodeLine{188             \textcolor{comment}{//Updating the new minimum x-\/coordiante index}}
-\DoxyCodeLine{189             pu\_min\_idx=i;}
-\DoxyCodeLine{190             pl\_min\_idx=i;}
-\DoxyCodeLine{191         \}}
-\DoxyCodeLine{192         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(points[i].x==min\_x)\{}
-\DoxyCodeLine{193             \textcolor{comment}{//if there are multiple points at same minumum x-\/coordinate}}
-\DoxyCodeLine{194             \textcolor{keywordflow}{if}(points[pu\_min\_idx].y<points[i].y)\{}
-\DoxyCodeLine{195                 \textcolor{comment}{//If the current point is above the pu\_min\_idx's y}}
-\DoxyCodeLine{196                 pu\_min\_idx=i;}
-\DoxyCodeLine{197             \}}
-\DoxyCodeLine{198             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(points[pl\_min\_idx].y>points[i].y)\{}
-\DoxyCodeLine{199                 \textcolor{comment}{//if the current point is even below pl\_min\_idx's y}}
-\DoxyCodeLine{200                 pl\_min\_idx=i;}
-\DoxyCodeLine{201             \}}
-\DoxyCodeLine{202         \}}
-\DoxyCodeLine{203 }
-\DoxyCodeLine{204         \textcolor{comment}{//Finding the maximum bounds of the points}}
-\DoxyCodeLine{205         \textcolor{keywordflow}{if}(points[i].x>max\_x)\{}
-\DoxyCodeLine{206             \textcolor{comment}{//Updating the estimate of the maximum value}}
-\DoxyCodeLine{207             max\_x=points[i].x;}
-\DoxyCodeLine{208             \textcolor{comment}{//Changing the max-\/x coordinate index}}
-\DoxyCodeLine{209             pu\_max\_idx=i;}
-\DoxyCodeLine{210             pl\_max\_idx=i;}
-\DoxyCodeLine{211         \}}
-\DoxyCodeLine{212         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(points[i].x==max\_x)\{}
-\DoxyCodeLine{213             \textcolor{comment}{//if two points are on the same x-\/coordinate farthest}}
-\DoxyCodeLine{214             \textcolor{keywordflow}{if}(points[pu\_max\_idx].y<points[i].y)\{}
-\DoxyCodeLine{215                 \textcolor{comment}{//if the upper max point is below the current point}}
-\DoxyCodeLine{216                 pu\_max\_idx=i;}
-\DoxyCodeLine{217             \}}
-\DoxyCodeLine{218             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(points[pl\_max\_idx].y>points[i].y)\{}
-\DoxyCodeLine{219                 \textcolor{comment}{//the the lower max point is above current point}}
-\DoxyCodeLine{220                 pl\_max\_idx=i;}
-\DoxyCodeLine{221             \}}
-\DoxyCodeLine{222         \}}
-\DoxyCodeLine{223     \}}
-\DoxyCodeLine{224     \textcolor{comment}{//Printing the bounding points}}
-\DoxyCodeLine{225     cout<<\textcolor{stringliteral}{"pu\_min\_"};\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(pu\_min\_idx);}
-\DoxyCodeLine{226     cout<<\textcolor{stringliteral}{"pl\_min\_"};\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(pl\_min\_idx);}
-\DoxyCodeLine{227     cout<<\textcolor{stringliteral}{"pu\_max\_"};\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(pu\_max\_idx);}
-\DoxyCodeLine{228     cout<<\textcolor{stringliteral}{"pl\_max\_"};\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(pl\_max\_idx);cout<<endl;}
-\DoxyCodeLine{229 \}}
+\DoxyCodeLine{174                                             \{}
+\DoxyCodeLine{183     cout<<\textcolor{stringliteral}{"Finding the extremum points"}<<endl;}
+\DoxyCodeLine{184     \textcolor{comment}{//Initializing the min and max value of x-\/coordinate of points}}
+\DoxyCodeLine{185     \textcolor{keywordtype}{double} min\_x=INT\_MAX;}
+\DoxyCodeLine{186     \textcolor{keywordtype}{double} max\_x=INT\_MIN;}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<points.size();i++)\{}
+\DoxyCodeLine{189         \textcolor{comment}{//Finding the minimum bound of the points}}
+\DoxyCodeLine{190         \textcolor{keywordflow}{if}(points[i].x<min\_x)\{}
+\DoxyCodeLine{191             \textcolor{comment}{//Updating the estimate of minumum x-\/coordinate}}
+\DoxyCodeLine{192             min\_x=points[i].x;}
+\DoxyCodeLine{193             \textcolor{comment}{//Updating the new minimum x-\/coordiante index}}
+\DoxyCodeLine{194             pu\_min\_idx=i;}
+\DoxyCodeLine{195             pl\_min\_idx=i;}
+\DoxyCodeLine{196         \}}
+\DoxyCodeLine{197         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(points[i].x==min\_x)\{}
+\DoxyCodeLine{198             \textcolor{comment}{//if there are multiple points at same minumum x-\/coordinate}}
+\DoxyCodeLine{199             \textcolor{keywordflow}{if}(points[pu\_min\_idx].y<points[i].y)\{}
+\DoxyCodeLine{200                 \textcolor{comment}{//If the current point is above the pu\_min\_idx's y}}
+\DoxyCodeLine{201                 pu\_min\_idx=i;}
+\DoxyCodeLine{202             \}}
+\DoxyCodeLine{203             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(points[pl\_min\_idx].y>points[i].y)\{}
+\DoxyCodeLine{204                 \textcolor{comment}{//if the current point is even below pl\_min\_idx's y}}
+\DoxyCodeLine{205                 pl\_min\_idx=i;}
+\DoxyCodeLine{206             \}}
+\DoxyCodeLine{207         \}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209         \textcolor{comment}{//Finding the maximum bounds of the points}}
+\DoxyCodeLine{210         \textcolor{keywordflow}{if}(points[i].x>max\_x)\{}
+\DoxyCodeLine{211             \textcolor{comment}{//Updating the estimate of the maximum value}}
+\DoxyCodeLine{212             max\_x=points[i].x;}
+\DoxyCodeLine{213             \textcolor{comment}{//Changing the max-\/x coordinate index}}
+\DoxyCodeLine{214             pu\_max\_idx=i;}
+\DoxyCodeLine{215             pl\_max\_idx=i;}
+\DoxyCodeLine{216         \}}
+\DoxyCodeLine{217         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(points[i].x==max\_x)\{}
+\DoxyCodeLine{218             \textcolor{comment}{//if two points are on the same x-\/coordinate farthest}}
+\DoxyCodeLine{219             \textcolor{keywordflow}{if}(points[pu\_max\_idx].y<points[i].y)\{}
+\DoxyCodeLine{220                 \textcolor{comment}{//if the upper max point is below the current point}}
+\DoxyCodeLine{221                 pu\_max\_idx=i;}
+\DoxyCodeLine{222             \}}
+\DoxyCodeLine{223             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(points[pl\_max\_idx].y>points[i].y)\{}
+\DoxyCodeLine{224                 \textcolor{comment}{//the the lower max point is above current point}}
+\DoxyCodeLine{225                 pl\_max\_idx=i;}
+\DoxyCodeLine{226             \}}
+\DoxyCodeLine{227         \}}
+\DoxyCodeLine{228     \}}
+\DoxyCodeLine{229     \textcolor{comment}{//Printing the bounding points}}
+\DoxyCodeLine{230     cout<<\textcolor{stringliteral}{"pu\_min\_"};\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(pu\_min\_idx);}
+\DoxyCodeLine{231     cout<<\textcolor{stringliteral}{"pl\_min\_"};\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(pl\_min\_idx);}
+\DoxyCodeLine{232     cout<<\textcolor{stringliteral}{"pu\_max\_"};\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(pu\_max\_idx);}
+\DoxyCodeLine{233     cout<<\textcolor{stringliteral}{"pl\_max\_"};\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(pl\_max\_idx);cout<<endl;}
+\DoxyCodeLine{234 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classKirkpatrick__Seidel_a489b1cbb1985e231f1ae41c7128adc1c}\label{classKirkpatrick__Seidel_a489b1cbb1985e231f1ae41c7128adc1c}} 
@@ -542,25 +562,38 @@ Definition at line 177 of file kirkpatrick\+\_\+seidel.\+cpp.
 \doxysubsubsection{\texorpdfstring{get\_p2p\_slope\_entry()}{get\_p2p\_slope\_entry()}}
 {\footnotesize\ttfamily struct \mbox{\hyperlink{structp2p__slope}{p2p\+\_\+slope}} $\ast$ Kirkpatrick\+\_\+\+Seidel\+::get\+\_\+p2p\+\_\+slope\+\_\+entry (\begin{DoxyParamCaption}\item[{int}]{idx1,  }\item[{int}]{idx2,  }\item[{double}]{slope }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-U\+P\+P\+ER B\+R\+I\+D\+GE R\+E\+L\+A\+T\+ED F\+U\+N\+C\+T\+I\+O\+NS ~\newline
- D\+E\+S\+C\+R\+I\+P\+T\+I\+ON\+: This functio will dynamically allocate the struct and assign appropriate field and return the pointer to the struct. U\+S\+A\+GE\+: I\+N\+P\+UT\+: idx1 \+: the index of the first point idx2 \+: the index of the second point slope \+: the slope of line joint by these points O\+U\+T\+P\+UT\+: slope\+\_\+ptr\+: the pointer to the p2p struct element.
+This functio will dynamically allocate the struct and assign appropriate field and return the pointer to the struct.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em idx1} & \+: the index of the first point \\
+\hline
+\mbox{\texttt{ in}}  & {\em idx2} & \+: the index of the second point \\
+\hline
+\mbox{\texttt{ in}}  & {\em slope} & \+: the slope of line joint by these points\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+slope\+\_\+ptr\+: the pointer to the p2p struct element.
+\end{DoxyReturn}
+
 
 Definition at line 305 of file kirkpatrick\+\_\+seidel.\+cpp.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{306                                                                   \{}
-\DoxyCodeLine{319     \textcolor{comment}{//Dynamically allocating the strucut from ram's heap}}
-\DoxyCodeLine{320     \textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}} *slope\_ptr=(\textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}}*)\(\backslash\)}
-\DoxyCodeLine{321                                     malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structp2p__slope}{p2p\_slope}}));}
-\DoxyCodeLine{322 }
-\DoxyCodeLine{323     \textcolor{comment}{//Assigning the value}}
-\DoxyCodeLine{324     slope\_ptr-\/>idx1=idx1;}
-\DoxyCodeLine{325     slope\_ptr-\/>idx2=idx2;}
-\DoxyCodeLine{326     slope\_ptr-\/>slope=slope;}
-\DoxyCodeLine{327 }
-\DoxyCodeLine{328     \textcolor{keywordflow}{return} slope\_ptr;}
-\DoxyCodeLine{329 \}}
+\DoxyCodeLine{317     \textcolor{comment}{//Dynamically allocating the strucut from ram's heap}}
+\DoxyCodeLine{318     \textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}} *slope\_ptr=(\textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}}*)\(\backslash\)}
+\DoxyCodeLine{319                                     malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structp2p__slope}{p2p\_slope}}));}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321     \textcolor{comment}{//Assigning the value}}
+\DoxyCodeLine{322     slope\_ptr-\/>idx1=idx1;}
+\DoxyCodeLine{323     slope\_ptr-\/>idx2=idx2;}
+\DoxyCodeLine{324     slope\_ptr-\/>slope=slope;}
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326     \textcolor{keywordflow}{return} slope\_ptr;}
+\DoxyCodeLine{327 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classKirkpatrick__Seidel_a403fd3696ad1a6b7dedb75cb8f5eaab7}\label{classKirkpatrick__Seidel_a403fd3696ad1a6b7dedb75cb8f5eaab7}} 
@@ -569,55 +602,67 @@ Definition at line 305 of file kirkpatrick\+\_\+seidel.\+cpp.
 \doxysubsubsection{\texorpdfstring{get\_pair\_slopes()}{get\_pair\_slopes()}}
 {\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{structp2p__slope}{p2p\+\_\+slope}} $\ast$ $>$ Kirkpatrick\+\_\+\+Seidel\+::get\+\_\+pair\+\_\+slopes (\begin{DoxyParamCaption}\item[{vector$<$ int $>$ \&}]{cand\+\_\+idx,  }\item[{vector$<$ int $>$ \&}]{new\+\_\+cand\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Description\+: This is a utility function to be used by the upper bridge function to randomly pair up the point and calculate their corresponding slope.
+This is a utility function to be used by the upper bridge function to randomly pair up the point and calculate their corresponding slope.
 
-In the process this will directly reject some of the points and put some of them directly into new candidate idx. U\+S\+A\+GE\+: I\+N\+P\+UT\+: cand\+\_\+idx \+: the index of candidate points now. new\+\_\+cand\+\_\+idx\+: the index of candidate points for next itr. O\+U\+T\+P\+UT\+: pair\+\_\+slopes \+: the pair of points with corresponding slope
+In the process this will directly reject some of the points and put some of them directly into new candidate idx.
 
-Definition at line 331 of file kirkpatrick\+\_\+seidel.\+cpp.
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cand\+\_\+idx} & \+: the index of candidate points now. \\
+\hline
+\mbox{\texttt{ out}}  & {\em new\+\_\+cand\+\_\+idx} & the index of candidate points for next itr.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair\+\_\+slopes \+: the pair of points with corresponding slope
+\end{DoxyReturn}
+
+
+Definition at line 329 of file kirkpatrick\+\_\+seidel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{333                                                               \{}
-\DoxyCodeLine{349     \textcolor{comment}{//Initializing the p2p\_slope struct}}
-\DoxyCodeLine{350     vector<struct p2p\_slope*> pair\_slopes;}
-\DoxyCodeLine{351 }
-\DoxyCodeLine{352     \textcolor{comment}{//Randomly pairing up the points (will do consecutive pairing)}}
-\DoxyCodeLine{353     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<cand\_idx.size();i++)\{}
-\DoxyCodeLine{354         \textcolor{keywordtype}{int} idx1=cand\_idx[i];i++;}
-\DoxyCodeLine{355         \textcolor{comment}{//If we have odd number of points then dont pair it up}}
-\DoxyCodeLine{356         \textcolor{keywordflow}{if}(i==cand\_idx.size())\{}
-\DoxyCodeLine{357             new\_cand\_idx.push\_back(idx1);}
-\DoxyCodeLine{358             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{359         \}}
-\DoxyCodeLine{360         \textcolor{keywordtype}{int} idx2=cand\_idx[i];}
-\DoxyCodeLine{361 }
-\DoxyCodeLine{362         \textcolor{comment}{//Filtering the points if both the points lie on same x}}
-\DoxyCodeLine{363         \textcolor{keywordflow}{if}(points[idx1].x==points[idx2].x)\{}
-\DoxyCodeLine{364             \textcolor{keywordflow}{if}(points[idx1].y>points[idx2].y)\{}
-\DoxyCodeLine{365                 cout<<\textcolor{stringliteral}{"point pair is verticle: removing: "}<<idx2;}
-\DoxyCodeLine{366                 new\_cand\_idx.push\_back(idx1);}
+\DoxyCodeLine{331                                                               \{}
+\DoxyCodeLine{345     \textcolor{comment}{//Initializing the p2p\_slope struct}}
+\DoxyCodeLine{346     vector<struct p2p\_slope*> pair\_slopes;}
+\DoxyCodeLine{347 }
+\DoxyCodeLine{348     \textcolor{comment}{//Randomly pairing up the points (will do consecutive pairing)}}
+\DoxyCodeLine{349     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<cand\_idx.size();i++)\{}
+\DoxyCodeLine{350         \textcolor{keywordtype}{int} idx1=cand\_idx[i];i++;}
+\DoxyCodeLine{351         \textcolor{comment}{//If we have odd number of points then dont pair it up}}
+\DoxyCodeLine{352         \textcolor{keywordflow}{if}(i==cand\_idx.size())\{}
+\DoxyCodeLine{353             new\_cand\_idx.push\_back(idx1);}
+\DoxyCodeLine{354             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{355         \}}
+\DoxyCodeLine{356         \textcolor{keywordtype}{int} idx2=cand\_idx[i];}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358         \textcolor{comment}{//Filtering the points if both the points lie on same x}}
+\DoxyCodeLine{359         \textcolor{keywordflow}{if}(points[idx1].x==points[idx2].x)\{}
+\DoxyCodeLine{360             \textcolor{keywordflow}{if}(points[idx1].y>points[idx2].y)\{}
+\DoxyCodeLine{361                 cout<<\textcolor{stringliteral}{"point pair is verticle: removing: "}<<idx2;}
+\DoxyCodeLine{362                 new\_cand\_idx.push\_back(idx1);}
+\DoxyCodeLine{363             \}}
+\DoxyCodeLine{364             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{365                 cout<<\textcolor{stringliteral}{"point pair is verticle: removing: "}<<idx1;}
+\DoxyCodeLine{366                 new\_cand\_idx.push\_back(idx2);}
 \DoxyCodeLine{367             \}}
-\DoxyCodeLine{368             \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{369                 cout<<\textcolor{stringliteral}{"point pair is verticle: removing: "}<<idx1;}
-\DoxyCodeLine{370                 new\_cand\_idx.push\_back(idx2);}
-\DoxyCodeLine{371             \}}
-\DoxyCodeLine{372             cout<<endl;}
-\DoxyCodeLine{373             \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{374         \}}
-\DoxyCodeLine{375 }
-\DoxyCodeLine{376         \textcolor{comment}{//Calculating the point to point slope}}
-\DoxyCodeLine{377         \textcolor{keywordtype}{double} slope=\mbox{\hyperlink{classKirkpatrick__Seidel_a180f5fcebe4744b99ee618066b819764}{calculate\_p2p\_slope}}(idx1,idx2);}
-\DoxyCodeLine{378         \textcolor{comment}{//Printitng the pair and corresponding slope}}
-\DoxyCodeLine{379         cout<<\textcolor{stringliteral}{"Pairing: "}<<idx1<<\textcolor{stringliteral}{" and "}<<idx2<<\textcolor{stringliteral}{" slope: "}<<slope;}
-\DoxyCodeLine{380         cout<<endl;}
-\DoxyCodeLine{381         \textcolor{comment}{//Adding the slope of point to the p2p\_slope vector}}
-\DoxyCodeLine{382         \textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}} *slope\_ptr=\mbox{\hyperlink{classKirkpatrick__Seidel_a489b1cbb1985e231f1ae41c7128adc1c}{get\_p2p\_slope\_entry}}(idx1,idx2,\(\backslash\)}
-\DoxyCodeLine{383                                                         slope);}
-\DoxyCodeLine{384         pair\_slopes.push\_back(slope\_ptr);}
-\DoxyCodeLine{385     \}}
-\DoxyCodeLine{386 }
-\DoxyCodeLine{387     \textcolor{keywordflow}{return} pair\_slopes;}
-\DoxyCodeLine{388 \}}
+\DoxyCodeLine{368             cout<<endl;}
+\DoxyCodeLine{369             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{370         \}}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372         \textcolor{comment}{//Calculating the point to point slope}}
+\DoxyCodeLine{373         \textcolor{keywordtype}{double} slope=\mbox{\hyperlink{classKirkpatrick__Seidel_a180f5fcebe4744b99ee618066b819764}{calculate\_p2p\_slope}}(idx1,idx2);}
+\DoxyCodeLine{374         \textcolor{comment}{//Printitng the pair and corresponding slope}}
+\DoxyCodeLine{375         cout<<\textcolor{stringliteral}{"Pairing: "}<<idx1<<\textcolor{stringliteral}{" and "}<<idx2<<\textcolor{stringliteral}{" slope: "}<<slope;}
+\DoxyCodeLine{376         cout<<endl;}
+\DoxyCodeLine{377         \textcolor{comment}{//Adding the slope of point to the p2p\_slope vector}}
+\DoxyCodeLine{378         \textcolor{keyword}{struct }\mbox{\hyperlink{structp2p__slope}{p2p\_slope}} *slope\_ptr=\mbox{\hyperlink{classKirkpatrick__Seidel_a489b1cbb1985e231f1ae41c7128adc1c}{get\_p2p\_slope\_entry}}(idx1,idx2,\(\backslash\)}
+\DoxyCodeLine{379                                                         slope);}
+\DoxyCodeLine{380         pair\_slopes.push\_back(slope\_ptr);}
+\DoxyCodeLine{381     \}}
+\DoxyCodeLine{382 }
+\DoxyCodeLine{383     \textcolor{keywordflow}{return} pair\_slopes;}
+\DoxyCodeLine{384 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classKirkpatrick__Seidel_a5186a9dd5060b8243cf455c7faf9fb92}\label{classKirkpatrick__Seidel_a5186a9dd5060b8243cf455c7faf9fb92}} 
@@ -626,72 +671,84 @@ Definition at line 331 of file kirkpatrick\+\_\+seidel.\+cpp.
 \doxysubsubsection{\texorpdfstring{get\_upper\_bridge()}{get\_upper\_bridge()}}
 {\footnotesize\ttfamily vector$<$ int $>$ Kirkpatrick\+\_\+\+Seidel\+::get\+\_\+upper\+\_\+bridge (\begin{DoxyParamCaption}\item[{double}]{med\+\_\+x,  }\item[{vector$<$ int $>$ \&}]{cand\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-D\+E\+S\+C\+R\+I\+P\+T\+I\+ON\+: This function will give the pair of points which forms a bridge in candidate points,covering our head from above. This bridge will merge the two sub-\/problem split before. U\+S\+A\+GE\+: I\+N\+P\+UT\+: median\+\_\+x \+: the x-\/coordinate of the median point. cand\+\_\+idx \+: the index of points on which to get bridge. O\+U\+T\+P\+UT\+: bridge\+\_\+point\+\_\+idx \+: the index in sorted order acc to x-\/coordinate formning the bridge above. (it could be only 2 point)
+This function will give the pair of points which forms a bridge in candidate points,covering our head from above. This bridge will merge the two sub-\/problem split before.
 
-Definition at line 662 of file kirkpatrick\+\_\+seidel.\+cpp.
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em median\+\_\+x} & \+: the x-\/coordinate of the median point. \\
+\hline
+\mbox{\texttt{ in}}  & {\em cand\+\_\+idx} & \+: the index of points on which to get bridge.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bridge\+\_\+point\+\_\+idx \+: the index in sorted order acc to x-\/coordinate formning the bridge above. (it could be only 2 point)
+\end{DoxyReturn}
+
+
+Definition at line 661 of file kirkpatrick\+\_\+seidel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{663                                                                   \{}
-\DoxyCodeLine{678     \textcolor{comment}{//Initializing the bridge vector}}
-\DoxyCodeLine{679     vector<int> bridge\_point\_idx;}
-\DoxyCodeLine{680 }
-\DoxyCodeLine{681     \textcolor{comment}{//Now getting the bridges from the set of upper points}}
-\DoxyCodeLine{682     \textcolor{keywordflow}{while}(bridge\_point\_idx.size()!=2)\{}
-\DoxyCodeLine{683         \textcolor{comment}{//Handling the base case when only two points are in candidate}}
-\DoxyCodeLine{684         \textcolor{keywordflow}{if}(cand\_idx.size()==2)\{}
-\DoxyCodeLine{685             \textcolor{keywordflow}{if}(points[cand\_idx[0]].x<points[cand\_idx[1]].x)\{}
-\DoxyCodeLine{686                 bridge\_point\_idx.push\_back(cand\_idx[0]);}
+\DoxyCodeLine{662                                                                   \{}
+\DoxyCodeLine{675     \textcolor{comment}{//Initializing the bridge vector}}
+\DoxyCodeLine{676     vector<int> bridge\_point\_idx;}
+\DoxyCodeLine{677 }
+\DoxyCodeLine{678     \textcolor{comment}{//Now getting the bridges from the set of upper points}}
+\DoxyCodeLine{679     \textcolor{keywordflow}{while}(bridge\_point\_idx.size()!=2)\{}
+\DoxyCodeLine{680         \textcolor{comment}{//Handling the base case when only two points are in candidate}}
+\DoxyCodeLine{681         \textcolor{keywordflow}{if}(cand\_idx.size()==2)\{}
+\DoxyCodeLine{682             \textcolor{keywordflow}{if}(points[cand\_idx[0]].x<points[cand\_idx[1]].x)\{}
+\DoxyCodeLine{683                 bridge\_point\_idx.push\_back(cand\_idx[0]);}
+\DoxyCodeLine{684                 bridge\_point\_idx.push\_back(cand\_idx[1]);}
+\DoxyCodeLine{685             \}}
+\DoxyCodeLine{686             \textcolor{keywordflow}{else}\{}
 \DoxyCodeLine{687                 bridge\_point\_idx.push\_back(cand\_idx[1]);}
-\DoxyCodeLine{688             \}}
-\DoxyCodeLine{689             \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{690                 bridge\_point\_idx.push\_back(cand\_idx[1]);}
-\DoxyCodeLine{691                 bridge\_point\_idx.push\_back(cand\_idx[0]);}
-\DoxyCodeLine{692             \}}
-\DoxyCodeLine{693             \textcolor{keywordflow}{return} bridge\_point\_idx;}
-\DoxyCodeLine{694         \}}
-\DoxyCodeLine{695 }
-\DoxyCodeLine{696         \textcolor{comment}{//Calculating the slopes}}
-\DoxyCodeLine{697         \textcolor{comment}{//Initializing the vector for the next set of candidaates idx}}
-\DoxyCodeLine{698         vector<int> new\_cand\_idx;}
-\DoxyCodeLine{699         vector<struct p2p\_slope*> pair\_slopes;}
-\DoxyCodeLine{700         \textcolor{comment}{//Calculating the sloped of the points along with some new cand}}
-\DoxyCodeLine{701         cout<<\textcolor{stringliteral}{"\(\backslash\)nPairing points and calculating slopes\(\backslash\)n"};}
-\DoxyCodeLine{702         pair\_slopes=\mbox{\hyperlink{classKirkpatrick__Seidel_a403fd3696ad1a6b7dedb75cb8f5eaab7}{get\_pair\_slopes}}(cand\_idx,new\_cand\_idx);}
-\DoxyCodeLine{703         \textcolor{comment}{//Handling the case when number of no pair of points are formed}}
-\DoxyCodeLine{704         \textcolor{keywordflow}{if}(pair\_slopes.size()==0)\{}
-\DoxyCodeLine{705             \textcolor{comment}{//Reinitializing the new candidate indexes as curr candidate}}
-\DoxyCodeLine{706             cand\_idx.assign(new\_cand\_idx.begin(),new\_cand\_idx.end());}
-\DoxyCodeLine{707             \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{708         \}}
-\DoxyCodeLine{709         \textcolor{comment}{//Have to free up the p2p\_slope pointers from heap}}
-\DoxyCodeLine{710 }
-\DoxyCodeLine{711         \textcolor{comment}{//Calcualting the median slopes index and making 3 slope buckets}}
-\DoxyCodeLine{712         vector<int> LARGE\_SLOPE;}
-\DoxyCodeLine{713         vector<int> EQUAL\_SLOPE;}
-\DoxyCodeLine{714         vector<int> SMALL\_SLOPE;}
-\DoxyCodeLine{715         \textcolor{comment}{//Calulating the median slope}}
-\DoxyCodeLine{716         \textcolor{keywordtype}{int} med\_slope\_idx=\mbox{\hyperlink{classKirkpatrick__Seidel_afa21506d3cd0d121b337145af844191a}{fill\_slope\_bucket}}(pair\_slopes,LARGE\_SLOPE,\(\backslash\)}
-\DoxyCodeLine{717                                             EQUAL\_SLOPE,SMALL\_SLOPE);}
-\DoxyCodeLine{718 }
-\DoxyCodeLine{719         \textcolor{comment}{//Now finding the new candidate indexes or the the bridge points}}
-\DoxyCodeLine{720         bridge\_point\_idx=\mbox{\hyperlink{classKirkpatrick__Seidel_a88715575474aaae15641eb578e94933d}{get\_bridge\_or\_candidate}}(med\_x,med\_slope\_idx,\(\backslash\)}
-\DoxyCodeLine{721                                             cand\_idx,new\_cand\_idx,\(\backslash\)}
-\DoxyCodeLine{722                                             pair\_slopes,LARGE\_SLOPE,\(\backslash\)}
-\DoxyCodeLine{723                                             EQUAL\_SLOPE,SMALL\_SLOPE);}
-\DoxyCodeLine{724 }
-\DoxyCodeLine{725         \textcolor{comment}{//Reinitializing the new candidate indexes as curr candidate}}
-\DoxyCodeLine{726         cand\_idx.assign(new\_cand\_idx.begin(),new\_cand\_idx.end());}
-\DoxyCodeLine{727         \textcolor{comment}{//Freeing up the point pairs}}
-\DoxyCodeLine{728         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<pair\_slopes.size();i++)\{}
-\DoxyCodeLine{729             free(pair\_slopes[i]);}
-\DoxyCodeLine{730         \}}
-\DoxyCodeLine{731         cout<<\textcolor{stringliteral}{"\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"}<<endl;}
-\DoxyCodeLine{732         cout<<\textcolor{stringliteral}{"AN ITERATION OF UPPER BRIDGE DONE"}<<endl;}
-\DoxyCodeLine{733         cout<<\textcolor{stringliteral}{"\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"}<<endl<<endl;}
-\DoxyCodeLine{734     \}}
-\DoxyCodeLine{735     \textcolor{keywordflow}{return} bridge\_point\_idx;}
-\DoxyCodeLine{736 \}}
+\DoxyCodeLine{688                 bridge\_point\_idx.push\_back(cand\_idx[0]);}
+\DoxyCodeLine{689             \}}
+\DoxyCodeLine{690             \textcolor{keywordflow}{return} bridge\_point\_idx;}
+\DoxyCodeLine{691         \}}
+\DoxyCodeLine{692 }
+\DoxyCodeLine{693         \textcolor{comment}{//Calculating the slopes}}
+\DoxyCodeLine{694         \textcolor{comment}{//Initializing the vector for the next set of candidaates idx}}
+\DoxyCodeLine{695         vector<int> new\_cand\_idx;}
+\DoxyCodeLine{696         vector<struct p2p\_slope*> pair\_slopes;}
+\DoxyCodeLine{697         \textcolor{comment}{//Calculating the sloped of the points along with some new cand}}
+\DoxyCodeLine{698         cout<<\textcolor{stringliteral}{"\(\backslash\)nPairing points and calculating slopes\(\backslash\)n"};}
+\DoxyCodeLine{699         pair\_slopes=\mbox{\hyperlink{classKirkpatrick__Seidel_a403fd3696ad1a6b7dedb75cb8f5eaab7}{get\_pair\_slopes}}(cand\_idx,new\_cand\_idx);}
+\DoxyCodeLine{700         \textcolor{comment}{//Handling the case when number of no pair of points are formed}}
+\DoxyCodeLine{701         \textcolor{keywordflow}{if}(pair\_slopes.size()==0)\{}
+\DoxyCodeLine{702             \textcolor{comment}{//Reinitializing the new candidate indexes as curr candidate}}
+\DoxyCodeLine{703             cand\_idx.assign(new\_cand\_idx.begin(),new\_cand\_idx.end());}
+\DoxyCodeLine{704             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{705         \}}
+\DoxyCodeLine{706         \textcolor{comment}{//Have to free up the p2p\_slope pointers from heap}}
+\DoxyCodeLine{707 }
+\DoxyCodeLine{708         \textcolor{comment}{//Calcualting the median slopes index and making 3 slope buckets}}
+\DoxyCodeLine{709         vector<int> LARGE\_SLOPE;}
+\DoxyCodeLine{710         vector<int> EQUAL\_SLOPE;}
+\DoxyCodeLine{711         vector<int> SMALL\_SLOPE;}
+\DoxyCodeLine{712         \textcolor{comment}{//Calulating the median slope}}
+\DoxyCodeLine{713         \textcolor{keywordtype}{int} med\_slope\_idx=fill\_slope\_bucket(pair\_slopes,LARGE\_SLOPE,\(\backslash\)}
+\DoxyCodeLine{714                                             EQUAL\_SLOPE,SMALL\_SLOPE);}
+\DoxyCodeLine{715 }
+\DoxyCodeLine{716         \textcolor{comment}{//Now finding the new candidate indexes or the the bridge points}}
+\DoxyCodeLine{717         bridge\_point\_idx=\mbox{\hyperlink{classKirkpatrick__Seidel_a88715575474aaae15641eb578e94933d}{get\_bridge\_or\_candidate}}(med\_x,med\_slope\_idx,\(\backslash\)}
+\DoxyCodeLine{718                                             cand\_idx,new\_cand\_idx,\(\backslash\)}
+\DoxyCodeLine{719                                             pair\_slopes,LARGE\_SLOPE,\(\backslash\)}
+\DoxyCodeLine{720                                             EQUAL\_SLOPE,SMALL\_SLOPE);}
+\DoxyCodeLine{721 }
+\DoxyCodeLine{722         \textcolor{comment}{//Reinitializing the new candidate indexes as curr candidate}}
+\DoxyCodeLine{723         cand\_idx.assign(new\_cand\_idx.begin(),new\_cand\_idx.end());}
+\DoxyCodeLine{724         \textcolor{comment}{//Freeing up the point pairs}}
+\DoxyCodeLine{725         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<pair\_slopes.size();i++)\{}
+\DoxyCodeLine{726             free(pair\_slopes[i]);}
+\DoxyCodeLine{727         \}}
+\DoxyCodeLine{728         cout<<\textcolor{stringliteral}{"\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"}<<endl;}
+\DoxyCodeLine{729         cout<<\textcolor{stringliteral}{"AN ITERATION OF UPPER BRIDGE DONE"}<<endl;}
+\DoxyCodeLine{730         cout<<\textcolor{stringliteral}{"\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"}<<endl<<endl;}
+\DoxyCodeLine{731     \}}
+\DoxyCodeLine{732     \textcolor{keywordflow}{return} bridge\_point\_idx;}
+\DoxyCodeLine{733 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classKirkpatrick__Seidel_a354a7cd71efe24b6750744b993ad48f5}\label{classKirkpatrick__Seidel_a354a7cd71efe24b6750744b993ad48f5}} 
@@ -700,88 +757,96 @@ Definition at line 662 of file kirkpatrick\+\_\+seidel.\+cpp.
 \doxysubsubsection{\texorpdfstring{get\_upper\_hull()}{get\_upper\_hull()}}
 {\footnotesize\ttfamily void Kirkpatrick\+\_\+\+Seidel\+::get\+\_\+upper\+\_\+hull (\begin{DoxyParamCaption}\item[{vector$<$ int $>$ \&}]{cand\+\_\+idx,  }\item[{unsigned int}]{min\+\_\+x\+\_\+idx,  }\item[{unsigned int}]{max\+\_\+x\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-D\+E\+S\+C\+R\+I\+P\+T\+I\+ON\+: This function will generate the upper hull of from the given set of living points. This function will recursively call itself each time it partition the problem into two half and joining them by finding the upper bridge. U\+S\+A\+GE\+: I\+N\+P\+UT\+: cand\+\_\+idx \+: a.\+dtype = vector$<$int$>$ b. the points on which to run the upper hull algorithm.(candidates) min\+\_\+x\+\_\+idx \+: the index of the lower bound of x-\/coord max\+\_\+x\+\_\+idx \+: the index of the upper bound of x-\/coord for this current problem. O\+U\+T\+P\+UT\+:
-
-M\+E\+R\+G\+I\+NG S\+T\+EP OF D\+I\+V\+I\+DE A\+ND C\+O\+N\+Q\+U\+ER ~\newline
+This function will generate the upper hull of from the given set of living points. This function will recursively call itself each time it partition the problem into two half and joining them by finding the upper bridge.
 
 
-D\+I\+V\+I\+S\+I\+ON S\+T\+EP OF D\+I\+V\+I\+DE A\+ND C\+O\+N\+Q\+U\+ER ~\newline
- 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cand\+\_\+idx} & \+: a.\+dtype = vector$<$int$>$ b. the points on which to run the upper hull algorithm.(candidates) \\
+\hline
+\mbox{\texttt{ in}}  & {\em min\+\_\+x\+\_\+idx} & \+: the index of the lower bound of x-\/coord \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+x\+\_\+idx} & \+: the index of the upper bound of x-\/coord for this current problem.\\
+\hline
+\end{DoxyParams}
 
-Definition at line 774 of file kirkpatrick\+\_\+seidel.\+cpp.
+
+Definition at line 767 of file kirkpatrick\+\_\+seidel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{776                                                \{}
-\DoxyCodeLine{794     \textcolor{comment}{//Handling the base case here itself, otherwise infinite loop}}
-\DoxyCodeLine{795     \textcolor{keywordflow}{if}(cand\_idx.size()==2)\{}
-\DoxyCodeLine{796         cout<<\textcolor{stringliteral}{"Base case reached for the bridge\(\backslash\)n"}<<endl;}
-\DoxyCodeLine{797         \textcolor{comment}{//Directly appending the points to the final hull}}
-\DoxyCodeLine{798         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ad4364483a9ba0f48498d010ff7b16590}{append\_bridge\_point\_to\_hull}}(cand\_idx);}
-\DoxyCodeLine{799         \textcolor{keywordflow}{return};}
-\DoxyCodeLine{800     \}}
-\DoxyCodeLine{801 }
-\DoxyCodeLine{802 }
-\DoxyCodeLine{804     \textcolor{comment}{//Finding the median element among the live candidate ones}}
-\DoxyCodeLine{805     cout<<\textcolor{stringliteral}{"Finding the median x coordinate"}<<endl;}
-\DoxyCodeLine{806     \textcolor{keywordtype}{int} med\_idx=calculate\_median(cand\_idx,this-\/>points);}
-\DoxyCodeLine{807     \textcolor{keywordtype}{double} median\_x=points[med\_idx].x;}
-\DoxyCodeLine{808     cout<<\textcolor{stringliteral}{"Median Index is: "}<<med\_idx<<\textcolor{stringliteral}{" at x-\/coord: "}<<median\_x;}
-\DoxyCodeLine{809     cout<<endl;}
-\DoxyCodeLine{810 }
-\DoxyCodeLine{811     \textcolor{comment}{//Now we have to calculate the upper bridge}}
-\DoxyCodeLine{812     vector<int> bridge\_point\_idx;}
-\DoxyCodeLine{813     bridge\_point\_idx=\mbox{\hyperlink{classKirkpatrick__Seidel_a5186a9dd5060b8243cf455c7faf9fb92}{get\_upper\_bridge}}(median\_x,cand\_idx);}
-\DoxyCodeLine{814     \textcolor{comment}{//Appending the point to the final hull index list}}
-\DoxyCodeLine{815     this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ad4364483a9ba0f48498d010ff7b16590}{append\_bridge\_point\_to\_hull}}(bridge\_point\_idx);}
-\DoxyCodeLine{816 }
-\DoxyCodeLine{817 }
-\DoxyCodeLine{820     \textcolor{comment}{//SOLVING LEFT SUB-\/PROBLEM}}
-\DoxyCodeLine{821     \textcolor{comment}{//Calculating the new candidate for the left sub problem}}
-\DoxyCodeLine{822     vector<int> left\_cand\_idx;}
-\DoxyCodeLine{823     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} left\_pu\_max\_idx=bridge\_point\_idx[0];}
-\DoxyCodeLine{824     cout<<\textcolor{stringliteral}{"\(\backslash\)nSolving the left sub-\/problem"}<<endl;}
-\DoxyCodeLine{825     cout<<\textcolor{stringliteral}{"left\_min\_idx: "}<<min\_x\_idx<<endl;}
-\DoxyCodeLine{826     cout<<\textcolor{stringliteral}{"left\_max\_idx: "}<<left\_pu\_max\_idx<<endl;}
-\DoxyCodeLine{827     \textcolor{keywordflow}{if}(min\_x\_idx!=left\_pu\_max\_idx)\{}
-\DoxyCodeLine{828         \textcolor{comment}{//Getting the index of probable point on left bridge}}
-\DoxyCodeLine{829         \textcolor{comment}{//bool upside=true;}}
-\DoxyCodeLine{830         left\_cand\_idx=this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a3469702d1b4f11eb2d52d8bd29a9f3a8}{get\_candidates\_idx}}(min\_x\_idx,\(\backslash\)}
-\DoxyCodeLine{831                                                 left\_pu\_max\_idx);}
-\DoxyCodeLine{832         \textcolor{comment}{//Printing the candidate indexes}}
-\DoxyCodeLine{833         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<left\_cand\_idx.size();i++)\{}
-\DoxyCodeLine{834             cout<<\textcolor{stringliteral}{"UH-\/Cand: "};}
-\DoxyCodeLine{835             this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(left\_cand\_idx[i]);}
-\DoxyCodeLine{836         \}}
-\DoxyCodeLine{837         \textcolor{comment}{//Calling this function recursively to solve left part}}
-\DoxyCodeLine{838         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a354a7cd71efe24b6750744b993ad48f5}{get\_upper\_hull}}(left\_cand\_idx,min\_x\_idx,\(\backslash\)}
-\DoxyCodeLine{839                                             left\_pu\_max\_idx);}
-\DoxyCodeLine{840     \}}
-\DoxyCodeLine{841 }
-\DoxyCodeLine{842     \textcolor{comment}{//SOLVING RIGHT SUB-\/PROBLEM}}
-\DoxyCodeLine{843     \textcolor{comment}{//Calculating the new candidates for right side}}
-\DoxyCodeLine{844     vector<int> right\_cand\_idx;}
-\DoxyCodeLine{845     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} right\_pu\_min\_idx=bridge\_point\_idx[1];}
-\DoxyCodeLine{846     cout<<\textcolor{stringliteral}{"\(\backslash\)n\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\(\backslash\)n"};}
-\DoxyCodeLine{847     cout<<\textcolor{stringliteral}{"Solving the right sub-\/problem"}<<endl;}
-\DoxyCodeLine{848     cout<<\textcolor{stringliteral}{"right\_min\_idx: "}<<right\_pu\_min\_idx<<endl;}
-\DoxyCodeLine{849     cout<<\textcolor{stringliteral}{"right\_max\_idx: "}<<max\_x\_idx<<endl;}
-\DoxyCodeLine{850     \textcolor{keywordflow}{if}(right\_pu\_min\_idx!=max\_x\_idx)\{}
-\DoxyCodeLine{851         \textcolor{comment}{//Getting the new candidates for the right side}}
-\DoxyCodeLine{852         \textcolor{comment}{//bool upside=true;}}
-\DoxyCodeLine{853         right\_cand\_idx=this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a3469702d1b4f11eb2d52d8bd29a9f3a8}{get\_candidates\_idx}}(right\_pu\_min\_idx,\(\backslash\)}
-\DoxyCodeLine{854                                                 max\_x\_idx);}
-\DoxyCodeLine{855         \textcolor{comment}{//Printing the candidate indexes}}
-\DoxyCodeLine{856         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<right\_cand\_idx.size();i++)\{}
-\DoxyCodeLine{857             cout<<\textcolor{stringliteral}{"UH-\/Cand: "};}
-\DoxyCodeLine{858             this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(right\_cand\_idx[i]);}
-\DoxyCodeLine{859         \}}
-\DoxyCodeLine{860         \textcolor{comment}{//Calling this function recursively to solve right side}}
-\DoxyCodeLine{861         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a354a7cd71efe24b6750744b993ad48f5}{get\_upper\_hull}}(right\_cand\_idx,right\_pu\_min\_idx,\(\backslash\)}
-\DoxyCodeLine{862                                             max\_x\_idx);}
-\DoxyCodeLine{863     \}}
-\DoxyCodeLine{864     \textcolor{keywordflow}{return};}
-\DoxyCodeLine{865 \}}
+\DoxyCodeLine{769                                                \{}
+\DoxyCodeLine{783     \textcolor{comment}{//Handling the base case here itself, otherwise infinite loop}}
+\DoxyCodeLine{784     \textcolor{keywordflow}{if}(cand\_idx.size()==2)\{}
+\DoxyCodeLine{785         cout<<\textcolor{stringliteral}{"Base case reached for the bridge\(\backslash\)n"}<<endl;}
+\DoxyCodeLine{786         \textcolor{comment}{//Directly appending the points to the final hull}}
+\DoxyCodeLine{787         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ad4364483a9ba0f48498d010ff7b16590}{append\_bridge\_point\_to\_hull}}(cand\_idx);}
+\DoxyCodeLine{788         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{789     \}}
+\DoxyCodeLine{790 }
+\DoxyCodeLine{791 }
+\DoxyCodeLine{792     \textcolor{comment}{/*         MERGING STEP OF DIVIDE AND CONQUER          */}}
+\DoxyCodeLine{793     \textcolor{comment}{//Finding the median element among the live candidate ones}}
+\DoxyCodeLine{794     cout<<\textcolor{stringliteral}{"Finding the median x coordinate"}<<endl;}
+\DoxyCodeLine{795     \textcolor{keywordtype}{int} med\_idx=calculate\_median(cand\_idx,this-\/>points);}
+\DoxyCodeLine{796     \textcolor{keywordtype}{double} median\_x=points[med\_idx].x;}
+\DoxyCodeLine{797     cout<<\textcolor{stringliteral}{"Median Index is: "}<<med\_idx<<\textcolor{stringliteral}{" at x-\/coord: "}<<median\_x;}
+\DoxyCodeLine{798     cout<<endl;}
+\DoxyCodeLine{799 }
+\DoxyCodeLine{800     \textcolor{comment}{//Now we have to calculate the upper bridge}}
+\DoxyCodeLine{801     vector<int> bridge\_point\_idx;}
+\DoxyCodeLine{802     bridge\_point\_idx=\mbox{\hyperlink{classKirkpatrick__Seidel_a5186a9dd5060b8243cf455c7faf9fb92}{get\_upper\_bridge}}(median\_x,cand\_idx);}
+\DoxyCodeLine{803     \textcolor{comment}{//Appending the point to the final hull index list}}
+\DoxyCodeLine{804     this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ad4364483a9ba0f48498d010ff7b16590}{append\_bridge\_point\_to\_hull}}(bridge\_point\_idx);}
+\DoxyCodeLine{805 }
+\DoxyCodeLine{806 }
+\DoxyCodeLine{807     \textcolor{comment}{/*       DIVISION STEP OF DIVIDE AND CONQUER             */}}
+\DoxyCodeLine{808 }
+\DoxyCodeLine{809     \textcolor{comment}{//SOLVING LEFT SUB-\/PROBLEM}}
+\DoxyCodeLine{810     \textcolor{comment}{//Calculating the new candidate for the left sub problem}}
+\DoxyCodeLine{811     vector<int> left\_cand\_idx;}
+\DoxyCodeLine{812     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} left\_pu\_max\_idx=bridge\_point\_idx[0];}
+\DoxyCodeLine{813     cout<<\textcolor{stringliteral}{"\(\backslash\)nSolving the left sub-\/problem"}<<endl;}
+\DoxyCodeLine{814     cout<<\textcolor{stringliteral}{"left\_min\_idx: "}<<min\_x\_idx<<endl;}
+\DoxyCodeLine{815     cout<<\textcolor{stringliteral}{"left\_max\_idx: "}<<left\_pu\_max\_idx<<endl;}
+\DoxyCodeLine{816     \textcolor{keywordflow}{if}(min\_x\_idx!=left\_pu\_max\_idx)\{}
+\DoxyCodeLine{817         \textcolor{comment}{//Getting the index of probable point on left bridge}}
+\DoxyCodeLine{818         \textcolor{comment}{//bool upside=true;}}
+\DoxyCodeLine{819         left\_cand\_idx=this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a3469702d1b4f11eb2d52d8bd29a9f3a8}{get\_candidates\_idx}}(min\_x\_idx,\(\backslash\)}
+\DoxyCodeLine{820                                                 left\_pu\_max\_idx);}
+\DoxyCodeLine{821         \textcolor{comment}{//Printing the candidate indexes}}
+\DoxyCodeLine{822         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<left\_cand\_idx.size();i++)\{}
+\DoxyCodeLine{823             cout<<\textcolor{stringliteral}{"UH-\/Cand: "};}
+\DoxyCodeLine{824             this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(left\_cand\_idx[i]);}
+\DoxyCodeLine{825         \}}
+\DoxyCodeLine{826         \textcolor{comment}{//Calling this function recursively to solve left part}}
+\DoxyCodeLine{827         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a354a7cd71efe24b6750744b993ad48f5}{get\_upper\_hull}}(left\_cand\_idx,min\_x\_idx,\(\backslash\)}
+\DoxyCodeLine{828                                             left\_pu\_max\_idx);}
+\DoxyCodeLine{829     \}}
+\DoxyCodeLine{830 }
+\DoxyCodeLine{831     \textcolor{comment}{//SOLVING RIGHT SUB-\/PROBLEM}}
+\DoxyCodeLine{832     \textcolor{comment}{//Calculating the new candidates for right side}}
+\DoxyCodeLine{833     vector<int> right\_cand\_idx;}
+\DoxyCodeLine{834     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} right\_pu\_min\_idx=bridge\_point\_idx[1];}
+\DoxyCodeLine{835     cout<<\textcolor{stringliteral}{"\(\backslash\)n\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\(\backslash\)n"};}
+\DoxyCodeLine{836     cout<<\textcolor{stringliteral}{"Solving the right sub-\/problem"}<<endl;}
+\DoxyCodeLine{837     cout<<\textcolor{stringliteral}{"right\_min\_idx: "}<<right\_pu\_min\_idx<<endl;}
+\DoxyCodeLine{838     cout<<\textcolor{stringliteral}{"right\_max\_idx: "}<<max\_x\_idx<<endl;}
+\DoxyCodeLine{839     \textcolor{keywordflow}{if}(right\_pu\_min\_idx!=max\_x\_idx)\{}
+\DoxyCodeLine{840         \textcolor{comment}{//Getting the new candidates for the right side}}
+\DoxyCodeLine{841         \textcolor{comment}{//bool upside=true;}}
+\DoxyCodeLine{842         right\_cand\_idx=this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a3469702d1b4f11eb2d52d8bd29a9f3a8}{get\_candidates\_idx}}(right\_pu\_min\_idx,\(\backslash\)}
+\DoxyCodeLine{843                                                 max\_x\_idx);}
+\DoxyCodeLine{844         \textcolor{comment}{//Printing the candidate indexes}}
+\DoxyCodeLine{845         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<right\_cand\_idx.size();i++)\{}
+\DoxyCodeLine{846             cout<<\textcolor{stringliteral}{"UH-\/Cand: "};}
+\DoxyCodeLine{847             this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(right\_cand\_idx[i]);}
+\DoxyCodeLine{848         \}}
+\DoxyCodeLine{849         \textcolor{comment}{//Calling this function recursively to solve right side}}
+\DoxyCodeLine{850         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a354a7cd71efe24b6750744b993ad48f5}{get\_upper\_hull}}(right\_cand\_idx,right\_pu\_min\_idx,\(\backslash\)}
+\DoxyCodeLine{851                                             max\_x\_idx);}
+\DoxyCodeLine{852     \}}
+\DoxyCodeLine{853     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{854 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classKirkpatrick__Seidel_a27411b5aba77fbca38854e6032c2ac33}\label{classKirkpatrick__Seidel_a27411b5aba77fbca38854e6032c2ac33}} 
@@ -790,24 +855,24 @@ Definition at line 774 of file kirkpatrick\+\_\+seidel.\+cpp.
 \doxysubsubsection{\texorpdfstring{print\_pairs\_on\_hull()}{print\_pairs\_on\_hull()}}
 {\footnotesize\ttfamily void Kirkpatrick\+\_\+\+Seidel\+::print\+\_\+pairs\+\_\+on\+\_\+hull (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-D\+E\+S\+C\+R\+I\+P\+T\+I\+ON\+: This function will allow the outside world to print the pair of points on the hull.
+This function will allow the outside world to print the pair of points on the hull.
 
-Definition at line 19 of file kirkpatrick\+\_\+seidel.\+cpp.
+Definition at line 26 of file kirkpatrick\+\_\+seidel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{19                                             \{}
-\DoxyCodeLine{25     cout<<\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\(\backslash\)n"};}
-\DoxyCodeLine{26     cout<<\textcolor{stringliteral}{"Printing the pair of point on the convex hull\(\backslash\)n"};}
-\DoxyCodeLine{27     cout<<\textcolor{stringliteral}{"\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\(\backslash\)n"};}
-\DoxyCodeLine{28     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<hull\_point\_pairs.size();i++)\{}
-\DoxyCodeLine{29         pair<int,int> hull\_pair=hull\_point\_pairs[i];}
-\DoxyCodeLine{30         cout<<\textcolor{stringliteral}{"HULL PAIR:\(\backslash\)n"};}
-\DoxyCodeLine{31         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(hull\_pair.first);}
-\DoxyCodeLine{32         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(hull\_pair.second);}
-\DoxyCodeLine{33         cout<<endl;}
-\DoxyCodeLine{34     \}}
-\DoxyCodeLine{35 \}}
+\DoxyCodeLine{26                                             \{}
+\DoxyCodeLine{31     cout<<\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\(\backslash\)n"};}
+\DoxyCodeLine{32     cout<<\textcolor{stringliteral}{"Printing the pair of point on the convex hull\(\backslash\)n"};}
+\DoxyCodeLine{33     cout<<\textcolor{stringliteral}{"\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\(\backslash\)n"};}
+\DoxyCodeLine{34     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<hull\_point\_pairs.size();i++)\{}
+\DoxyCodeLine{35         pair<int,int> hull\_pair=hull\_point\_pairs[i];}
+\DoxyCodeLine{36         cout<<\textcolor{stringliteral}{"HULL PAIR:\(\backslash\)n"};}
+\DoxyCodeLine{37         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(hull\_pair.first);}
+\DoxyCodeLine{38         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(hull\_pair.second);}
+\DoxyCodeLine{39         cout<<endl;}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}\label{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}} 
@@ -816,17 +881,23 @@ Definition at line 19 of file kirkpatrick\+\_\+seidel.\+cpp.
 \doxysubsubsection{\texorpdfstring{print\_point()}{print\_point()}}
 {\footnotesize\ttfamily void Kirkpatrick\+\_\+\+Seidel\+::print\+\_\+point (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})}
 
-================================================================P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+ON ~\newline
- ================================================================ 
+This function will be used to print the points given it\textquotesingle{}s index easily without needing to access the points vector everytime in properly formatted order.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em idx} & the index of the point in the point vector\\
+\hline
+\end{DoxyParams}
+
 
 Definition at line 13 of file kirkpatrick\+\_\+seidel.\+cpp.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{13                                            \{}
-\DoxyCodeLine{14     cout<<\textcolor{stringliteral}{"idx:"}<<idx<<\textcolor{stringliteral}{" at location: "};}
-\DoxyCodeLine{15     cout<<points[idx].x<<\textcolor{stringliteral}{","}<<points[idx].y<<endl;}
-\DoxyCodeLine{16 \}}
+\DoxyCodeLine{21     cout<<\textcolor{stringliteral}{"idx:"}<<idx<<\textcolor{stringliteral}{" at location: "};}
+\DoxyCodeLine{22     cout<<points[idx].x<<\textcolor{stringliteral}{","}<<points[idx].y<<endl;}
+\DoxyCodeLine{23 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classKirkpatrick__Seidel_a87772fab208930356384e5c568ecee69}\label{classKirkpatrick__Seidel_a87772fab208930356384e5c568ecee69}} 
@@ -835,87 +906,75 @@ Definition at line 13 of file kirkpatrick\+\_\+seidel.\+cpp.
 \doxysubsubsection{\texorpdfstring{put\_a\_hull\_on\_points()}{put\_a\_hull\_on\_points()}}
 {\footnotesize\ttfamily void Kirkpatrick\+\_\+\+Seidel\+::put\+\_\+a\+\_\+hull\+\_\+on\+\_\+points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-D\+E\+S\+C\+R\+I\+P\+T\+I\+ON\+: This function is the main iterface of talking for finding the convex world from the outside world.\+Internally it will call it\textquotesingle{}s helper function to generate the convex hull and put the indexes of the points in the member variable hull\+\_\+point\+\_\+pairs U\+S\+A\+GE\+: No Arguments and Return value
+This function is the main iterface of talking for finding the convex world from the outside world.\+Internally it will call it\textquotesingle{}s helper function to generate the convex hull and put the indexes of the points in the member variable hull\+\_\+point\+\_\+pairs
 
-U\+P\+P\+ER H\+U\+LL G\+E\+N\+E\+R\+A\+T\+I\+ON ~\newline
-
-
-L\+O\+W\+ER H\+U\+LL G\+E\+N\+E\+R\+A\+T\+I\+ON ~\newline
-
-
-J\+O\+I\+N\+I\+NG U\+P\+P\+ER A\+ND L\+O\+W\+ER H\+U\+LL ~\newline
- 
-
-Definition at line 38 of file kirkpatrick\+\_\+seidel.\+cpp.
+Definition at line 44 of file kirkpatrick\+\_\+seidel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{38                                              \{}
-\DoxyCodeLine{49 }
-\DoxyCodeLine{51         \textcolor{comment}{//Generating the candidate points which could form upper hull.}}
-\DoxyCodeLine{53         cout<<\textcolor{stringliteral}{"////////////////////////////////////\(\backslash\)n"};}
-\DoxyCodeLine{54         cout<<\textcolor{stringliteral}{"Generating the UPPER-\/HULL Candidates"}<<endl;}
-\DoxyCodeLine{55         cout<<\textcolor{stringliteral}{"////////////////////////////////////\(\backslash\)n"};}
-\DoxyCodeLine{56         \textcolor{comment}{//bool upside=true;}}
-\DoxyCodeLine{57         vector<int> cand\_idx=\mbox{\hyperlink{classKirkpatrick__Seidel_a3469702d1b4f11eb2d52d8bd29a9f3a8}{get\_candidates\_idx}}(this-\/>pu\_min\_idx,\(\backslash\)}
-\DoxyCodeLine{58                                                 this-\/>pu\_max\_idx);}
-\DoxyCodeLine{59         \textcolor{comment}{//Printing the candidate indexes}}
-\DoxyCodeLine{60         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<cand\_idx.size();i++)\{}
-\DoxyCodeLine{61             cout<<\textcolor{stringliteral}{"UH-\/Cand: "};}
-\DoxyCodeLine{62             this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(cand\_idx[i]);}
-\DoxyCodeLine{63         \}}
-\DoxyCodeLine{64 }
-\DoxyCodeLine{65         \textcolor{comment}{//Now calling the upper hull creator to get upper hull}}
-\DoxyCodeLine{66         cout<<endl<<\textcolor{stringliteral}{"Calling the Upper Hull function"}<<endl;}
-\DoxyCodeLine{67         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a354a7cd71efe24b6750744b993ad48f5}{get\_upper\_hull}}(cand\_idx,this-\/>pu\_min\_idx,\(\backslash\)}
-\DoxyCodeLine{68                                         this-\/>pu\_max\_idx);}
-\DoxyCodeLine{69 }
-\DoxyCodeLine{70         \textcolor{comment}{//Printing the upper hull index}}
-\DoxyCodeLine{71         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a27411b5aba77fbca38854e6032c2ac33}{print\_pairs\_on\_hull}}();}
+\DoxyCodeLine{44                                              \{}
+\DoxyCodeLine{52         \textcolor{comment}{/*                 UPPER HULL GENERATION                    */}}
+\DoxyCodeLine{55         \textcolor{comment}{//Generating the candidate points which could form upper hull.}}
+\DoxyCodeLine{56         cout<<\textcolor{stringliteral}{"////////////////////////////////////\(\backslash\)n"};}
+\DoxyCodeLine{57         cout<<\textcolor{stringliteral}{"Generating the UPPER-\/HULL Candidates"}<<endl;}
+\DoxyCodeLine{58         cout<<\textcolor{stringliteral}{"////////////////////////////////////\(\backslash\)n"};}
+\DoxyCodeLine{59         \textcolor{comment}{//bool upside=true;}}
+\DoxyCodeLine{60         vector<int> cand\_idx=\mbox{\hyperlink{classKirkpatrick__Seidel_a3469702d1b4f11eb2d52d8bd29a9f3a8}{get\_candidates\_idx}}(this-\/>pu\_min\_idx,\(\backslash\)}
+\DoxyCodeLine{61                                                 this-\/>pu\_max\_idx);}
+\DoxyCodeLine{62         \textcolor{comment}{//Printing the candidate indexes}}
+\DoxyCodeLine{63         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<cand\_idx.size();i++)\{}
+\DoxyCodeLine{64             cout<<\textcolor{stringliteral}{"UH-\/Cand: "};}
+\DoxyCodeLine{65             this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(cand\_idx[i]);}
+\DoxyCodeLine{66         \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         \textcolor{comment}{//Now calling the upper hull creator to get upper hull}}
+\DoxyCodeLine{69         cout<<endl<<\textcolor{stringliteral}{"Calling the Upper Hull function"}<<endl;}
+\DoxyCodeLine{70         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a354a7cd71efe24b6750744b993ad48f5}{get\_upper\_hull}}(cand\_idx,this-\/>pu\_min\_idx,\(\backslash\)}
+\DoxyCodeLine{71                                         this-\/>pu\_max\_idx);}
 \DoxyCodeLine{72 }
-\DoxyCodeLine{74 }
-\DoxyCodeLine{75         \textcolor{comment}{//generate the candidates for the lower hull}}
-\DoxyCodeLine{77         cout<<endl<<endl;}
-\DoxyCodeLine{78         cout<<\textcolor{stringliteral}{"////////////////////////////////////\(\backslash\)n"};}
-\DoxyCodeLine{79         cout<<\textcolor{stringliteral}{"Generating the LOWER-\/HULL candidates"}<<endl;}
-\DoxyCodeLine{80         cout<<\textcolor{stringliteral}{"////////////////////////////////////\(\backslash\)n"};}
-\DoxyCodeLine{81 }
-\DoxyCodeLine{82         \textcolor{comment}{//Now we will hack our system to generate use model}}
-\DoxyCodeLine{83         \textcolor{comment}{//lower hull probelm to upper hull problem.}}
-\DoxyCodeLine{84         cout<<\textcolor{stringliteral}{"Hacking the lower hull as upper hull\(\backslash\)n"};}
-\DoxyCodeLine{85         \mbox{\hyperlink{classKirkpatrick__Seidel_a766a0a811f34a933a6c53125df5ee1d7}{transform\_lowers\_to\_upper}}();}
-\DoxyCodeLine{86 }
-\DoxyCodeLine{87         \textcolor{comment}{//Resetting our upside flag to represent we want lower hull cand}}
-\DoxyCodeLine{88         \textcolor{comment}{//upside=false;}}
-\DoxyCodeLine{89         cand\_idx.clear();}
-\DoxyCodeLine{90         cand\_idx=\mbox{\hyperlink{classKirkpatrick__Seidel_a3469702d1b4f11eb2d52d8bd29a9f3a8}{get\_candidates\_idx}}(this-\/>pl\_min\_idx,this-\/>pl\_max\_idx);}
-\DoxyCodeLine{91         \textcolor{comment}{//Printing the index of candidate}}
-\DoxyCodeLine{92         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<cand\_idx.size();i++)\{}
-\DoxyCodeLine{93             cout<<\textcolor{stringliteral}{"LH-\/Cand: "};}
-\DoxyCodeLine{94             this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(cand\_idx[i]);}
-\DoxyCodeLine{95         \}}
-\DoxyCodeLine{96 }
-\DoxyCodeLine{97         \textcolor{comment}{//Calling the upper hull function on this hacked points}}
-\DoxyCodeLine{98         cout<<\textcolor{stringliteral}{"Calling the upper hull function on hacked points"}<<endl;}
-\DoxyCodeLine{99         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a354a7cd71efe24b6750744b993ad48f5}{get\_upper\_hull}}(cand\_idx,}
-\DoxyCodeLine{100                                 this-\/>pl\_min\_idx,}
-\DoxyCodeLine{101                                 this-\/>pl\_max\_idx);}
-\DoxyCodeLine{102 }
-\DoxyCodeLine{103         \textcolor{comment}{//Correcting the hacking done in the points (calling same func)}}
-\DoxyCodeLine{104         \mbox{\hyperlink{classKirkpatrick__Seidel_a766a0a811f34a933a6c53125df5ee1d7}{transform\_lowers\_to\_upper}}();}
+\DoxyCodeLine{73         \textcolor{comment}{//Printing the upper hull index}}
+\DoxyCodeLine{74         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a27411b5aba77fbca38854e6032c2ac33}{print\_pairs\_on\_hull}}();}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{77         \textcolor{comment}{/*              LOWER HULL GENERATION                       */}}
+\DoxyCodeLine{79         \textcolor{comment}{//generate the candidates for the lower hull}}
+\DoxyCodeLine{80         cout<<endl<<endl;}
+\DoxyCodeLine{81         cout<<\textcolor{stringliteral}{"////////////////////////////////////\(\backslash\)n"};}
+\DoxyCodeLine{82         cout<<\textcolor{stringliteral}{"Generating the LOWER-\/HULL candidates"}<<endl;}
+\DoxyCodeLine{83         cout<<\textcolor{stringliteral}{"////////////////////////////////////\(\backslash\)n"};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         \textcolor{comment}{//Now we will hack our system to generate use model}}
+\DoxyCodeLine{86         \textcolor{comment}{//lower hull probelm to upper hull problem.}}
+\DoxyCodeLine{87         cout<<\textcolor{stringliteral}{"Hacking the lower hull as upper hull\(\backslash\)n"};}
+\DoxyCodeLine{88         \mbox{\hyperlink{classKirkpatrick__Seidel_a766a0a811f34a933a6c53125df5ee1d7}{transform\_lowers\_to\_upper}}();}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90         \textcolor{comment}{//Resetting our upside flag to represent we want lower hull cand}}
+\DoxyCodeLine{91         \textcolor{comment}{//upside=false;}}
+\DoxyCodeLine{92         cand\_idx.clear();}
+\DoxyCodeLine{93         cand\_idx=\mbox{\hyperlink{classKirkpatrick__Seidel_a3469702d1b4f11eb2d52d8bd29a9f3a8}{get\_candidates\_idx}}(this-\/>pl\_min\_idx,this-\/>pl\_max\_idx);}
+\DoxyCodeLine{94         \textcolor{comment}{//Printing the index of candidate}}
+\DoxyCodeLine{95         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<cand\_idx.size();i++)\{}
+\DoxyCodeLine{96             cout<<\textcolor{stringliteral}{"LH-\/Cand: "};}
+\DoxyCodeLine{97             this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(cand\_idx[i]);}
+\DoxyCodeLine{98         \}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100         \textcolor{comment}{//Calling the upper hull function on this hacked points}}
+\DoxyCodeLine{101         cout<<\textcolor{stringliteral}{"Calling the upper hull function on hacked points"}<<endl;}
+\DoxyCodeLine{102         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a354a7cd71efe24b6750744b993ad48f5}{get\_upper\_hull}}(cand\_idx,}
+\DoxyCodeLine{103                                 this-\/>pl\_min\_idx,}
+\DoxyCodeLine{104                                 this-\/>pl\_max\_idx);}
 \DoxyCodeLine{105 }
-\DoxyCodeLine{107 }
-\DoxyCodeLine{108         \textcolor{comment}{//Adding the pl and pu points to the hull also if they are diff}}
-\DoxyCodeLine{110         \textcolor{comment}{//Joining the left side of upper hull to lower hull.}}
-\DoxyCodeLine{111         \textcolor{keywordflow}{if}(this-\/>pu\_min\_idx!=this-\/>pl\_min\_idx)\{}
-\DoxyCodeLine{112             \textcolor{comment}{//Making a pair of point to join the upper hull to lower}}
-\DoxyCodeLine{113             pair<int,int> hull\_pair;}
-\DoxyCodeLine{114             hull\_pair=make\_pair(this-\/>pl\_min\_idx,this-\/>pu\_min\_idx);}
-\DoxyCodeLine{115             \textcolor{comment}{//Adding this pair to the hull pair vector}}
-\DoxyCodeLine{116             this-\/>hull\_point\_pairs.push\_back(hull\_pair);}
-\DoxyCodeLine{117 }
-\DoxyCodeLine{118             \textcolor{comment}{//Drawing the connecting bridge}}
-\DoxyCodeLine{119             \textcolor{comment}{//this-\/>draw\_bridge(this-\/>pl\_min\_idx,this-\/>pu\_min\_idx);}}
+\DoxyCodeLine{106         \textcolor{comment}{//Correcting the hacking done in the points (calling same func)}}
+\DoxyCodeLine{107         \mbox{\hyperlink{classKirkpatrick__Seidel_a766a0a811f34a933a6c53125df5ee1d7}{transform\_lowers\_to\_upper}}();}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{110         \textcolor{comment}{/*            JOINING UPPER AND LOWER HULL                */}}
+\DoxyCodeLine{112         \textcolor{comment}{//Adding the pl and pu points to the hull also if they are diff}}
+\DoxyCodeLine{113         \textcolor{comment}{//Joining the left side of upper hull to lower hull.}}
+\DoxyCodeLine{114         \textcolor{keywordflow}{if}(this-\/>pu\_min\_idx!=this-\/>pl\_min\_idx)\{}
+\DoxyCodeLine{115             \textcolor{comment}{//Making a pair of point to join the upper hull to lower}}
+\DoxyCodeLine{116             pair<int,int> hull\_pair;}
+\DoxyCodeLine{117             hull\_pair=make\_pair(this-\/>pl\_min\_idx,this-\/>pu\_min\_idx);}
+\DoxyCodeLine{118             \textcolor{comment}{//Adding this pair to the hull pair vector}}
+\DoxyCodeLine{119             this-\/>hull\_point\_pairs.push\_back(hull\_pair);}
 \DoxyCodeLine{120         \}}
 \DoxyCodeLine{121         \textcolor{comment}{//Sewing the right side of upper hull to lower hull}}
 \DoxyCodeLine{122         \textcolor{keywordflow}{if}(this-\/>pu\_max\_idx!=this-\/>pl\_max\_idx)\{}
@@ -924,17 +983,14 @@ Definition at line 38 of file kirkpatrick\+\_\+seidel.\+cpp.
 \DoxyCodeLine{125             hull\_pair=make\_pair(this-\/>pl\_max\_idx,this-\/>pu\_max\_idx);}
 \DoxyCodeLine{126             \textcolor{comment}{//Adding this pair to upper hull}}
 \DoxyCodeLine{127             this-\/>hull\_point\_pairs.push\_back(hull\_pair);}
-\DoxyCodeLine{128 }
-\DoxyCodeLine{129             \textcolor{comment}{//Drawing the connecting bridge}}
-\DoxyCodeLine{130             \textcolor{comment}{//this-\/>draw\_bridge(this-\/>pl\_min\_idx,this-\/>pu\_min\_idx);}}
-\DoxyCodeLine{131         \}}
+\DoxyCodeLine{128         \}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130         \textcolor{comment}{//Finally printing all the pair of points on hull}}
+\DoxyCodeLine{131         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a27411b5aba77fbca38854e6032c2ac33}{print\_pairs\_on\_hull}}();}
 \DoxyCodeLine{132 }
-\DoxyCodeLine{133         \textcolor{comment}{//Finally printing all the pair of points on hull}}
-\DoxyCodeLine{134         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a27411b5aba77fbca38854e6032c2ac33}{print\_pairs\_on\_hull}}();}
-\DoxyCodeLine{135 }
-\DoxyCodeLine{136         \textcolor{comment}{//Drwaing the bridge}}
-\DoxyCodeLine{137         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a3580c52f1f0cf27589ce8fa39f7af669}{draw\_bridge}}();}
-\DoxyCodeLine{138     \}}
+\DoxyCodeLine{133         \textcolor{comment}{//Drwaing the bridge on the gui}}
+\DoxyCodeLine{134         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a3580c52f1f0cf27589ce8fa39f7af669}{draw\_bridge}}();}
+\DoxyCodeLine{135     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classKirkpatrick__Seidel_a766a0a811f34a933a6c53125df5ee1d7}\label{classKirkpatrick__Seidel_a766a0a811f34a933a6c53125df5ee1d7}} 
@@ -943,25 +999,24 @@ Definition at line 38 of file kirkpatrick\+\_\+seidel.\+cpp.
 \doxysubsubsection{\texorpdfstring{transform\_lowers\_to\_upper()}{transform\_lowers\_to\_upper()}}
 {\footnotesize\ttfamily void Kirkpatrick\+\_\+\+Seidel\+::transform\+\_\+lowers\+\_\+to\+\_\+upper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-L\+O\+W\+ER H\+U\+LL R\+E\+L\+A\+T\+ED F\+U\+N\+C\+T\+I\+ON ~\newline
- D\+E\+S\+C\+R\+I\+P\+T\+I\+ON\+: This function will reflect the points on the lower side of convex hull above the pl\+\_\+min and pl\+\_\+max line, and then solve the problem using upper convex hull.
+This function will reflect the points on the lower side of convex hull above the pl\+\_\+min and pl\+\_\+max line, and then solve the problem using upper convex hull.
 
 But in the process we will modify the index of actual point coordinate so we will temporatrily keep a correct copy of points and correct it later.
 
-Definition at line 872 of file kirkpatrick\+\_\+seidel.\+cpp.
+Definition at line 861 of file kirkpatrick\+\_\+seidel.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{872                                                   \{}
-\DoxyCodeLine{883     \textcolor{comment}{//Now we have to reflect the coordinate of candidates about}}
-\DoxyCodeLine{884     \textcolor{comment}{//the pl\_min and pl\_max line. It's enough to reflect around}}
-\DoxyCodeLine{885     \textcolor{comment}{//x-\/axis.}}
-\DoxyCodeLine{886     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<points.size();i++)\{}
-\DoxyCodeLine{887         \textcolor{comment}{//Reflecting the candidate points about x-\/axis}}
-\DoxyCodeLine{888         points[i].y=(-\/1*points[i].y);}
-\DoxyCodeLine{889         \textcolor{comment}{//There are no chages in the x-\/coordinate of the cand}}
-\DoxyCodeLine{890     \}}
-\DoxyCodeLine{891 \}}
+\DoxyCodeLine{861                                                   \{}
+\DoxyCodeLine{871     \textcolor{comment}{//Now we have to reflect the coordinate of candidates about}}
+\DoxyCodeLine{872     \textcolor{comment}{//the pl\_min and pl\_max line. It's enough to reflect around}}
+\DoxyCodeLine{873     \textcolor{comment}{//x-\/axis.}}
+\DoxyCodeLine{874     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<points.size();i++)\{}
+\DoxyCodeLine{875         \textcolor{comment}{//Reflecting the candidate points about x-\/axis}}
+\DoxyCodeLine{876         points[i].y=(-\/1*points[i].y);}
+\DoxyCodeLine{877         \textcolor{comment}{//There are no chages in the x-\/coordinate of the cand}}
+\DoxyCodeLine{878     \}}
+\DoxyCodeLine{879 \}}
 
 \end{DoxyCode}
 

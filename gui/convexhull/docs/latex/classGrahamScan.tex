@@ -55,7 +55,7 @@ Definition at line 71 of file Graham\+Scan.\+h.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{71                                                       \{}
-\DoxyCodeLine{72       }
+\DoxyCodeLine{72 }
 \DoxyCodeLine{73       \textcolor{comment}{// Type cast from void to point*}}
 \DoxyCodeLine{74       \mbox{\hyperlink{structpoint}{point}} *p1 = ( \mbox{\hyperlink{structpoint}{point}}* )v1;}
 \DoxyCodeLine{75       \mbox{\hyperlink{structpoint}{point}} *p2 = ( \mbox{\hyperlink{structpoint}{point}}* )v2;}
@@ -71,7 +71,7 @@ Definition at line 71 of file Graham\+Scan.\+h.
 \DoxyCodeLine{85         \textcolor{keywordflow}{return} 1;}
 \DoxyCodeLine{86       \} \textcolor{keywordflow}{else} \{}
 \DoxyCodeLine{87         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{88       \} }
+\DoxyCodeLine{88       \}}
 \DoxyCodeLine{89     \}}
 
 \end{DoxyCode}
@@ -115,7 +115,7 @@ Definition at line 24 of file Graham\+Scan.\+h.
 \DoxyCodeLine{24                                                          \{}
 \DoxyCodeLine{25       \textcolor{keywordtype}{double} ymin = points[0].y, min = 0;}
 \DoxyCodeLine{26       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 1; i < points.size(); i++)}
-\DoxyCodeLine{27       \{ }
+\DoxyCodeLine{27       \{}
 \DoxyCodeLine{28         \textcolor{keywordtype}{double} y = points[i].y;}
 \DoxyCodeLine{29         \textcolor{keywordflow}{if} ((y < ymin) || (ymin == y \&\& points[i].x < points[min].x))\{}
 \DoxyCodeLine{30           ymin = points[i].y;}
@@ -155,9 +155,9 @@ Definition at line 95 of file Graham\+Scan.\+h.
 \DoxyCodeLine{103 }
 \DoxyCodeLine{104       \textcolor{comment}{// for(size\_t i = 0; i < points.size(); i++)}}
 \DoxyCodeLine{105       \textcolor{comment}{// \{}}
-\DoxyCodeLine{106       \textcolor{comment}{//   cout << points[i].x << " " << points[i].y << endl;  }}
+\DoxyCodeLine{106       \textcolor{comment}{//   cout << points[i].x << " " << points[i].y << endl;}}
 \DoxyCodeLine{107       \textcolor{comment}{// \}}}
-\DoxyCodeLine{108       }
+\DoxyCodeLine{108 }
 \DoxyCodeLine{109     \}}
 
 \end{DoxyCode}
@@ -181,7 +181,7 @@ Definition at line 123 of file Graham\+Scan.\+h.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{123                                                             \{}
-\DoxyCodeLine{124       }
+\DoxyCodeLine{124 }
 \DoxyCodeLine{125       \mbox{\hyperlink{classGrahamScan_a3d6c2b8a83af6e55436bf260e7ea8a98}{findReferencePointAndSwap}}(points);}
 \DoxyCodeLine{126       \textcolor{comment}{// sort the points according to the polar angle with respect to the center}}
 \DoxyCodeLine{127       \textcolor{comment}{// and line parallel to x-\/axis.}}
@@ -216,7 +216,7 @@ Definition at line 123 of file Graham\+Scan.\+h.
 \DoxyCodeLine{156        hullPoints.push\_back(hullPoints[0]);}
 \DoxyCodeLine{157        w-\/>clearLines();}
 \DoxyCodeLine{158        w-\/>drawLines(hullPoints);}
-\DoxyCodeLine{159       }
+\DoxyCodeLine{159 }
 \DoxyCodeLine{160 }
 \DoxyCodeLine{161 \textcolor{comment}{//      convexHull.getPoints();}}
 \DoxyCodeLine{162 }
