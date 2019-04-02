@@ -24,5 +24,6 @@ var searchData=
   ['cscandlestick',['csCandlestick',['../classQCPFinancial.html#a0f800e21ee98d646dfc6f8f89d10ebfbac803cbd39f26e3f206bcc7028679e62f',1,'QCPFinancial']]],
   ['csohlc',['csOhlc',['../classQCPFinancial.html#a0f800e21ee98d646dfc6f8f89d10ebfba3a516016c9298d3e95dd82aa203c4390',1,'QCPFinancial']]],
   ['currentlayer',['currentLayer',['../classQCustomPlot.html#a0421d647f420b0b4c57aec1708857af5',1,'QCustomPlot']]],
-  ['customstack',['customStack',['../classcustomStack.html',1,'']]]
+  ['customstack',['customStack',['../classcustomStack.html',1,'']]],
+  ['convex_2dhull_2dalgorithms',['Convex-Hull-algorithms',['../index.html',1,'']]]
 ];
