@@ -14,6 +14,7 @@ var searchData=
   ['topright',['topRight',['../classQCPAxisRect.html#a7aa221967549ba71b98c465bf8234758',1,'QCPAxisRect']]],
   ['toqcpitemposition',['toQCPItemPosition',['../classQCPItemAnchor.html#ac54b20120669950255a63587193dbb86',1,'QCPItemAnchor::toQCPItemPosition()'],['../classQCPItemPosition.html#a577a7efc601df85a20b3e709d1ac320e',1,'QCPItemPosition::toQCPItemPosition()']]],
   ['tracerstyle',['TracerStyle',['../classQCPItemTracer.html#a2f05ddb13978036f902ca3ab47076500',1,'QCPItemTracer']]],
+  ['transform_5flowers_5fto_5fupper',['transform_lowers_to_upper',['../classKirkpatrick__Seidel.html#a766a0a811f34a933a6c53125df5ee1d7',1,'Kirkpatrick_Seidel']]],
   ['tscircle',['tsCircle',['../classQCPItemTracer.html#a2f05ddb13978036f902ca3ab47076500ae2252c28f4842880d71e9f94e69de94e',1,'QCPItemTracer']]],
   ['tscrosshair',['tsCrosshair',['../classQCPItemTracer.html#a2f05ddb13978036f902ca3ab47076500af562ec81ac3ba99e26ef8540cf1ec16f',1,'QCPItemTracer']]],
   ['tsnone',['tsNone',['../classQCPItemTracer.html#a2f05ddb13978036f902ca3ab47076500aac27462c79146225bfa8fba24d2ee8a4',1,'QCPItemTracer']]],

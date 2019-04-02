@@ -27,6 +27,7 @@ var searchData=
   ['anchors',['anchors',['../classQCPAbstractItem.html#a81d1ecfea3368b836cf9675a0045e659',1,'QCPAbstractItem']]],
   ['antialiasedelement',['AntialiasedElement',['../namespaceQCP.html#ae55dbe315d41fe80f29ba88100843a0c',1,'QCP']]],
   ['append',['append',['../classQCPBarsGroup.html#a809ed63cc4ff7cd5b0b8c96b470163d3',1,'QCPBarsGroup']]],
+  ['append_5fbridge_5fpoint_5fto_5fhull',['append_bridge_point_to_hull',['../classKirkpatrick__Seidel.html#ad4364483a9ba0f48498d010ff7b16590',1,'Kirkpatrick_Seidel']]],
   ['applyto',['applyTo',['../classQCPScatterStyle.html#afd8044ece445300499ca0dc164821e0f',1,'QCPScatterStyle']]],
   ['atbottom',['atBottom',['../classQCPAxis.html#ae2bcc1728b382f10f064612b368bc18aa220d68888516b6c3b493d144f1ba438f',1,'QCPAxis']]],
   ['atleft',['atLeft',['../classQCPAxis.html#ae2bcc1728b382f10f064612b368bc18aaf84aa6cac6fb6099f54a2cbf7546b730',1,'QCPAxis']]],

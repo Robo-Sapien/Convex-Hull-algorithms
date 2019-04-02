@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['calculate_5fp2p_5fslope',['calculate_p2p_slope',['../classKirkpatrick__Seidel.html#a180f5fcebe4744b99ee618066b819764',1,'Kirkpatrick_Seidel']]],
   ['celltocoord',['cellToCoord',['../classQCPColorMapData.html#af1a36385c78ab624cd617065602408b6',1,'QCPColorMapData']]],
   ['center',['center',['../classQCPRange.html#af57d4a37a45d0101177ca30fae5d4ca8',1,'QCPRange::center()'],['../classQCPAxisRect.html#ade3aef874bafcec6dd16174fba44c0b1',1,'QCPAxisRect::center()']]],
   ['children',['children',['../classQCPLayer.html#a183b90941fc78f0b136edd77c5fb6966',1,'QCPLayer']]],
@@ -12,6 +13,7 @@ var searchData=
   ['colorize',['colorize',['../classQCPColorGradient.html#aaf423ceb943e177b0ed2c48c811d83dc',1,'QCPColorGradient']]],
   ['colormaps',['colorMaps',['../classQCPColorScale.html#a556adc6b0216ebc1cc4317c541956d06',1,'QCPColorScale']]],
   ['columncount',['columnCount',['../classQCPLayoutGrid.html#a1a2962cbf45011405b64b913afa8e7a2',1,'QCPLayoutGrid']]],
+  ['compare',['compare',['../classGrahamScan.html#a3a31f419e9e05d12c9b5b26ae97ee37d',1,'GrahamScan']]],
   ['contains',['contains',['../classQCPRange.html#ae9842b48b6d38dc5e9607358e3083cc8',1,'QCPRange::contains()'],['../classQCPBarsGroup.html#ae26da07a23553052a178fb3fae90d0dc',1,'QCPBarsGroup::contains()']]],
   ['coordtocell',['coordToCell',['../classQCPColorMapData.html#aca5b29e0ca2f299c9060fc6e1f74d0c8',1,'QCPColorMapData']]],
   ['coordtopixel',['coordToPixel',['../classQCPAxis.html#af15d1b3a7f7e9b53d759d3ccff1fe4b4',1,'QCPAxis']]],

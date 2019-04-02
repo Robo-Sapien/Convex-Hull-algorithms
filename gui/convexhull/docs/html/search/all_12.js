@@ -268,5 +268,6 @@ var searchData=
   ['staxisrectratio',['stAxisRectRatio',['../classQCPBarsGroup.html#a4c0521120a97e60bbca37677a37075b6ae94b05c27bc985dcdd8b1e1b7f163d26',1,'QCPBarsGroup']]],
   ['stlinear',['stLinear',['../classQCPAxis.html#a36d8e8658dbaa179bf2aeb973db2d6f0aff6e30a11a828bc850caffab0ff994f6',1,'QCPAxis']]],
   ['stlogarithmic',['stLogarithmic',['../classQCPAxis.html#a36d8e8658dbaa179bf2aeb973db2d6f0abf5b785ad976618816dc6f79b73216d4',1,'QCPAxis']]],
-  ['stplotcoords',['stPlotCoords',['../classQCPBarsGroup.html#a4c0521120a97e60bbca37677a37075b6ad369cee6287e0a86e8c2b643a3168c54',1,'QCPBarsGroup']]]
+  ['stplotcoords',['stPlotCoords',['../classQCPBarsGroup.html#a4c0521120a97e60bbca37677a37075b6ad369cee6287e0a86e8c2b643a3168c54',1,'QCPBarsGroup']]],
+  ['swap_5felements',['swap_elements',['../classHeap.html#a03306d60e535986b3d5f698e9cf09e72',1,'Heap']]]
 ];

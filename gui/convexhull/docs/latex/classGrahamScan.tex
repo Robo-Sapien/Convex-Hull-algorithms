@@ -14,6 +14,23 @@ Inheritance diagram for Graham\+Scan\+:\begin{figure}[H]
 \item 
 void \mbox{\hyperlink{classGrahamScan_a8e42e789ad6ff1737f5c2d85def028e2}{run\+Graham\+Scan}} (vector$<$ \mbox{\hyperlink{structpoint}{point}} $>$ \&points, \mbox{\hyperlink{classMainWindow}{Main\+Window}} $\ast$w)
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGrahamScan_a3d6c2b8a83af6e55436bf260e7ea8a98}{find\+Reference\+Point\+And\+Swap}} (vector$<$ \mbox{\hyperlink{structpoint}{point}} $>$ \&points)
+\item 
+void \mbox{\hyperlink{classGrahamScan_aa1eea84fdd67aaed6be306f8f24bfa7d}{remove\+Collinear\+Points}} (vector$<$ \mbox{\hyperlink{structpoint}{point}} $>$ \&points)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGrahamScan_a5fc674b5ec43d6819860d571ef46901f}\label{classGrahamScan_a5fc674b5ec43d6819860d571ef46901f}} 
+static double {\bfseries distance\+Sq} (\mbox{\hyperlink{structpoint}{point}} p1, \mbox{\hyperlink{structpoint}{point}} p2)
+\item 
+static int \mbox{\hyperlink{classGrahamScan_a228b6d9784f514280c8a84d3a7fffa11}{find\+Orientation}} (\mbox{\hyperlink{structpoint}{point}} a, \mbox{\hyperlink{structpoint}{point}} b, \mbox{\hyperlink{structpoint}{point}} c)
+\item 
+static int \mbox{\hyperlink{classGrahamScan_a3a31f419e9e05d12c9b5b26ae97ee37d}{compare}} (const void $\ast$v1, const void $\ast$v2)
+\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -25,59 +42,185 @@ Definition at line 19 of file Graham\+Scan.\+h.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGrahamScan_a3a31f419e9e05d12c9b5b26ae97ee37d}\label{classGrahamScan_a3a31f419e9e05d12c9b5b26ae97ee37d}} 
+\index{GrahamScan@{GrahamScan}!compare@{compare}}
+\index{compare@{compare}!GrahamScan@{GrahamScan}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily static int Graham\+Scan\+::compare (\begin{DoxyParamCaption}\item[{const void $\ast$}]{v1,  }\item[{const void $\ast$}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+custom caomparison function for sorting the points according to the polar angle. returns -\/1 if v1 $<$ v2, and 1 if v1 $>$ v2 
+
+Definition at line 71 of file Graham\+Scan.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71                                                       \{}
+\DoxyCodeLine{72       }
+\DoxyCodeLine{73       \textcolor{comment}{// Type cast from void to point*}}
+\DoxyCodeLine{74       \mbox{\hyperlink{structpoint}{point}} *p1 = ( \mbox{\hyperlink{structpoint}{point}}* )v1;}
+\DoxyCodeLine{75       \mbox{\hyperlink{structpoint}{point}} *p2 = ( \mbox{\hyperlink{structpoint}{point}}* )v2;}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77       \textcolor{keywordtype}{int} orientation = \mbox{\hyperlink{classGrahamScan_a228b6d9784f514280c8a84d3a7fffa11}{findOrientation}}( referencePoint, *p1, *p2 );}
+\DoxyCodeLine{78       \textcolor{keywordflow}{if} ( orientation == 0 ) \{}
+\DoxyCodeLine{79         \textcolor{keywordflow}{if}( distanceSq( referencePoint, *p2 ) >= distanceSq( referencePoint, *p1) )\{}
+\DoxyCodeLine{80           \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{81         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{82           \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{83         \}}
+\DoxyCodeLine{84       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( orientation == 1 ) \{}
+\DoxyCodeLine{85         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{86       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{87         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{88       \} }
+\DoxyCodeLine{89     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGrahamScan_a228b6d9784f514280c8a84d3a7fffa11}\label{classGrahamScan_a228b6d9784f514280c8a84d3a7fffa11}} 
+\index{GrahamScan@{GrahamScan}!findOrientation@{findOrientation}}
+\index{findOrientation@{findOrientation}!GrahamScan@{GrahamScan}}
+\doxysubsubsection{\texorpdfstring{findOrientation()}{findOrientation()}}
+{\footnotesize\ttfamily static int Graham\+Scan\+::find\+Orientation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpoint}{point}}}]{a,  }\item[{\mbox{\hyperlink{structpoint}{point}}}]{b,  }\item[{\mbox{\hyperlink{structpoint}{point}}}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+Find the orientation of th 2 points with respect to the center it returns 0 if they are collinear, 1 if they are clockwise (angle p1 is greater than p2) and 2 if they are anti-\/clockwise (angle p2 is greater than p1) 
+
+Definition at line 55 of file Graham\+Scan.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{55                                                          \{}
+\DoxyCodeLine{56       \textcolor{keywordtype}{double} o = (b.y -\/ a.y) * (c.x -\/ b.x) -\/ (b.x -\/ a.x) * (c.y -\/ b.y);}
+\DoxyCodeLine{57       \textcolor{keywordflow}{if}(o == 0)\{}
+\DoxyCodeLine{58         \textcolor{keywordflow}{return} 0; \textcolor{comment}{// collinear}}
+\DoxyCodeLine{59       \}}
+\DoxyCodeLine{60       \textcolor{keywordflow}{if}(o < 0)\{}
+\DoxyCodeLine{61         \textcolor{keywordflow}{return} 2; \textcolor{comment}{// counter-\/clockwise}}
+\DoxyCodeLine{62       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{63         \textcolor{keywordflow}{return} 1; \textcolor{comment}{// clockwise}}
+\DoxyCodeLine{64       \}}
+\DoxyCodeLine{65     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGrahamScan_a3d6c2b8a83af6e55436bf260e7ea8a98}\label{classGrahamScan_a3d6c2b8a83af6e55436bf260e7ea8a98}} 
+\index{GrahamScan@{GrahamScan}!findReferencePointAndSwap@{findReferencePointAndSwap}}
+\index{findReferencePointAndSwap@{findReferencePointAndSwap}!GrahamScan@{GrahamScan}}
+\doxysubsubsection{\texorpdfstring{findReferencePointAndSwap()}{findReferencePointAndSwap()}}
+{\footnotesize\ttfamily void Graham\+Scan\+::find\+Reference\+Point\+And\+Swap (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structpoint}{point}} $>$ \&}]{points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Find the reference point (bottommost leftmost point) 
+
+Definition at line 24 of file Graham\+Scan.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24                                                          \{}
+\DoxyCodeLine{25       \textcolor{keywordtype}{double} ymin = points[0].y, min = 0;}
+\DoxyCodeLine{26       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 1; i < points.size(); i++)}
+\DoxyCodeLine{27       \{ }
+\DoxyCodeLine{28         \textcolor{keywordtype}{double} y = points[i].y;}
+\DoxyCodeLine{29         \textcolor{keywordflow}{if} ((y < ymin) || (ymin == y \&\& points[i].x < points[min].x))\{}
+\DoxyCodeLine{30           ymin = points[i].y;}
+\DoxyCodeLine{31           min = i;}
+\DoxyCodeLine{32         \}}
+\DoxyCodeLine{33       \}}
+\DoxyCodeLine{34       \textcolor{comment}{// Place the bottom-\/most point at first position}}
+\DoxyCodeLine{35       \mbox{\hyperlink{structpoint}{point}} temp = points[0];}
+\DoxyCodeLine{36       points[0] = points[min];}
+\DoxyCodeLine{37       points[min] = temp;}
+\DoxyCodeLine{38       referencePoint = points[0];}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40       \textcolor{keywordflow}{return};}
+\DoxyCodeLine{41     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGrahamScan_aa1eea84fdd67aaed6be306f8f24bfa7d}\label{classGrahamScan_aa1eea84fdd67aaed6be306f8f24bfa7d}} 
+\index{GrahamScan@{GrahamScan}!removeCollinearPoints@{removeCollinearPoints}}
+\index{removeCollinearPoints@{removeCollinearPoints}!GrahamScan@{GrahamScan}}
+\doxysubsubsection{\texorpdfstring{removeCollinearPoints()}{removeCollinearPoints()}}
+{\footnotesize\ttfamily void Graham\+Scan\+::remove\+Collinear\+Points (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structpoint}{point}} $>$ \&}]{points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+If two points mak the same polar angle with the eference point, remove the one with the smaller distance from reference point 
+
+Definition at line 95 of file Graham\+Scan.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{95                                                      \{}
+\DoxyCodeLine{96       \textcolor{keywordflow}{for}(vector<point>::iterator i = (points.begin()+1); i != points.end(); ++i)}
+\DoxyCodeLine{97       \{}
+\DoxyCodeLine{98         \textcolor{keywordflow}{while} (i+1 != points.end() \&\& \mbox{\hyperlink{classGrahamScan_a228b6d9784f514280c8a84d3a7fffa11}{findOrientation}}(referencePoint, *i, *(i+1)) == 0)\{}
+\DoxyCodeLine{99           points.erase(i);}
+\DoxyCodeLine{100           i++;}
+\DoxyCodeLine{101         \}}
+\DoxyCodeLine{102       \}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104       \textcolor{comment}{// for(size\_t i = 0; i < points.size(); i++)}}
+\DoxyCodeLine{105       \textcolor{comment}{// \{}}
+\DoxyCodeLine{106       \textcolor{comment}{//   cout << points[i].x << " " << points[i].y << endl;  }}
+\DoxyCodeLine{107       \textcolor{comment}{// \}}}
+\DoxyCodeLine{108       }
+\DoxyCodeLine{109     \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classGrahamScan_a8e42e789ad6ff1737f5c2d85def028e2}\label{classGrahamScan_a8e42e789ad6ff1737f5c2d85def028e2}} 
 \index{GrahamScan@{GrahamScan}!runGrahamScan@{runGrahamScan}}
 \index{runGrahamScan@{runGrahamScan}!GrahamScan@{GrahamScan}}
 \doxysubsubsection{\texorpdfstring{runGrahamScan()}{runGrahamScan()}}
 {\footnotesize\ttfamily void Graham\+Scan\+::run\+Graham\+Scan (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structpoint}{point}} $>$ \&}]{points,  }\item[{\mbox{\hyperlink{classMainWindow}{Main\+Window}} $\ast$}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-runs the graham\textquotesingle{}s scan algorithm on the vector of points and displays the convexhull in the G\+UI. 
+Runs the graham\textquotesingle{}s scan algorithm on the vector of points and displays the convexhull in the G\+UI. 
+\begin{DoxyParams}{Parameters}
+{\em points} & vector of points \\
+\hline
+{\em w} & \mbox{\hyperlink{classMainWindow}{Main\+Window}} object pointer \\
+\hline
+\end{DoxyParams}
 
-Definition at line 121 of file Graham\+Scan.\+h.
+
+Definition at line 123 of file Graham\+Scan.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{121                                                             \{}
-\DoxyCodeLine{122       }
-\DoxyCodeLine{123       findReferencePointAndSwap(points);}
-\DoxyCodeLine{124       \textcolor{comment}{// sort the points according to the polar angle with respect to the center}}
-\DoxyCodeLine{125       \textcolor{comment}{// and line parallel to x-\/axis.}}
-\DoxyCodeLine{126       qsort(\&points[1], points.size() -\/ 1, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structpoint}{point}}), compare);}
-\DoxyCodeLine{127 }
-\DoxyCodeLine{128       removeCollinearPoints(points);}
+\DoxyCodeLine{123                                                             \{}
+\DoxyCodeLine{124       }
+\DoxyCodeLine{125       \mbox{\hyperlink{classGrahamScan_a3d6c2b8a83af6e55436bf260e7ea8a98}{findReferencePointAndSwap}}(points);}
+\DoxyCodeLine{126       \textcolor{comment}{// sort the points according to the polar angle with respect to the center}}
+\DoxyCodeLine{127       \textcolor{comment}{// and line parallel to x-\/axis.}}
+\DoxyCodeLine{128       qsort(\&points[1], points.size() -\/ 1, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structpoint}{point}}), \mbox{\hyperlink{classGrahamScan_a3a31f419e9e05d12c9b5b26ae97ee37d}{compare}});}
 \DoxyCodeLine{129 }
-\DoxyCodeLine{130       \mbox{\hyperlink{classcustomStack}{customStack<point>}} convexHull;}
-\DoxyCodeLine{131       convexHull.push(points[0]);}
-\DoxyCodeLine{132       convexHull.push(points[1]);}
-\DoxyCodeLine{133       convexHull.push(points[2]);}
-\DoxyCodeLine{134       vector<point> hullPoints;}
-\DoxyCodeLine{135       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 3; i < points.size(); i++)}
-\DoxyCodeLine{136       \{}
-\DoxyCodeLine{137         \textcolor{keywordflow}{while}( findOrientation(convexHull.getElementBelowTop(), convexHull.getTopElement(), points[i]) == 1)\{}
-\DoxyCodeLine{138             w-\/>clearLines();}
-\DoxyCodeLine{139             w-\/>drawLines(hullPoints);}
-\DoxyCodeLine{140             sleep(1);}
-\DoxyCodeLine{141             convexHull.pop();}
-\DoxyCodeLine{142         \}}
-\DoxyCodeLine{143         convexHull.push(points[i]);}
-\DoxyCodeLine{144         hullPoints = convexHull.getPoints();}
-\DoxyCodeLine{145         w-\/>clearLines();}
-\DoxyCodeLine{146         w-\/>drawLines(hullPoints);}
-\DoxyCodeLine{147         sleep(1);}
-\DoxyCodeLine{148 \textcolor{comment}{//        for(unsigned int i=0; i<hullPoints.size(); i++)\{}}
-\DoxyCodeLine{149 \textcolor{comment}{//            cout<<hullPoints[i].x<<" "<<hullPoints[i].y<<endl;}}
-\DoxyCodeLine{150 \textcolor{comment}{//        \}}}
-\DoxyCodeLine{151         cout<<endl;}
-\DoxyCodeLine{152 }
-\DoxyCodeLine{153       \}}
-\DoxyCodeLine{154        hullPoints.push\_back(hullPoints[0]);}
-\DoxyCodeLine{155        w-\/>clearLines();}
-\DoxyCodeLine{156        w-\/>drawLines(hullPoints);}
-\DoxyCodeLine{157       }
-\DoxyCodeLine{158 }
-\DoxyCodeLine{159 \textcolor{comment}{//      convexHull.getPoints();}}
+\DoxyCodeLine{130       \mbox{\hyperlink{classGrahamScan_aa1eea84fdd67aaed6be306f8f24bfa7d}{removeCollinearPoints}}(points);}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132       \mbox{\hyperlink{classcustomStack}{customStack<point>}} convexHull;}
+\DoxyCodeLine{133       convexHull.push(points[0]);}
+\DoxyCodeLine{134       convexHull.push(points[1]);}
+\DoxyCodeLine{135       convexHull.push(points[2]);}
+\DoxyCodeLine{136       vector<point> hullPoints;}
+\DoxyCodeLine{137       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 3; i < points.size(); i++)}
+\DoxyCodeLine{138       \{}
+\DoxyCodeLine{139         \textcolor{keywordflow}{while}( \mbox{\hyperlink{classGrahamScan_a228b6d9784f514280c8a84d3a7fffa11}{findOrientation}}(convexHull.getElementBelowTop(), convexHull.getTopElement(), points[i]) == 1)\{}
+\DoxyCodeLine{140             w-\/>clearLines();}
+\DoxyCodeLine{141             w-\/>drawLines(hullPoints);}
+\DoxyCodeLine{142             sleep(1);}
+\DoxyCodeLine{143             convexHull.pop();}
+\DoxyCodeLine{144         \}}
+\DoxyCodeLine{145         convexHull.push(points[i]);}
+\DoxyCodeLine{146         hullPoints = convexHull.getPoints();}
+\DoxyCodeLine{147         w-\/>clearLines();}
+\DoxyCodeLine{148         w-\/>drawLines(hullPoints);}
+\DoxyCodeLine{149         sleep(1);}
+\DoxyCodeLine{150 \textcolor{comment}{//        for(unsigned int i=0; i<hullPoints.size(); i++)\{}}
+\DoxyCodeLine{151 \textcolor{comment}{//            cout<<hullPoints[i].x<<" "<<hullPoints[i].y<<endl;}}
+\DoxyCodeLine{152 \textcolor{comment}{//        \}}}
+\DoxyCodeLine{153         cout<<endl;}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155       \}}
+\DoxyCodeLine{156        hullPoints.push\_back(hullPoints[0]);}
+\DoxyCodeLine{157        w-\/>clearLines();}
+\DoxyCodeLine{158        w-\/>drawLines(hullPoints);}
+\DoxyCodeLine{159       }
 \DoxyCodeLine{160 }
-\DoxyCodeLine{161     \}}
+\DoxyCodeLine{161 \textcolor{comment}{//      convexHull.getPoints();}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163     \}}
 
 \end{DoxyCode}
 

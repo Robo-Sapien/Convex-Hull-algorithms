@@ -115,8 +115,10 @@ class GrahamScan : public ConvexHull{
     }
 
     /**
-    runs the graham's scan algorithm on the vector of points and displays the
+    Runs the graham's scan algorithm on the vector of points and displays the
     convexhull in the GUI.
+    @param points: vector of points
+    @param w: MainWindow object pointer
     */
     void runGrahamScan(vector<point> &points, MainWindow *w){
       

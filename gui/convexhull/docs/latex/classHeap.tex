@@ -26,6 +26,23 @@ char {\bfseries heap\+\_\+type}
 \mbox{\Hypertarget{classHeap_a03e09fe84bc7226ae6e8630c923cb419}\label{classHeap_a03e09fe84bc7226ae6e8630c923cb419}} 
 int {\bfseries heap\+\_\+size}
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classHeap_a03306d60e535986b3d5f698e9cf09e72}{swap\+\_\+elements}} (int pos1, int pos2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHeap_ab7113bcb2f4cfadc789473e441ed70b5}\label{classHeap_ab7113bcb2f4cfadc789473e441ed70b5}} 
+int $\ast$ {\bfseries idx\+\_\+heap}
+\item 
+\mbox{\Hypertarget{classHeap_a4407c22fa5a09ee208477370b00cff4b}\label{classHeap_a4407c22fa5a09ee208477370b00cff4b}} 
+double $\ast$ {\bfseries val\+\_\+heap}
+\item 
+\mbox{\Hypertarget{classHeap_a6a1294b626cc4d57e3fc5666748d3012}\label{classHeap_a6a1294b626cc4d57e3fc5666748d3012}} 
+int {\bfseries last\+\_\+pos}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -118,13 +135,13 @@ Definition at line 44 of file convex\+\_\+hull\+\_\+utility.\+cpp.
 \DoxyCodeLine{71         \textcolor{keywordflow}{if}(this-\/>heap\_type==\textcolor{charliteral}{'x'} \&\& val\_heap[cid]>val\_heap[pid])\{}
 \DoxyCodeLine{72             \textcolor{comment}{//Putting the parent to children position}}
 \DoxyCodeLine{73             \textcolor{comment}{//And putting the children(curr point) as parent pos}}
-\DoxyCodeLine{74             this-\/>swap\_elements(cid,pid);}
+\DoxyCodeLine{74             this-\/>\mbox{\hyperlink{classHeap_a03306d60e535986b3d5f698e9cf09e72}{swap\_elements}}(cid,pid);}
 \DoxyCodeLine{75         \}}
 \DoxyCodeLine{76         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this-\/>heap\_type==\textcolor{charliteral}{'n'} \&\& val\_heap[cid]<val\_heap[pid])\{}
 \DoxyCodeLine{77             \textcolor{comment}{//if the heap is min and the child is smallar than parent}}
 \DoxyCodeLine{78             \textcolor{comment}{//Putting the parent to child position}}
 \DoxyCodeLine{79             \textcolor{comment}{//And putting the current point at the parent pos}}
-\DoxyCodeLine{80             this-\/>swap\_elements(cid,pid);}
+\DoxyCodeLine{80             this-\/>\mbox{\hyperlink{classHeap_a03306d60e535986b3d5f698e9cf09e72}{swap\_elements}}(cid,pid);}
 \DoxyCodeLine{81         \}}
 \DoxyCodeLine{82         \textcolor{keywordflow}{else}\{}
 \DoxyCodeLine{83             \textcolor{comment}{//Nothing is wrong so break}}
@@ -188,11 +205,11 @@ Definition at line 107 of file convex\+\_\+hull\+\_\+utility.\+cpp.
 \DoxyCodeLine{150             \textcolor{keywordtype}{double} val1=val\_heap[cid1];}
 \DoxyCodeLine{151             \textcolor{comment}{//If this is max heap and the value of child is greater}}
 \DoxyCodeLine{152             \textcolor{keywordflow}{if}(this-\/>heap\_type==\textcolor{charliteral}{'x'} \&\& valp<val1)\{}
-\DoxyCodeLine{153                 this-\/>swap\_elements(cid1,pid);}
+\DoxyCodeLine{153                 this-\/>\mbox{\hyperlink{classHeap_a03306d60e535986b3d5f698e9cf09e72}{swap\_elements}}(cid1,pid);}
 \DoxyCodeLine{154             \}}
 \DoxyCodeLine{155             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this-\/>heap\_type==\textcolor{charliteral}{'n'} \&\& valp>val1)\{}
 \DoxyCodeLine{156                 \textcolor{comment}{//If this is min heap and value of parent is less}}
-\DoxyCodeLine{157                 this-\/>swap\_elements(cid1,pid);}
+\DoxyCodeLine{157                 this-\/>\mbox{\hyperlink{classHeap_a03306d60e535986b3d5f698e9cf09e72}{swap\_elements}}(cid1,pid);}
 \DoxyCodeLine{158             \}}
 \DoxyCodeLine{159             \textcolor{keywordflow}{break};}
 \DoxyCodeLine{160         \}}
@@ -203,24 +220,24 @@ Definition at line 107 of file convex\+\_\+hull\+\_\+utility.\+cpp.
 \DoxyCodeLine{165             \textcolor{keywordflow}{if}(val1>val2)\{}
 \DoxyCodeLine{166                 \textcolor{comment}{//Swapping parent with the first child}}
 \DoxyCodeLine{167                 \textcolor{comment}{//Putting the parent at the children's pos}}
-\DoxyCodeLine{168                 this-\/>swap\_elements(cid1,pid);}
+\DoxyCodeLine{168                 this-\/>\mbox{\hyperlink{classHeap_a03306d60e535986b3d5f698e9cf09e72}{swap\_elements}}(cid1,pid);}
 \DoxyCodeLine{169                 pid=cid1;}
 \DoxyCodeLine{170             \}}
 \DoxyCodeLine{171             \textcolor{keywordflow}{else}\{}
 \DoxyCodeLine{172                 \textcolor{comment}{//if second child is greater than parent and first}}
 \DoxyCodeLine{173                 \textcolor{comment}{//Putting the parent to second's children position}}
-\DoxyCodeLine{174                 this-\/>swap\_elements(cid2,pid);}
+\DoxyCodeLine{174                 this-\/>\mbox{\hyperlink{classHeap_a03306d60e535986b3d5f698e9cf09e72}{swap\_elements}}(cid2,pid);}
 \DoxyCodeLine{175                 pid=cid2;}
 \DoxyCodeLine{176             \}}
 \DoxyCodeLine{177         \}}
 \DoxyCodeLine{178         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this-\/>heap\_type==\textcolor{charliteral}{'n'} \&\& (valp>val1 || valp>val2))\{}
 \DoxyCodeLine{179             \textcolor{keywordflow}{if}(val1<val2)\{}
 \DoxyCodeLine{180                 \textcolor{comment}{//if child1's value is less than the child2 then let up.}}
-\DoxyCodeLine{181                 this-\/>swap\_elements(cid1,pid);}
+\DoxyCodeLine{181                 this-\/>\mbox{\hyperlink{classHeap_a03306d60e535986b3d5f698e9cf09e72}{swap\_elements}}(cid1,pid);}
 \DoxyCodeLine{182                 pid=cid1;}
 \DoxyCodeLine{183             \}}
 \DoxyCodeLine{184             \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{185                 this-\/>swap\_elements(cid2,pid);}
+\DoxyCodeLine{185                 this-\/>\mbox{\hyperlink{classHeap_a03306d60e535986b3d5f698e9cf09e72}{swap\_elements}}(cid2,pid);}
 \DoxyCodeLine{186                 pid=cid2;}
 \DoxyCodeLine{187             \}}
 \DoxyCodeLine{188         \}}
@@ -251,6 +268,32 @@ Definition at line 195 of file convex\+\_\+hull\+\_\+utility.\+cpp.
 \DoxyCodeLine{204     \}}
 \DoxyCodeLine{205     cout<<endl;}
 \DoxyCodeLine{206 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHeap_a03306d60e535986b3d5f698e9cf09e72}\label{classHeap_a03306d60e535986b3d5f698e9cf09e72}} 
+\index{Heap@{Heap}!swap\_elements@{swap\_elements}}
+\index{swap\_elements@{swap\_elements}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{swap\_elements()}{swap\_elements()}}
+{\footnotesize\ttfamily void Heap\+::swap\+\_\+elements (\begin{DoxyParamCaption}\item[{int}]{pos1,  }\item[{int}]{pos2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This function will swap the elements present in at pos1 and pos2 in both idx and val heap simultaneously.
+
+Definition at line 90 of file convex\+\_\+hull\+\_\+utility.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{90                                          \{}
+\DoxyCodeLine{95     \textcolor{comment}{//Saving the temporary}}
+\DoxyCodeLine{96     \textcolor{keywordtype}{int} temp\_idx=idx\_heap[pos1];}
+\DoxyCodeLine{97     \textcolor{keywordtype}{double} temp\_val=val\_heap[pos1];}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{comment}{//Swapping the pos2 in pos1}}
+\DoxyCodeLine{100     idx\_heap[pos1]=idx\_heap[pos2];}
+\DoxyCodeLine{101     val\_heap[pos1]=val\_heap[pos2];}
+\DoxyCodeLine{102     \textcolor{comment}{//Putting the value of pos1 at pos2 from the temp entry}}
+\DoxyCodeLine{103     idx\_heap[pos2]=temp\_idx;}
+\DoxyCodeLine{104     val\_heap[pos2]=temp\_val;}
+\DoxyCodeLine{105 \}}
 
 \end{DoxyCode}
 

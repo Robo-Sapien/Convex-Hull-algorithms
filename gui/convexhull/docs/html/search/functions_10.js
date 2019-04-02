@@ -231,5 +231,6 @@ var searchData=
   ['setzerolinepen',['setZeroLinePen',['../classQCPGrid.html#a209f40fdb252397b418b82d3494d8ea0',1,'QCPGrid']]],
   ['simplify',['simplify',['../classQCPLayout.html#a41e6ac049143866e8f8b4964efab01b2',1,'QCPLayout::simplify()'],['../classQCPLayoutGrid.html#a08bba60e4acd20165526a8fd7f986b58',1,'QCPLayoutGrid::simplify()'],['../classQCPLayoutInset.html#abb9eb23bf2d7c587a8abe02d065eae0a',1,'QCPLayoutInset::simplify()']]],
   ['size',['size',['../classQCPRange.html#a62326e7cc4316b96df6a60813230e63f',1,'QCPRange::size()'],['../classQCPAxisRect.html#a7a8289346eb612f422c704f8b75cf479',1,'QCPAxisRect::size()'],['../classQCPBarsGroup.html#a3780ec77919cb00840207ec7a0f00dd5',1,'QCPBarsGroup::size()']]],
-  ['sizeconstraintschanged',['sizeConstraintsChanged',['../classQCPLayout.html#aeac66a292f65cf7f8adf94eb92345b3e',1,'QCPLayout']]]
+  ['sizeconstraintschanged',['sizeConstraintsChanged',['../classQCPLayout.html#aeac66a292f65cf7f8adf94eb92345b3e',1,'QCPLayout']]],
+  ['swap_5felements',['swap_elements',['../classHeap.html#a03306d60e535986b3d5f698e9cf09e72',1,'Heap']]]
 ];

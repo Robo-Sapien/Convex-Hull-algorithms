@@ -13,6 +13,7 @@ var searchData=
   ['anchor',['anchor',['../classQCPAbstractItem.html#a139c255ea8831642fac91748e29a5adb',1,'QCPAbstractItem']]],
   ['anchors',['anchors',['../classQCPAbstractItem.html#a81d1ecfea3368b836cf9675a0045e659',1,'QCPAbstractItem']]],
   ['append',['append',['../classQCPBarsGroup.html#a809ed63cc4ff7cd5b0b8c96b470163d3',1,'QCPBarsGroup']]],
+  ['append_5fbridge_5fpoint_5fto_5fhull',['append_bridge_point_to_hull',['../classKirkpatrick__Seidel.html#ad4364483a9ba0f48498d010ff7b16590',1,'Kirkpatrick_Seidel']]],
   ['applyto',['applyTo',['../classQCPScatterStyle.html#afd8044ece445300499ca0dc164821e0f',1,'QCPScatterStyle']]],
   ['axes',['axes',['../classQCPAxisRect.html#a8db4722cb93e9c4a6f0d91150c200867',1,'QCPAxisRect::axes(QCPAxis::AxisTypes types) const'],['../classQCPAxisRect.html#a11657b8faebe9677180860e8057ede26',1,'QCPAxisRect::axes() const']]],
   ['axis',['axis',['../classQCPAxisRect.html#a583ae4f6d78b601b732183f6cabecbe1',1,'QCPAxisRect::axis()'],['../classQCPColorScale.html#a39bdbdb3b212602a5a57f9f3ea444190',1,'QCPColorScale::axis()']]],
