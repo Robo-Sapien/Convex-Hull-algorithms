@@ -9,7 +9,7 @@
 using namespace std;
 
 
-void Jarvis::runJarvisMarch(vector<point> &points, MainWindow *w)
+void Jarvis::runJarvisMarch(MainWindow *w)
 {
 	int indexToBeSwapped = indexOfLeftMostPoint();
 

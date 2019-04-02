@@ -149,6 +149,6 @@ void MainWindow::on_btn_JarvisMarch_clicked()
             points.push_back(p);
     }
     Jarvis *obj = new Jarvis(points);
-    obj->runJarvisMarch(points, this);
+    obj->runJarvisMarch(this);
 
 }

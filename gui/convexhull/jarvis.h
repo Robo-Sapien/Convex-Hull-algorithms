@@ -17,11 +17,11 @@ private:
 	int secondPointIndex();
 
 public:
-	Jarvis(vector<struct point> points):ConvexHull(points)
+    Jarvis(vector<struct point> points):ConvexHull(points)
 	{
 
 	}
-	void runJarvisMarch(vector<point> &points, MainWindow *w);
+    void runJarvisMarch(MainWindow *w);
 };
 
 
