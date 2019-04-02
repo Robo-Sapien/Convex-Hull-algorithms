@@ -159,7 +159,7 @@ void Kirkpatrick_Seidel::draw_bridge(){
         display_points.push_back(p2);
         //Calling the display function to draw these line on gui
         /*this->w->drawLines(display_points);*/
-        sleep(1);
+        //sleep(1);
     }
 }
 
