@@ -5,6 +5,7 @@
 #include <cmath>
 #include "kirkpatrick_seidel.h"
 #include "jarvis.h"
+#include "GrahamScan.cpp"
 
 int main(){
     //Initializing the points
@@ -35,13 +36,19 @@ int main(){
     //cout<<"med_idx: "<<med_idx<<endl;
 
     //Creating the class and initializig the points
-    Kirkpatrick_Seidel MyKPS(points);
+    // Kirkpatrick_Seidel MyKPS(points);
     //Testing the Upper hull
-    MyKPS.put_a_hull_on_points();
+    // MyKPS.put_a_hull_on_points();
+
+    GrahamScan *obj = new GrahamScan(points);
+    obj->runGrahamScan(points);
 
     //Testing the Jarvis March
     // Jarvis *ob = new Jarvis(points);
     // ob->runJarvisMarch();
+
+    //Testing the Grahm Scan
+
 
     return 0;
 }
