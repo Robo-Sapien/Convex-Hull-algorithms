@@ -24,7 +24,7 @@ class GrahamScan : public ConvexHull{
     void findReferencePointAndSwap(vector<point> &points){
       double ymin = points[0].y, min = 0;
       for (unsigned int i = 1; i < points.size(); i++)
-      { 
+      {
         double y = points[i].y;
         if ((y < ymin) || (ymin == y && points[i].x < points[min].x)){
           ymin = points[i].y;
@@ -42,14 +42,14 @@ class GrahamScan : public ConvexHull{
 
     // finds square of distance between 2 points
     static double distanceSq(point p1, point p2) {
-      return (p1.x - p2.x)*(p1.x - p2.x) + (p1.y - p2.y)*(p1.y - p2.y); 
-    } 
+      return (p1.x - p2.x)*(p1.x - p2.x) + (p1.y - p2.y)*(p1.y - p2.y);
+    }
 
     /**
     Find the orientation of th 2 points with respect to the center
-    it returns 
-    0 if they are collinear, 
-    1 if they are clockwise (angle p1 is greater than p2) and 
+    it returns
+    0 if they are collinear,
+    1 if they are clockwise (angle p1 is greater than p2) and
     2 if they are anti-clockwise (angle p2 is greater than p1)
     */
     static int findOrientation(point a, point b, point c){
@@ -69,7 +69,7 @@ class GrahamScan : public ConvexHull{
     returns -1 if v1 < v2, and 1 if v1 > v2
     */
     static int compare(const void *v1, const void *v2){
-      
+
       // Type cast from void to point*
       point *p1 = ( point* )v1;
       point *p2 = ( point* )v2;
@@ -85,11 +85,11 @@ class GrahamScan : public ConvexHull{
         return 1;
       } else {
         return -1;
-      } 
+      }
     }
 
     /**
-    If two points mak the same polar angle with the eference point, 
+    If two points mak the same polar angle with the eference point,
     remove the one with the smaller distance from reference point
     */
     void removeCollinearPoints(vector<point> &points){
@@ -103,9 +103,9 @@ class GrahamScan : public ConvexHull{
 
       // for(size_t i = 0; i < points.size(); i++)
       // {
-      //   cout << points[i].x << " " << points[i].y << endl;  
+      //   cout << points[i].x << " " << points[i].y << endl;
       // }
-      
+
     }
 
   public:
@@ -121,7 +121,7 @@ class GrahamScan : public ConvexHull{
     @param w: MainWindow object pointer
     */
     void runGrahamScan(vector<point> &points, MainWindow *w){
-      
+
       findReferencePointAndSwap(points);
       // sort the points according to the polar angle with respect to the center
       // and line parallel to x-axis.
@@ -156,7 +156,7 @@ class GrahamScan : public ConvexHull{
        hullPoints.push_back(hullPoints[0]);
        w->clearLines();
        w->drawLines(hullPoints);
-      
+
 
 //      convexHull.getPoints();
 
