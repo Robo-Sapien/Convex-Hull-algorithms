@@ -163,28 +163,3 @@ class GrahamScan : public ConvexHull{
 };
 
 #endif
-
-//int main(int argc, char *argv[])
-//{
-//    QApplication a(argc, argv);
-//    MainWindow w;
-//    w.show();
-
-////    int n;
-////    cin >> n;
-////    vector<point> points;
-////    double x, y;
-////    for (size_t i = 0; i < n; i++) {
-////      cin >> x >> y;
-////      struct point p;
-////      p.x = x;
-////      p.y = y;
-////      points.push_back(p);
-////    }
-////    cout<<endl;
-////    GrahamScan *obj = new GrahamScan(points);
-////    obj->runGrahamScan(points);
-
-//    return a.exec();
-//}
-

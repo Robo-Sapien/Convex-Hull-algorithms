@@ -1,0 +1,656 @@
+\hypertarget{classQCPCurve}{}\doxysection{Q\+C\+P\+Curve Class Reference}
+\label{classQCPCurve}\index{QCPCurve@{QCPCurve}}
+
+
+A plottable representing a parametric curve in a plot.  
+
+
+Inheritance diagram for Q\+C\+P\+Curve\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classQCPCurve}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1}{Line\+Style}} \{ \mbox{\hyperlink{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1aec1601a191cdf0b4e761c4c66092cc48}{ls\+None}}, 
+\mbox{\hyperlink{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1ade5822ce6fbf131d3df131795c2e1003}{ls\+Line}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPCurve_a36de58e2652b3fa47bdf9187d421d3ce}{Q\+C\+P\+Curve}} (\mbox{\hyperlink{classQCPAxis}{Q\+C\+P\+Axis}} $\ast$key\+Axis, \mbox{\hyperlink{classQCPAxis}{Q\+C\+P\+Axis}} $\ast$value\+Axis)
+\item 
+\mbox{\Hypertarget{classQCPCurve_a667ca2594cf651e3032c624dbaa95add}\label{classQCPCurve_a667ca2594cf651e3032c624dbaa95add}} 
+\mbox{\hyperlink{qcustomplot_8h_a444d37ec9cb2951b3a7fe443c34d1658}{Q\+C\+P\+Curve\+Data\+Map}} $\ast$ {\bfseries data} () const
+\item 
+\mbox{\Hypertarget{classQCPCurve_afa6bd72a3a331a5ed45d3e0c5843b592}\label{classQCPCurve_afa6bd72a3a331a5ed45d3e0c5843b592}} 
+\mbox{\hyperlink{classQCPScatterStyle}{Q\+C\+P\+Scatter\+Style}} {\bfseries scatter\+Style} () const
+\item 
+\mbox{\Hypertarget{classQCPCurve_a06e3cf3f8f1add689254b3cda66e040e}\label{classQCPCurve_a06e3cf3f8f1add689254b3cda66e040e}} 
+\mbox{\hyperlink{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1}{Line\+Style}} {\bfseries line\+Style} () const
+\item 
+void \mbox{\hyperlink{classQCPCurve_a631ac886708460013b30052f49cbc9da}{set\+Data}} (\mbox{\hyperlink{qcustomplot_8h_a444d37ec9cb2951b3a7fe443c34d1658}{Q\+C\+P\+Curve\+Data\+Map}} $\ast$data, bool copy=false)
+\item 
+void \mbox{\hyperlink{classQCPCurve_affe80e011e2ced62a88f614acd6ab8d1}{set\+Data}} (const Q\+Vector$<$ double $>$ \&t, const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&value)
+\item 
+void \mbox{\hyperlink{classQCPCurve_a963d4c45777deef15848a8f56172d066}{set\+Data}} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&value)
+\item 
+void \mbox{\hyperlink{classQCPCurve_a55e43b44709bf50a35500644988aa706}{set\+Scatter\+Style}} (const \mbox{\hyperlink{classQCPScatterStyle}{Q\+C\+P\+Scatter\+Style}} \&style)
+\item 
+void \mbox{\hyperlink{classQCPCurve_a4a377ec863ff81a1875c3094a6177c19}{set\+Line\+Style}} (\mbox{\hyperlink{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1}{Line\+Style}} style)
+\item 
+void \mbox{\hyperlink{classQCPCurve_a4e24023c3b9ac75440c7a260172c99af}{add\+Data}} (const \mbox{\hyperlink{qcustomplot_8h_a444d37ec9cb2951b3a7fe443c34d1658}{Q\+C\+P\+Curve\+Data\+Map}} \&data\+Map)
+\item 
+void \mbox{\hyperlink{classQCPCurve_ad304326aba096911f92452d8bfe0470e}{add\+Data}} (const \mbox{\hyperlink{classQCPCurveData}{Q\+C\+P\+Curve\+Data}} \&data)
+\item 
+void \mbox{\hyperlink{classQCPCurve_a13398b236f6926014e404eeb5b9f415c}{add\+Data}} (double t, double key, double value)
+\item 
+void \mbox{\hyperlink{classQCPCurve_ada4762e793cd5707b33f35b8a4b0f8fb}{add\+Data}} (double key, double value)
+\item 
+void \mbox{\hyperlink{classQCPCurve_a27c8b3dddd4067d626397ee199626722}{add\+Data}} (const Q\+Vector$<$ double $>$ \&ts, const Q\+Vector$<$ double $>$ \&keys, const Q\+Vector$<$ double $>$ \&values)
+\item 
+void \mbox{\hyperlink{classQCPCurve_af6f4284fbc2f34e676f24dce03c34fe5}{remove\+Data\+Before}} (double t)
+\item 
+void \mbox{\hyperlink{classQCPCurve_a0365cb947c4e6d405ee22e00191d5f52}{remove\+Data\+After}} (double t)
+\item 
+void \mbox{\hyperlink{classQCPCurve_ad45bb5479be799163028ef2b776f7221}{remove\+Data}} (double fromt, double tot)
+\item 
+void \mbox{\hyperlink{classQCPCurve_a30c91acfa591ec534c49fed4c0fca39a}{remove\+Data}} (double t)
+\item 
+virtual void \mbox{\hyperlink{classQCPCurve_ae0462c61dbfbac07db0736ec64110241}{clear\+Data}} ()
+\item 
+virtual double \mbox{\hyperlink{classQCPCurve_a87a9fb34a2a48dcae4c1245ada235e7d}{select\+Test}} (const Q\+PointF \&pos, bool only\+Selectable, Q\+Variant $\ast$details=0) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPCurve_a2361302d2fc6ec669849bd3bca00c4b2}\label{classQCPCurve_a2361302d2fc6ec669849bd3bca00c4b2}} 
+virtual void {\bfseries draw} (\mbox{\hyperlink{classQCPPainter}{Q\+C\+P\+Painter}} $\ast$painter)
+\item 
+\mbox{\Hypertarget{classQCPCurve_acccc86e9f496bb0392529f59f3a69dbc}\label{classQCPCurve_acccc86e9f496bb0392529f59f3a69dbc}} 
+virtual void {\bfseries draw\+Legend\+Icon} (\mbox{\hyperlink{classQCPPainter}{Q\+C\+P\+Painter}} $\ast$painter, const Q\+RectF \&rect) const
+\item 
+\mbox{\Hypertarget{classQCPCurve_a1b24b1384d72862e8294688501ffa01d}\label{classQCPCurve_a1b24b1384d72862e8294688501ffa01d}} 
+virtual \mbox{\hyperlink{classQCPRange}{Q\+C\+P\+Range}} {\bfseries get\+Key\+Range} (bool \&found\+Range, \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8}{Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a082b98cfb91a7363a3b5cd17b0c1cd60}{sd\+Both}}) const
+\item 
+\mbox{\Hypertarget{classQCPCurve_a12fcfce09ffa9965b3e01555d968d378}\label{classQCPCurve_a12fcfce09ffa9965b3e01555d968d378}} 
+virtual \mbox{\hyperlink{classQCPRange}{Q\+C\+P\+Range}} {\bfseries get\+Value\+Range} (bool \&found\+Range, \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8}{Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a082b98cfb91a7363a3b5cd17b0c1cd60}{sd\+Both}}) const
+\item 
+\mbox{\Hypertarget{classQCPCurve_a00d17c020796ac84c84f881201c2ed10}\label{classQCPCurve_a00d17c020796ac84c84f881201c2ed10}} 
+virtual void {\bfseries draw\+Scatter\+Plot} (\mbox{\hyperlink{classQCPPainter}{Q\+C\+P\+Painter}} $\ast$painter, const Q\+Vector$<$ Q\+PointF $>$ $\ast$point\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPCurve_a3ca9d2c315c643f732cc85e20d18b551}\label{classQCPCurve_a3ca9d2c315c643f732cc85e20d18b551}} 
+void {\bfseries get\+Curve\+Data} (Q\+Vector$<$ Q\+PointF $>$ $\ast$line\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPCurve_a316b216383dbff606f59c38bd72e6501}\label{classQCPCurve_a316b216383dbff606f59c38bd72e6501}} 
+int {\bfseries get\+Region} (double x, double y, double rect\+Left, double rect\+Top, double rect\+Right, double rect\+Bottom) const
+\item 
+\mbox{\Hypertarget{classQCPCurve_ae729c9aef90af9b7463c379cb88459f6}\label{classQCPCurve_ae729c9aef90af9b7463c379cb88459f6}} 
+Q\+PointF {\bfseries get\+Optimized\+Point} (int prev\+Region, double prev\+Key, double prev\+Value, double key, double value, double rect\+Left, double rect\+Top, double rect\+Right, double rect\+Bottom) const
+\item 
+\mbox{\Hypertarget{classQCPCurve_a2f1455455d71de9ef9190c50a90f0abc}\label{classQCPCurve_a2f1455455d71de9ef9190c50a90f0abc}} 
+Q\+Vector$<$ Q\+PointF $>$ {\bfseries get\+Optimized\+Corner\+Points} (int prev\+Region, int current\+Region, double prev\+Key, double prev\+Value, double key, double value, double rect\+Left, double rect\+Top, double rect\+Right, double rect\+Bottom) const
+\item 
+\mbox{\Hypertarget{classQCPCurve_af5df2560b30333fe662ec676bd355415}\label{classQCPCurve_af5df2560b30333fe662ec676bd355415}} 
+bool {\bfseries may\+Traverse} (int prev\+Region, int current\+Region) const
+\item 
+\mbox{\Hypertarget{classQCPCurve_a82a78dffde71e7b9c40217fa7e381057}\label{classQCPCurve_a82a78dffde71e7b9c40217fa7e381057}} 
+bool {\bfseries get\+Traverse} (double prev\+Key, double prev\+Value, double key, double value, double rect\+Left, double rect\+Top, double rect\+Right, double rect\+Bottom, Q\+PointF \&crossA, Q\+PointF \&crossB) const
+\item 
+\mbox{\Hypertarget{classQCPCurve_a592d6e3dbd42cb8cea35eda889ece1b1}\label{classQCPCurve_a592d6e3dbd42cb8cea35eda889ece1b1}} 
+void {\bfseries get\+Traverse\+Corner\+Points} (int prev\+Region, int current\+Region, double rect\+Left, double rect\+Top, double rect\+Right, double rect\+Bottom, Q\+Vector$<$ Q\+PointF $>$ \&before\+Traverse, Q\+Vector$<$ Q\+PointF $>$ \&after\+Traverse) const
+\item 
+\mbox{\Hypertarget{classQCPCurve_adc3ab8051946f9097cdf7c0707ef1a25}\label{classQCPCurve_adc3ab8051946f9097cdf7c0707ef1a25}} 
+double {\bfseries point\+Distance} (const Q\+PointF \&pixel\+Point) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPCurve_a88d533e455bca96004b049e99168731b}\label{classQCPCurve_a88d533e455bca96004b049e99168731b}} 
+\mbox{\hyperlink{qcustomplot_8h_a444d37ec9cb2951b3a7fe443c34d1658}{Q\+C\+P\+Curve\+Data\+Map}} $\ast$ {\bfseries m\+Data}
+\item 
+\mbox{\Hypertarget{classQCPCurve_a08f803b4a30b01bbd7a1eab15d0f864f}\label{classQCPCurve_a08f803b4a30b01bbd7a1eab15d0f864f}} 
+\mbox{\hyperlink{classQCPScatterStyle}{Q\+C\+P\+Scatter\+Style}} {\bfseries m\+Scatter\+Style}
+\item 
+\mbox{\Hypertarget{classQCPCurve_ae1f35ae2b15aee8e15bcdfec5be95156}\label{classQCPCurve_ae1f35ae2b15aee8e15bcdfec5be95156}} 
+\mbox{\hyperlink{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1}{Line\+Style}} {\bfseries m\+Line\+Style}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPCurve_a1cdf9df76adcfae45261690aa0ca2198}\label{classQCPCurve_a1cdf9df76adcfae45261690aa0ca2198}} 
+class {\bfseries Q\+Custom\+Plot}
+\item 
+\mbox{\Hypertarget{classQCPCurve_a8429035e7adfbd7f05805a6530ad5e3b}\label{classQCPCurve_a8429035e7adfbd7f05805a6530ad5e3b}} 
+class {\bfseries Q\+C\+P\+Legend}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A plottable representing a parametric curve in a plot. 
+
+
+
+Unlike \mbox{\hyperlink{classQCPGraph}{Q\+C\+P\+Graph}}, plottables of this type may have multiple points with the same key coordinate, so their visual representation can have {\itshape loops}. This is realized by introducing a third coordinate {\itshape t}, which defines the order of the points described by the other two coordinates {\itshape x} and {\itshape y}.
+
+To plot data, assign it with the \mbox{\hyperlink{classQCPCurve_a631ac886708460013b30052f49cbc9da}{set\+Data}} or \mbox{\hyperlink{classQCPCurve_a4e24023c3b9ac75440c7a260172c99af}{add\+Data}} functions.
+
+Gaps in the curve can be created by adding data points with NaN as key and value ({\ttfamily q\+Q\+Na\+N()} or {\ttfamily std\+::numeric\+\_\+limits$<$double$>$\+::quiet\+\_\+\+Na\+N()}) in between the two data points that shall be separated.\hypertarget{classQCPStatisticalBox_appearance}{}\doxysubsection{Changing the appearance}\label{classQCPStatisticalBox_appearance}
+The appearance of the curve is determined by the pen and the brush (\mbox{\hyperlink{classQCPAbstractPlottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}, \mbox{\hyperlink{classQCPAbstractPlottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}). \hypertarget{classQCPStatisticalBox_usage}{}\doxysubsection{Usage}\label{classQCPStatisticalBox_usage}
+Like all data representing objects in \mbox{\hyperlink{classQCustomPlot}{Q\+Custom\+Plot}}, the \mbox{\hyperlink{classQCPCurve}{Q\+C\+P\+Curve}} is a plottable (\mbox{\hyperlink{classQCPAbstractPlottable}{Q\+C\+P\+Abstract\+Plottable}}). So the plottable-\/interface of \mbox{\hyperlink{classQCustomPlot}{Q\+Custom\+Plot}} applies (\mbox{\hyperlink{classQCustomPlot_a32de81ff53e263e785b83b52ecd99d6f}{Q\+Custom\+Plot\+::plottable}}, \mbox{\hyperlink{classQCustomPlot_ab7ad9174f701f9c6f64e378df77927a6}{Q\+Custom\+Plot\+::add\+Plottable}}, \mbox{\hyperlink{classQCustomPlot_af3dafd56884208474f311d6226513ab2}{Q\+Custom\+Plot\+::remove\+Plottable}}, etc.)
+
+Usually, you first create an instance and add it to the custom\+Plot\+: 
+\begin{DoxyCodeInclude}{0}
+\end{DoxyCodeInclude}
+and then modify the properties of the newly created plottable, e.\+g.\+: 
+\begin{DoxyCodeInclude}{0}
+\end{DoxyCodeInclude}
+
+
+Definition at line 2660 of file qcustomplot.\+h.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1}\label{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1}} 
+\index{QCPCurve@{QCPCurve}!LineStyle@{LineStyle}}
+\index{LineStyle@{LineStyle}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{LineStyle}{LineStyle}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1}{Q\+C\+P\+Curve\+::\+Line\+Style}}}
+
+Defines how the curve\textquotesingle{}s line is represented visually in the plot. The line is drawn with the current pen of the curve (\mbox{\hyperlink{classQCPAbstractPlottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}). \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPCurve_a4a377ec863ff81a1875c3094a6177c19}{set\+Line\+Style}} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lsNone@{lsNone}!QCPCurve@{QCPCurve}}\index{QCPCurve@{QCPCurve}!lsNone@{lsNone}}}\mbox{\Hypertarget{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1aec1601a191cdf0b4e761c4c66092cc48}\label{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1aec1601a191cdf0b4e761c4c66092cc48}} 
+ls\+None&No line is drawn between data points (e.\+g. only scatters) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lsLine@{lsLine}!QCPCurve@{QCPCurve}}\index{QCPCurve@{QCPCurve}!lsLine@{lsLine}}}\mbox{\Hypertarget{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1ade5822ce6fbf131d3df131795c2e1003}\label{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1ade5822ce6fbf131d3df131795c2e1003}} 
+ls\+Line&Data points are connected with a straight line. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 2673 of file qcustomplot.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2673                  \{ \mbox{\hyperlink{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1aec1601a191cdf0b4e761c4c66092cc48}{lsNone}}  }
+\DoxyCodeLine{2674                    ,\mbox{\hyperlink{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1ade5822ce6fbf131d3df131795c2e1003}{lsLine}} }
+\DoxyCodeLine{2675                  \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQCPCurve_a36de58e2652b3fa47bdf9187d421d3ce}\label{classQCPCurve_a36de58e2652b3fa47bdf9187d421d3ce}} 
+\index{QCPCurve@{QCPCurve}!QCPCurve@{QCPCurve}}
+\index{QCPCurve@{QCPCurve}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{QCPCurve()}{QCPCurve()}}
+{\footnotesize\ttfamily Q\+C\+P\+Curve\+::\+Q\+C\+P\+Curve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPAxis}{Q\+C\+P\+Axis}} $\ast$}]{key\+Axis,  }\item[{\mbox{\hyperlink{classQCPAxis}{Q\+C\+P\+Axis}} $\ast$}]{value\+Axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructs a curve which uses {\itshape key\+Axis} as its key axis (\char`\"{}x\char`\"{}) and {\itshape value\+Axis} as its value axis (\char`\"{}y\char`\"{}). {\itshape key\+Axis} and {\itshape value\+Axis} must reside in the same \mbox{\hyperlink{classQCustomPlot}{Q\+Custom\+Plot}} instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (q\+Debug), the construction is not aborted, though.
+
+The constructed \mbox{\hyperlink{classQCPCurve}{Q\+C\+P\+Curve}} can be added to the plot with \mbox{\hyperlink{classQCustomPlot_ab7ad9174f701f9c6f64e378df77927a6}{Q\+Custom\+Plot\+::add\+Plottable}}, \mbox{\hyperlink{classQCustomPlot}{Q\+Custom\+Plot}} then takes ownership of the graph. 
+
+Definition at line 16812 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16812                                                        :}
+\DoxyCodeLine{16813   \mbox{\hyperlink{classQCPAbstractPlottable_af78a036e40db6f53a31abadc5323715a}{QCPAbstractPlottable}}(keyAxis, valueAxis)}
+\DoxyCodeLine{16814 \{}
+\DoxyCodeLine{16815   mData = \textcolor{keyword}{new} \mbox{\hyperlink{qcustomplot_8h_a444d37ec9cb2951b3a7fe443c34d1658}{QCPCurveDataMap}};}
+\DoxyCodeLine{16816   mPen.setColor(Qt::blue);}
+\DoxyCodeLine{16817   mPen.setStyle(Qt::SolidLine);}
+\DoxyCodeLine{16818   mBrush.setColor(Qt::blue);}
+\DoxyCodeLine{16819   mBrush.setStyle(Qt::NoBrush);}
+\DoxyCodeLine{16820   mSelectedPen = mPen;}
+\DoxyCodeLine{16821   mSelectedPen.setWidthF(2.5);}
+\DoxyCodeLine{16822   mSelectedPen.setColor(QColor(80, 80, 255)); \textcolor{comment}{// lighter than Qt::blue of mPen}}
+\DoxyCodeLine{16823   mSelectedBrush = mBrush;}
+\DoxyCodeLine{16824   }
+\DoxyCodeLine{16825   \mbox{\hyperlink{classQCPCurve_a55e43b44709bf50a35500644988aa706}{setScatterStyle}}(\mbox{\hyperlink{classQCPScatterStyle}{QCPScatterStyle}}());}
+\DoxyCodeLine{16826   \mbox{\hyperlink{classQCPCurve_a4a377ec863ff81a1875c3094a6177c19}{setLineStyle}}(\mbox{\hyperlink{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1ade5822ce6fbf131d3df131795c2e1003}{lsLine}});}
+\DoxyCodeLine{16827 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQCPCurve_ad304326aba096911f92452d8bfe0470e}\label{classQCPCurve_ad304326aba096911f92452d8bfe0470e}} 
+\index{QCPCurve@{QCPCurve}!addData@{addData}}
+\index{addData@{addData}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Curve\+::add\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQCPCurveData}{Q\+C\+P\+Curve\+Data}} \&}]{data }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Adds the provided single data point in {\itshape data} to the current data. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPCurve_ad45bb5479be799163028ef2b776f7221}{remove\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 16937 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16938 \{}
+\DoxyCodeLine{16939   mData-\/>insertMulti(data.t, data);}
+\DoxyCodeLine{16940 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPCurve_a4e24023c3b9ac75440c7a260172c99af}\label{classQCPCurve_a4e24023c3b9ac75440c7a260172c99af}} 
+\index{QCPCurve@{QCPCurve}!addData@{addData}}
+\index{addData@{addData}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Curve\+::add\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{qcustomplot_8h_a444d37ec9cb2951b3a7fe443c34d1658}{Q\+C\+P\+Curve\+Data\+Map}} \&}]{data\+Map }\end{DoxyParamCaption})}
+
+Adds the provided data points in {\itshape data\+Map} to the current data. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPCurve_ad45bb5479be799163028ef2b776f7221}{remove\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 16928 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16929 \{}
+\DoxyCodeLine{16930   mData-\/>unite(dataMap);}
+\DoxyCodeLine{16931 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPCurve_a27c8b3dddd4067d626397ee199626722}\label{classQCPCurve_a27c8b3dddd4067d626397ee199626722}} 
+\index{QCPCurve@{QCPCurve}!addData@{addData}}
+\index{addData@{addData}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Curve\+::add\+Data (\begin{DoxyParamCaption}\item[{const Q\+Vector$<$ double $>$ \&}]{ts,  }\item[{const Q\+Vector$<$ double $>$ \&}]{keys,  }\item[{const Q\+Vector$<$ double $>$ \&}]{values }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Adds the provided data points as {\itshape t}, {\itshape key} and {\itshape value} tuples to the current data. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPCurve_ad45bb5479be799163028ef2b776f7221}{remove\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 16979 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16980 \{}
+\DoxyCodeLine{16981   \textcolor{keywordtype}{int} n = ts.size();}
+\DoxyCodeLine{16982   n = qMin(n, keys.size());}
+\DoxyCodeLine{16983   n = qMin(n, values.size());}
+\DoxyCodeLine{16984   \mbox{\hyperlink{classQCPCurveData}{QCPCurveData}} newData;}
+\DoxyCodeLine{16985   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; ++i)}
+\DoxyCodeLine{16986   \{}
+\DoxyCodeLine{16987     newData.t = ts[i];}
+\DoxyCodeLine{16988     newData.key = keys[i];}
+\DoxyCodeLine{16989     newData.value = values[i];}
+\DoxyCodeLine{16990     mData-\/>insertMulti(newData.t, newData);}
+\DoxyCodeLine{16991   \}}
+\DoxyCodeLine{16992 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPCurve_ada4762e793cd5707b33f35b8a4b0f8fb}\label{classQCPCurve_ada4762e793cd5707b33f35b8a4b0f8fb}} 
+\index{QCPCurve@{QCPCurve}!addData@{addData}}
+\index{addData@{addData}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Curve\+::add\+Data (\begin{DoxyParamCaption}\item[{double}]{key,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Adds the provided single data point as {\itshape key} and {\itshape value} pair to the current data The t parameter of the data point is set to the t of the last data point plus 1. If there is no last data point, t will be set to 0.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPCurve_ad45bb5479be799163028ef2b776f7221}{remove\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 16963 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16964 \{}
+\DoxyCodeLine{16965   \mbox{\hyperlink{classQCPCurveData}{QCPCurveData}} newData;}
+\DoxyCodeLine{16966   \textcolor{keywordflow}{if} (!mData-\/>isEmpty())}
+\DoxyCodeLine{16967     newData.t = (mData-\/>constEnd()-\/1).key()+1;}
+\DoxyCodeLine{16968   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{16969     newData.t = 0;}
+\DoxyCodeLine{16970   newData.key = key;}
+\DoxyCodeLine{16971   newData.value = value;}
+\DoxyCodeLine{16972   mData-\/>insertMulti(newData.t, newData);}
+\DoxyCodeLine{16973 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPCurve_a13398b236f6926014e404eeb5b9f415c}\label{classQCPCurve_a13398b236f6926014e404eeb5b9f415c}} 
+\index{QCPCurve@{QCPCurve}!addData@{addData}}
+\index{addData@{addData}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Curve\+::add\+Data (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{double}]{key,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Adds the provided single data point as {\itshape t}, {\itshape key} and {\itshape value} tuple to the current data \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPCurve_ad45bb5479be799163028ef2b776f7221}{remove\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 16946 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16947 \{}
+\DoxyCodeLine{16948   \mbox{\hyperlink{classQCPCurveData}{QCPCurveData}} newData;}
+\DoxyCodeLine{16949   newData.t = t;}
+\DoxyCodeLine{16950   newData.key = key;}
+\DoxyCodeLine{16951   newData.value = value;}
+\DoxyCodeLine{16952   mData-\/>insertMulti(newData.t, newData);}
+\DoxyCodeLine{16953 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPCurve_ae0462c61dbfbac07db0736ec64110241}\label{classQCPCurve_ae0462c61dbfbac07db0736ec64110241}} 
+\index{QCPCurve@{QCPCurve}!clearData@{clearData}}
+\index{clearData@{clearData}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{clearData()}{clearData()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Curve\+::clear\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes all data points. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPCurve_ad45bb5479be799163028ef2b776f7221}{remove\+Data}}, \mbox{\hyperlink{classQCPCurve_a0365cb947c4e6d405ee22e00191d5f52}{remove\+Data\+After}}, \mbox{\hyperlink{classQCPCurve_af6f4284fbc2f34e676f24dce03c34fe5}{remove\+Data\+Before}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classQCPAbstractPlottable_a86e5b8fd4b6ff4f4084e7ea4c573fc53}{Q\+C\+P\+Abstract\+Plottable}}.
+
+
+
+Definition at line 17051 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17052 \{}
+\DoxyCodeLine{17053   mData-\/>clear();}
+\DoxyCodeLine{17054 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPCurve_ad45bb5479be799163028ef2b776f7221}\label{classQCPCurve_ad45bb5479be799163028ef2b776f7221}} 
+\index{QCPCurve@{QCPCurve}!removeData@{removeData}}
+\index{removeData@{removeData}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{removeData()}{removeData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Curve\+::remove\+Data (\begin{DoxyParamCaption}\item[{double}]{fromt,  }\item[{double}]{tot }\end{DoxyParamCaption})}
+
+Removes all data points with curve parameter t between {\itshape fromt} and {\itshape tot}. if {\itshape fromt} is greater or equal to {\itshape tot}, the function does nothing. To remove a single data point with known t, use \mbox{\hyperlink{classQCPCurve_a30c91acfa591ec534c49fed4c0fca39a}{remove\+Data(double t)}}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPCurve_a4e24023c3b9ac75440c7a260172c99af}{add\+Data}}, \mbox{\hyperlink{classQCPCurve_ae0462c61dbfbac07db0736ec64110241}{clear\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 17024 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17025 \{}
+\DoxyCodeLine{17026   \textcolor{keywordflow}{if} (fromt >= tot || mData-\/>isEmpty()) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{17027   QCPCurveDataMap::iterator it = mData-\/>upperBound(fromt);}
+\DoxyCodeLine{17028   QCPCurveDataMap::iterator itEnd = mData-\/>upperBound(tot);}
+\DoxyCodeLine{17029   \textcolor{keywordflow}{while} (it != itEnd)}
+\DoxyCodeLine{17030     it = mData-\/>erase(it);}
+\DoxyCodeLine{17031 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPCurve_a30c91acfa591ec534c49fed4c0fca39a}\label{classQCPCurve_a30c91acfa591ec534c49fed4c0fca39a}} 
+\index{QCPCurve@{QCPCurve}!removeData@{removeData}}
+\index{removeData@{removeData}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{removeData()}{removeData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Curve\+::remove\+Data (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Removes a single data point at curve parameter {\itshape t}. If the position is not known with absolute precision, consider using \mbox{\hyperlink{classQCPCurve_ad45bb5479be799163028ef2b776f7221}{remove\+Data(double fromt, double tot)}} with a small fuzziness interval around the suspected position, depeding on the precision with which the curve parameter is known.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPCurve_a4e24023c3b9ac75440c7a260172c99af}{add\+Data}}, \mbox{\hyperlink{classQCPCurve_ae0462c61dbfbac07db0736ec64110241}{clear\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 17042 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17043 \{}
+\DoxyCodeLine{17044   mData-\/>remove(t);}
+\DoxyCodeLine{17045 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPCurve_a0365cb947c4e6d405ee22e00191d5f52}\label{classQCPCurve_a0365cb947c4e6d405ee22e00191d5f52}} 
+\index{QCPCurve@{QCPCurve}!removeDataAfter@{removeDataAfter}}
+\index{removeDataAfter@{removeDataAfter}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{removeDataAfter()}{removeDataAfter()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Curve\+::remove\+Data\+After (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})}
+
+Removes all data points with curve parameter t greater than {\itshape t}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPCurve_a4e24023c3b9ac75440c7a260172c99af}{add\+Data}}, \mbox{\hyperlink{classQCPCurve_ae0462c61dbfbac07db0736ec64110241}{clear\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 17009 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17010 \{}
+\DoxyCodeLine{17011   \textcolor{keywordflow}{if} (mData-\/>isEmpty()) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{17012   QCPCurveDataMap::iterator it = mData-\/>upperBound(t);}
+\DoxyCodeLine{17013   \textcolor{keywordflow}{while} (it != mData-\/>end())}
+\DoxyCodeLine{17014     it = mData-\/>erase(it);}
+\DoxyCodeLine{17015 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPCurve_af6f4284fbc2f34e676f24dce03c34fe5}\label{classQCPCurve_af6f4284fbc2f34e676f24dce03c34fe5}} 
+\index{QCPCurve@{QCPCurve}!removeDataBefore@{removeDataBefore}}
+\index{removeDataBefore@{removeDataBefore}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{removeDataBefore()}{removeDataBefore()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Curve\+::remove\+Data\+Before (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})}
+
+Removes all data points with curve parameter t smaller than {\itshape t}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPCurve_a4e24023c3b9ac75440c7a260172c99af}{add\+Data}}, \mbox{\hyperlink{classQCPCurve_ae0462c61dbfbac07db0736ec64110241}{clear\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 16998 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16999 \{}
+\DoxyCodeLine{17000   QCPCurveDataMap::iterator it = mData-\/>begin();}
+\DoxyCodeLine{17001   \textcolor{keywordflow}{while} (it != mData-\/>end() \&\& it.key() < t)}
+\DoxyCodeLine{17002     it = mData-\/>erase(it);}
+\DoxyCodeLine{17003 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPCurve_a87a9fb34a2a48dcae4c1245ada235e7d}\label{classQCPCurve_a87a9fb34a2a48dcae4c1245ada235e7d}} 
+\index{QCPCurve@{QCPCurve}!selectTest@{selectTest}}
+\index{selectTest@{selectTest}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
+{\footnotesize\ttfamily double Q\+C\+P\+Curve\+::select\+Test (\begin{DoxyParamCaption}\item[{const Q\+PointF \&}]{pos,  }\item[{bool}]{only\+Selectable,  }\item[{Q\+Variant $\ast$}]{details = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \mbox{\hyperlink{classQCustomPlot}{Q\+Custom\+Plot}} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the object is represented not by single lines but by an area like a \mbox{\hyperlink{classQCPItemText}{Q\+C\+P\+Item\+Text}} or the bars of a \mbox{\hyperlink{classQCPBars}{Q\+C\+P\+Bars}} plottable, a click inside the area should also be considered a hit. In these cases this function thus returns a constant value greater zero but still below the parent plot\textquotesingle{}s selection tolerance. (typically the selection\+Tolerance multiplied by 0.\+99).
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{classQCustomPlot}{Q\+Custom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{classQCustomPlot}{Q\+Custom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{classQCPAxis}{Q\+C\+P\+Axis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{classQCPCurve_a87a9fb34a2a48dcae4c1245ada235e7d}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+select\+Event, deselect\+Event, \mbox{\hyperlink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{Q\+Custom\+Plot\+::set\+Interactions}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classQCPAbstractPlottable_a38efe9641d972992a3d44204bc80ec1d}{Q\+C\+P\+Abstract\+Plottable}}.
+
+
+
+Definition at line 17057 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17058 \{}
+\DoxyCodeLine{17059   Q\_UNUSED(details)}
+\DoxyCodeLine{17060   \textcolor{keywordflow}{if} ((onlySelectable \&\& !mSelectable) || mData-\/>isEmpty())}
+\DoxyCodeLine{17061     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{17062   \textcolor{keywordflow}{if} (!mKeyAxis || !mValueAxis) \{ qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"invalid key or value axis"}; \textcolor{keywordflow}{return} -\/1; \}}
+\DoxyCodeLine{17063   }
+\DoxyCodeLine{17064   \textcolor{keywordflow}{if} (mKeyAxis.data()-\/>axisRect()-\/>rect().contains(pos.toPoint()))}
+\DoxyCodeLine{17065     \textcolor{keywordflow}{return} pointDistance(pos);}
+\DoxyCodeLine{17066   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{17067     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{17068 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPCurve_a963d4c45777deef15848a8f56172d066}\label{classQCPCurve_a963d4c45777deef15848a8f56172d066}} 
+\index{QCPCurve@{QCPCurve}!setData@{setData}}
+\index{setData@{setData}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Curve\+::set\+Data (\begin{DoxyParamCaption}\item[{const Q\+Vector$<$ double $>$ \&}]{key,  }\item[{const Q\+Vector$<$ double $>$ \&}]{value }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Replaces the current data with the provided {\itshape key} and {\itshape value} pairs. The t parameter of each data point will be set to the integer index of the respective key/value pair. 
+
+Definition at line 16885 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16886 \{}
+\DoxyCodeLine{16887   mData-\/>clear();}
+\DoxyCodeLine{16888   \textcolor{keywordtype}{int} n = key.size();}
+\DoxyCodeLine{16889   n = qMin(n, value.size());}
+\DoxyCodeLine{16890   \mbox{\hyperlink{classQCPCurveData}{QCPCurveData}} newData;}
+\DoxyCodeLine{16891   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; ++i)}
+\DoxyCodeLine{16892   \{}
+\DoxyCodeLine{16893     newData.t = i; \textcolor{comment}{// no t vector given, so we assign t the index of the key/value pair}}
+\DoxyCodeLine{16894     newData.key = key[i];}
+\DoxyCodeLine{16895     newData.value = value[i];}
+\DoxyCodeLine{16896     mData-\/>insertMulti(newData.t, newData);}
+\DoxyCodeLine{16897   \}}
+\DoxyCodeLine{16898 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPCurve_affe80e011e2ced62a88f614acd6ab8d1}\label{classQCPCurve_affe80e011e2ced62a88f614acd6ab8d1}} 
+\index{QCPCurve@{QCPCurve}!setData@{setData}}
+\index{setData@{setData}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Curve\+::set\+Data (\begin{DoxyParamCaption}\item[{const Q\+Vector$<$ double $>$ \&}]{t,  }\item[{const Q\+Vector$<$ double $>$ \&}]{key,  }\item[{const Q\+Vector$<$ double $>$ \&}]{value }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Replaces the current data with the provided points in {\itshape t}, {\itshape key} and {\itshape value} tuples. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector. 
+
+Definition at line 16864 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16865 \{}
+\DoxyCodeLine{16866   mData-\/>clear();}
+\DoxyCodeLine{16867   \textcolor{keywordtype}{int} n = t.size();}
+\DoxyCodeLine{16868   n = qMin(n, key.size());}
+\DoxyCodeLine{16869   n = qMin(n, value.size());}
+\DoxyCodeLine{16870   \mbox{\hyperlink{classQCPCurveData}{QCPCurveData}} newData;}
+\DoxyCodeLine{16871   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; ++i)}
+\DoxyCodeLine{16872   \{}
+\DoxyCodeLine{16873     newData.t = t[i];}
+\DoxyCodeLine{16874     newData.key = key[i];}
+\DoxyCodeLine{16875     newData.value = value[i];}
+\DoxyCodeLine{16876     mData-\/>insertMulti(newData.t, newData);}
+\DoxyCodeLine{16877   \}}
+\DoxyCodeLine{16878 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPCurve_a631ac886708460013b30052f49cbc9da}\label{classQCPCurve_a631ac886708460013b30052f49cbc9da}} 
+\index{QCPCurve@{QCPCurve}!setData@{setData}}
+\index{setData@{setData}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Curve\+::set\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qcustomplot_8h_a444d37ec9cb2951b3a7fe443c34d1658}{Q\+C\+P\+Curve\+Data\+Map}} $\ast$}]{data,  }\item[{bool}]{copy = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Replaces the current data with the provided {\itshape data}.
+
+If {\itshape copy} is set to true, data points in {\itshape data} will only be copied. if false, the plottable takes ownership of the passed data and replaces the internal data pointer with it. This is significantly faster than copying for large datasets. 
+
+Definition at line 16841 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16842 \{}
+\DoxyCodeLine{16843   \textcolor{keywordflow}{if} (mData == data)}
+\DoxyCodeLine{16844   \{}
+\DoxyCodeLine{16845     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"The data pointer is already in (and owned by) this plottable"} << reinterpret\_cast<quintptr>(data);}
+\DoxyCodeLine{16846     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{16847   \}}
+\DoxyCodeLine{16848   \textcolor{keywordflow}{if} (copy)}
+\DoxyCodeLine{16849   \{}
+\DoxyCodeLine{16850     *mData = *data;}
+\DoxyCodeLine{16851   \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{16852   \{}
+\DoxyCodeLine{16853     \textcolor{keyword}{delete} mData;}
+\DoxyCodeLine{16854     mData = data;}
+\DoxyCodeLine{16855   \}}
+\DoxyCodeLine{16856 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPCurve_a4a377ec863ff81a1875c3094a6177c19}\label{classQCPCurve_a4a377ec863ff81a1875c3094a6177c19}} 
+\index{QCPCurve@{QCPCurve}!setLineStyle@{setLineStyle}}
+\index{setLineStyle@{setLineStyle}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{setLineStyle()}{setLineStyle()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Curve\+::set\+Line\+Style (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1}{Q\+C\+P\+Curve\+::\+Line\+Style}}}]{style }\end{DoxyParamCaption})}
+
+Sets how the single data points are connected in the plot or how they are represented visually apart from the scatter symbol. For scatter-\/only plots, set {\itshape style} to \mbox{\hyperlink{classQCPCurve_a2710e9f79302152cff794c6e16cc01f1aec1601a191cdf0b4e761c4c66092cc48}{ls\+None}} and \mbox{\hyperlink{classQCPCurve_a55e43b44709bf50a35500644988aa706}{set\+Scatter\+Style}} to the desired scatter style.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPCurve_a55e43b44709bf50a35500644988aa706}{set\+Scatter\+Style}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 16919 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16920 \{}
+\DoxyCodeLine{16921   mLineStyle = style;}
+\DoxyCodeLine{16922 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPCurve_a55e43b44709bf50a35500644988aa706}\label{classQCPCurve_a55e43b44709bf50a35500644988aa706}} 
+\index{QCPCurve@{QCPCurve}!setScatterStyle@{setScatterStyle}}
+\index{setScatterStyle@{setScatterStyle}!QCPCurve@{QCPCurve}}
+\doxysubsubsection{\texorpdfstring{setScatterStyle()}{setScatterStyle()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Curve\+::set\+Scatter\+Style (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQCPScatterStyle}{Q\+C\+P\+Scatter\+Style}} \&}]{style }\end{DoxyParamCaption})}
+
+Sets the visual appearance of single data points in the plot. If set to \mbox{\hyperlink{classQCPScatterStyle_adb31525af6b680e6f1b7472e43859349abd144c291ca274f77053ec68cab6c022}{Q\+C\+P\+Scatter\+Style\+::ss\+None}}, no scatter points are drawn (e.\+g. for line-\/only plots with appropriate line style).
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPScatterStyle}{Q\+C\+P\+Scatter\+Style}}, \mbox{\hyperlink{classQCPCurve_a4a377ec863ff81a1875c3094a6177c19}{set\+Line\+Style}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 16907 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16908 \{}
+\DoxyCodeLine{16909   mScatterStyle = style;}
+\DoxyCodeLine{16910 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
+\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}

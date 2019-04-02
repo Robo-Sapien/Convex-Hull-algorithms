@@ -1,0 +1,234 @@
+\hypertarget{classKirkpatrick__Seidel}{}\doxysection{Kirkpatrick\+\_\+\+Seidel Class Reference}
+\label{classKirkpatrick__Seidel}\index{Kirkpatrick\_Seidel@{Kirkpatrick\_Seidel}}
+Inheritance diagram for Kirkpatrick\+\_\+\+Seidel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classKirkpatrick__Seidel}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classKirkpatrick__Seidel_a7201eced0c9edc442fdca2dcab3a1b6d}\label{classKirkpatrick__Seidel_a7201eced0c9edc442fdca2dcab3a1b6d}} 
+{\bfseries Kirkpatrick\+\_\+\+Seidel} (vector$<$ struct \mbox{\hyperlink{structpoint}{point}} $>$ points, \mbox{\hyperlink{classMainWindow}{Main\+Window}} $\ast$w)
+\item 
+void \mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\+\_\+point}} (int idx)
+\item 
+void \mbox{\hyperlink{classKirkpatrick__Seidel_a27411b5aba77fbca38854e6032c2ac33}{print\+\_\+pairs\+\_\+on\+\_\+hull}} ()
+\item 
+void \mbox{\hyperlink{classKirkpatrick__Seidel_a87772fab208930356384e5c568ecee69}{put\+\_\+a\+\_\+hull\+\_\+on\+\_\+points}} ()
+\item 
+void \mbox{\hyperlink{classKirkpatrick__Seidel_a3580c52f1f0cf27589ce8fa39f7af669}{draw\+\_\+bridge}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classKirkpatrick__Seidel_af27c76b65420d9e4f9fbc96c5d20b38f}\label{classKirkpatrick__Seidel_af27c76b65420d9e4f9fbc96c5d20b38f}} 
+\mbox{\hyperlink{classMainWindow}{Main\+Window}} $\ast$ {\bfseries w}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 7 of file kirkpatrick\+\_\+seidel.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classKirkpatrick__Seidel_a3580c52f1f0cf27589ce8fa39f7af669}\label{classKirkpatrick__Seidel_a3580c52f1f0cf27589ce8fa39f7af669}} 
+\index{Kirkpatrick\_Seidel@{Kirkpatrick\_Seidel}!draw\_bridge@{draw\_bridge}}
+\index{draw\_bridge@{draw\_bridge}!Kirkpatrick\_Seidel@{Kirkpatrick\_Seidel}}
+\doxysubsubsection{\texorpdfstring{draw\_bridge()}{draw\_bridge()}}
+{\footnotesize\ttfamily void Kirkpatrick\+\_\+\+Seidel\+::draw\+\_\+bridge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+D\+E\+S\+C\+R\+I\+P\+T\+I\+ON\+: This function will display the bridges as they were generated U\+S\+A\+GE\+:
+
+Definition at line 141 of file kirkpatrick\+\_\+seidel.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{141                                     \{}
+\DoxyCodeLine{147     \textcolor{comment}{//Displaying this bridge on the gui using the reference of the window}}
+\DoxyCodeLine{148     \textcolor{comment}{//Creating a vector of points to display}}
+\DoxyCodeLine{149     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<this-\/>hull\_point\_pairs.size();i++)\{}
+\DoxyCodeLine{150         \textcolor{comment}{//Getting the index}}
+\DoxyCodeLine{151         \textcolor{keywordtype}{int} idx1=this-\/>hull\_point\_pairs[i].first;}
+\DoxyCodeLine{152         \textcolor{keywordtype}{int} idx2=this-\/>hull\_point\_pairs[i].second;}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154         \textcolor{comment}{//Creating the vector of points}}
+\DoxyCodeLine{155         vector<struct point> display\_points;}
+\DoxyCodeLine{156         \textcolor{keyword}{struct }\mbox{\hyperlink{structpoint}{point}} p1,p2;}
+\DoxyCodeLine{157         \textcolor{comment}{//Copying the location of point on these local copy}}
+\DoxyCodeLine{158         p1=this-\/>points[idx1];}
+\DoxyCodeLine{159         p2=this-\/>points[idx2];}
+\DoxyCodeLine{160         \textcolor{comment}{//Pushing these points on the vector}}
+\DoxyCodeLine{161         display\_points.push\_back(p1);}
+\DoxyCodeLine{162         display\_points.push\_back(p2);}
+\DoxyCodeLine{163         \textcolor{comment}{//Calling the display function to draw these line on gui}}
+\DoxyCodeLine{164         this-\/>w-\/>drawLines(display\_points);}
+\DoxyCodeLine{165         sleep(1);}
+\DoxyCodeLine{166     \}}
+\DoxyCodeLine{167 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classKirkpatrick__Seidel_a27411b5aba77fbca38854e6032c2ac33}\label{classKirkpatrick__Seidel_a27411b5aba77fbca38854e6032c2ac33}} 
+\index{Kirkpatrick\_Seidel@{Kirkpatrick\_Seidel}!print\_pairs\_on\_hull@{print\_pairs\_on\_hull}}
+\index{print\_pairs\_on\_hull@{print\_pairs\_on\_hull}!Kirkpatrick\_Seidel@{Kirkpatrick\_Seidel}}
+\doxysubsubsection{\texorpdfstring{print\_pairs\_on\_hull()}{print\_pairs\_on\_hull()}}
+{\footnotesize\ttfamily void Kirkpatrick\+\_\+\+Seidel\+::print\+\_\+pairs\+\_\+on\+\_\+hull (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+D\+E\+S\+C\+R\+I\+P\+T\+I\+ON\+: This function will allow the outside world to print the pair of points on the hull.
+
+Definition at line 19 of file kirkpatrick\+\_\+seidel.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19                                             \{}
+\DoxyCodeLine{25     cout<<\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\(\backslash\)n"};}
+\DoxyCodeLine{26     cout<<\textcolor{stringliteral}{"Printing the pair of point on the convex hull\(\backslash\)n"};}
+\DoxyCodeLine{27     cout<<\textcolor{stringliteral}{"\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\(\backslash\)n"};}
+\DoxyCodeLine{28     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<hull\_point\_pairs.size();i++)\{}
+\DoxyCodeLine{29         pair<int,int> hull\_pair=hull\_point\_pairs[i];}
+\DoxyCodeLine{30         cout<<\textcolor{stringliteral}{"HULL PAIR:\(\backslash\)n"};}
+\DoxyCodeLine{31         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(hull\_pair.first);}
+\DoxyCodeLine{32         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(hull\_pair.second);}
+\DoxyCodeLine{33         cout<<endl;}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}\label{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}} 
+\index{Kirkpatrick\_Seidel@{Kirkpatrick\_Seidel}!print\_point@{print\_point}}
+\index{print\_point@{print\_point}!Kirkpatrick\_Seidel@{Kirkpatrick\_Seidel}}
+\doxysubsubsection{\texorpdfstring{print\_point()}{print\_point()}}
+{\footnotesize\ttfamily void Kirkpatrick\+\_\+\+Seidel\+::print\+\_\+point (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})}
+
+================================================================P\+U\+B\+L\+IC F\+U\+N\+C\+T\+I\+ON ~\newline
+ ================================================================ 
+
+Definition at line 13 of file kirkpatrick\+\_\+seidel.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13                                            \{}
+\DoxyCodeLine{14     cout<<\textcolor{stringliteral}{"idx:"}<<idx<<\textcolor{stringliteral}{" at location: "};}
+\DoxyCodeLine{15     cout<<points[idx].x<<\textcolor{stringliteral}{","}<<points[idx].y<<endl;}
+\DoxyCodeLine{16 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classKirkpatrick__Seidel_a87772fab208930356384e5c568ecee69}\label{classKirkpatrick__Seidel_a87772fab208930356384e5c568ecee69}} 
+\index{Kirkpatrick\_Seidel@{Kirkpatrick\_Seidel}!put\_a\_hull\_on\_points@{put\_a\_hull\_on\_points}}
+\index{put\_a\_hull\_on\_points@{put\_a\_hull\_on\_points}!Kirkpatrick\_Seidel@{Kirkpatrick\_Seidel}}
+\doxysubsubsection{\texorpdfstring{put\_a\_hull\_on\_points()}{put\_a\_hull\_on\_points()}}
+{\footnotesize\ttfamily void Kirkpatrick\+\_\+\+Seidel\+::put\+\_\+a\+\_\+hull\+\_\+on\+\_\+points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+D\+E\+S\+C\+R\+I\+P\+T\+I\+ON\+: This function is the main iterface of talking for finding the convex world from the outside world.\+Internally it will call it\textquotesingle{}s helper function to generate the convex hull and put the indexes of the points in the member variable hull\+\_\+point\+\_\+pairs U\+S\+A\+GE\+: No Arguments and Return value
+
+U\+P\+P\+ER H\+U\+LL G\+E\+N\+E\+R\+A\+T\+I\+ON ~\newline
+
+
+L\+O\+W\+ER H\+U\+LL G\+E\+N\+E\+R\+A\+T\+I\+ON ~\newline
+
+
+J\+O\+I\+N\+I\+NG U\+P\+P\+ER A\+ND L\+O\+W\+ER H\+U\+LL ~\newline
+ 
+
+Definition at line 38 of file kirkpatrick\+\_\+seidel.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38                                              \{}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{51         \textcolor{comment}{//Generating the candidate points which could form upper hull.}}
+\DoxyCodeLine{53         cout<<\textcolor{stringliteral}{"////////////////////////////////////\(\backslash\)n"};}
+\DoxyCodeLine{54         cout<<\textcolor{stringliteral}{"Generating the UPPER-\/HULL Candidates"}<<endl;}
+\DoxyCodeLine{55         cout<<\textcolor{stringliteral}{"////////////////////////////////////\(\backslash\)n"};}
+\DoxyCodeLine{56         \textcolor{comment}{//bool upside=true;}}
+\DoxyCodeLine{57         vector<int> cand\_idx=get\_candidates\_idx(this-\/>pu\_min\_idx,\(\backslash\)}
+\DoxyCodeLine{58                                                 this-\/>pu\_max\_idx);}
+\DoxyCodeLine{59         \textcolor{comment}{//Printing the candidate indexes}}
+\DoxyCodeLine{60         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<cand\_idx.size();i++)\{}
+\DoxyCodeLine{61             cout<<\textcolor{stringliteral}{"UH-\/Cand: "};}
+\DoxyCodeLine{62             this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(cand\_idx[i]);}
+\DoxyCodeLine{63         \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65         \textcolor{comment}{//Now calling the upper hull creator to get upper hull}}
+\DoxyCodeLine{66         cout<<endl<<\textcolor{stringliteral}{"Calling the Upper Hull function"}<<endl;}
+\DoxyCodeLine{67         this-\/>get\_upper\_hull(cand\_idx,this-\/>pu\_min\_idx,\(\backslash\)}
+\DoxyCodeLine{68                                         this-\/>pu\_max\_idx);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         \textcolor{comment}{//Printing the upper hull index}}
+\DoxyCodeLine{71         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a27411b5aba77fbca38854e6032c2ac33}{print\_pairs\_on\_hull}}();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75         \textcolor{comment}{//generate the candidates for the lower hull}}
+\DoxyCodeLine{77         cout<<endl<<endl;}
+\DoxyCodeLine{78         cout<<\textcolor{stringliteral}{"////////////////////////////////////\(\backslash\)n"};}
+\DoxyCodeLine{79         cout<<\textcolor{stringliteral}{"Generating the LOWER-\/HULL candidates"}<<endl;}
+\DoxyCodeLine{80         cout<<\textcolor{stringliteral}{"////////////////////////////////////\(\backslash\)n"};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82         \textcolor{comment}{//Now we will hack our system to generate use model}}
+\DoxyCodeLine{83         \textcolor{comment}{//lower hull probelm to upper hull problem.}}
+\DoxyCodeLine{84         cout<<\textcolor{stringliteral}{"Hacking the lower hull as upper hull\(\backslash\)n"};}
+\DoxyCodeLine{85         transform\_lowers\_to\_upper();}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87         \textcolor{comment}{//Resetting our upside flag to represent we want lower hull cand}}
+\DoxyCodeLine{88         \textcolor{comment}{//upside=false;}}
+\DoxyCodeLine{89         cand\_idx.clear();}
+\DoxyCodeLine{90         cand\_idx=get\_candidates\_idx(this-\/>pl\_min\_idx,this-\/>pl\_max\_idx);}
+\DoxyCodeLine{91         \textcolor{comment}{//Printing the index of candidate}}
+\DoxyCodeLine{92         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0;i<cand\_idx.size();i++)\{}
+\DoxyCodeLine{93             cout<<\textcolor{stringliteral}{"LH-\/Cand: "};}
+\DoxyCodeLine{94             this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_ac2608acfdf7d7194a23f1727d071a9cb}{print\_point}}(cand\_idx[i]);}
+\DoxyCodeLine{95         \}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97         \textcolor{comment}{//Calling the upper hull function on this hacked points}}
+\DoxyCodeLine{98         cout<<\textcolor{stringliteral}{"Calling the upper hull function on hacked points"}<<endl;}
+\DoxyCodeLine{99         this-\/>get\_upper\_hull(cand\_idx,}
+\DoxyCodeLine{100                                 this-\/>pl\_min\_idx,}
+\DoxyCodeLine{101                                 this-\/>pl\_max\_idx);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103         \textcolor{comment}{//Correcting the hacking done in the points (calling same func)}}
+\DoxyCodeLine{104         transform\_lowers\_to\_upper();}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108         \textcolor{comment}{//Adding the pl and pu points to the hull also if they are diff}}
+\DoxyCodeLine{110         \textcolor{comment}{//Joining the left side of upper hull to lower hull.}}
+\DoxyCodeLine{111         \textcolor{keywordflow}{if}(this-\/>pu\_min\_idx!=this-\/>pl\_min\_idx)\{}
+\DoxyCodeLine{112             \textcolor{comment}{//Making a pair of point to join the upper hull to lower}}
+\DoxyCodeLine{113             pair<int,int> hull\_pair;}
+\DoxyCodeLine{114             hull\_pair=make\_pair(this-\/>pl\_min\_idx,this-\/>pu\_min\_idx);}
+\DoxyCodeLine{115             \textcolor{comment}{//Adding this pair to the hull pair vector}}
+\DoxyCodeLine{116             this-\/>hull\_point\_pairs.push\_back(hull\_pair);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118             \textcolor{comment}{//Drawing the connecting bridge}}
+\DoxyCodeLine{119             \textcolor{comment}{//this-\/>draw\_bridge(this-\/>pl\_min\_idx,this-\/>pu\_min\_idx);}}
+\DoxyCodeLine{120         \}}
+\DoxyCodeLine{121         \textcolor{comment}{//Sewing the right side of upper hull to lower hull}}
+\DoxyCodeLine{122         \textcolor{keywordflow}{if}(this-\/>pu\_max\_idx!=this-\/>pl\_max\_idx)\{}
+\DoxyCodeLine{123             \textcolor{comment}{//Joing the upper and lower hull}}
+\DoxyCodeLine{124             pair<int,int> hull\_pair;}
+\DoxyCodeLine{125             hull\_pair=make\_pair(this-\/>pl\_max\_idx,this-\/>pu\_max\_idx);}
+\DoxyCodeLine{126             \textcolor{comment}{//Adding this pair to upper hull}}
+\DoxyCodeLine{127             this-\/>hull\_point\_pairs.push\_back(hull\_pair);}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129             \textcolor{comment}{//Drawing the connecting bridge}}
+\DoxyCodeLine{130             \textcolor{comment}{//this-\/>draw\_bridge(this-\/>pl\_min\_idx,this-\/>pu\_min\_idx);}}
+\DoxyCodeLine{131         \}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133         \textcolor{comment}{//Finally printing all the pair of points on hull}}
+\DoxyCodeLine{134         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a27411b5aba77fbca38854e6032c2ac33}{print\_pairs\_on\_hull}}();}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136         \textcolor{comment}{//Drwaing the bridge}}
+\DoxyCodeLine{137         this-\/>\mbox{\hyperlink{classKirkpatrick__Seidel_a3580c52f1f0cf27589ce8fa39f7af669}{draw\_bridge}}();}
+\DoxyCodeLine{138     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+kirkpatrick\+\_\+seidel.\+h\item 
+kirkpatrick\+\_\+seidel.\+cpp\end{DoxyCompactItemize}

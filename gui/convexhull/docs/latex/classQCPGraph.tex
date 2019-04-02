@@ -1,0 +1,1650 @@
+\hypertarget{classQCPGraph}{}\doxysection{Q\+C\+P\+Graph Class Reference}
+\label{classQCPGraph}\index{QCPGraph@{QCPGraph}}
+
+
+A plottable representing a graph in a plot.  
+
+
+Inheritance diagram for Q\+C\+P\+Graph\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classQCPGraph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859}{Line\+Style}} \{ \newline
+\mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859aea9591b933733cc7b20786b71e60fa04}{ls\+None}}, 
+\mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859a3c42a27b15aa3c92d399082fad8b7515}{ls\+Line}}, 
+\mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859ae10568bda57836487d9dec5eba1d6c6e}{ls\+Step\+Left}}, 
+\mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859a9c37951f7d11aa070100fd16f2935c9e}{ls\+Step\+Right}}, 
+\newline
+\mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859a5adf7b04da215a40a764c21294ea7366}{ls\+Step\+Center}}, 
+\mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859aa3b358b4ae7cca94aceeb8e529c12ebb}{ls\+Impulse}}
+ \}
+\item 
+enum \mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6af}{Error\+Type}} \{ \mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afaeae745e7cc1766bb8546e35d4b76a711}{et\+None}}, 
+\mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afa2a5d89cd76fb8b6b18d71b8f6f6c0f43}{et\+Key}}, 
+\mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afa147022ccdc49f6bd48f904cb4f61872e}{et\+Value}}, 
+\mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afa761cb7d61670c1e2efecccd8974409ab}{et\+Both}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPGraph_a0393a38cf7183cbf46348eb6cf9a5a6c}{Q\+C\+P\+Graph}} (\mbox{\hyperlink{classQCPAxis}{Q\+C\+P\+Axis}} $\ast$key\+Axis, \mbox{\hyperlink{classQCPAxis}{Q\+C\+P\+Axis}} $\ast$value\+Axis)
+\item 
+\mbox{\hyperlink{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}{Q\+C\+P\+Data\+Map}} $\ast$ \mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}} () const
+\item 
+\mbox{\Hypertarget{classQCPGraph_ac3e6f4b3387338df45992b47691b2551}\label{classQCPGraph_ac3e6f4b3387338df45992b47691b2551}} 
+\mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859}{Line\+Style}} {\bfseries line\+Style} () const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a36d5b641db08e27527827c212542bbbd}\label{classQCPGraph_a36d5b641db08e27527827c212542bbbd}} 
+\mbox{\hyperlink{classQCPScatterStyle}{Q\+C\+P\+Scatter\+Style}} {\bfseries scatter\+Style} () const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a1efa62c4b826f34716b505b15d2b2583}\label{classQCPGraph_a1efa62c4b826f34716b505b15d2b2583}} 
+\mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6af}{Error\+Type}} {\bfseries error\+Type} () const
+\item 
+\mbox{\Hypertarget{classQCPGraph_abcf453d2c0d7a751d3a311a8b919b8d9}\label{classQCPGraph_abcf453d2c0d7a751d3a311a8b919b8d9}} 
+Q\+Pen {\bfseries error\+Pen} () const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a5b071344b150359aadb7be0b10b0eae9}\label{classQCPGraph_a5b071344b150359aadb7be0b10b0eae9}} 
+double {\bfseries error\+Bar\+Size} () const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a810db049eff26150c0bcead1bfbcf931}\label{classQCPGraph_a810db049eff26150c0bcead1bfbcf931}} 
+bool {\bfseries error\+Bar\+Skip\+Symbol} () const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a84277b1655474453a5c83318053414d5}\label{classQCPGraph_a84277b1655474453a5c83318053414d5}} 
+\mbox{\hyperlink{classQCPGraph}{Q\+C\+P\+Graph}} $\ast$ {\bfseries channel\+Fill\+Graph} () const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a1ba934b9621270b9a40fcdd2d9ba2adb}\label{classQCPGraph_a1ba934b9621270b9a40fcdd2d9ba2adb}} 
+bool {\bfseries adaptive\+Sampling} () const
+\item 
+void \mbox{\hyperlink{classQCPGraph_a1df2fd710545c8ba3b2c99a39a27bf8b}{set\+Data}} (\mbox{\hyperlink{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}{Q\+C\+P\+Data\+Map}} $\ast$\mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}}, bool copy=false)
+\item 
+void \mbox{\hyperlink{classQCPGraph_a4c55d8ac13bfa42c8c93747820891a76}{set\+Data}} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&value)
+\item 
+void \mbox{\hyperlink{classQCPGraph_abce9f07c0d722bc3e4fa7bd73c7e5dfa}{set\+Data\+Key\+Error}} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&value, const Q\+Vector$<$ double $>$ \&key\+Error)
+\item 
+void \mbox{\hyperlink{classQCPGraph_ac15c749c5fedf740d5692c6fe67143b8}{set\+Data\+Key\+Error}} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&value, const Q\+Vector$<$ double $>$ \&key\+Error\+Minus, const Q\+Vector$<$ double $>$ \&key\+Error\+Plus)
+\item 
+void \mbox{\hyperlink{classQCPGraph_acba6296eadcb36b93267628b8dae3de5}{set\+Data\+Value\+Error}} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&value, const Q\+Vector$<$ double $>$ \&value\+Error)
+\item 
+void \mbox{\hyperlink{classQCPGraph_a3afbfd7222d739351c69387904776f93}{set\+Data\+Value\+Error}} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&value, const Q\+Vector$<$ double $>$ \&value\+Error\+Minus, const Q\+Vector$<$ double $>$ \&value\+Error\+Plus)
+\item 
+void \mbox{\hyperlink{classQCPGraph_a873fe46bdb20be5710428e474ade8908}{set\+Data\+Both\+Error}} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&value, const Q\+Vector$<$ double $>$ \&key\+Error, const Q\+Vector$<$ double $>$ \&value\+Error)
+\item 
+void \mbox{\hyperlink{classQCPGraph_abb75736ecdbf6e6a7501e1da64fb18cf}{set\+Data\+Both\+Error}} (const Q\+Vector$<$ double $>$ \&key, const Q\+Vector$<$ double $>$ \&value, const Q\+Vector$<$ double $>$ \&key\+Error\+Minus, const Q\+Vector$<$ double $>$ \&key\+Error\+Plus, const Q\+Vector$<$ double $>$ \&value\+Error\+Minus, const Q\+Vector$<$ double $>$ \&value\+Error\+Plus)
+\item 
+void \mbox{\hyperlink{classQCPGraph_a513fecccff5b2a50ce53f665338c60ff}{set\+Line\+Style}} (\mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859}{Line\+Style}} ls)
+\item 
+void \mbox{\hyperlink{classQCPGraph_a12bd17a8ba21983163ec5d8f42a9fea5}{set\+Scatter\+Style}} (const \mbox{\hyperlink{classQCPScatterStyle}{Q\+C\+P\+Scatter\+Style}} \&style)
+\item 
+void \mbox{\hyperlink{classQCPGraph_ac3614d799c3894f2bc646e99c7f73d38}{set\+Error\+Type}} (\mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6af}{Error\+Type}} error\+Type)
+\item 
+void \mbox{\hyperlink{classQCPGraph_abd4c7f81939e10776ea64603a704f22a}{set\+Error\+Pen}} (const Q\+Pen \&pen)
+\item 
+void \mbox{\hyperlink{classQCPGraph_a10f50c5495ce45ef559ec2066194a335}{set\+Error\+Bar\+Size}} (double size)
+\item 
+void \mbox{\hyperlink{classQCPGraph_ab1c1ee03d8dd94676a564e5e5f11aac2}{set\+Error\+Bar\+Skip\+Symbol}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classQCPGraph_a2d03156df1b64037a2e36cfa50351ca3}{set\+Channel\+Fill\+Graph}} (\mbox{\hyperlink{classQCPGraph}{Q\+C\+P\+Graph}} $\ast$target\+Graph)
+\item 
+void \mbox{\hyperlink{classQCPGraph_ab468cd600160f327836aa0644291e64c}{set\+Adaptive\+Sampling}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classQCPGraph_aa5c6181d84db72ce4dbe9dc15a34ef4f}{add\+Data}} (const \mbox{\hyperlink{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}{Q\+C\+P\+Data\+Map}} \&data\+Map)
+\item 
+void \mbox{\hyperlink{classQCPGraph_a80cc91e1e0ef77eb50afc5b366d0efd9}{add\+Data}} (const \mbox{\hyperlink{classQCPData}{Q\+C\+P\+Data}} \&\mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}})
+\item 
+void \mbox{\hyperlink{classQCPGraph_a0bf98b1972286cfb7b1c4b7dd6ae2012}{add\+Data}} (double key, double value)
+\item 
+void \mbox{\hyperlink{classQCPGraph_ab6da6377541fe80d892a9893a92db9c6}{add\+Data}} (const Q\+Vector$<$ double $>$ \&keys, const Q\+Vector$<$ double $>$ \&values)
+\item 
+void \mbox{\hyperlink{classQCPGraph_a9fe0b3e54e8c7b61319bd03337e21e99}{remove\+Data\+Before}} (double key)
+\item 
+void \mbox{\hyperlink{classQCPGraph_ae42d645ef617cfc75fc0df58e62c522a}{remove\+Data\+After}} (double key)
+\item 
+void \mbox{\hyperlink{classQCPGraph_a4a0fde50b7db9db0a85b5c5b6b10098f}{remove\+Data}} (double from\+Key, double to\+Key)
+\item 
+void \mbox{\hyperlink{classQCPGraph_a4a706020b4318f118381648ef18aca3f}{remove\+Data}} (double key)
+\item 
+virtual void \mbox{\hyperlink{classQCPGraph_ad4e94a4e44e5e76fbec81a72a977157d}{clear\+Data}} ()
+\item 
+virtual double \mbox{\hyperlink{classQCPGraph_a36011c34aca4f7a477de25961e2f6c13}{select\+Test}} (const Q\+PointF \&pos, bool only\+Selectable, Q\+Variant $\ast$details=0) const
+\item 
+void \mbox{\hyperlink{classQCPGraph_a9c3909d6116e9d03978f057d41174e6a}{rescale\+Axes}} (bool only\+Enlarge, bool include\+Error\+Bars) const
+\item 
+void \mbox{\hyperlink{classQCPGraph_a051fb77b459ba1ae8d65552c67f45e94}{rescale\+Key\+Axis}} (bool only\+Enlarge, bool include\+Error\+Bars) const
+\item 
+void \mbox{\hyperlink{classQCPGraph_a9e0e620a56932c4df80a3762c2f93608}{rescale\+Value\+Axis}} (bool only\+Enlarge, bool include\+Error\+Bars) const
+\item 
+void \mbox{\hyperlink{classQCPGraph_a1491c4a606bccd2d09e65e11b79eb882}{rescale\+Axes}} (bool only\+Enlarge=false) const
+\item 
+void \mbox{\hyperlink{classQCPGraph_ae96b83c961e257da116c6acf9c7da308}{rescale\+Key\+Axis}} (bool only\+Enlarge=false) const
+\item 
+void \mbox{\hyperlink{classQCPGraph_aa1e408bb2d13999150c3f7f8a8579ca9}{rescale\+Value\+Axis}} (bool only\+Enlarge=false) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPGraph_a659218cc62c2a7786213d9dd429c1c8d}\label{classQCPGraph_a659218cc62c2a7786213d9dd429c1c8d}} 
+virtual void {\bfseries draw} (\mbox{\hyperlink{classQCPPainter}{Q\+C\+P\+Painter}} $\ast$painter)
+\item 
+\mbox{\Hypertarget{classQCPGraph_ae962caca309faae29ce0988d0d0eff4b}\label{classQCPGraph_ae962caca309faae29ce0988d0d0eff4b}} 
+virtual void {\bfseries draw\+Legend\+Icon} (\mbox{\hyperlink{classQCPPainter}{Q\+C\+P\+Painter}} $\ast$painter, const Q\+RectF \&rect) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_ad65bc571de3bd0af36296a3cbd0d77ee}\label{classQCPGraph_ad65bc571de3bd0af36296a3cbd0d77ee}} 
+virtual \mbox{\hyperlink{classQCPRange}{Q\+C\+P\+Range}} {\bfseries get\+Key\+Range} (bool \&found\+Range, \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8}{Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a082b98cfb91a7363a3b5cd17b0c1cd60}{sd\+Both}}) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_ac205efd80b4a70d67b163429dc6cba8d}\label{classQCPGraph_ac205efd80b4a70d67b163429dc6cba8d}} 
+virtual \mbox{\hyperlink{classQCPRange}{Q\+C\+P\+Range}} {\bfseries get\+Value\+Range} (bool \&found\+Range, \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8}{Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a082b98cfb91a7363a3b5cd17b0c1cd60}{sd\+Both}}) const
+\item 
+virtual \mbox{\hyperlink{classQCPRange}{Q\+C\+P\+Range}} \mbox{\hyperlink{classQCPGraph_ae6425d5df537c08159f794cb18c051c3}{get\+Key\+Range}} (bool \&found\+Range, \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8}{Sign\+Domain}} in\+Sign\+Domain, bool include\+Errors) const
+\item 
+virtual \mbox{\hyperlink{classQCPRange}{Q\+C\+P\+Range}} \mbox{\hyperlink{classQCPGraph_ac23c7702ca836c7055f48e6fc3295ca4}{get\+Value\+Range}} (bool \&found\+Range, \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8}{Sign\+Domain}} in\+Sign\+Domain, bool include\+Errors) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a9e6ce6db9aa7b29fc397c724fcf7b126}\label{classQCPGraph_a9e6ce6db9aa7b29fc397c724fcf7b126}} 
+virtual void {\bfseries draw\+Fill} (\mbox{\hyperlink{classQCPPainter}{Q\+C\+P\+Painter}} $\ast$painter, Q\+Vector$<$ Q\+PointF $>$ $\ast$line\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_ae1f3edd5eb41aa5782e61673488fd3e0}\label{classQCPGraph_ae1f3edd5eb41aa5782e61673488fd3e0}} 
+virtual void {\bfseries draw\+Scatter\+Plot} (\mbox{\hyperlink{classQCPPainter}{Q\+C\+P\+Painter}} $\ast$painter, Q\+Vector$<$ \mbox{\hyperlink{classQCPData}{Q\+C\+P\+Data}} $>$ $\ast$scatter\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_af460db06d4d6466806721fe101f512e3}\label{classQCPGraph_af460db06d4d6466806721fe101f512e3}} 
+virtual void {\bfseries draw\+Line\+Plot} (\mbox{\hyperlink{classQCPPainter}{Q\+C\+P\+Painter}} $\ast$painter, Q\+Vector$<$ Q\+PointF $>$ $\ast$line\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_ac62c84f51d85b78ee583455b8c37ba56}\label{classQCPGraph_ac62c84f51d85b78ee583455b8c37ba56}} 
+virtual void {\bfseries draw\+Impulse\+Plot} (\mbox{\hyperlink{classQCPPainter}{Q\+C\+P\+Painter}} $\ast$painter, Q\+Vector$<$ Q\+PointF $>$ $\ast$line\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_ae853c297da9d21b6720d2d1c3b0121bf}\label{classQCPGraph_ae853c297da9d21b6720d2d1c3b0121bf}} 
+void {\bfseries get\+Prepared\+Data} (Q\+Vector$<$ \mbox{\hyperlink{classQCPData}{Q\+C\+P\+Data}} $>$ $\ast$line\+Data, Q\+Vector$<$ \mbox{\hyperlink{classQCPData}{Q\+C\+P\+Data}} $>$ $\ast$scatter\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a5ec495f97b8185ba9712430cb1558f52}\label{classQCPGraph_a5ec495f97b8185ba9712430cb1558f52}} 
+void {\bfseries get\+Plot\+Data} (Q\+Vector$<$ Q\+PointF $>$ $\ast$line\+Data, Q\+Vector$<$ \mbox{\hyperlink{classQCPData}{Q\+C\+P\+Data}} $>$ $\ast$scatter\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a6ea929da420e6c104998060d19740ed6}\label{classQCPGraph_a6ea929da420e6c104998060d19740ed6}} 
+void {\bfseries get\+Scatter\+Plot\+Data} (Q\+Vector$<$ \mbox{\hyperlink{classQCPData}{Q\+C\+P\+Data}} $>$ $\ast$scatter\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a77314984a7af578a66e939db0db48556}\label{classQCPGraph_a77314984a7af578a66e939db0db48556}} 
+void {\bfseries get\+Line\+Plot\+Data} (Q\+Vector$<$ Q\+PointF $>$ $\ast$line\+Pixel\+Data, Q\+Vector$<$ \mbox{\hyperlink{classQCPData}{Q\+C\+P\+Data}} $>$ $\ast$scatter\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a8f8ae9cb4aa312c2085c3f6f298f19d4}\label{classQCPGraph_a8f8ae9cb4aa312c2085c3f6f298f19d4}} 
+void {\bfseries get\+Step\+Left\+Plot\+Data} (Q\+Vector$<$ Q\+PointF $>$ $\ast$line\+Pixel\+Data, Q\+Vector$<$ \mbox{\hyperlink{classQCPData}{Q\+C\+P\+Data}} $>$ $\ast$scatter\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a59fecb135f47db10e14d75018210bf80}\label{classQCPGraph_a59fecb135f47db10e14d75018210bf80}} 
+void {\bfseries get\+Step\+Right\+Plot\+Data} (Q\+Vector$<$ Q\+PointF $>$ $\ast$line\+Pixel\+Data, Q\+Vector$<$ \mbox{\hyperlink{classQCPData}{Q\+C\+P\+Data}} $>$ $\ast$scatter\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_ab860d67ecc7e2d7253ab1f19032958c2}\label{classQCPGraph_ab860d67ecc7e2d7253ab1f19032958c2}} 
+void {\bfseries get\+Step\+Center\+Plot\+Data} (Q\+Vector$<$ Q\+PointF $>$ $\ast$line\+Pixel\+Data, Q\+Vector$<$ \mbox{\hyperlink{classQCPData}{Q\+C\+P\+Data}} $>$ $\ast$scatter\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_aae73c001a78cbe54e55e6779d7a70957}\label{classQCPGraph_aae73c001a78cbe54e55e6779d7a70957}} 
+void {\bfseries get\+Impulse\+Plot\+Data} (Q\+Vector$<$ Q\+PointF $>$ $\ast$line\+Pixel\+Data, Q\+Vector$<$ \mbox{\hyperlink{classQCPData}{Q\+C\+P\+Data}} $>$ $\ast$scatter\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_ab51aeba7e9d29754e58852cfad3436cc}\label{classQCPGraph_ab51aeba7e9d29754e58852cfad3436cc}} 
+void {\bfseries draw\+Error} (\mbox{\hyperlink{classQCPPainter}{Q\+C\+P\+Painter}} $\ast$painter, double x, double y, const \mbox{\hyperlink{classQCPData}{Q\+C\+P\+Data}} \&\mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}}) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_abda485a2f71ebe00d890840acbb91516}\label{classQCPGraph_abda485a2f71ebe00d890840acbb91516}} 
+void {\bfseries get\+Visible\+Data\+Bounds} (Q\+C\+P\+Data\+Map\+::const\+\_\+iterator \&lower, Q\+C\+P\+Data\+Map\+::const\+\_\+iterator \&upper) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_ae413e4ea50fea821a48ee2b3c4aaa055}\label{classQCPGraph_ae413e4ea50fea821a48ee2b3c4aaa055}} 
+int {\bfseries count\+Data\+In\+Bounds} (const Q\+C\+P\+Data\+Map\+::const\+\_\+iterator \&lower, const Q\+C\+P\+Data\+Map\+::const\+\_\+iterator \&upper, int max\+Count) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a8e517dcd3baba1b41daed0248841c092}\label{classQCPGraph_a8e517dcd3baba1b41daed0248841c092}} 
+void {\bfseries add\+Fill\+Base\+Points} (Q\+Vector$<$ Q\+PointF $>$ $\ast$line\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_aff2ae149f6d319fc3ed2c7c6fb348553}\label{classQCPGraph_aff2ae149f6d319fc3ed2c7c6fb348553}} 
+void {\bfseries remove\+Fill\+Base\+Points} (Q\+Vector$<$ Q\+PointF $>$ $\ast$line\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_ace7c17a07e9aa824853e469816a5aa1c}\label{classQCPGraph_ace7c17a07e9aa824853e469816a5aa1c}} 
+Q\+PointF {\bfseries lower\+Fill\+Base\+Point} (double lower\+Key) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a7a255fc7260d96ed6f9d972839941f93}\label{classQCPGraph_a7a255fc7260d96ed6f9d972839941f93}} 
+Q\+PointF {\bfseries upper\+Fill\+Base\+Point} (double upper\+Key) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_add26655bd2338adaa7fc99e27bd06550}\label{classQCPGraph_add26655bd2338adaa7fc99e27bd06550}} 
+const Q\+PolygonF {\bfseries get\+Channel\+Fill\+Polygon} (const Q\+Vector$<$ Q\+PointF $>$ $\ast$line\+Data) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a8c3f15dd5a06633011a6ef36016d308b}\label{classQCPGraph_a8c3f15dd5a06633011a6ef36016d308b}} 
+int {\bfseries find\+Index\+BelowX} (const Q\+Vector$<$ Q\+PointF $>$ $\ast$\mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}}, double x) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_aaabd6c6a7200a2672c44e62bd2a1cafa}\label{classQCPGraph_aaabd6c6a7200a2672c44e62bd2a1cafa}} 
+int {\bfseries find\+Index\+AboveX} (const Q\+Vector$<$ Q\+PointF $>$ $\ast$\mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}}, double x) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a5b0291f248e8ca8eaa82833ab420dcd0}\label{classQCPGraph_a5b0291f248e8ca8eaa82833ab420dcd0}} 
+int {\bfseries find\+Index\+BelowY} (const Q\+Vector$<$ Q\+PointF $>$ $\ast$\mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}}, double y) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a8b952a5f937840dc242489585cc8000d}\label{classQCPGraph_a8b952a5f937840dc242489585cc8000d}} 
+int {\bfseries find\+Index\+AboveY} (const Q\+Vector$<$ Q\+PointF $>$ $\ast$\mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}}, double y) const
+\item 
+\mbox{\Hypertarget{classQCPGraph_a96146099a5e68f49c7326a765f768da2}\label{classQCPGraph_a96146099a5e68f49c7326a765f768da2}} 
+double {\bfseries point\+Distance} (const Q\+PointF \&pixel\+Point) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPGraph_a8457c840f69a0ac49f61d30a509c5d08}\label{classQCPGraph_a8457c840f69a0ac49f61d30a509c5d08}} 
+\mbox{\hyperlink{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}{Q\+C\+P\+Data\+Map}} $\ast$ {\bfseries m\+Data}
+\item 
+\mbox{\Hypertarget{classQCPGraph_aa35681a24165c2831301091a87b662ce}\label{classQCPGraph_aa35681a24165c2831301091a87b662ce}} 
+Q\+Pen {\bfseries m\+Error\+Pen}
+\item 
+\mbox{\Hypertarget{classQCPGraph_a8604fd98402035a63375849f7341ee25}\label{classQCPGraph_a8604fd98402035a63375849f7341ee25}} 
+\mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859}{Line\+Style}} {\bfseries m\+Line\+Style}
+\item 
+\mbox{\Hypertarget{classQCPGraph_a4aa36241f166ccd1f75fc8f24e4a3247}\label{classQCPGraph_a4aa36241f166ccd1f75fc8f24e4a3247}} 
+\mbox{\hyperlink{classQCPScatterStyle}{Q\+C\+P\+Scatter\+Style}} {\bfseries m\+Scatter\+Style}
+\item 
+\mbox{\Hypertarget{classQCPGraph_a29e64273db201aeadebc61c870720a36}\label{classQCPGraph_a29e64273db201aeadebc61c870720a36}} 
+\mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6af}{Error\+Type}} {\bfseries m\+Error\+Type}
+\item 
+\mbox{\Hypertarget{classQCPGraph_a7b51c8d09510f9d195b5e765ccbcf05b}\label{classQCPGraph_a7b51c8d09510f9d195b5e765ccbcf05b}} 
+double {\bfseries m\+Error\+Bar\+Size}
+\item 
+\mbox{\Hypertarget{classQCPGraph_acf631d7dbd1055a69ab3b63094868557}\label{classQCPGraph_acf631d7dbd1055a69ab3b63094868557}} 
+bool {\bfseries m\+Error\+Bar\+Skip\+Symbol}
+\item 
+\mbox{\Hypertarget{classQCPGraph_a2f1777c7accf8244fc640c33f0b04577}\label{classQCPGraph_a2f1777c7accf8244fc640c33f0b04577}} 
+Q\+Pointer$<$ \mbox{\hyperlink{classQCPGraph}{Q\+C\+P\+Graph}} $>$ {\bfseries m\+Channel\+Fill\+Graph}
+\item 
+\mbox{\Hypertarget{classQCPGraph_aa951e78aeba714cf443be6da2e52502e}\label{classQCPGraph_aa951e78aeba714cf443be6da2e52502e}} 
+bool {\bfseries m\+Adaptive\+Sampling}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPGraph_a1cdf9df76adcfae45261690aa0ca2198}\label{classQCPGraph_a1cdf9df76adcfae45261690aa0ca2198}} 
+class {\bfseries Q\+Custom\+Plot}
+\item 
+\mbox{\Hypertarget{classQCPGraph_a8429035e7adfbd7f05805a6530ad5e3b}\label{classQCPGraph_a8429035e7adfbd7f05805a6530ad5e3b}} 
+class {\bfseries Q\+C\+P\+Legend}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A plottable representing a graph in a plot. 
+
+
+
+Usually you create new graphs by calling \mbox{\hyperlink{classQCustomPlot_a6fb2873d35a8a8089842d81a70a54167}{Q\+Custom\+Plot\+::add\+Graph}}. The resulting instance can be accessed via \mbox{\hyperlink{classQCustomPlot_a6ecae130f684b25276fb47bd3a5875c6}{Q\+Custom\+Plot\+::graph}}.
+
+To plot data, assign it with the \mbox{\hyperlink{classQCPGraph_a1df2fd710545c8ba3b2c99a39a27bf8b}{set\+Data}} or \mbox{\hyperlink{classQCPGraph_aa5c6181d84db72ce4dbe9dc15a34ef4f}{add\+Data}} functions. Alternatively, you can also access and modify the graph\textquotesingle{}s data via the \mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}} method, which returns a pointer to the internal \mbox{\hyperlink{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}{Q\+C\+P\+Data\+Map}}.
+
+Graphs are used to display single-\/valued data. Single-\/valued means that there should only be one data point per unique key coordinate. In other words, the graph can\textquotesingle{}t have {\itshape loops}. If you do want to plot non-\/single-\/valued curves, rather use the \mbox{\hyperlink{classQCPCurve}{Q\+C\+P\+Curve}} plottable.
+
+Gaps in the graph line can be created by adding data points with NaN as value ({\ttfamily q\+Q\+Na\+N()} or {\ttfamily std\+::numeric\+\_\+limits$<$double$>$\+::quiet\+\_\+\+Na\+N()}) in between the two data points that shall be separated.\hypertarget{classQCPStatisticalBox_appearance}{}\doxysubsection{Changing the appearance}\label{classQCPStatisticalBox_appearance}
+The appearance of the graph is mainly determined by the line style, scatter style, brush and pen of the graph (\mbox{\hyperlink{classQCPGraph_a513fecccff5b2a50ce53f665338c60ff}{set\+Line\+Style}}, \mbox{\hyperlink{classQCPGraph_a12bd17a8ba21983163ec5d8f42a9fea5}{set\+Scatter\+Style}}, \mbox{\hyperlink{classQCPAbstractPlottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}, \mbox{\hyperlink{classQCPAbstractPlottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}).\hypertarget{classQCPGraph_filling}{}\doxysubsubsection{Filling under or between graphs}\label{classQCPGraph_filling}
+\mbox{\hyperlink{classQCPGraph}{Q\+C\+P\+Graph}} knows two types of fills\+: Normal graph fills towards the zero-\/value-\/line parallel to the key axis of the graph, and fills between two graphs, called channel fills. To enable a fill, just set a brush with \mbox{\hyperlink{classQCPAbstractPlottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}} which is neither Qt\+::\+No\+Brush nor fully transparent.
+
+By default, a normal fill towards the zero-\/value-\/line will be drawn. To set up a channel fill between this graph and another one, call \mbox{\hyperlink{classQCPGraph_a2d03156df1b64037a2e36cfa50351ca3}{set\+Channel\+Fill\+Graph}} with the other graph as parameter.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCustomPlot_a6fb2873d35a8a8089842d81a70a54167}{Q\+Custom\+Plot\+::add\+Graph}}, \mbox{\hyperlink{classQCustomPlot_a6ecae130f684b25276fb47bd3a5875c6}{Q\+Custom\+Plot\+::graph}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2490 of file qcustomplot.\+h.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classQCPGraph_ad23b514404bd2cb3216f57c90904d6af}\label{classQCPGraph_ad23b514404bd2cb3216f57c90904d6af}} 
+\index{QCPGraph@{QCPGraph}!ErrorType@{ErrorType}}
+\index{ErrorType@{ErrorType}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{ErrorType}{ErrorType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6af}{Q\+C\+P\+Graph\+::\+Error\+Type}}}
+
+Defines what kind of error bars are drawn for each data point \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{etNone@{etNone}!QCPGraph@{QCPGraph}}\index{QCPGraph@{QCPGraph}!etNone@{etNone}}}\mbox{\Hypertarget{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afaeae745e7cc1766bb8546e35d4b76a711}\label{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afaeae745e7cc1766bb8546e35d4b76a711}} 
+et\+None&No error bars are shown. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{etKey@{etKey}!QCPGraph@{QCPGraph}}\index{QCPGraph@{QCPGraph}!etKey@{etKey}}}\mbox{\Hypertarget{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afa2a5d89cd76fb8b6b18d71b8f6f6c0f43}\label{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afa2a5d89cd76fb8b6b18d71b8f6f6c0f43}} 
+et\+Key&Error bars for the key dimension of the data point are shown. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{etValue@{etValue}!QCPGraph@{QCPGraph}}\index{QCPGraph@{QCPGraph}!etValue@{etValue}}}\mbox{\Hypertarget{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afa147022ccdc49f6bd48f904cb4f61872e}\label{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afa147022ccdc49f6bd48f904cb4f61872e}} 
+et\+Value&Error bars for the value dimension of the data point are shown. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{etBoth@{etBoth}!QCPGraph@{QCPGraph}}\index{QCPGraph@{QCPGraph}!etBoth@{etBoth}}}\mbox{\Hypertarget{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afa761cb7d61670c1e2efecccd8974409ab}\label{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afa761cb7d61670c1e2efecccd8974409ab}} 
+et\+Both&Error bars for both key and value dimensions of the data point are shown. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 2521 of file qcustomplot.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2521                  \{ \mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afaeae745e7cc1766bb8546e35d4b76a711}{etNone}}   }
+\DoxyCodeLine{2522                    ,\mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afa2a5d89cd76fb8b6b18d71b8f6f6c0f43}{etKey}}   }
+\DoxyCodeLine{2523                    ,\mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afa147022ccdc49f6bd48f904cb4f61872e}{etValue}} }
+\DoxyCodeLine{2524                    ,\mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afa761cb7d61670c1e2efecccd8974409ab}{etBoth}}  }
+\DoxyCodeLine{2525                  \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859}\label{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859}} 
+\index{QCPGraph@{QCPGraph}!LineStyle@{LineStyle}}
+\index{LineStyle@{LineStyle}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{LineStyle}{LineStyle}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859}{Q\+C\+P\+Graph\+::\+Line\+Style}}}
+
+Defines how the graph\textquotesingle{}s line is represented visually in the plot. The line is drawn with the current pen of the graph (\mbox{\hyperlink{classQCPAbstractPlottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}). \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_a513fecccff5b2a50ce53f665338c60ff}{set\+Line\+Style}} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lsNone@{lsNone}!QCPGraph@{QCPGraph}}\index{QCPGraph@{QCPGraph}!lsNone@{lsNone}}}\mbox{\Hypertarget{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859aea9591b933733cc7b20786b71e60fa04}\label{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859aea9591b933733cc7b20786b71e60fa04}} 
+ls\+None&data points are not connected with any lines (e.\+g. data only represented with symbols according to the scatter style, see \mbox{\hyperlink{classQCPGraph_a12bd17a8ba21983163ec5d8f42a9fea5}{set\+Scatter\+Style}}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lsLine@{lsLine}!QCPGraph@{QCPGraph}}\index{QCPGraph@{QCPGraph}!lsLine@{lsLine}}}\mbox{\Hypertarget{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859a3c42a27b15aa3c92d399082fad8b7515}\label{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859a3c42a27b15aa3c92d399082fad8b7515}} 
+ls\+Line&data points are connected by a straight line \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lsStepLeft@{lsStepLeft}!QCPGraph@{QCPGraph}}\index{QCPGraph@{QCPGraph}!lsStepLeft@{lsStepLeft}}}\mbox{\Hypertarget{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859ae10568bda57836487d9dec5eba1d6c6e}\label{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859ae10568bda57836487d9dec5eba1d6c6e}} 
+ls\+Step\+Left&line is drawn as steps where the step height is the value of the left data point \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lsStepRight@{lsStepRight}!QCPGraph@{QCPGraph}}\index{QCPGraph@{QCPGraph}!lsStepRight@{lsStepRight}}}\mbox{\Hypertarget{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859a9c37951f7d11aa070100fd16f2935c9e}\label{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859a9c37951f7d11aa070100fd16f2935c9e}} 
+ls\+Step\+Right&line is drawn as steps where the step height is the value of the right data point \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lsStepCenter@{lsStepCenter}!QCPGraph@{QCPGraph}}\index{QCPGraph@{QCPGraph}!lsStepCenter@{lsStepCenter}}}\mbox{\Hypertarget{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859a5adf7b04da215a40a764c21294ea7366}\label{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859a5adf7b04da215a40a764c21294ea7366}} 
+ls\+Step\+Center&line is drawn as steps where the step is in between two data points \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lsImpulse@{lsImpulse}!QCPGraph@{QCPGraph}}\index{QCPGraph@{QCPGraph}!lsImpulse@{lsImpulse}}}\mbox{\Hypertarget{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859aa3b358b4ae7cca94aceeb8e529c12ebb}\label{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859aa3b358b4ae7cca94aceeb8e529c12ebb}} 
+ls\+Impulse&each data point is represented by a line parallel to the value axis, which reaches from the data point to the zero-\/value-\/line \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 2509 of file qcustomplot.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2509                  \{ \mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859aea9591b933733cc7b20786b71e60fa04}{lsNone}}        }
+\DoxyCodeLine{2510                    ,\mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859a3c42a27b15aa3c92d399082fad8b7515}{lsLine}}       }
+\DoxyCodeLine{2512                    ,\mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859ae10568bda57836487d9dec5eba1d6c6e}{lsStepLeft}}   }
+\DoxyCodeLine{2513                    ,\mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859a9c37951f7d11aa070100fd16f2935c9e}{lsStepRight}}  }
+\DoxyCodeLine{2514                    ,\mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859a5adf7b04da215a40a764c21294ea7366}{lsStepCenter}} }
+\DoxyCodeLine{2515                    ,\mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859aa3b358b4ae7cca94aceeb8e529c12ebb}{lsImpulse}}    }
+\DoxyCodeLine{2516                  \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQCPGraph_a0393a38cf7183cbf46348eb6cf9a5a6c}\label{classQCPGraph_a0393a38cf7183cbf46348eb6cf9a5a6c}} 
+\index{QCPGraph@{QCPGraph}!QCPGraph@{QCPGraph}}
+\index{QCPGraph@{QCPGraph}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{QCPGraph()}{QCPGraph()}}
+{\footnotesize\ttfamily Q\+C\+P\+Graph\+::\+Q\+C\+P\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPAxis}{Q\+C\+P\+Axis}} $\ast$}]{key\+Axis,  }\item[{\mbox{\hyperlink{classQCPAxis}{Q\+C\+P\+Axis}} $\ast$}]{value\+Axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructs a graph which uses {\itshape key\+Axis} as its key axis (\char`\"{}x\char`\"{}) and {\itshape value\+Axis} as its value axis (\char`\"{}y\char`\"{}). {\itshape key\+Axis} and {\itshape value\+Axis} must reside in the same \mbox{\hyperlink{classQCustomPlot}{Q\+Custom\+Plot}} instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (q\+Debug), the construction is not aborted, though.
+
+The constructed \mbox{\hyperlink{classQCPGraph}{Q\+C\+P\+Graph}} can be added to the plot with \mbox{\hyperlink{classQCustomPlot_ab7ad9174f701f9c6f64e378df77927a6}{Q\+Custom\+Plot\+::add\+Plottable}}, \mbox{\hyperlink{classQCustomPlot}{Q\+Custom\+Plot}} then takes ownership of the graph.
+
+To directly create a graph inside a plot, you can also use the simpler \mbox{\hyperlink{classQCustomPlot_a6fb2873d35a8a8089842d81a70a54167}{Q\+Custom\+Plot\+::add\+Graph}} function. 
+
+Definition at line 14483 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14483                                                        :}
+\DoxyCodeLine{14484   \mbox{\hyperlink{classQCPAbstractPlottable_af78a036e40db6f53a31abadc5323715a}{QCPAbstractPlottable}}(keyAxis, valueAxis)}
+\DoxyCodeLine{14485 \{}
+\DoxyCodeLine{14486   mData = \textcolor{keyword}{new} \mbox{\hyperlink{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}{QCPDataMap}};}
+\DoxyCodeLine{14487   }
+\DoxyCodeLine{14488   \mbox{\hyperlink{classQCPAbstractPlottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{setPen}}(QPen(Qt::blue, 0));}
+\DoxyCodeLine{14489   \mbox{\hyperlink{classQCPGraph_abd4c7f81939e10776ea64603a704f22a}{setErrorPen}}(QPen(Qt::black));}
+\DoxyCodeLine{14490   \mbox{\hyperlink{classQCPAbstractPlottable_a7a4b92144dca6453a1f0f210e27edc74}{setBrush}}(Qt::NoBrush);}
+\DoxyCodeLine{14491   \mbox{\hyperlink{classQCPAbstractPlottable_a6911603cad23ab0469b108224517516f}{setSelectedPen}}(QPen(QColor(80, 80, 255), 2.5));}
+\DoxyCodeLine{14492   \mbox{\hyperlink{classQCPAbstractPlottable_ae8c816874089f7a44001e8618e81a9dc}{setSelectedBrush}}(Qt::NoBrush);}
+\DoxyCodeLine{14493   }
+\DoxyCodeLine{14494   \mbox{\hyperlink{classQCPGraph_a513fecccff5b2a50ce53f665338c60ff}{setLineStyle}}(\mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859a3c42a27b15aa3c92d399082fad8b7515}{lsLine}});}
+\DoxyCodeLine{14495   \mbox{\hyperlink{classQCPGraph_ac3614d799c3894f2bc646e99c7f73d38}{setErrorType}}(\mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afaeae745e7cc1766bb8546e35d4b76a711}{etNone}});}
+\DoxyCodeLine{14496   \mbox{\hyperlink{classQCPGraph_a10f50c5495ce45ef559ec2066194a335}{setErrorBarSize}}(6);}
+\DoxyCodeLine{14497   \mbox{\hyperlink{classQCPGraph_ab1c1ee03d8dd94676a564e5e5f11aac2}{setErrorBarSkipSymbol}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{14498   \mbox{\hyperlink{classQCPGraph_a2d03156df1b64037a2e36cfa50351ca3}{setChannelFillGraph}}(0);}
+\DoxyCodeLine{14499   \mbox{\hyperlink{classQCPGraph_ab468cd600160f327836aa0644291e64c}{setAdaptiveSampling}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{14500 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQCPGraph_a80cc91e1e0ef77eb50afc5b366d0efd9}\label{classQCPGraph_a80cc91e1e0ef77eb50afc5b366d0efd9}} 
+\index{QCPGraph@{QCPGraph}!addData@{addData}}
+\index{addData@{addData}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::add\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQCPData}{Q\+C\+P\+Data}} \&}]{data }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Adds the provided single data point in {\itshape data} to the current data.
+
+Alternatively, you can also access and modify the graph\textquotesingle{}s data via the \mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}} method, which returns a pointer to the internal \mbox{\hyperlink{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}{Q\+C\+P\+Data\+Map}}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_a4a0fde50b7db9db0a85b5c5b6b10098f}{remove\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 14875 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14876 \{}
+\DoxyCodeLine{14877   mData-\/>insertMulti(\mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}}.key, \mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}});}
+\DoxyCodeLine{14878 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_aa5c6181d84db72ce4dbe9dc15a34ef4f}\label{classQCPGraph_aa5c6181d84db72ce4dbe9dc15a34ef4f}} 
+\index{QCPGraph@{QCPGraph}!addData@{addData}}
+\index{addData@{addData}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::add\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}{Q\+C\+P\+Data\+Map}} \&}]{data\+Map }\end{DoxyParamCaption})}
+
+Adds the provided data points in {\itshape data\+Map} to the current data.
+
+Alternatively, you can also access and modify the graph\textquotesingle{}s data via the \mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}} method, which returns a pointer to the internal \mbox{\hyperlink{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}{Q\+C\+P\+Data\+Map}}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_a4a0fde50b7db9db0a85b5c5b6b10098f}{remove\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 14862 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14863 \{}
+\DoxyCodeLine{14864   mData-\/>unite(dataMap);}
+\DoxyCodeLine{14865 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_ab6da6377541fe80d892a9893a92db9c6}\label{classQCPGraph_ab6da6377541fe80d892a9893a92db9c6}} 
+\index{QCPGraph@{QCPGraph}!addData@{addData}}
+\index{addData@{addData}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::add\+Data (\begin{DoxyParamCaption}\item[{const Q\+Vector$<$ double $>$ \&}]{keys,  }\item[{const Q\+Vector$<$ double $>$ \&}]{values }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Adds the provided data points as {\itshape key} and {\itshape value} pairs to the current data.
+
+Alternatively, you can also access and modify the graph\textquotesingle{}s data via the \mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}} method, which returns a pointer to the internal \mbox{\hyperlink{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}{Q\+C\+P\+Data\+Map}}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_a4a0fde50b7db9db0a85b5c5b6b10098f}{remove\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 14904 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14905 \{}
+\DoxyCodeLine{14906   \textcolor{keywordtype}{int} n = qMin(keys.size(), values.size());}
+\DoxyCodeLine{14907   \mbox{\hyperlink{classQCPData}{QCPData}} newData;}
+\DoxyCodeLine{14908   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; ++i)}
+\DoxyCodeLine{14909   \{}
+\DoxyCodeLine{14910     newData.key = keys[i];}
+\DoxyCodeLine{14911     newData.value = values[i];}
+\DoxyCodeLine{14912     mData-\/>insertMulti(newData.key, newData);}
+\DoxyCodeLine{14913   \}}
+\DoxyCodeLine{14914 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a0bf98b1972286cfb7b1c4b7dd6ae2012}\label{classQCPGraph_a0bf98b1972286cfb7b1c4b7dd6ae2012}} 
+\index{QCPGraph@{QCPGraph}!addData@{addData}}
+\index{addData@{addData}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::add\+Data (\begin{DoxyParamCaption}\item[{double}]{key,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Adds the provided single data point as {\itshape key} and {\itshape value} pair to the current data.
+
+Alternatively, you can also access and modify the graph\textquotesingle{}s data via the \mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}} method, which returns a pointer to the internal \mbox{\hyperlink{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}{Q\+C\+P\+Data\+Map}}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_a4a0fde50b7db9db0a85b5c5b6b10098f}{remove\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 14888 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14889 \{}
+\DoxyCodeLine{14890   \mbox{\hyperlink{classQCPData}{QCPData}} newData;}
+\DoxyCodeLine{14891   newData.key = key;}
+\DoxyCodeLine{14892   newData.value = value;}
+\DoxyCodeLine{14893   mData-\/>insertMulti(newData.key, newData);}
+\DoxyCodeLine{14894 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_ad4e94a4e44e5e76fbec81a72a977157d}\label{classQCPGraph_ad4e94a4e44e5e76fbec81a72a977157d}} 
+\index{QCPGraph@{QCPGraph}!clearData@{clearData}}
+\index{clearData@{clearData}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{clearData()}{clearData()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::clear\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes all data points. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_a4a0fde50b7db9db0a85b5c5b6b10098f}{remove\+Data}}, \mbox{\hyperlink{classQCPGraph_ae42d645ef617cfc75fc0df58e62c522a}{remove\+Data\+After}}, \mbox{\hyperlink{classQCPGraph_a9fe0b3e54e8c7b61319bd03337e21e99}{remove\+Data\+Before}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classQCPAbstractPlottable_a86e5b8fd4b6ff4f4084e7ea4c573fc53}{Q\+C\+P\+Abstract\+Plottable}}.
+
+
+
+Definition at line 14972 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14973 \{}
+\DoxyCodeLine{14974   mData-\/>clear();}
+\DoxyCodeLine{14975 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}\label{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}} 
+\index{QCPGraph@{QCPGraph}!data@{data}}
+\index{data@{data}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}{Q\+C\+P\+Data\+Map}} $\ast$ Q\+C\+P\+Graph\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a pointer to the internal data storage of type \mbox{\hyperlink{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}{Q\+C\+P\+Data\+Map}}. You may use it to directly manipulate the data, which may be more convenient and faster than using the regular \mbox{\hyperlink{classQCPGraph_a1df2fd710545c8ba3b2c99a39a27bf8b}{set\+Data}} or \mbox{\hyperlink{classQCPGraph_aa5c6181d84db72ce4dbe9dc15a34ef4f}{add\+Data}} methods, in certain situations. 
+
+Definition at line 2532 of file qcustomplot.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2532 \{ \textcolor{keywordflow}{return} mData; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_ae6425d5df537c08159f794cb18c051c3}\label{classQCPGraph_ae6425d5df537c08159f794cb18c051c3}} 
+\index{QCPGraph@{QCPGraph}!getKeyRange@{getKeyRange}}
+\index{getKeyRange@{getKeyRange}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{getKeyRange()}{getKeyRange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPRange}{Q\+C\+P\+Range}} Q\+C\+P\+Graph\+::get\+Key\+Range (\begin{DoxyParamCaption}\item[{bool \&}]{found\+Range,  }\item[{\mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8}{Sign\+Domain}}}]{in\+Sign\+Domain,  }\item[{bool}]{include\+Errors }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Allows to specify whether the error bars should be included in the range calculation.
+
+\begin{DoxySeeAlso}{See also}
+get\+Key\+Range(bool \&found\+Range, Sign\+Domain in\+Sign\+Domain) 
+\end{DoxySeeAlso}
+
+
+Definition at line 16506 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16507 \{}
+\DoxyCodeLine{16508   \mbox{\hyperlink{classQCPRange}{QCPRange}} range;}
+\DoxyCodeLine{16509   \textcolor{keywordtype}{bool} haveLower = \textcolor{keyword}{false};}
+\DoxyCodeLine{16510   \textcolor{keywordtype}{bool} haveUpper = \textcolor{keyword}{false};}
+\DoxyCodeLine{16511   }
+\DoxyCodeLine{16512   \textcolor{keywordtype}{double} current, currentErrorMinus, currentErrorPlus;}
+\DoxyCodeLine{16513   }
+\DoxyCodeLine{16514   \textcolor{keywordflow}{if} (inSignDomain == \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a082b98cfb91a7363a3b5cd17b0c1cd60}{sdBoth}}) \textcolor{comment}{// range may be anywhere}}
+\DoxyCodeLine{16515   \{}
+\DoxyCodeLine{16516     QCPDataMap::const\_iterator it = mData-\/>constBegin();}
+\DoxyCodeLine{16517     \textcolor{keywordflow}{while} (it != mData-\/>constEnd())}
+\DoxyCodeLine{16518     \{}
+\DoxyCodeLine{16519       \textcolor{keywordflow}{if} (!qIsNaN(it.value().value))}
+\DoxyCodeLine{16520       \{}
+\DoxyCodeLine{16521         current = it.value().key;}
+\DoxyCodeLine{16522         currentErrorMinus = (includeErrors ? it.value().keyErrorMinus : 0);}
+\DoxyCodeLine{16523         currentErrorPlus = (includeErrors ? it.value().keyErrorPlus : 0);}
+\DoxyCodeLine{16524         \textcolor{keywordflow}{if} (current-\/currentErrorMinus < range.lower || !haveLower)}
+\DoxyCodeLine{16525         \{}
+\DoxyCodeLine{16526           range.lower = current-\/currentErrorMinus;}
+\DoxyCodeLine{16527           haveLower = \textcolor{keyword}{true};}
+\DoxyCodeLine{16528         \}}
+\DoxyCodeLine{16529         \textcolor{keywordflow}{if} (current+currentErrorPlus > range.upper || !haveUpper)}
+\DoxyCodeLine{16530         \{}
+\DoxyCodeLine{16531           range.upper = current+currentErrorPlus;}
+\DoxyCodeLine{16532           haveUpper = \textcolor{keyword}{true};}
+\DoxyCodeLine{16533         \}}
+\DoxyCodeLine{16534       \}}
+\DoxyCodeLine{16535       ++it;}
+\DoxyCodeLine{16536     \}}
+\DoxyCodeLine{16537   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (inSignDomain == \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a0fc9a70796ef60ad18ddd18056e6dc63}{sdNegative}}) \textcolor{comment}{// range may only be in the negative sign domain}}
+\DoxyCodeLine{16538   \{}
+\DoxyCodeLine{16539     QCPDataMap::const\_iterator it = mData-\/>constBegin();}
+\DoxyCodeLine{16540     \textcolor{keywordflow}{while} (it != mData-\/>constEnd())}
+\DoxyCodeLine{16541     \{}
+\DoxyCodeLine{16542       \textcolor{keywordflow}{if} (!qIsNaN(it.value().value))}
+\DoxyCodeLine{16543       \{}
+\DoxyCodeLine{16544         current = it.value().key;}
+\DoxyCodeLine{16545         currentErrorMinus = (includeErrors ? it.value().keyErrorMinus : 0);}
+\DoxyCodeLine{16546         currentErrorPlus = (includeErrors ? it.value().keyErrorPlus : 0);}
+\DoxyCodeLine{16547         \textcolor{keywordflow}{if} ((current-\/currentErrorMinus < range.lower || !haveLower) \&\& current-\/currentErrorMinus < 0)}
+\DoxyCodeLine{16548         \{}
+\DoxyCodeLine{16549           range.lower = current-\/currentErrorMinus;}
+\DoxyCodeLine{16550           haveLower = \textcolor{keyword}{true};}
+\DoxyCodeLine{16551         \}}
+\DoxyCodeLine{16552         \textcolor{keywordflow}{if} ((current+currentErrorPlus > range.upper || !haveUpper) \&\& current+currentErrorPlus < 0)}
+\DoxyCodeLine{16553         \{}
+\DoxyCodeLine{16554           range.upper = current+currentErrorPlus;}
+\DoxyCodeLine{16555           haveUpper = \textcolor{keyword}{true};}
+\DoxyCodeLine{16556         \}}
+\DoxyCodeLine{16557         \textcolor{keywordflow}{if} (includeErrors) \textcolor{comment}{// in case point is in valid sign domain but errobars stretch beyond it, we still want to geht that point.}}
+\DoxyCodeLine{16558         \{}
+\DoxyCodeLine{16559           \textcolor{keywordflow}{if} ((current < range.lower || !haveLower) \&\& current < 0)}
+\DoxyCodeLine{16560           \{}
+\DoxyCodeLine{16561             range.lower = current;}
+\DoxyCodeLine{16562             haveLower = \textcolor{keyword}{true};}
+\DoxyCodeLine{16563           \}}
+\DoxyCodeLine{16564           \textcolor{keywordflow}{if} ((current > range.upper || !haveUpper) \&\& current < 0)}
+\DoxyCodeLine{16565           \{}
+\DoxyCodeLine{16566             range.upper = current;}
+\DoxyCodeLine{16567             haveUpper = \textcolor{keyword}{true};}
+\DoxyCodeLine{16568           \}}
+\DoxyCodeLine{16569         \}}
+\DoxyCodeLine{16570       \}}
+\DoxyCodeLine{16571       ++it;}
+\DoxyCodeLine{16572     \}}
+\DoxyCodeLine{16573   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (inSignDomain == \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a02951859f243a4d24e779cfbb5471030}{sdPositive}}) \textcolor{comment}{// range may only be in the positive sign domain}}
+\DoxyCodeLine{16574   \{}
+\DoxyCodeLine{16575     QCPDataMap::const\_iterator it = mData-\/>constBegin();}
+\DoxyCodeLine{16576     \textcolor{keywordflow}{while} (it != mData-\/>constEnd())}
+\DoxyCodeLine{16577     \{}
+\DoxyCodeLine{16578       \textcolor{keywordflow}{if} (!qIsNaN(it.value().value))}
+\DoxyCodeLine{16579       \{}
+\DoxyCodeLine{16580         current = it.value().key;}
+\DoxyCodeLine{16581         currentErrorMinus = (includeErrors ? it.value().keyErrorMinus : 0);}
+\DoxyCodeLine{16582         currentErrorPlus = (includeErrors ? it.value().keyErrorPlus : 0);}
+\DoxyCodeLine{16583         \textcolor{keywordflow}{if} ((current-\/currentErrorMinus < range.lower || !haveLower) \&\& current-\/currentErrorMinus > 0)}
+\DoxyCodeLine{16584         \{}
+\DoxyCodeLine{16585           range.lower = current-\/currentErrorMinus;}
+\DoxyCodeLine{16586           haveLower = \textcolor{keyword}{true};}
+\DoxyCodeLine{16587         \}}
+\DoxyCodeLine{16588         \textcolor{keywordflow}{if} ((current+currentErrorPlus > range.upper || !haveUpper) \&\& current+currentErrorPlus > 0)}
+\DoxyCodeLine{16589         \{}
+\DoxyCodeLine{16590           range.upper = current+currentErrorPlus;}
+\DoxyCodeLine{16591           haveUpper = \textcolor{keyword}{true};}
+\DoxyCodeLine{16592         \}}
+\DoxyCodeLine{16593         \textcolor{keywordflow}{if} (includeErrors) \textcolor{comment}{// in case point is in valid sign domain but errobars stretch beyond it, we still want to get that point.}}
+\DoxyCodeLine{16594         \{}
+\DoxyCodeLine{16595           \textcolor{keywordflow}{if} ((current < range.lower || !haveLower) \&\& current > 0)}
+\DoxyCodeLine{16596           \{}
+\DoxyCodeLine{16597             range.lower = current;}
+\DoxyCodeLine{16598             haveLower = \textcolor{keyword}{true};}
+\DoxyCodeLine{16599           \}}
+\DoxyCodeLine{16600           \textcolor{keywordflow}{if} ((current > range.upper || !haveUpper) \&\& current > 0)}
+\DoxyCodeLine{16601           \{}
+\DoxyCodeLine{16602             range.upper = current;}
+\DoxyCodeLine{16603             haveUpper = \textcolor{keyword}{true};}
+\DoxyCodeLine{16604           \}}
+\DoxyCodeLine{16605         \}}
+\DoxyCodeLine{16606       \}}
+\DoxyCodeLine{16607       ++it;}
+\DoxyCodeLine{16608     \}}
+\DoxyCodeLine{16609   \}}
+\DoxyCodeLine{16610   }
+\DoxyCodeLine{16611   foundRange = haveLower \&\& haveUpper;}
+\DoxyCodeLine{16612   \textcolor{keywordflow}{return} range;}
+\DoxyCodeLine{16613 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_ac23c7702ca836c7055f48e6fc3295ca4}\label{classQCPGraph_ac23c7702ca836c7055f48e6fc3295ca4}} 
+\index{QCPGraph@{QCPGraph}!getValueRange@{getValueRange}}
+\index{getValueRange@{getValueRange}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{getValueRange()}{getValueRange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPRange}{Q\+C\+P\+Range}} Q\+C\+P\+Graph\+::get\+Value\+Range (\begin{DoxyParamCaption}\item[{bool \&}]{found\+Range,  }\item[{\mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8}{Sign\+Domain}}}]{in\+Sign\+Domain,  }\item[{bool}]{include\+Errors }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Allows to specify whether the error bars should be included in the range calculation.
+
+\begin{DoxySeeAlso}{See also}
+get\+Value\+Range(bool \&found\+Range, Sign\+Domain in\+Sign\+Domain) 
+\end{DoxySeeAlso}
+
+
+Definition at line 16621 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16622 \{}
+\DoxyCodeLine{16623   \mbox{\hyperlink{classQCPRange}{QCPRange}} range;}
+\DoxyCodeLine{16624   \textcolor{keywordtype}{bool} haveLower = \textcolor{keyword}{false};}
+\DoxyCodeLine{16625   \textcolor{keywordtype}{bool} haveUpper = \textcolor{keyword}{false};}
+\DoxyCodeLine{16626   }
+\DoxyCodeLine{16627   \textcolor{keywordtype}{double} current, currentErrorMinus, currentErrorPlus;}
+\DoxyCodeLine{16628   }
+\DoxyCodeLine{16629   \textcolor{keywordflow}{if} (inSignDomain == \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a082b98cfb91a7363a3b5cd17b0c1cd60}{sdBoth}}) \textcolor{comment}{// range may be anywhere}}
+\DoxyCodeLine{16630   \{}
+\DoxyCodeLine{16631     QCPDataMap::const\_iterator it = mData-\/>constBegin();}
+\DoxyCodeLine{16632     \textcolor{keywordflow}{while} (it != mData-\/>constEnd())}
+\DoxyCodeLine{16633     \{}
+\DoxyCodeLine{16634       current = it.value().value;}
+\DoxyCodeLine{16635       \textcolor{keywordflow}{if} (!qIsNaN(current))}
+\DoxyCodeLine{16636       \{}
+\DoxyCodeLine{16637         currentErrorMinus = (includeErrors ? it.value().valueErrorMinus : 0);}
+\DoxyCodeLine{16638         currentErrorPlus = (includeErrors ? it.value().valueErrorPlus : 0);}
+\DoxyCodeLine{16639         \textcolor{keywordflow}{if} (current-\/currentErrorMinus < range.lower || !haveLower)}
+\DoxyCodeLine{16640         \{}
+\DoxyCodeLine{16641           range.lower = current-\/currentErrorMinus;}
+\DoxyCodeLine{16642           haveLower = \textcolor{keyword}{true};}
+\DoxyCodeLine{16643         \}}
+\DoxyCodeLine{16644         \textcolor{keywordflow}{if} (current+currentErrorPlus > range.upper || !haveUpper)}
+\DoxyCodeLine{16645         \{}
+\DoxyCodeLine{16646           range.upper = current+currentErrorPlus;}
+\DoxyCodeLine{16647           haveUpper = \textcolor{keyword}{true};}
+\DoxyCodeLine{16648         \}}
+\DoxyCodeLine{16649       \}}
+\DoxyCodeLine{16650       ++it;}
+\DoxyCodeLine{16651     \}}
+\DoxyCodeLine{16652   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (inSignDomain == \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a0fc9a70796ef60ad18ddd18056e6dc63}{sdNegative}}) \textcolor{comment}{// range may only be in the negative sign domain}}
+\DoxyCodeLine{16653   \{}
+\DoxyCodeLine{16654     QCPDataMap::const\_iterator it = mData-\/>constBegin();}
+\DoxyCodeLine{16655     \textcolor{keywordflow}{while} (it != mData-\/>constEnd())}
+\DoxyCodeLine{16656     \{}
+\DoxyCodeLine{16657       current = it.value().value;}
+\DoxyCodeLine{16658       \textcolor{keywordflow}{if} (!qIsNaN(current))}
+\DoxyCodeLine{16659       \{}
+\DoxyCodeLine{16660         currentErrorMinus = (includeErrors ? it.value().valueErrorMinus : 0);}
+\DoxyCodeLine{16661         currentErrorPlus = (includeErrors ? it.value().valueErrorPlus : 0);}
+\DoxyCodeLine{16662         \textcolor{keywordflow}{if} ((current-\/currentErrorMinus < range.lower || !haveLower) \&\& current-\/currentErrorMinus < 0)}
+\DoxyCodeLine{16663         \{}
+\DoxyCodeLine{16664           range.lower = current-\/currentErrorMinus;}
+\DoxyCodeLine{16665           haveLower = \textcolor{keyword}{true};}
+\DoxyCodeLine{16666         \}}
+\DoxyCodeLine{16667         \textcolor{keywordflow}{if} ((current+currentErrorPlus > range.upper || !haveUpper) \&\& current+currentErrorPlus < 0)}
+\DoxyCodeLine{16668         \{}
+\DoxyCodeLine{16669           range.upper = current+currentErrorPlus;}
+\DoxyCodeLine{16670           haveUpper = \textcolor{keyword}{true};}
+\DoxyCodeLine{16671         \}}
+\DoxyCodeLine{16672         \textcolor{keywordflow}{if} (includeErrors) \textcolor{comment}{// in case point is in valid sign domain but errobars stretch beyond it, we still want to get that point.}}
+\DoxyCodeLine{16673         \{}
+\DoxyCodeLine{16674           \textcolor{keywordflow}{if} ((current < range.lower || !haveLower) \&\& current < 0)}
+\DoxyCodeLine{16675           \{}
+\DoxyCodeLine{16676             range.lower = current;}
+\DoxyCodeLine{16677             haveLower = \textcolor{keyword}{true};}
+\DoxyCodeLine{16678           \}}
+\DoxyCodeLine{16679           \textcolor{keywordflow}{if} ((current > range.upper || !haveUpper) \&\& current < 0)}
+\DoxyCodeLine{16680           \{}
+\DoxyCodeLine{16681             range.upper = current;}
+\DoxyCodeLine{16682             haveUpper = \textcolor{keyword}{true};}
+\DoxyCodeLine{16683           \}}
+\DoxyCodeLine{16684         \}}
+\DoxyCodeLine{16685       \}}
+\DoxyCodeLine{16686       ++it;}
+\DoxyCodeLine{16687     \}}
+\DoxyCodeLine{16688   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (inSignDomain == \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a02951859f243a4d24e779cfbb5471030}{sdPositive}}) \textcolor{comment}{// range may only be in the positive sign domain}}
+\DoxyCodeLine{16689   \{}
+\DoxyCodeLine{16690     QCPDataMap::const\_iterator it = mData-\/>constBegin();}
+\DoxyCodeLine{16691     \textcolor{keywordflow}{while} (it != mData-\/>constEnd())}
+\DoxyCodeLine{16692     \{}
+\DoxyCodeLine{16693       current = it.value().value;}
+\DoxyCodeLine{16694       \textcolor{keywordflow}{if} (!qIsNaN(current))}
+\DoxyCodeLine{16695       \{}
+\DoxyCodeLine{16696         currentErrorMinus = (includeErrors ? it.value().valueErrorMinus : 0);}
+\DoxyCodeLine{16697         currentErrorPlus = (includeErrors ? it.value().valueErrorPlus : 0);}
+\DoxyCodeLine{16698         \textcolor{keywordflow}{if} ((current-\/currentErrorMinus < range.lower || !haveLower) \&\& current-\/currentErrorMinus > 0)}
+\DoxyCodeLine{16699         \{}
+\DoxyCodeLine{16700           range.lower = current-\/currentErrorMinus;}
+\DoxyCodeLine{16701           haveLower = \textcolor{keyword}{true};}
+\DoxyCodeLine{16702         \}}
+\DoxyCodeLine{16703         \textcolor{keywordflow}{if} ((current+currentErrorPlus > range.upper || !haveUpper) \&\& current+currentErrorPlus > 0)}
+\DoxyCodeLine{16704         \{}
+\DoxyCodeLine{16705           range.upper = current+currentErrorPlus;}
+\DoxyCodeLine{16706           haveUpper = \textcolor{keyword}{true};}
+\DoxyCodeLine{16707         \}}
+\DoxyCodeLine{16708         \textcolor{keywordflow}{if} (includeErrors) \textcolor{comment}{// in case point is in valid sign domain but errobars stretch beyond it, we still want to geht that point.}}
+\DoxyCodeLine{16709         \{}
+\DoxyCodeLine{16710           \textcolor{keywordflow}{if} ((current < range.lower || !haveLower) \&\& current > 0)}
+\DoxyCodeLine{16711           \{}
+\DoxyCodeLine{16712             range.lower = current;}
+\DoxyCodeLine{16713             haveLower = \textcolor{keyword}{true};}
+\DoxyCodeLine{16714           \}}
+\DoxyCodeLine{16715           \textcolor{keywordflow}{if} ((current > range.upper || !haveUpper) \&\& current > 0)}
+\DoxyCodeLine{16716           \{}
+\DoxyCodeLine{16717             range.upper = current;}
+\DoxyCodeLine{16718             haveUpper = \textcolor{keyword}{true};}
+\DoxyCodeLine{16719           \}}
+\DoxyCodeLine{16720         \}}
+\DoxyCodeLine{16721       \}}
+\DoxyCodeLine{16722       ++it;}
+\DoxyCodeLine{16723     \}}
+\DoxyCodeLine{16724   \}}
+\DoxyCodeLine{16725   }
+\DoxyCodeLine{16726   foundRange = haveLower \&\& haveUpper;}
+\DoxyCodeLine{16727   \textcolor{keywordflow}{return} range;}
+\DoxyCodeLine{16728 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a4a0fde50b7db9db0a85b5c5b6b10098f}\label{classQCPGraph_a4a0fde50b7db9db0a85b5c5b6b10098f}} 
+\index{QCPGraph@{QCPGraph}!removeData@{removeData}}
+\index{removeData@{removeData}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{removeData()}{removeData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::remove\+Data (\begin{DoxyParamCaption}\item[{double}]{from\+Key,  }\item[{double}]{to\+Key }\end{DoxyParamCaption})}
+
+Removes all data points with keys between {\itshape from\+Key} and {\itshape to\+Key}. if {\itshape from\+Key} is greater or equal to {\itshape to\+Key}, the function does nothing. To remove a single data point with known key, use \mbox{\hyperlink{classQCPGraph_a4a706020b4318f118381648ef18aca3f}{remove\+Data(double key)}}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_aa5c6181d84db72ce4dbe9dc15a34ef4f}{add\+Data}}, \mbox{\hyperlink{classQCPGraph_ad4e94a4e44e5e76fbec81a72a977157d}{clear\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 14946 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14947 \{}
+\DoxyCodeLine{14948   \textcolor{keywordflow}{if} (fromKey >= toKey || mData-\/>isEmpty()) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{14949   QCPDataMap::iterator it = mData-\/>upperBound(fromKey);}
+\DoxyCodeLine{14950   QCPDataMap::iterator itEnd = mData-\/>upperBound(toKey);}
+\DoxyCodeLine{14951   \textcolor{keywordflow}{while} (it != itEnd)}
+\DoxyCodeLine{14952     it = mData-\/>erase(it);}
+\DoxyCodeLine{14953 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a4a706020b4318f118381648ef18aca3f}\label{classQCPGraph_a4a706020b4318f118381648ef18aca3f}} 
+\index{QCPGraph@{QCPGraph}!removeData@{removeData}}
+\index{removeData@{removeData}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{removeData()}{removeData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::remove\+Data (\begin{DoxyParamCaption}\item[{double}]{key }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Removes a single data point at {\itshape key}. If the position is not known with absolute precision, consider using \mbox{\hyperlink{classQCPGraph_a4a0fde50b7db9db0a85b5c5b6b10098f}{remove\+Data(double from\+Key, double to\+Key)}} with a small fuzziness interval around the suspected position, depeding on the precision with which the key is known.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_aa5c6181d84db72ce4dbe9dc15a34ef4f}{add\+Data}}, \mbox{\hyperlink{classQCPGraph_ad4e94a4e44e5e76fbec81a72a977157d}{clear\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 14963 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14964 \{}
+\DoxyCodeLine{14965   mData-\/>remove(key);}
+\DoxyCodeLine{14966 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_ae42d645ef617cfc75fc0df58e62c522a}\label{classQCPGraph_ae42d645ef617cfc75fc0df58e62c522a}} 
+\index{QCPGraph@{QCPGraph}!removeDataAfter@{removeDataAfter}}
+\index{removeDataAfter@{removeDataAfter}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{removeDataAfter()}{removeDataAfter()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::remove\+Data\+After (\begin{DoxyParamCaption}\item[{double}]{key }\end{DoxyParamCaption})}
+
+Removes all data points with keys greater than {\itshape key}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_aa5c6181d84db72ce4dbe9dc15a34ef4f}{add\+Data}}, \mbox{\hyperlink{classQCPGraph_ad4e94a4e44e5e76fbec81a72a977157d}{clear\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 14931 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14932 \{}
+\DoxyCodeLine{14933   \textcolor{keywordflow}{if} (mData-\/>isEmpty()) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{14934   QCPDataMap::iterator it = mData-\/>upperBound(key);}
+\DoxyCodeLine{14935   \textcolor{keywordflow}{while} (it != mData-\/>end())}
+\DoxyCodeLine{14936     it = mData-\/>erase(it);}
+\DoxyCodeLine{14937 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a9fe0b3e54e8c7b61319bd03337e21e99}\label{classQCPGraph_a9fe0b3e54e8c7b61319bd03337e21e99}} 
+\index{QCPGraph@{QCPGraph}!removeDataBefore@{removeDataBefore}}
+\index{removeDataBefore@{removeDataBefore}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{removeDataBefore()}{removeDataBefore()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::remove\+Data\+Before (\begin{DoxyParamCaption}\item[{double}]{key }\end{DoxyParamCaption})}
+
+Removes all data points with keys smaller than {\itshape key}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_aa5c6181d84db72ce4dbe9dc15a34ef4f}{add\+Data}}, \mbox{\hyperlink{classQCPGraph_ad4e94a4e44e5e76fbec81a72a977157d}{clear\+Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 14920 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14921 \{}
+\DoxyCodeLine{14922   QCPDataMap::iterator it = mData-\/>begin();}
+\DoxyCodeLine{14923   \textcolor{keywordflow}{while} (it != mData-\/>end() \&\& it.key() < key)}
+\DoxyCodeLine{14924     it = mData-\/>erase(it);}
+\DoxyCodeLine{14925 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a9c3909d6116e9d03978f057d41174e6a}\label{classQCPGraph_a9c3909d6116e9d03978f057d41174e6a}} 
+\index{QCPGraph@{QCPGraph}!rescaleAxes@{rescaleAxes}}
+\index{rescaleAxes@{rescaleAxes}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{rescaleAxes()}{rescaleAxes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::rescale\+Axes (\begin{DoxyParamCaption}\item[{bool}]{only\+Enlarge,  }\item[{bool}]{include\+Error\+Bars }\end{DoxyParamCaption}) const}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Allows to define whether error bars are taken into consideration when determining the new axis range.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_a051fb77b459ba1ae8d65552c67f45e94}{rescale\+Key\+Axis}}, \mbox{\hyperlink{classQCPGraph_a9e0e620a56932c4df80a3762c2f93608}{rescale\+Value\+Axis}}, \mbox{\hyperlink{classQCPAbstractPlottable_a1491c4a606bccd2d09e65e11b79eb882}{Q\+C\+P\+Abstract\+Plottable\+::rescale\+Axes}}, \mbox{\hyperlink{classQCustomPlot_ad86528f2cee6c7e446dea4a6e8839935}{Q\+Custom\+Plot\+::rescale\+Axes}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 14998 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14999 \{}
+\DoxyCodeLine{15000   \mbox{\hyperlink{classQCPGraph_a051fb77b459ba1ae8d65552c67f45e94}{rescaleKeyAxis}}(onlyEnlarge, includeErrorBars);}
+\DoxyCodeLine{15001   \mbox{\hyperlink{classQCPGraph_a9e0e620a56932c4df80a3762c2f93608}{rescaleValueAxis}}(onlyEnlarge, includeErrorBars);}
+\DoxyCodeLine{15002 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a1491c4a606bccd2d09e65e11b79eb882}\label{classQCPGraph_a1491c4a606bccd2d09e65e11b79eb882}} 
+\index{QCPGraph@{QCPGraph}!rescaleAxes@{rescaleAxes}}
+\index{rescaleAxes@{rescaleAxes}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{rescaleAxes()}{rescaleAxes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Abstract\+Plottable\+::rescale\+Axes}
+
+Rescales the key and value axes associated with this plottable to contain all displayed data, so the whole plottable is visible. If the scaling of an axis is logarithmic, rescale\+Axes will make sure not to rescale to an illegal range i.\+e. a range containing different signs and/or zero. Instead it will stay in the current sign domain and ignore all parts of the plottable that lie outside of that domain.
+
+{\itshape only\+Enlarge} makes sure the ranges are only expanded, never reduced. So it\textquotesingle{}s possible to show multiple plottables in their entirety by multiple calls to rescale\+Axes where the first call has {\itshape only\+Enlarge} set to false (the default), and all subsequent set to true.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_a051fb77b459ba1ae8d65552c67f45e94}{rescale\+Key\+Axis}}, \mbox{\hyperlink{classQCPGraph_a9e0e620a56932c4df80a3762c2f93608}{rescale\+Value\+Axis}}, \mbox{\hyperlink{classQCustomPlot_ad86528f2cee6c7e446dea4a6e8839935}{Q\+Custom\+Plot\+::rescale\+Axes}}, \mbox{\hyperlink{classQCPAxis_a499345f02ebce4b23d8ccec96e58daa9}{Q\+C\+P\+Axis\+::rescale}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 7039 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7040 \{}
+\DoxyCodeLine{7041   \mbox{\hyperlink{classQCPGraph_a051fb77b459ba1ae8d65552c67f45e94}{rescaleKeyAxis}}(onlyEnlarge);}
+\DoxyCodeLine{7042   \mbox{\hyperlink{classQCPGraph_a9e0e620a56932c4df80a3762c2f93608}{rescaleValueAxis}}(onlyEnlarge);}
+\DoxyCodeLine{7043 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a051fb77b459ba1ae8d65552c67f45e94}\label{classQCPGraph_a051fb77b459ba1ae8d65552c67f45e94}} 
+\index{QCPGraph@{QCPGraph}!rescaleKeyAxis@{rescaleKeyAxis}}
+\index{rescaleKeyAxis@{rescaleKeyAxis}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{rescaleKeyAxis()}{rescaleKeyAxis()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::rescale\+Key\+Axis (\begin{DoxyParamCaption}\item[{bool}]{only\+Enlarge,  }\item[{bool}]{include\+Error\+Bars }\end{DoxyParamCaption}) const}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Allows to define whether error bars (of kind \mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afa2a5d89cd76fb8b6b18d71b8f6f6c0f43}{Q\+C\+P\+Graph\+::et\+Key}}) are taken into consideration when determining the new axis range.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_a9c3909d6116e9d03978f057d41174e6a}{rescale\+Axes}}, \mbox{\hyperlink{classQCPAbstractPlottable_ae96b83c961e257da116c6acf9c7da308}{Q\+C\+P\+Abstract\+Plottable\+::rescale\+Key\+Axis}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 15011 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15012 \{}
+\DoxyCodeLine{15013   \textcolor{comment}{// this code is a copy of QCPAbstractPlottable::rescaleKeyAxis with the only change}}
+\DoxyCodeLine{15014   \textcolor{comment}{// that getKeyRange is passed the includeErrorBars value.}}
+\DoxyCodeLine{15015   \textcolor{keywordflow}{if} (mData-\/>isEmpty()) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{15016   }
+\DoxyCodeLine{15017   \mbox{\hyperlink{classQCPAxis}{QCPAxis}} *keyAxis = mKeyAxis.data();}
+\DoxyCodeLine{15018   \textcolor{keywordflow}{if} (!keyAxis) \{ qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"invalid key axis"}; \textcolor{keywordflow}{return}; \}}
+\DoxyCodeLine{15019 }
+\DoxyCodeLine{15020   \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8}{SignDomain}} signDomain = \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a082b98cfb91a7363a3b5cd17b0c1cd60}{sdBoth}};}
+\DoxyCodeLine{15021   \textcolor{keywordflow}{if} (keyAxis-\/>scaleType() == \mbox{\hyperlink{classQCPAxis_a36d8e8658dbaa179bf2aeb973db2d6f0abf5b785ad976618816dc6f79b73216d4}{QCPAxis::stLogarithmic}})}
+\DoxyCodeLine{15022     signDomain = (keyAxis-\/>range().upper < 0 ? \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a0fc9a70796ef60ad18ddd18056e6dc63}{sdNegative}} : \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a02951859f243a4d24e779cfbb5471030}{sdPositive}});}
+\DoxyCodeLine{15023   }
+\DoxyCodeLine{15024   \textcolor{keywordtype}{bool} foundRange;}
+\DoxyCodeLine{15025   \mbox{\hyperlink{classQCPRange}{QCPRange}} newRange = getKeyRange(foundRange, signDomain, includeErrorBars);}
+\DoxyCodeLine{15026   }
+\DoxyCodeLine{15027   \textcolor{keywordflow}{if} (foundRange)}
+\DoxyCodeLine{15028   \{}
+\DoxyCodeLine{15029     \textcolor{keywordflow}{if} (onlyEnlarge)}
+\DoxyCodeLine{15030     \{}
+\DoxyCodeLine{15031       \textcolor{keywordflow}{if} (keyAxis-\/>range().lower < newRange.lower)}
+\DoxyCodeLine{15032         newRange.lower = keyAxis-\/>range().lower;}
+\DoxyCodeLine{15033       \textcolor{keywordflow}{if} (keyAxis-\/>range().upper > newRange.upper)}
+\DoxyCodeLine{15034         newRange.upper = keyAxis-\/>range().upper;}
+\DoxyCodeLine{15035     \}}
+\DoxyCodeLine{15036     keyAxis-\/>\mbox{\hyperlink{classQCPAxis_aebdfea5d44c3a0ad2b4700cd4d25b641}{setRange}}(newRange);}
+\DoxyCodeLine{15037   \}}
+\DoxyCodeLine{15038 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_ae96b83c961e257da116c6acf9c7da308}\label{classQCPGraph_ae96b83c961e257da116c6acf9c7da308}} 
+\index{QCPGraph@{QCPGraph}!rescaleKeyAxis@{rescaleKeyAxis}}
+\index{rescaleKeyAxis@{rescaleKeyAxis}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{rescaleKeyAxis()}{rescaleKeyAxis()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Abstract\+Plottable\+::rescale\+Key\+Axis}
+
+Rescales the key axis of the plottable so the whole plottable is visible.
+
+See \mbox{\hyperlink{classQCPGraph_a9c3909d6116e9d03978f057d41174e6a}{rescale\+Axes}} for detailed behaviour. 
+
+Definition at line 7050 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7051 \{}
+\DoxyCodeLine{7052   \mbox{\hyperlink{classQCPAxis}{QCPAxis}} *keyAxis = mKeyAxis.data();}
+\DoxyCodeLine{7053   \textcolor{keywordflow}{if} (!keyAxis) \{ qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"invalid key axis"}; \textcolor{keywordflow}{return}; \}}
+\DoxyCodeLine{7054   }
+\DoxyCodeLine{7055   \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8}{SignDomain}} signDomain = \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a082b98cfb91a7363a3b5cd17b0c1cd60}{sdBoth}};}
+\DoxyCodeLine{7056   \textcolor{keywordflow}{if} (keyAxis-\/>scaleType() == \mbox{\hyperlink{classQCPAxis_a36d8e8658dbaa179bf2aeb973db2d6f0abf5b785ad976618816dc6f79b73216d4}{QCPAxis::stLogarithmic}})}
+\DoxyCodeLine{7057     signDomain = (keyAxis-\/>range().upper < 0 ? \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a0fc9a70796ef60ad18ddd18056e6dc63}{sdNegative}} : \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a02951859f243a4d24e779cfbb5471030}{sdPositive}});}
+\DoxyCodeLine{7058   }
+\DoxyCodeLine{7059   \textcolor{keywordtype}{bool} foundRange;}
+\DoxyCodeLine{7060   \mbox{\hyperlink{classQCPRange}{QCPRange}} newRange = getKeyRange(foundRange, signDomain);}
+\DoxyCodeLine{7061   \textcolor{keywordflow}{if} (foundRange)}
+\DoxyCodeLine{7062   \{}
+\DoxyCodeLine{7063     \textcolor{keywordflow}{if} (onlyEnlarge)}
+\DoxyCodeLine{7064       newRange.\mbox{\hyperlink{classQCPRange_a0fa1bc8048be50d52bea93a8caf08305}{expand}}(keyAxis-\/>range());}
+\DoxyCodeLine{7065     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classQCPRange_ab38bd4841c77c7bb86c9eea0f142dcc0}{QCPRange::validRange}}(newRange)) \textcolor{comment}{// likely due to range being zero (plottable has only constant data in this axis dimension), shift current range to at least center the plottable}}
+\DoxyCodeLine{7066     \{}
+\DoxyCodeLine{7067       \textcolor{keywordtype}{double} center = (newRange.lower+newRange.upper)*0.5; \textcolor{comment}{// upper and lower should be equal anyway, but just to make sure, incase validRange returned false for other reason}}
+\DoxyCodeLine{7068       \textcolor{keywordflow}{if} (keyAxis-\/>scaleType() == \mbox{\hyperlink{classQCPAxis_a36d8e8658dbaa179bf2aeb973db2d6f0aff6e30a11a828bc850caffab0ff994f6}{QCPAxis::stLinear}})}
+\DoxyCodeLine{7069       \{}
+\DoxyCodeLine{7070         newRange.lower = center-\/keyAxis-\/>range().\mbox{\hyperlink{classQCPRange_a62326e7cc4316b96df6a60813230e63f}{size}}()/2.0;}
+\DoxyCodeLine{7071         newRange.upper = center+keyAxis-\/>range().\mbox{\hyperlink{classQCPRange_a62326e7cc4316b96df6a60813230e63f}{size}}()/2.0;}
+\DoxyCodeLine{7072       \} \textcolor{keywordflow}{else} \textcolor{comment}{// scaleType() == stLogarithmic}}
+\DoxyCodeLine{7073       \{}
+\DoxyCodeLine{7074         newRange.lower = center/qSqrt(keyAxis-\/>range().upper/keyAxis-\/>range().lower);}
+\DoxyCodeLine{7075         newRange.upper = center*qSqrt(keyAxis-\/>range().upper/keyAxis-\/>range().lower);}
+\DoxyCodeLine{7076       \}}
+\DoxyCodeLine{7077     \}}
+\DoxyCodeLine{7078     keyAxis-\/>\mbox{\hyperlink{classQCPAxis_aebdfea5d44c3a0ad2b4700cd4d25b641}{setRange}}(newRange);}
+\DoxyCodeLine{7079   \}}
+\DoxyCodeLine{7080 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a9e0e620a56932c4df80a3762c2f93608}\label{classQCPGraph_a9e0e620a56932c4df80a3762c2f93608}} 
+\index{QCPGraph@{QCPGraph}!rescaleValueAxis@{rescaleValueAxis}}
+\index{rescaleValueAxis@{rescaleValueAxis}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{rescaleValueAxis()}{rescaleValueAxis()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::rescale\+Value\+Axis (\begin{DoxyParamCaption}\item[{bool}]{only\+Enlarge,  }\item[{bool}]{include\+Error\+Bars }\end{DoxyParamCaption}) const}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Allows to define whether error bars (of kind \mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afa147022ccdc49f6bd48f904cb4f61872e}{Q\+C\+P\+Graph\+::et\+Value}}) are taken into consideration when determining the new axis range.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_a9c3909d6116e9d03978f057d41174e6a}{rescale\+Axes}}, \mbox{\hyperlink{classQCPAbstractPlottable_aa1e408bb2d13999150c3f7f8a8579ca9}{Q\+C\+P\+Abstract\+Plottable\+::rescale\+Value\+Axis}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 15047 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15048 \{}
+\DoxyCodeLine{15049   \textcolor{comment}{// this code is a copy of QCPAbstractPlottable::rescaleValueAxis with the only change}}
+\DoxyCodeLine{15050   \textcolor{comment}{// is that getValueRange is passed the includeErrorBars value.}}
+\DoxyCodeLine{15051   \textcolor{keywordflow}{if} (mData-\/>isEmpty()) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{15052   }
+\DoxyCodeLine{15053   \mbox{\hyperlink{classQCPAxis}{QCPAxis}} *valueAxis = mValueAxis.data();}
+\DoxyCodeLine{15054   \textcolor{keywordflow}{if} (!valueAxis) \{ qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"invalid value axis"}; \textcolor{keywordflow}{return}; \}}
+\DoxyCodeLine{15055 }
+\DoxyCodeLine{15056   \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8}{SignDomain}} signDomain = \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a082b98cfb91a7363a3b5cd17b0c1cd60}{sdBoth}};}
+\DoxyCodeLine{15057   \textcolor{keywordflow}{if} (valueAxis-\/>scaleType() == \mbox{\hyperlink{classQCPAxis_a36d8e8658dbaa179bf2aeb973db2d6f0abf5b785ad976618816dc6f79b73216d4}{QCPAxis::stLogarithmic}})}
+\DoxyCodeLine{15058     signDomain = (valueAxis-\/>range().upper < 0 ? \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a0fc9a70796ef60ad18ddd18056e6dc63}{sdNegative}} : \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a02951859f243a4d24e779cfbb5471030}{sdPositive}});}
+\DoxyCodeLine{15059   }
+\DoxyCodeLine{15060   \textcolor{keywordtype}{bool} foundRange;}
+\DoxyCodeLine{15061   \mbox{\hyperlink{classQCPRange}{QCPRange}} newRange = getValueRange(foundRange, signDomain, includeErrorBars);}
+\DoxyCodeLine{15062   }
+\DoxyCodeLine{15063   \textcolor{keywordflow}{if} (foundRange)}
+\DoxyCodeLine{15064   \{}
+\DoxyCodeLine{15065     \textcolor{keywordflow}{if} (onlyEnlarge)}
+\DoxyCodeLine{15066     \{}
+\DoxyCodeLine{15067       \textcolor{keywordflow}{if} (valueAxis-\/>range().lower < newRange.lower)}
+\DoxyCodeLine{15068         newRange.lower = valueAxis-\/>range().lower;}
+\DoxyCodeLine{15069       \textcolor{keywordflow}{if} (valueAxis-\/>range().upper > newRange.upper)}
+\DoxyCodeLine{15070         newRange.upper = valueAxis-\/>range().upper;}
+\DoxyCodeLine{15071     \}}
+\DoxyCodeLine{15072     valueAxis-\/>\mbox{\hyperlink{classQCPAxis_aebdfea5d44c3a0ad2b4700cd4d25b641}{setRange}}(newRange);}
+\DoxyCodeLine{15073   \}}
+\DoxyCodeLine{15074 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_aa1e408bb2d13999150c3f7f8a8579ca9}\label{classQCPGraph_aa1e408bb2d13999150c3f7f8a8579ca9}} 
+\index{QCPGraph@{QCPGraph}!rescaleValueAxis@{rescaleValueAxis}}
+\index{rescaleValueAxis@{rescaleValueAxis}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{rescaleValueAxis()}{rescaleValueAxis()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Abstract\+Plottable\+::rescale\+Value\+Axis}
+
+Rescales the value axis of the plottable so the whole plottable is visible.
+
+Returns true if the axis was actually scaled. This might not be the case if this plottable has an invalid range, e.\+g. because it has no data points.
+
+See \mbox{\hyperlink{classQCPGraph_a9c3909d6116e9d03978f057d41174e6a}{rescale\+Axes}} for detailed behaviour. 
+
+Definition at line 7090 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7091 \{}
+\DoxyCodeLine{7092   \mbox{\hyperlink{classQCPAxis}{QCPAxis}} *valueAxis = mValueAxis.data();}
+\DoxyCodeLine{7093   \textcolor{keywordflow}{if} (!valueAxis) \{ qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"invalid value axis"}; \textcolor{keywordflow}{return}; \}}
+\DoxyCodeLine{7094   }
+\DoxyCodeLine{7095   \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8}{SignDomain}} signDomain = \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a082b98cfb91a7363a3b5cd17b0c1cd60}{sdBoth}};}
+\DoxyCodeLine{7096   \textcolor{keywordflow}{if} (valueAxis-\/>scaleType() == \mbox{\hyperlink{classQCPAxis_a36d8e8658dbaa179bf2aeb973db2d6f0abf5b785ad976618816dc6f79b73216d4}{QCPAxis::stLogarithmic}})}
+\DoxyCodeLine{7097     signDomain = (valueAxis-\/>range().upper < 0 ? \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a0fc9a70796ef60ad18ddd18056e6dc63}{sdNegative}} : \mbox{\hyperlink{classQCPAbstractPlottable_a661743478a1d3c09d28ec2711d7653d8a02951859f243a4d24e779cfbb5471030}{sdPositive}});}
+\DoxyCodeLine{7098   }
+\DoxyCodeLine{7099   \textcolor{keywordtype}{bool} foundRange;}
+\DoxyCodeLine{7100   \mbox{\hyperlink{classQCPRange}{QCPRange}} newRange = getValueRange(foundRange, signDomain);}
+\DoxyCodeLine{7101   \textcolor{keywordflow}{if} (foundRange)}
+\DoxyCodeLine{7102   \{}
+\DoxyCodeLine{7103     \textcolor{keywordflow}{if} (onlyEnlarge)}
+\DoxyCodeLine{7104       newRange.\mbox{\hyperlink{classQCPRange_a0fa1bc8048be50d52bea93a8caf08305}{expand}}(valueAxis-\/>range());}
+\DoxyCodeLine{7105     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classQCPRange_ab38bd4841c77c7bb86c9eea0f142dcc0}{QCPRange::validRange}}(newRange)) \textcolor{comment}{// likely due to range being zero (plottable has only constant data in this axis dimension), shift current range to at least center the plottable}}
+\DoxyCodeLine{7106     \{}
+\DoxyCodeLine{7107       \textcolor{keywordtype}{double} center = (newRange.lower+newRange.upper)*0.5; \textcolor{comment}{// upper and lower should be equal anyway, but just to make sure, incase validRange returned false for other reason}}
+\DoxyCodeLine{7108       \textcolor{keywordflow}{if} (valueAxis-\/>scaleType() == \mbox{\hyperlink{classQCPAxis_a36d8e8658dbaa179bf2aeb973db2d6f0aff6e30a11a828bc850caffab0ff994f6}{QCPAxis::stLinear}})}
+\DoxyCodeLine{7109       \{}
+\DoxyCodeLine{7110         newRange.lower = center-\/valueAxis-\/>range().\mbox{\hyperlink{classQCPRange_a62326e7cc4316b96df6a60813230e63f}{size}}()/2.0;}
+\DoxyCodeLine{7111         newRange.upper = center+valueAxis-\/>range().\mbox{\hyperlink{classQCPRange_a62326e7cc4316b96df6a60813230e63f}{size}}()/2.0;}
+\DoxyCodeLine{7112       \} \textcolor{keywordflow}{else} \textcolor{comment}{// scaleType() == stLogarithmic}}
+\DoxyCodeLine{7113       \{}
+\DoxyCodeLine{7114         newRange.lower = center/qSqrt(valueAxis-\/>range().upper/valueAxis-\/>range().lower);}
+\DoxyCodeLine{7115         newRange.upper = center*qSqrt(valueAxis-\/>range().upper/valueAxis-\/>range().lower);}
+\DoxyCodeLine{7116       \}}
+\DoxyCodeLine{7117     \}}
+\DoxyCodeLine{7118     valueAxis-\/>\mbox{\hyperlink{classQCPAxis_aebdfea5d44c3a0ad2b4700cd4d25b641}{setRange}}(newRange);}
+\DoxyCodeLine{7119   \}}
+\DoxyCodeLine{7120 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a36011c34aca4f7a477de25961e2f6c13}\label{classQCPGraph_a36011c34aca4f7a477de25961e2f6c13}} 
+\index{QCPGraph@{QCPGraph}!selectTest@{selectTest}}
+\index{selectTest@{selectTest}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
+{\footnotesize\ttfamily double Q\+C\+P\+Graph\+::select\+Test (\begin{DoxyParamCaption}\item[{const Q\+PointF \&}]{pos,  }\item[{bool}]{only\+Selectable,  }\item[{Q\+Variant $\ast$}]{details = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \mbox{\hyperlink{classQCustomPlot}{Q\+Custom\+Plot}} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the object is represented not by single lines but by an area like a \mbox{\hyperlink{classQCPItemText}{Q\+C\+P\+Item\+Text}} or the bars of a \mbox{\hyperlink{classQCPBars}{Q\+C\+P\+Bars}} plottable, a click inside the area should also be considered a hit. In these cases this function thus returns a constant value greater zero but still below the parent plot\textquotesingle{}s selection tolerance. (typically the selection\+Tolerance multiplied by 0.\+99).
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{classQCustomPlot}{Q\+Custom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{classQCustomPlot}{Q\+Custom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{classQCPAxis}{Q\+C\+P\+Axis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{classQCPGraph_a36011c34aca4f7a477de25961e2f6c13}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+select\+Event, deselect\+Event, \mbox{\hyperlink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{Q\+Custom\+Plot\+::set\+Interactions}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classQCPAbstractPlottable_a38efe9641d972992a3d44204bc80ec1d}{Q\+C\+P\+Abstract\+Plottable}}.
+
+
+
+Definition at line 14978 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14979 \{}
+\DoxyCodeLine{14980   Q\_UNUSED(details)}
+\DoxyCodeLine{14981   \textcolor{keywordflow}{if} ((onlySelectable \&\& !mSelectable) || mData-\/>isEmpty())}
+\DoxyCodeLine{14982     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{14983   \textcolor{keywordflow}{if} (!mKeyAxis || !mValueAxis) \{ qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"invalid key or value axis"}; \textcolor{keywordflow}{return} -\/1; \}}
+\DoxyCodeLine{14984   }
+\DoxyCodeLine{14985   \textcolor{keywordflow}{if} (mKeyAxis.data()-\/>axisRect()-\/>rect().contains(pos.toPoint()))}
+\DoxyCodeLine{14986     \textcolor{keywordflow}{return} pointDistance(pos);}
+\DoxyCodeLine{14987   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{14988     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{14989 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_ab468cd600160f327836aa0644291e64c}\label{classQCPGraph_ab468cd600160f327836aa0644291e64c}} 
+\index{QCPGraph@{QCPGraph}!setAdaptiveSampling@{setAdaptiveSampling}}
+\index{setAdaptiveSampling@{setAdaptiveSampling}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{setAdaptiveSampling()}{setAdaptiveSampling()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::set\+Adaptive\+Sampling (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+Sets whether adaptive sampling shall be used when plotting this graph. \mbox{\hyperlink{classQCustomPlot}{Q\+Custom\+Plot}}\textquotesingle{}s adaptive sampling technique can drastically improve the replot performance for graphs with a larger number of points (e.\+g. above 10,000), without notably changing the appearance of the graph.
+
+By default, adaptive sampling is enabled. Even if enabled, \mbox{\hyperlink{classQCustomPlot}{Q\+Custom\+Plot}} decides whether adaptive sampling shall actually be used on a per-\/graph basis. So leaving adaptive sampling enabled has no disadvantage in almost all cases.
+
+
+
+As can be seen, line plots experience no visual degradation from adaptive sampling. Outliers are reproduced reliably, as well as the overall shape of the data set. The replot time reduces dramatically though. This allows \mbox{\hyperlink{classQCustomPlot}{Q\+Custom\+Plot}} to display large amounts of data in realtime.
+
+
+
+Care must be taken when using high-\/density scatter plots in combination with adaptive sampling. The adaptive sampling algorithm treats scatter plots more carefully than line plots which still gives a significant reduction of replot times, but not quite as much as for line plots. This is because scatter plots inherently need more data points to be preserved in order to still resemble the original, non-\/adaptive-\/sampling plot. As shown above, the results still aren\textquotesingle{}t quite identical, as banding occurs for the outer data points. This is in fact intentional, such that the boundaries of the data cloud stay visible to the viewer. How strong the banding appears, depends on the point density, i.\+e. the number of points in the plot.
+
+For some situations with scatter plots it might thus be desirable to manually turn adaptive sampling off. For example, when saving the plot to disk. This can be achieved by setting {\itshape enabled} to false before issuing a command like \mbox{\hyperlink{classQCustomPlot_a7636261aff1f6d25c9da749ece3fc8b8}{Q\+Custom\+Plot\+::save\+Png}}, and setting {\itshape enabled} back to true afterwards. 
+
+Definition at line 14849 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14850 \{}
+\DoxyCodeLine{14851   mAdaptiveSampling = enabled;}
+\DoxyCodeLine{14852 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a2d03156df1b64037a2e36cfa50351ca3}\label{classQCPGraph_a2d03156df1b64037a2e36cfa50351ca3}} 
+\index{QCPGraph@{QCPGraph}!setChannelFillGraph@{setChannelFillGraph}}
+\index{setChannelFillGraph@{setChannelFillGraph}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{setChannelFillGraph()}{setChannelFillGraph()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::set\+Channel\+Fill\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPGraph}{Q\+C\+P\+Graph}} $\ast$}]{target\+Graph }\end{DoxyParamCaption})}
+
+Sets the target graph for filling the area between this graph and {\itshape target\+Graph} with the current brush (\mbox{\hyperlink{classQCPAbstractPlottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}).
+
+When {\itshape target\+Graph} is set to 0, a normal graph fill to the zero-\/value-\/line will be shown. To disable any filling, set the brush to Qt\+::\+No\+Brush.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPAbstractPlottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 14798 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14799 \{}
+\DoxyCodeLine{14800   \textcolor{comment}{// prevent setting channel target to this graph itself:}}
+\DoxyCodeLine{14801   \textcolor{keywordflow}{if} (targetGraph == \textcolor{keyword}{this})}
+\DoxyCodeLine{14802   \{}
+\DoxyCodeLine{14803     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"targetGraph is this graph itself"};}
+\DoxyCodeLine{14804     mChannelFillGraph = 0;}
+\DoxyCodeLine{14805     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{14806   \}}
+\DoxyCodeLine{14807   \textcolor{comment}{// prevent setting channel target to a graph not in the plot:}}
+\DoxyCodeLine{14808   \textcolor{keywordflow}{if} (targetGraph \&\& targetGraph-\/>mParentPlot != mParentPlot)}
+\DoxyCodeLine{14809   \{}
+\DoxyCodeLine{14810     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"targetGraph not in same plot"};}
+\DoxyCodeLine{14811     mChannelFillGraph = 0;}
+\DoxyCodeLine{14812     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{14813   \}}
+\DoxyCodeLine{14814   }
+\DoxyCodeLine{14815   mChannelFillGraph = targetGraph;}
+\DoxyCodeLine{14816 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a4c55d8ac13bfa42c8c93747820891a76}\label{classQCPGraph_a4c55d8ac13bfa42c8c93747820891a76}} 
+\index{QCPGraph@{QCPGraph}!setData@{setData}}
+\index{setData@{setData}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::set\+Data (\begin{DoxyParamCaption}\item[{const Q\+Vector$<$ double $>$ \&}]{key,  }\item[{const Q\+Vector$<$ double $>$ \&}]{value }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Replaces the current data with the provided points in {\itshape key} and {\itshape value} pairs. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector. 
+
+Definition at line 14540 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14541 \{}
+\DoxyCodeLine{14542   mData-\/>clear();}
+\DoxyCodeLine{14543   \textcolor{keywordtype}{int} n = key.size();}
+\DoxyCodeLine{14544   n = qMin(n, value.size());}
+\DoxyCodeLine{14545   \mbox{\hyperlink{classQCPData}{QCPData}} newData;}
+\DoxyCodeLine{14546   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; ++i)}
+\DoxyCodeLine{14547   \{}
+\DoxyCodeLine{14548     newData.key = key[i];}
+\DoxyCodeLine{14549     newData.value = value[i];}
+\DoxyCodeLine{14550     mData-\/>insertMulti(newData.key, newData);}
+\DoxyCodeLine{14551   \}}
+\DoxyCodeLine{14552 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a1df2fd710545c8ba3b2c99a39a27bf8b}\label{classQCPGraph_a1df2fd710545c8ba3b2c99a39a27bf8b}} 
+\index{QCPGraph@{QCPGraph}!setData@{setData}}
+\index{setData@{setData}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::set\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}{Q\+C\+P\+Data\+Map}} $\ast$}]{data,  }\item[{bool}]{copy = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Replaces the current data with the provided {\itshape data}.
+
+If {\itshape copy} is set to true, data points in {\itshape data} will only be copied. if false, the graph takes ownership of the passed data and replaces the internal data pointer with it. This is significantly faster than copying for large datasets.
+
+Alternatively, you can also access and modify the graph\textquotesingle{}s data via the \mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}} method, which returns a pointer to the internal \mbox{\hyperlink{qcustomplot_8h_a84a9c4a4c2216ccfdcb5f3067cda76e3}{Q\+C\+P\+Data\+Map}}. 
+
+Definition at line 14517 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14518 \{}
+\DoxyCodeLine{14519   \textcolor{keywordflow}{if} (mData == \mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}})}
+\DoxyCodeLine{14520   \{}
+\DoxyCodeLine{14521     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"The data pointer is already in (and owned by) this plottable"} << reinterpret\_cast<quintptr>(\mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}});}
+\DoxyCodeLine{14522     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{14523   \}}
+\DoxyCodeLine{14524   \textcolor{keywordflow}{if} (copy)}
+\DoxyCodeLine{14525   \{}
+\DoxyCodeLine{14526     *mData = *\mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}};}
+\DoxyCodeLine{14527   \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{14528   \{}
+\DoxyCodeLine{14529     \textcolor{keyword}{delete} mData;}
+\DoxyCodeLine{14530     mData = \mbox{\hyperlink{classQCPGraph_acde1c0d1f6a817930489548396e6b3e6}{data}};}
+\DoxyCodeLine{14531   \}}
+\DoxyCodeLine{14532 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a873fe46bdb20be5710428e474ade8908}\label{classQCPGraph_a873fe46bdb20be5710428e474ade8908}} 
+\index{QCPGraph@{QCPGraph}!setDataBothError@{setDataBothError}}
+\index{setDataBothError@{setDataBothError}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{setDataBothError()}{setDataBothError()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::set\+Data\+Both\+Error (\begin{DoxyParamCaption}\item[{const Q\+Vector$<$ double $>$ \&}]{key,  }\item[{const Q\+Vector$<$ double $>$ \&}]{value,  }\item[{const Q\+Vector$<$ double $>$ \&}]{key\+Error,  }\item[{const Q\+Vector$<$ double $>$ \&}]{value\+Error }\end{DoxyParamCaption})}
+
+Replaces the current data with the provided points in {\itshape key} and {\itshape value} pairs. Additionally the symmetrical key and value errors of the data points are set to the values in {\itshape key\+Error} and {\itshape value\+Error}. For error bars to show appropriately, see \mbox{\hyperlink{classQCPGraph_ac3614d799c3894f2bc646e99c7f73d38}{set\+Error\+Type}}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+
+For asymmetrical errors (plus different from minus), see the overloaded version of this function. 
+
+Definition at line 14669 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14670 \{}
+\DoxyCodeLine{14671   mData-\/>clear();}
+\DoxyCodeLine{14672   \textcolor{keywordtype}{int} n = key.size();}
+\DoxyCodeLine{14673   n = qMin(n, value.size());}
+\DoxyCodeLine{14674   n = qMin(n, valueError.size());}
+\DoxyCodeLine{14675   n = qMin(n, keyError.size());}
+\DoxyCodeLine{14676   \mbox{\hyperlink{classQCPData}{QCPData}} newData;}
+\DoxyCodeLine{14677   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; ++i)}
+\DoxyCodeLine{14678   \{}
+\DoxyCodeLine{14679     newData.key = key[i];}
+\DoxyCodeLine{14680     newData.value = value[i];}
+\DoxyCodeLine{14681     newData.keyErrorMinus = keyError[i];}
+\DoxyCodeLine{14682     newData.keyErrorPlus = keyError[i];}
+\DoxyCodeLine{14683     newData.valueErrorMinus = valueError[i];}
+\DoxyCodeLine{14684     newData.valueErrorPlus = valueError[i];}
+\DoxyCodeLine{14685     mData-\/>insertMulti(key[i], newData);}
+\DoxyCodeLine{14686   \}}
+\DoxyCodeLine{14687 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_abb75736ecdbf6e6a7501e1da64fb18cf}\label{classQCPGraph_abb75736ecdbf6e6a7501e1da64fb18cf}} 
+\index{QCPGraph@{QCPGraph}!setDataBothError@{setDataBothError}}
+\index{setDataBothError@{setDataBothError}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{setDataBothError()}{setDataBothError()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::set\+Data\+Both\+Error (\begin{DoxyParamCaption}\item[{const Q\+Vector$<$ double $>$ \&}]{key,  }\item[{const Q\+Vector$<$ double $>$ \&}]{value,  }\item[{const Q\+Vector$<$ double $>$ \&}]{key\+Error\+Minus,  }\item[{const Q\+Vector$<$ double $>$ \&}]{key\+Error\+Plus,  }\item[{const Q\+Vector$<$ double $>$ \&}]{value\+Error\+Minus,  }\item[{const Q\+Vector$<$ double $>$ \&}]{value\+Error\+Plus }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Replaces the current data with the provided points in {\itshape key} and {\itshape value} pairs. Additionally the negative key and value errors of the data points are set to the values in {\itshape key\+Error\+Minus} and {\itshape value\+Error\+Minus}. The positive key and value errors are set to the values in {\itshape key\+Error\+Plus} {\itshape value\+Error\+Plus}. For error bars to show appropriately, see \mbox{\hyperlink{classQCPGraph_ac3614d799c3894f2bc646e99c7f73d38}{set\+Error\+Type}}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector. 
+
+Definition at line 14698 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14699 \{}
+\DoxyCodeLine{14700   mData-\/>clear();}
+\DoxyCodeLine{14701   \textcolor{keywordtype}{int} n = key.size();}
+\DoxyCodeLine{14702   n = qMin(n, value.size());}
+\DoxyCodeLine{14703   n = qMin(n, valueErrorMinus.size());}
+\DoxyCodeLine{14704   n = qMin(n, valueErrorPlus.size());}
+\DoxyCodeLine{14705   n = qMin(n, keyErrorMinus.size());}
+\DoxyCodeLine{14706   n = qMin(n, keyErrorPlus.size());}
+\DoxyCodeLine{14707   \mbox{\hyperlink{classQCPData}{QCPData}} newData;}
+\DoxyCodeLine{14708   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; ++i)}
+\DoxyCodeLine{14709   \{}
+\DoxyCodeLine{14710     newData.key = key[i];}
+\DoxyCodeLine{14711     newData.value = value[i];}
+\DoxyCodeLine{14712     newData.keyErrorMinus = keyErrorMinus[i];}
+\DoxyCodeLine{14713     newData.keyErrorPlus = keyErrorPlus[i];}
+\DoxyCodeLine{14714     newData.valueErrorMinus = valueErrorMinus[i];}
+\DoxyCodeLine{14715     newData.valueErrorPlus = valueErrorPlus[i];}
+\DoxyCodeLine{14716     mData-\/>insertMulti(key[i], newData);}
+\DoxyCodeLine{14717   \}}
+\DoxyCodeLine{14718 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_abce9f07c0d722bc3e4fa7bd73c7e5dfa}\label{classQCPGraph_abce9f07c0d722bc3e4fa7bd73c7e5dfa}} 
+\index{QCPGraph@{QCPGraph}!setDataKeyError@{setDataKeyError}}
+\index{setDataKeyError@{setDataKeyError}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{setDataKeyError()}{setDataKeyError()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::set\+Data\+Key\+Error (\begin{DoxyParamCaption}\item[{const Q\+Vector$<$ double $>$ \&}]{key,  }\item[{const Q\+Vector$<$ double $>$ \&}]{value,  }\item[{const Q\+Vector$<$ double $>$ \&}]{key\+Error }\end{DoxyParamCaption})}
+
+Replaces the current data with the provided points in {\itshape key} and {\itshape value} pairs. Additionally the symmetrical key error of the data points are set to the values in {\itshape key\+Error}. For error bars to show appropriately, see \mbox{\hyperlink{classQCPGraph_ac3614d799c3894f2bc646e99c7f73d38}{set\+Error\+Type}}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+
+For asymmetrical errors (plus different from minus), see the overloaded version of this function. 
+
+Definition at line 14616 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14617 \{}
+\DoxyCodeLine{14618   mData-\/>clear();}
+\DoxyCodeLine{14619   \textcolor{keywordtype}{int} n = key.size();}
+\DoxyCodeLine{14620   n = qMin(n, value.size());}
+\DoxyCodeLine{14621   n = qMin(n, keyError.size());}
+\DoxyCodeLine{14622   \mbox{\hyperlink{classQCPData}{QCPData}} newData;}
+\DoxyCodeLine{14623   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; ++i)}
+\DoxyCodeLine{14624   \{}
+\DoxyCodeLine{14625     newData.key = key[i];}
+\DoxyCodeLine{14626     newData.value = value[i];}
+\DoxyCodeLine{14627     newData.keyErrorMinus = keyError[i];}
+\DoxyCodeLine{14628     newData.keyErrorPlus = keyError[i];}
+\DoxyCodeLine{14629     mData-\/>insertMulti(key[i], newData);}
+\DoxyCodeLine{14630   \}}
+\DoxyCodeLine{14631 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_ac15c749c5fedf740d5692c6fe67143b8}\label{classQCPGraph_ac15c749c5fedf740d5692c6fe67143b8}} 
+\index{QCPGraph@{QCPGraph}!setDataKeyError@{setDataKeyError}}
+\index{setDataKeyError@{setDataKeyError}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{setDataKeyError()}{setDataKeyError()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::set\+Data\+Key\+Error (\begin{DoxyParamCaption}\item[{const Q\+Vector$<$ double $>$ \&}]{key,  }\item[{const Q\+Vector$<$ double $>$ \&}]{value,  }\item[{const Q\+Vector$<$ double $>$ \&}]{key\+Error\+Minus,  }\item[{const Q\+Vector$<$ double $>$ \&}]{key\+Error\+Plus }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Replaces the current data with the provided points in {\itshape key} and {\itshape value} pairs. Additionally the negative key error of the data points are set to the values in {\itshape key\+Error\+Minus}, the positive key error to {\itshape key\+Error\+Plus}. For error bars to show appropriately, see \mbox{\hyperlink{classQCPGraph_ac3614d799c3894f2bc646e99c7f73d38}{set\+Error\+Type}}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector. 
+
+Definition at line 14642 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14643 \{}
+\DoxyCodeLine{14644   mData-\/>clear();}
+\DoxyCodeLine{14645   \textcolor{keywordtype}{int} n = key.size();}
+\DoxyCodeLine{14646   n = qMin(n, value.size());}
+\DoxyCodeLine{14647   n = qMin(n, keyErrorMinus.size());}
+\DoxyCodeLine{14648   n = qMin(n, keyErrorPlus.size());}
+\DoxyCodeLine{14649   \mbox{\hyperlink{classQCPData}{QCPData}} newData;}
+\DoxyCodeLine{14650   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; ++i)}
+\DoxyCodeLine{14651   \{}
+\DoxyCodeLine{14652     newData.key = key[i];}
+\DoxyCodeLine{14653     newData.value = value[i];}
+\DoxyCodeLine{14654     newData.keyErrorMinus = keyErrorMinus[i];}
+\DoxyCodeLine{14655     newData.keyErrorPlus = keyErrorPlus[i];}
+\DoxyCodeLine{14656     mData-\/>insertMulti(key[i], newData);}
+\DoxyCodeLine{14657   \}}
+\DoxyCodeLine{14658 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_acba6296eadcb36b93267628b8dae3de5}\label{classQCPGraph_acba6296eadcb36b93267628b8dae3de5}} 
+\index{QCPGraph@{QCPGraph}!setDataValueError@{setDataValueError}}
+\index{setDataValueError@{setDataValueError}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{setDataValueError()}{setDataValueError()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::set\+Data\+Value\+Error (\begin{DoxyParamCaption}\item[{const Q\+Vector$<$ double $>$ \&}]{key,  }\item[{const Q\+Vector$<$ double $>$ \&}]{value,  }\item[{const Q\+Vector$<$ double $>$ \&}]{value\+Error }\end{DoxyParamCaption})}
+
+Replaces the current data with the provided points in {\itshape key} and {\itshape value} pairs. Additionally the symmetrical value error of the data points are set to the values in {\itshape value\+Error}. For error bars to show appropriately, see \mbox{\hyperlink{classQCPGraph_ac3614d799c3894f2bc646e99c7f73d38}{set\+Error\+Type}}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+
+For asymmetrical errors (plus different from minus), see the overloaded version of this function. 
+
+Definition at line 14563 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14564 \{}
+\DoxyCodeLine{14565   mData-\/>clear();}
+\DoxyCodeLine{14566   \textcolor{keywordtype}{int} n = key.size();}
+\DoxyCodeLine{14567   n = qMin(n, value.size());}
+\DoxyCodeLine{14568   n = qMin(n, valueError.size());}
+\DoxyCodeLine{14569   \mbox{\hyperlink{classQCPData}{QCPData}} newData;}
+\DoxyCodeLine{14570   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; ++i)}
+\DoxyCodeLine{14571   \{}
+\DoxyCodeLine{14572     newData.key = key[i];}
+\DoxyCodeLine{14573     newData.value = value[i];}
+\DoxyCodeLine{14574     newData.valueErrorMinus = valueError[i];}
+\DoxyCodeLine{14575     newData.valueErrorPlus = valueError[i];}
+\DoxyCodeLine{14576     mData-\/>insertMulti(key[i], newData);}
+\DoxyCodeLine{14577   \}}
+\DoxyCodeLine{14578 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a3afbfd7222d739351c69387904776f93}\label{classQCPGraph_a3afbfd7222d739351c69387904776f93}} 
+\index{QCPGraph@{QCPGraph}!setDataValueError@{setDataValueError}}
+\index{setDataValueError@{setDataValueError}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{setDataValueError()}{setDataValueError()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::set\+Data\+Value\+Error (\begin{DoxyParamCaption}\item[{const Q\+Vector$<$ double $>$ \&}]{key,  }\item[{const Q\+Vector$<$ double $>$ \&}]{value,  }\item[{const Q\+Vector$<$ double $>$ \&}]{value\+Error\+Minus,  }\item[{const Q\+Vector$<$ double $>$ \&}]{value\+Error\+Plus }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Replaces the current data with the provided points in {\itshape key} and {\itshape value} pairs. Additionally the negative value error of the data points are set to the values in {\itshape value\+Error\+Minus}, the positive value error to {\itshape value\+Error\+Plus}. For error bars to show appropriately, see \mbox{\hyperlink{classQCPGraph_ac3614d799c3894f2bc646e99c7f73d38}{set\+Error\+Type}}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector. 
+
+Definition at line 14589 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14590 \{}
+\DoxyCodeLine{14591   mData-\/>clear();}
+\DoxyCodeLine{14592   \textcolor{keywordtype}{int} n = key.size();}
+\DoxyCodeLine{14593   n = qMin(n, value.size());}
+\DoxyCodeLine{14594   n = qMin(n, valueErrorMinus.size());}
+\DoxyCodeLine{14595   n = qMin(n, valueErrorPlus.size());}
+\DoxyCodeLine{14596   \mbox{\hyperlink{classQCPData}{QCPData}} newData;}
+\DoxyCodeLine{14597   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; ++i)}
+\DoxyCodeLine{14598   \{}
+\DoxyCodeLine{14599     newData.key = key[i];}
+\DoxyCodeLine{14600     newData.value = value[i];}
+\DoxyCodeLine{14601     newData.valueErrorMinus = valueErrorMinus[i];}
+\DoxyCodeLine{14602     newData.valueErrorPlus = valueErrorPlus[i];}
+\DoxyCodeLine{14603     mData-\/>insertMulti(key[i], newData);}
+\DoxyCodeLine{14604   \}}
+\DoxyCodeLine{14605 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a10f50c5495ce45ef559ec2066194a335}\label{classQCPGraph_a10f50c5495ce45ef559ec2066194a335}} 
+\index{QCPGraph@{QCPGraph}!setErrorBarSize@{setErrorBarSize}}
+\index{setErrorBarSize@{setErrorBarSize}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{setErrorBarSize()}{setErrorBarSize()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::set\+Error\+Bar\+Size (\begin{DoxyParamCaption}\item[{double}]{size }\end{DoxyParamCaption})}
+
+Sets the width of the handles at both ends of an error bar in pixels. 
+
+Definition at line 14768 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14769 \{}
+\DoxyCodeLine{14770   mErrorBarSize = size;}
+\DoxyCodeLine{14771 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_ab1c1ee03d8dd94676a564e5e5f11aac2}\label{classQCPGraph_ab1c1ee03d8dd94676a564e5e5f11aac2}} 
+\index{QCPGraph@{QCPGraph}!setErrorBarSkipSymbol@{setErrorBarSkipSymbol}}
+\index{setErrorBarSkipSymbol@{setErrorBarSkipSymbol}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{setErrorBarSkipSymbol()}{setErrorBarSkipSymbol()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::set\+Error\+Bar\+Skip\+Symbol (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+If {\itshape enabled} is set to true, the error bar will not be drawn as a solid line under the scatter symbol but leave some free space around the symbol.
+
+This feature uses the current scatter size (\mbox{\hyperlink{classQCPScatterStyle_aaefdd031052892c4136129db68596e0f}{Q\+C\+P\+Scatter\+Style\+::set\+Size}}) to determine the size of the area to leave blank. So when drawing Pixmaps as scatter points (\mbox{\hyperlink{classQCPScatterStyle_adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e}{Q\+C\+P\+Scatter\+Style\+::ss\+Pixmap}}), the scatter size must be set manually to a value corresponding to the size of the Pixmap, if the error bars should leave gaps to its boundaries.
+
+\mbox{\hyperlink{classQCPGraph_ac3614d799c3894f2bc646e99c7f73d38}{set\+Error\+Type}}, set\+Error\+Bar\+Size, set\+Scatter\+Style 
+
+Definition at line 14784 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14785 \{}
+\DoxyCodeLine{14786   mErrorBarSkipSymbol = enabled;}
+\DoxyCodeLine{14787 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_abd4c7f81939e10776ea64603a704f22a}\label{classQCPGraph_abd4c7f81939e10776ea64603a704f22a}} 
+\index{QCPGraph@{QCPGraph}!setErrorPen@{setErrorPen}}
+\index{setErrorPen@{setErrorPen}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{setErrorPen()}{setErrorPen()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::set\+Error\+Pen (\begin{DoxyParamCaption}\item[{const Q\+Pen \&}]{pen }\end{DoxyParamCaption})}
+
+Sets the pen with which the error bars will be drawn. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_a10f50c5495ce45ef559ec2066194a335}{set\+Error\+Bar\+Size}}, \mbox{\hyperlink{classQCPGraph_ac3614d799c3894f2bc646e99c7f73d38}{set\+Error\+Type}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 14760 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14761 \{}
+\DoxyCodeLine{14762   mErrorPen = pen;}
+\DoxyCodeLine{14763 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_ac3614d799c3894f2bc646e99c7f73d38}\label{classQCPGraph_ac3614d799c3894f2bc646e99c7f73d38}} 
+\index{QCPGraph@{QCPGraph}!setErrorType@{setErrorType}}
+\index{setErrorType@{setErrorType}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{setErrorType()}{setErrorType()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::set\+Error\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6af}{Error\+Type}}}]{error\+Type }\end{DoxyParamCaption})}
+
+Sets which kind of error bars (Key Error, Value Error or both) should be drawn on each data point. If you set {\itshape error\+Type} to something other than \mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6afaeae745e7cc1766bb8546e35d4b76a711}{et\+None}}, make sure to actually pass error data via the specific set\+Data functions along with the data points (e.\+g. \mbox{\hyperlink{classQCPGraph_acba6296eadcb36b93267628b8dae3de5}{set\+Data\+Value\+Error}}, \mbox{\hyperlink{classQCPGraph_abce9f07c0d722bc3e4fa7bd73c7e5dfa}{set\+Data\+Key\+Error}}, \mbox{\hyperlink{classQCPGraph_a873fe46bdb20be5710428e474ade8908}{set\+Data\+Both\+Error}}).
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_ad23b514404bd2cb3216f57c90904d6af}{Error\+Type}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 14751 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14752 \{}
+\DoxyCodeLine{14753   mErrorType = errorType;}
+\DoxyCodeLine{14754 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a513fecccff5b2a50ce53f665338c60ff}\label{classQCPGraph_a513fecccff5b2a50ce53f665338c60ff}} 
+\index{QCPGraph@{QCPGraph}!setLineStyle@{setLineStyle}}
+\index{setLineStyle@{setLineStyle}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{setLineStyle()}{setLineStyle()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::set\+Line\+Style (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859}{Line\+Style}}}]{ls }\end{DoxyParamCaption})}
+
+Sets how the single data points are connected in the plot. For scatter-\/only plots, set {\itshape ls} to \mbox{\hyperlink{classQCPGraph_ad60175cd9b5cac937c5ee685c32c0859aea9591b933733cc7b20786b71e60fa04}{ls\+None}} and \mbox{\hyperlink{classQCPGraph_a12bd17a8ba21983163ec5d8f42a9fea5}{set\+Scatter\+Style}} to the desired scatter style.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPGraph_a12bd17a8ba21983163ec5d8f42a9fea5}{set\+Scatter\+Style}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 14727 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14728 \{}
+\DoxyCodeLine{14729   mLineStyle = ls;}
+\DoxyCodeLine{14730 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPGraph_a12bd17a8ba21983163ec5d8f42a9fea5}\label{classQCPGraph_a12bd17a8ba21983163ec5d8f42a9fea5}} 
+\index{QCPGraph@{QCPGraph}!setScatterStyle@{setScatterStyle}}
+\index{setScatterStyle@{setScatterStyle}!QCPGraph@{QCPGraph}}
+\doxysubsubsection{\texorpdfstring{setScatterStyle()}{setScatterStyle()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Graph\+::set\+Scatter\+Style (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQCPScatterStyle}{Q\+C\+P\+Scatter\+Style}} \&}]{style }\end{DoxyParamCaption})}
+
+Sets the visual appearance of single data points in the plot. If set to \mbox{\hyperlink{classQCPScatterStyle_adb31525af6b680e6f1b7472e43859349abd144c291ca274f77053ec68cab6c022}{Q\+C\+P\+Scatter\+Style\+::ss\+None}}, no scatter points are drawn (e.\+g. for line-\/only-\/plots with appropriate line style).
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPScatterStyle}{Q\+C\+P\+Scatter\+Style}}, \mbox{\hyperlink{classQCPGraph_a513fecccff5b2a50ce53f665338c60ff}{set\+Line\+Style}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 14738 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14739 \{}
+\DoxyCodeLine{14740   mScatterStyle = style;}
+\DoxyCodeLine{14741 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
+\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}

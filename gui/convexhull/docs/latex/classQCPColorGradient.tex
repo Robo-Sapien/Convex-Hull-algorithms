@@ -1,0 +1,638 @@
+\hypertarget{classQCPColorGradient}{}\doxysection{Q\+C\+P\+Color\+Gradient Class Reference}
+\label{classQCPColorGradient}\index{QCPColorGradient@{QCPColorGradient}}
+
+
+Defines a color gradient for use with e.\+g. \mbox{\hyperlink{classQCPColorMap}{Q\+C\+P\+Color\+Map}}.  
+
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1}{Color\+Interpolation}} \{ \mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7}{ci\+R\+GB}}, 
+\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb}{ci\+H\+SV}}
+ \}
+\item 
+enum \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072}{Gradient\+Preset}} \{ \newline
+\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb}{gp\+Grayscale}}, 
+\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5}{gp\+Hot}}, 
+\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557}{gp\+Cold}}, 
+\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a1bb89351b6def7d220973443fe059c62}{gp\+Night}}, 
+\newline
+\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a9e72663bf6b94b65945f7843f24e0721}{gp\+Candy}}, 
+\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a382f0b07cec1a59d8a533438aea815d2}{gp\+Geography}}, 
+\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a4297f4f9e212a819cd65e8e34567182b}{gp\+Ion}}, 
+\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072af1676b129f9f458ace453f280c731cf7}{gp\+Thermal}}, 
+\newline
+\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072ab7414ce4e36dc3e82e0132a7f0f41b52}{gp\+Polar}}, 
+\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072ad63adc100ef46f6b4a8a6deacec4642f}{gp\+Spectrum}}, 
+\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a5f8a9e67b64c17ddfe4f069fe2b9fb02}{gp\+Jet}}, 
+\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130}{gp\+Hues}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPColorGradient_a546e44df5fa1846400a582c041361c85}{Q\+C\+P\+Color\+Gradient}} (\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072}{Gradient\+Preset}} preset=\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557}{gp\+Cold}})
+\item 
+\mbox{\Hypertarget{classQCPColorGradient_a7f3478c33c59aa3c03b9ea1f809877fa}\label{classQCPColorGradient_a7f3478c33c59aa3c03b9ea1f809877fa}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classQCPColorGradient}{Q\+C\+P\+Color\+Gradient}} \&other) const
+\item 
+\mbox{\Hypertarget{classQCPColorGradient_ad26a10e3beaef4fc6f2553d1a9756087}\label{classQCPColorGradient_ad26a10e3beaef4fc6f2553d1a9756087}} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classQCPColorGradient}{Q\+C\+P\+Color\+Gradient}} \&other) const
+\item 
+\mbox{\Hypertarget{classQCPColorGradient_ac4b9d7034fc3b6c76318b05075367090}\label{classQCPColorGradient_ac4b9d7034fc3b6c76318b05075367090}} 
+int {\bfseries level\+Count} () const
+\item 
+\mbox{\Hypertarget{classQCPColorGradient_aaab19729e921682401044ac8e518ff02}\label{classQCPColorGradient_aaab19729e921682401044ac8e518ff02}} 
+Q\+Map$<$ double, Q\+Color $>$ {\bfseries color\+Stops} () const
+\item 
+\mbox{\Hypertarget{classQCPColorGradient_abad5002858db8cf75ecb045200881de6}\label{classQCPColorGradient_abad5002858db8cf75ecb045200881de6}} 
+\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1}{Color\+Interpolation}} {\bfseries color\+Interpolation} () const
+\item 
+\mbox{\Hypertarget{classQCPColorGradient_a22a1d2b17f203caf0dcec833507fb9e0}\label{classQCPColorGradient_a22a1d2b17f203caf0dcec833507fb9e0}} 
+bool {\bfseries periodic} () const
+\item 
+void \mbox{\hyperlink{classQCPColorGradient_a18da587eb4f7fc788ea28ba15b6a12de}{set\+Level\+Count}} (int n)
+\item 
+void \mbox{\hyperlink{classQCPColorGradient_a724e828aa6f0ba5011a9392477c35d3a}{set\+Color\+Stops}} (const Q\+Map$<$ double, Q\+Color $>$ \&color\+Stops)
+\item 
+void \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}} (double position, const Q\+Color \&color)
+\item 
+void \mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{set\+Color\+Interpolation}} (\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1}{Color\+Interpolation}} interpolation)
+\item 
+void \mbox{\hyperlink{classQCPColorGradient_a39d6448155fc00a219f239220d14bb39}{set\+Periodic}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classQCPColorGradient_aaf423ceb943e177b0ed2c48c811d83dc}{colorize}} (const double $\ast$data, const \mbox{\hyperlink{classQCPRange}{Q\+C\+P\+Range}} \&range, Q\+Rgb $\ast$scan\+Line, int n, int data\+Index\+Factor=1, bool logarithmic=false)
+\item 
+\mbox{\Hypertarget{classQCPColorGradient_a0599545c859268b025d2060dea741cea}\label{classQCPColorGradient_a0599545c859268b025d2060dea741cea}} 
+Q\+Rgb {\bfseries color} (double position, const \mbox{\hyperlink{classQCPRange}{Q\+C\+P\+Range}} \&range, bool logarithmic=false)
+\item 
+void \mbox{\hyperlink{classQCPColorGradient_aa0aeec1528241728b9671bf8e60b1622}{load\+Preset}} (\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072}{Gradient\+Preset}} preset)
+\item 
+void \mbox{\hyperlink{classQCPColorGradient_a939213e85f0d1279519d555c5fcfb6ad}{clear\+Color\+Stops}} ()
+\item 
+\mbox{\hyperlink{classQCPColorGradient}{Q\+C\+P\+Color\+Gradient}} \mbox{\hyperlink{classQCPColorGradient_a9f72f501de429829ec446333316decda}{inverted}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPColorGradient_a353f15ab3ab586eebf1f6b58c3e2707b}\label{classQCPColorGradient_a353f15ab3ab586eebf1f6b58c3e2707b}} 
+void {\bfseries update\+Color\+Buffer} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPColorGradient_a98fb68e359904b2c991fcae3e38a211a}\label{classQCPColorGradient_a98fb68e359904b2c991fcae3e38a211a}} 
+int {\bfseries m\+Level\+Count}
+\item 
+\mbox{\Hypertarget{classQCPColorGradient_a9e11a2b0974ef289d12c324822bc3a3e}\label{classQCPColorGradient_a9e11a2b0974ef289d12c324822bc3a3e}} 
+Q\+Map$<$ double, Q\+Color $>$ {\bfseries m\+Color\+Stops}
+\item 
+\mbox{\Hypertarget{classQCPColorGradient_a028cef73d863800a9ee93ffd641cce01}\label{classQCPColorGradient_a028cef73d863800a9ee93ffd641cce01}} 
+\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1}{Color\+Interpolation}} {\bfseries m\+Color\+Interpolation}
+\item 
+\mbox{\Hypertarget{classQCPColorGradient_a4b07deeb20ca1ee2d5ea7e01bf0420af}\label{classQCPColorGradient_a4b07deeb20ca1ee2d5ea7e01bf0420af}} 
+bool {\bfseries m\+Periodic}
+\item 
+\mbox{\Hypertarget{classQCPColorGradient_af8b5f0739faa5f8295154d47ce38ecff}\label{classQCPColorGradient_af8b5f0739faa5f8295154d47ce38ecff}} 
+Q\+Vector$<$ Q\+Rgb $>$ {\bfseries m\+Color\+Buffer}
+\item 
+\mbox{\Hypertarget{classQCPColorGradient_abacf55e11f67d6722a687af1bb2687bd}\label{classQCPColorGradient_abacf55e11f67d6722a687af1bb2687bd}} 
+bool {\bfseries m\+Color\+Buffer\+Invalidated}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines a color gradient for use with e.\+g. \mbox{\hyperlink{classQCPColorMap}{Q\+C\+P\+Color\+Map}}. 
+
+This class describes a color gradient which can be used to encode data with color. For example, \mbox{\hyperlink{classQCPColorMap}{Q\+C\+P\+Color\+Map}} and \mbox{\hyperlink{classQCPColorScale}{Q\+C\+P\+Color\+Scale}} have \mbox{\hyperlink{classQCPColorMap_a7313c78360471cead3576341a2c50377}{set\+Gradient}} methods which take an instance of this class. Colors are set with \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At(double position, const Q\+Color \&color)}} with a {\itshape position} from 0 to 1. In between these defined color positions, the color will be interpolated linearly either in R\+GB or H\+SV space, see \mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{set\+Color\+Interpolation}}.
+
+Alternatively, load one of the preset color gradients shown in the image below, with \mbox{\hyperlink{classQCPColorGradient_aa0aeec1528241728b9671bf8e60b1622}{load\+Preset}}, or by directly specifying the preset in the constructor.
+
+
+
+The fact that the \mbox{\hyperlink{classQCPColorGradient_a546e44df5fa1846400a582c041361c85}{Q\+C\+P\+Color\+Gradient(\+Gradient\+Preset preset)}} constructor allows directly converting a \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072}{Gradient\+Preset}} to a \mbox{\hyperlink{classQCPColorGradient}{Q\+C\+P\+Color\+Gradient}}, you can also directly pass \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072}{Gradient\+Preset}} to all the {\itshape set\+Gradient} methods, e.\+g.\+: 
+\begin{DoxyCodeInclude}{0}
+\end{DoxyCodeInclude}
+ The total number of levels used in the gradient can be set with \mbox{\hyperlink{classQCPColorGradient_a18da587eb4f7fc788ea28ba15b6a12de}{set\+Level\+Count}}. Whether the color gradient shall be applied periodically (wrapping around) to data values that lie outside the data range specified on the plottable instance can be controlled with \mbox{\hyperlink{classQCPColorGradient_a39d6448155fc00a219f239220d14bb39}{set\+Periodic}}. 
+
+Definition at line 1900 of file qcustomplot.\+h.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1}\label{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1}} 
+\index{QCPColorGradient@{QCPColorGradient}!ColorInterpolation@{ColorInterpolation}}
+\index{ColorInterpolation@{ColorInterpolation}!QCPColorGradient@{QCPColorGradient}}
+\doxysubsubsection{\texorpdfstring{ColorInterpolation}{ColorInterpolation}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1}{Q\+C\+P\+Color\+Gradient\+::\+Color\+Interpolation}}}
+
+Defines the color spaces in which color interpolation between gradient stops can be performed.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{set\+Color\+Interpolation}} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ciRGB@{ciRGB}!QCPColorGradient@{QCPColorGradient}}\index{QCPColorGradient@{QCPColorGradient}!ciRGB@{ciRGB}}}\mbox{\Hypertarget{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7}\label{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7}} 
+ci\+R\+GB&Color channels red, green and blue are linearly interpolated. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ciHSV@{ciHSV}!QCPColorGradient@{QCPColorGradient}}\index{QCPColorGradient@{QCPColorGradient}!ciHSV@{ciHSV}}}\mbox{\Hypertarget{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb}\label{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb}} 
+ci\+H\+SV&Color channels hue, saturation and value are linearly interpolated (The hue is interpolated over the shortest angle distance) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 1909 of file qcustomplot.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1909                           \{ \mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7}{ciRGB}}  }
+\DoxyCodeLine{1910                             ,\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb}{ciHSV}} }
+\DoxyCodeLine{1911                           \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPColorGradient_aed6569828fee337023670272910c9072}\label{classQCPColorGradient_aed6569828fee337023670272910c9072}} 
+\index{QCPColorGradient@{QCPColorGradient}!GradientPreset@{GradientPreset}}
+\index{GradientPreset@{GradientPreset}!QCPColorGradient@{QCPColorGradient}}
+\doxysubsubsection{\texorpdfstring{GradientPreset}{GradientPreset}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072}{Q\+C\+P\+Color\+Gradient\+::\+Gradient\+Preset}}}
+
+Defines the available presets that can be loaded with \mbox{\hyperlink{classQCPColorGradient_aa0aeec1528241728b9671bf8e60b1622}{load\+Preset}}. See the documentation there for an image of the presets. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gpGrayscale@{gpGrayscale}!QCPColorGradient@{QCPColorGradient}}\index{QCPColorGradient@{QCPColorGradient}!gpGrayscale@{gpGrayscale}}}\mbox{\Hypertarget{classQCPColorGradient_aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb}\label{classQCPColorGradient_aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb}} 
+gp\+Grayscale&Continuous lightness from black to white (suited for non-\/biased data representation) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gpHot@{gpHot}!QCPColorGradient@{QCPColorGradient}}\index{QCPColorGradient@{QCPColorGradient}!gpHot@{gpHot}}}\mbox{\Hypertarget{classQCPColorGradient_aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5}\label{classQCPColorGradient_aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5}} 
+gp\+Hot&Continuous lightness from black over firey colors to white (suited for non-\/biased data representation) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gpCold@{gpCold}!QCPColorGradient@{QCPColorGradient}}\index{QCPColorGradient@{QCPColorGradient}!gpCold@{gpCold}}}\mbox{\Hypertarget{classQCPColorGradient_aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557}\label{classQCPColorGradient_aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557}} 
+gp\+Cold&Continuous lightness from black over icey colors to white (suited for non-\/biased data representation) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gpNight@{gpNight}!QCPColorGradient@{QCPColorGradient}}\index{QCPColorGradient@{QCPColorGradient}!gpNight@{gpNight}}}\mbox{\Hypertarget{classQCPColorGradient_aed6569828fee337023670272910c9072a1bb89351b6def7d220973443fe059c62}\label{classQCPColorGradient_aed6569828fee337023670272910c9072a1bb89351b6def7d220973443fe059c62}} 
+gp\+Night&Continuous lightness from black over weak blueish colors to white (suited for non-\/biased data representation) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gpCandy@{gpCandy}!QCPColorGradient@{QCPColorGradient}}\index{QCPColorGradient@{QCPColorGradient}!gpCandy@{gpCandy}}}\mbox{\Hypertarget{classQCPColorGradient_aed6569828fee337023670272910c9072a9e72663bf6b94b65945f7843f24e0721}\label{classQCPColorGradient_aed6569828fee337023670272910c9072a9e72663bf6b94b65945f7843f24e0721}} 
+gp\+Candy&Blue over pink to white. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gpGeography@{gpGeography}!QCPColorGradient@{QCPColorGradient}}\index{QCPColorGradient@{QCPColorGradient}!gpGeography@{gpGeography}}}\mbox{\Hypertarget{classQCPColorGradient_aed6569828fee337023670272910c9072a382f0b07cec1a59d8a533438aea815d2}\label{classQCPColorGradient_aed6569828fee337023670272910c9072a382f0b07cec1a59d8a533438aea815d2}} 
+gp\+Geography&Colors suitable to represent different elevations on geographical maps. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gpIon@{gpIon}!QCPColorGradient@{QCPColorGradient}}\index{QCPColorGradient@{QCPColorGradient}!gpIon@{gpIon}}}\mbox{\Hypertarget{classQCPColorGradient_aed6569828fee337023670272910c9072a4297f4f9e212a819cd65e8e34567182b}\label{classQCPColorGradient_aed6569828fee337023670272910c9072a4297f4f9e212a819cd65e8e34567182b}} 
+gp\+Ion&Half hue spectrum from black over purple to blue and finally green (creates banding illusion but allows more precise magnitude estimates) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gpThermal@{gpThermal}!QCPColorGradient@{QCPColorGradient}}\index{QCPColorGradient@{QCPColorGradient}!gpThermal@{gpThermal}}}\mbox{\Hypertarget{classQCPColorGradient_aed6569828fee337023670272910c9072af1676b129f9f458ace453f280c731cf7}\label{classQCPColorGradient_aed6569828fee337023670272910c9072af1676b129f9f458ace453f280c731cf7}} 
+gp\+Thermal&Colors suitable for thermal imaging, ranging from dark blue over purple to orange, yellow and white. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gpPolar@{gpPolar}!QCPColorGradient@{QCPColorGradient}}\index{QCPColorGradient@{QCPColorGradient}!gpPolar@{gpPolar}}}\mbox{\Hypertarget{classQCPColorGradient_aed6569828fee337023670272910c9072ab7414ce4e36dc3e82e0132a7f0f41b52}\label{classQCPColorGradient_aed6569828fee337023670272910c9072ab7414ce4e36dc3e82e0132a7f0f41b52}} 
+gp\+Polar&Colors suitable to emphasize polarity around the center, with blue for negative, black in the middle and red for positive values. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gpSpectrum@{gpSpectrum}!QCPColorGradient@{QCPColorGradient}}\index{QCPColorGradient@{QCPColorGradient}!gpSpectrum@{gpSpectrum}}}\mbox{\Hypertarget{classQCPColorGradient_aed6569828fee337023670272910c9072ad63adc100ef46f6b4a8a6deacec4642f}\label{classQCPColorGradient_aed6569828fee337023670272910c9072ad63adc100ef46f6b4a8a6deacec4642f}} 
+gp\+Spectrum&An approximation of the visible light spectrum (creates banding illusion but allows more precise magnitude estimates) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gpJet@{gpJet}!QCPColorGradient@{QCPColorGradient}}\index{QCPColorGradient@{QCPColorGradient}!gpJet@{gpJet}}}\mbox{\Hypertarget{classQCPColorGradient_aed6569828fee337023670272910c9072a5f8a9e67b64c17ddfe4f069fe2b9fb02}\label{classQCPColorGradient_aed6569828fee337023670272910c9072a5f8a9e67b64c17ddfe4f069fe2b9fb02}} 
+gp\+Jet&Hue variation similar to a spectrum, often used in numerical visualization (creates banding illusion but allows more precise magnitude estimates) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gpHues@{gpHues}!QCPColorGradient@{QCPColorGradient}}\index{QCPColorGradient@{QCPColorGradient}!gpHues@{gpHues}}}\mbox{\Hypertarget{classQCPColorGradient_aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130}\label{classQCPColorGradient_aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130}} 
+gp\+Hues&Full hue cycle, with highest and lowest color red (suitable for periodic data, such as angles and phases, see \mbox{\hyperlink{classQCPColorGradient_a39d6448155fc00a219f239220d14bb39}{set\+Periodic}}) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 1918 of file qcustomplot.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1918                       \{ \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb}{gpGrayscale}}  }
+\DoxyCodeLine{1919                         ,\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5}{gpHot}}       }
+\DoxyCodeLine{1920                         ,\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557}{gpCold}}      }
+\DoxyCodeLine{1921                         ,\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a1bb89351b6def7d220973443fe059c62}{gpNight}}     }
+\DoxyCodeLine{1922                         ,\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a9e72663bf6b94b65945f7843f24e0721}{gpCandy}}     }
+\DoxyCodeLine{1923                         ,\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a382f0b07cec1a59d8a533438aea815d2}{gpGeography}} }
+\DoxyCodeLine{1924                         ,\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a4297f4f9e212a819cd65e8e34567182b}{gpIon}}       }
+\DoxyCodeLine{1925                         ,\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072af1676b129f9f458ace453f280c731cf7}{gpThermal}}   }
+\DoxyCodeLine{1926                         ,\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072ab7414ce4e36dc3e82e0132a7f0f41b52}{gpPolar}}     }
+\DoxyCodeLine{1927                         ,\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072ad63adc100ef46f6b4a8a6deacec4642f}{gpSpectrum}}  }
+\DoxyCodeLine{1928                         ,\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a5f8a9e67b64c17ddfe4f069fe2b9fb02}{gpJet}}       }
+\DoxyCodeLine{1929                         ,\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130}{gpHues}}      }
+\DoxyCodeLine{1930                       \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQCPColorGradient_a546e44df5fa1846400a582c041361c85}\label{classQCPColorGradient_a546e44df5fa1846400a582c041361c85}} 
+\index{QCPColorGradient@{QCPColorGradient}!QCPColorGradient@{QCPColorGradient}}
+\index{QCPColorGradient@{QCPColorGradient}!QCPColorGradient@{QCPColorGradient}}
+\doxysubsubsection{\texorpdfstring{QCPColorGradient()}{QCPColorGradient()}}
+{\footnotesize\ttfamily Q\+C\+P\+Color\+Gradient\+::\+Q\+C\+P\+Color\+Gradient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072}{Gradient\+Preset}}}]{preset = {\ttfamily \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557}{gp\+Cold}}} }\end{DoxyParamCaption})}
+
+Constructs a new \mbox{\hyperlink{classQCPColorGradient}{Q\+C\+P\+Color\+Gradient}} initialized with the colors and color interpolation according to {\itshape preset}.
+
+The color level count is initialized to 350. 
+
+Definition at line 11178 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11178                                                         :}
+\DoxyCodeLine{11179   mLevelCount(350),}
+\DoxyCodeLine{11180   mColorInterpolation(\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7}{ciRGB}}),}
+\DoxyCodeLine{11181   mPeriodic(\textcolor{keyword}{false}),}
+\DoxyCodeLine{11182   mColorBufferInvalidated(\textcolor{keyword}{true})}
+\DoxyCodeLine{11183 \{}
+\DoxyCodeLine{11184   mColorBuffer.fill(qRgb(0, 0, 0), mLevelCount);}
+\DoxyCodeLine{11185   \mbox{\hyperlink{classQCPColorGradient_aa0aeec1528241728b9671bf8e60b1622}{loadPreset}}(preset);}
+\DoxyCodeLine{11186 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQCPColorGradient_a939213e85f0d1279519d555c5fcfb6ad}\label{classQCPColorGradient_a939213e85f0d1279519d555c5fcfb6ad}} 
+\index{QCPColorGradient@{QCPColorGradient}!clearColorStops@{clearColorStops}}
+\index{clearColorStops@{clearColorStops}!QCPColorGradient@{QCPColorGradient}}
+\doxysubsubsection{\texorpdfstring{clearColorStops()}{clearColorStops()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Color\+Gradient\+::clear\+Color\+Stops (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clears all color stops.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPColorGradient_a724e828aa6f0ba5011a9392477c35d3a}{set\+Color\+Stops}}, \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 11509 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11510 \{}
+\DoxyCodeLine{11511   mColorStops.clear();}
+\DoxyCodeLine{11512   mColorBufferInvalidated = \textcolor{keyword}{true};}
+\DoxyCodeLine{11513 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPColorGradient_aaf423ceb943e177b0ed2c48c811d83dc}\label{classQCPColorGradient_aaf423ceb943e177b0ed2c48c811d83dc}} 
+\index{QCPColorGradient@{QCPColorGradient}!colorize@{colorize}}
+\index{colorize@{colorize}!QCPColorGradient@{QCPColorGradient}}
+\doxysubsubsection{\texorpdfstring{colorize()}{colorize()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Color\+Gradient\+::colorize (\begin{DoxyParamCaption}\item[{const double $\ast$}]{data,  }\item[{const \mbox{\hyperlink{classQCPRange}{Q\+C\+P\+Range}} \&}]{range,  }\item[{Q\+Rgb $\ast$}]{scan\+Line,  }\item[{int}]{n,  }\item[{int}]{data\+Index\+Factor = {\ttfamily 1},  }\item[{bool}]{logarithmic = {\ttfamily false} }\end{DoxyParamCaption})}
+
+This method is used to quickly convert a {\itshape data} array to colors. The colors will be output in the array {\itshape scan\+Line}. Both {\itshape data} and {\itshape scan\+Line} must have the length {\itshape n} when passed to this function. The data range that shall be used for mapping the data value to the gradient is passed in {\itshape range}. {\itshape logarithmic} indicates whether the data values shall be mapped to colors logarithmically.
+
+if {\itshape data} actually contains 2D-\/data linearized via {\ttfamily \mbox{[}row$\ast$column\+Count + column\mbox{]}}, you can set {\itshape data\+Index\+Factor} to {\ttfamily column\+Count} to convert a column instead of a row of the data array, in {\itshape scan\+Line}. {\itshape scan\+Line} will remain a regular (1D) array. This works because {\itshape data} is addressed {\ttfamily data\mbox{[}i$\ast$data\+Index\+Factor\mbox{]}}. 
+
+Definition at line 11293 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11294 \{}
+\DoxyCodeLine{11295   \textcolor{comment}{// If you change something here, make sure to also adapt ::color()}}
+\DoxyCodeLine{11296   \textcolor{keywordflow}{if} (!data)}
+\DoxyCodeLine{11297   \{}
+\DoxyCodeLine{11298     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"null pointer given as data"};}
+\DoxyCodeLine{11299     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{11300   \}}
+\DoxyCodeLine{11301   \textcolor{keywordflow}{if} (!scanLine)}
+\DoxyCodeLine{11302   \{}
+\DoxyCodeLine{11303     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"null pointer given as scanLine"};}
+\DoxyCodeLine{11304     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{11305   \}}
+\DoxyCodeLine{11306   \textcolor{keywordflow}{if} (mColorBufferInvalidated)}
+\DoxyCodeLine{11307     updateColorBuffer();}
+\DoxyCodeLine{11308   }
+\DoxyCodeLine{11309   \textcolor{keywordflow}{if} (!logarithmic)}
+\DoxyCodeLine{11310   \{}
+\DoxyCodeLine{11311     \textcolor{keyword}{const} \textcolor{keywordtype}{double} posToIndexFactor = (mLevelCount-\/1)/range.\mbox{\hyperlink{classQCPRange_a62326e7cc4316b96df6a60813230e63f}{size}}();}
+\DoxyCodeLine{11312     \textcolor{keywordflow}{if} (mPeriodic)}
+\DoxyCodeLine{11313     \{}
+\DoxyCodeLine{11314       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; ++i)}
+\DoxyCodeLine{11315       \{}
+\DoxyCodeLine{11316         \textcolor{keywordtype}{int} index = (int)((data[dataIndexFactor*i]-\/range.lower)*posToIndexFactor) \% mLevelCount;}
+\DoxyCodeLine{11317         \textcolor{keywordflow}{if} (index < 0)}
+\DoxyCodeLine{11318           index += mLevelCount;}
+\DoxyCodeLine{11319         scanLine[i] = mColorBuffer.at(index);}
+\DoxyCodeLine{11320       \}}
+\DoxyCodeLine{11321     \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{11322     \{}
+\DoxyCodeLine{11323       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; ++i)}
+\DoxyCodeLine{11324       \{}
+\DoxyCodeLine{11325         \textcolor{keywordtype}{int} index = (data[dataIndexFactor*i]-\/range.lower)*posToIndexFactor;}
+\DoxyCodeLine{11326         \textcolor{keywordflow}{if} (index < 0)}
+\DoxyCodeLine{11327           index = 0;}
+\DoxyCodeLine{11328         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (index >= mLevelCount)}
+\DoxyCodeLine{11329           index = mLevelCount-\/1;}
+\DoxyCodeLine{11330         scanLine[i] = mColorBuffer.at(index);}
+\DoxyCodeLine{11331       \}}
+\DoxyCodeLine{11332     \}}
+\DoxyCodeLine{11333   \} \textcolor{keywordflow}{else} \textcolor{comment}{// logarithmic == true}}
+\DoxyCodeLine{11334   \{}
+\DoxyCodeLine{11335     \textcolor{keywordflow}{if} (mPeriodic)}
+\DoxyCodeLine{11336     \{}
+\DoxyCodeLine{11337       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; ++i)}
+\DoxyCodeLine{11338       \{}
+\DoxyCodeLine{11339         \textcolor{keywordtype}{int} index = (int)(qLn(data[dataIndexFactor*i]/range.lower)/qLn(range.upper/range.lower)*(mLevelCount-\/1)) \% mLevelCount;}
+\DoxyCodeLine{11340         \textcolor{keywordflow}{if} (index < 0)}
+\DoxyCodeLine{11341           index += mLevelCount;}
+\DoxyCodeLine{11342         scanLine[i] = mColorBuffer.at(index);}
+\DoxyCodeLine{11343       \}}
+\DoxyCodeLine{11344     \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{11345     \{}
+\DoxyCodeLine{11346       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; ++i)}
+\DoxyCodeLine{11347       \{}
+\DoxyCodeLine{11348         \textcolor{keywordtype}{int} index = qLn(data[dataIndexFactor*i]/range.lower)/qLn(range.upper/range.lower)*(mLevelCount-\/1);}
+\DoxyCodeLine{11349         \textcolor{keywordflow}{if} (index < 0)}
+\DoxyCodeLine{11350           index = 0;}
+\DoxyCodeLine{11351         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (index >= mLevelCount)}
+\DoxyCodeLine{11352           index = mLevelCount-\/1;}
+\DoxyCodeLine{11353         scanLine[i] = mColorBuffer.at(index);}
+\DoxyCodeLine{11354       \}}
+\DoxyCodeLine{11355     \}}
+\DoxyCodeLine{11356   \}}
+\DoxyCodeLine{11357 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPColorGradient_a9f72f501de429829ec446333316decda}\label{classQCPColorGradient_a9f72f501de429829ec446333316decda}} 
+\index{QCPColorGradient@{QCPColorGradient}!inverted@{inverted}}
+\index{inverted@{inverted}!QCPColorGradient@{QCPColorGradient}}
+\doxysubsubsection{\texorpdfstring{inverted()}{inverted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPColorGradient}{Q\+C\+P\+Color\+Gradient}} Q\+C\+P\+Color\+Gradient\+::inverted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns an inverted gradient. The inverted gradient has all properties as this \mbox{\hyperlink{classQCPColorGradient}{Q\+C\+P\+Color\+Gradient}}, but the order of the color stops is inverted.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPColorGradient_a724e828aa6f0ba5011a9392477c35d3a}{set\+Color\+Stops}}, \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 11521 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11522 \{}
+\DoxyCodeLine{11523   \mbox{\hyperlink{classQCPColorGradient}{QCPColorGradient}} result(*\textcolor{keyword}{this});}
+\DoxyCodeLine{11524   result.clearColorStops();}
+\DoxyCodeLine{11525   \textcolor{keywordflow}{for} (QMap<double, QColor>::const\_iterator it=mColorStops.constBegin(); it!=mColorStops.constEnd(); ++it)}
+\DoxyCodeLine{11526     result.setColorStopAt(1.0-\/it.key(), it.value());}
+\DoxyCodeLine{11527   \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{11528 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPColorGradient_aa0aeec1528241728b9671bf8e60b1622}\label{classQCPColorGradient_aa0aeec1528241728b9671bf8e60b1622}} 
+\index{QCPColorGradient@{QCPColorGradient}!loadPreset@{loadPreset}}
+\index{loadPreset@{loadPreset}!QCPColorGradient@{QCPColorGradient}}
+\doxysubsubsection{\texorpdfstring{loadPreset()}{loadPreset()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Color\+Gradient\+::load\+Preset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072}{Gradient\+Preset}}}]{preset }\end{DoxyParamCaption})}
+
+Clears the current color stops and loads the specified {\itshape preset}. A preset consists of predefined color stops and the corresponding color interpolation method.
+
+The available presets are\+:  
+
+Definition at line 11400 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11401 \{}
+\DoxyCodeLine{11402   \mbox{\hyperlink{classQCPColorGradient_a939213e85f0d1279519d555c5fcfb6ad}{clearColorStops}}();}
+\DoxyCodeLine{11403   \textcolor{keywordflow}{switch} (preset)}
+\DoxyCodeLine{11404   \{}
+\DoxyCodeLine{11405     \textcolor{keywordflow}{case} \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb}{gpGrayscale}}:}
+\DoxyCodeLine{11406       \mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{setColorInterpolation}}(\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7}{ciRGB}});}
+\DoxyCodeLine{11407       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0, Qt::black);}
+\DoxyCodeLine{11408       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(1, Qt::white);}
+\DoxyCodeLine{11409       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11410     \textcolor{keywordflow}{case} \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5}{gpHot}}:}
+\DoxyCodeLine{11411       \mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{setColorInterpolation}}(\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7}{ciRGB}});}
+\DoxyCodeLine{11412       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0, QColor(50, 0, 0));}
+\DoxyCodeLine{11413       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.2, QColor(180, 10, 0));}
+\DoxyCodeLine{11414       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.4, QColor(245, 50, 0));}
+\DoxyCodeLine{11415       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.6, QColor(255, 150, 10));}
+\DoxyCodeLine{11416       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.8, QColor(255, 255, 50));}
+\DoxyCodeLine{11417       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(1, QColor(255, 255, 255));}
+\DoxyCodeLine{11418       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11419     \textcolor{keywordflow}{case} \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557}{gpCold}}:}
+\DoxyCodeLine{11420       \mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{setColorInterpolation}}(\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7}{ciRGB}});}
+\DoxyCodeLine{11421       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0, QColor(0, 0, 50));}
+\DoxyCodeLine{11422       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.2, QColor(0, 10, 180));}
+\DoxyCodeLine{11423       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.4, QColor(0, 50, 245));}
+\DoxyCodeLine{11424       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.6, QColor(10, 150, 255));}
+\DoxyCodeLine{11425       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.8, QColor(50, 255, 255));}
+\DoxyCodeLine{11426       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(1, QColor(255, 255, 255));}
+\DoxyCodeLine{11427       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11428     \textcolor{keywordflow}{case} \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a1bb89351b6def7d220973443fe059c62}{gpNight}}:}
+\DoxyCodeLine{11429       \mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{setColorInterpolation}}(\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb}{ciHSV}});}
+\DoxyCodeLine{11430       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0, QColor(10, 20, 30));}
+\DoxyCodeLine{11431       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(1, QColor(250, 255, 250));}
+\DoxyCodeLine{11432       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11433     \textcolor{keywordflow}{case} \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a9e72663bf6b94b65945f7843f24e0721}{gpCandy}}:}
+\DoxyCodeLine{11434       \mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{setColorInterpolation}}(\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb}{ciHSV}});}
+\DoxyCodeLine{11435       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0, QColor(0, 0, 255));}
+\DoxyCodeLine{11436       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(1, QColor(255, 250, 250));}
+\DoxyCodeLine{11437       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11438     \textcolor{keywordflow}{case} \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a382f0b07cec1a59d8a533438aea815d2}{gpGeography}}:}
+\DoxyCodeLine{11439       \mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{setColorInterpolation}}(\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7}{ciRGB}});}
+\DoxyCodeLine{11440       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0, QColor(70, 170, 210));}
+\DoxyCodeLine{11441       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.20, QColor(90, 160, 180));}
+\DoxyCodeLine{11442       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.25, QColor(45, 130, 175));}
+\DoxyCodeLine{11443       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.30, QColor(100, 140, 125));}
+\DoxyCodeLine{11444       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.5, QColor(100, 140, 100));}
+\DoxyCodeLine{11445       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.6, QColor(130, 145, 120));}
+\DoxyCodeLine{11446       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.7, QColor(140, 130, 120));}
+\DoxyCodeLine{11447       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.9, QColor(180, 190, 190));}
+\DoxyCodeLine{11448       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(1, QColor(210, 210, 230));}
+\DoxyCodeLine{11449       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11450     \textcolor{keywordflow}{case} \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a4297f4f9e212a819cd65e8e34567182b}{gpIon}}:}
+\DoxyCodeLine{11451       \mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{setColorInterpolation}}(\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb}{ciHSV}});}
+\DoxyCodeLine{11452       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0, QColor(50, 10, 10));}
+\DoxyCodeLine{11453       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.45, QColor(0, 0, 255));}
+\DoxyCodeLine{11454       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.8, QColor(0, 255, 255));}
+\DoxyCodeLine{11455       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(1, QColor(0, 255, 0));}
+\DoxyCodeLine{11456       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11457     \textcolor{keywordflow}{case} \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072af1676b129f9f458ace453f280c731cf7}{gpThermal}}:}
+\DoxyCodeLine{11458       \mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{setColorInterpolation}}(\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7}{ciRGB}});}
+\DoxyCodeLine{11459       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0, QColor(0, 0, 50));}
+\DoxyCodeLine{11460       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.15, QColor(20, 0, 120));}
+\DoxyCodeLine{11461       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.33, QColor(200, 30, 140));}
+\DoxyCodeLine{11462       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.6, QColor(255, 100, 0));}
+\DoxyCodeLine{11463       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.85, QColor(255, 255, 40));}
+\DoxyCodeLine{11464       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(1, QColor(255, 255, 255));}
+\DoxyCodeLine{11465       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11466     \textcolor{keywordflow}{case} \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072ab7414ce4e36dc3e82e0132a7f0f41b52}{gpPolar}}:}
+\DoxyCodeLine{11467       \mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{setColorInterpolation}}(\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7}{ciRGB}});}
+\DoxyCodeLine{11468       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0, QColor(50, 255, 255));}
+\DoxyCodeLine{11469       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.18, QColor(10, 70, 255));}
+\DoxyCodeLine{11470       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.28, QColor(10, 10, 190));}
+\DoxyCodeLine{11471       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.5, QColor(0, 0, 0));}
+\DoxyCodeLine{11472       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.72, QColor(190, 10, 10));}
+\DoxyCodeLine{11473       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.82, QColor(255, 70, 10));}
+\DoxyCodeLine{11474       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(1, QColor(255, 255, 50));}
+\DoxyCodeLine{11475       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11476     \textcolor{keywordflow}{case} \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072ad63adc100ef46f6b4a8a6deacec4642f}{gpSpectrum}}:}
+\DoxyCodeLine{11477       \mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{setColorInterpolation}}(\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb}{ciHSV}});}
+\DoxyCodeLine{11478       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0, QColor(50, 0, 50));}
+\DoxyCodeLine{11479       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.15, QColor(0, 0, 255));}
+\DoxyCodeLine{11480       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.35, QColor(0, 255, 255));}
+\DoxyCodeLine{11481       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.6, QColor(255, 255, 0));}
+\DoxyCodeLine{11482       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.75, QColor(255, 30, 0));}
+\DoxyCodeLine{11483       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(1, QColor(50, 0, 0));}
+\DoxyCodeLine{11484       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11485     \textcolor{keywordflow}{case} \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a5f8a9e67b64c17ddfe4f069fe2b9fb02}{gpJet}}:}
+\DoxyCodeLine{11486       \mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{setColorInterpolation}}(\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7}{ciRGB}});}
+\DoxyCodeLine{11487       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0, QColor(0, 0, 100));}
+\DoxyCodeLine{11488       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.15, QColor(0, 50, 255));}
+\DoxyCodeLine{11489       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.35, QColor(0, 255, 255));}
+\DoxyCodeLine{11490       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.65, QColor(255, 255, 0));}
+\DoxyCodeLine{11491       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0.85, QColor(255, 30, 0));}
+\DoxyCodeLine{11492       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(1, QColor(100, 0, 0));}
+\DoxyCodeLine{11493       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11494     \textcolor{keywordflow}{case} \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130}{gpHues}}:}
+\DoxyCodeLine{11495       \mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{setColorInterpolation}}(\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb}{ciHSV}});}
+\DoxyCodeLine{11496       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(0, QColor(255, 0, 0));}
+\DoxyCodeLine{11497       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(1.0/3.0, QColor(0, 0, 255));}
+\DoxyCodeLine{11498       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(2.0/3.0, QColor(0, 255, 0));}
+\DoxyCodeLine{11499       \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{setColorStopAt}}(1, QColor(255, 0, 0));}
+\DoxyCodeLine{11500       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11501   \}}
+\DoxyCodeLine{11502 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}\label{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}} 
+\index{QCPColorGradient@{QCPColorGradient}!setColorInterpolation@{setColorInterpolation}}
+\index{setColorInterpolation@{setColorInterpolation}!QCPColorGradient@{QCPColorGradient}}
+\doxysubsubsection{\texorpdfstring{setColorInterpolation()}{setColorInterpolation()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Color\+Gradient\+::set\+Color\+Interpolation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPColorGradient_ac5dca17cc24336e6ca176610e7f77fc1}{Q\+C\+P\+Color\+Gradient\+::\+Color\+Interpolation}}}]{interpolation }\end{DoxyParamCaption})}
+
+Sets whether the colors in between the configured color stops (see \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}}) shall be interpolated linearly in R\+GB or in H\+SV color space.
+
+For example, a sweep in R\+GB space from red to green will have a muddy brown intermediate color, whereas in H\+SV space the intermediate color is yellow. 
+
+Definition at line 11252 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11253 \{}
+\DoxyCodeLine{11254   \textcolor{keywordflow}{if} (interpolation != mColorInterpolation)}
+\DoxyCodeLine{11255   \{}
+\DoxyCodeLine{11256     mColorInterpolation = interpolation;}
+\DoxyCodeLine{11257     mColorBufferInvalidated = \textcolor{keyword}{true};}
+\DoxyCodeLine{11258   \}}
+\DoxyCodeLine{11259 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}\label{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}} 
+\index{QCPColorGradient@{QCPColorGradient}!setColorStopAt@{setColorStopAt}}
+\index{setColorStopAt@{setColorStopAt}!QCPColorGradient@{QCPColorGradient}}
+\doxysubsubsection{\texorpdfstring{setColorStopAt()}{setColorStopAt()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Color\+Gradient\+::set\+Color\+Stop\+At (\begin{DoxyParamCaption}\item[{double}]{position,  }\item[{const Q\+Color \&}]{color }\end{DoxyParamCaption})}
+
+Sets the {\itshape color} the gradient will have at the specified {\itshape position} (from 0 to 1). In between these color stops, the color is interpolated according to \mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{set\+Color\+Interpolation}}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPColorGradient_a724e828aa6f0ba5011a9392477c35d3a}{set\+Color\+Stops}}, \mbox{\hyperlink{classQCPColorGradient_a939213e85f0d1279519d555c5fcfb6ad}{clear\+Color\+Stops}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 11239 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11240 \{}
+\DoxyCodeLine{11241   mColorStops.insert(position, color);}
+\DoxyCodeLine{11242   mColorBufferInvalidated = \textcolor{keyword}{true};}
+\DoxyCodeLine{11243 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPColorGradient_a724e828aa6f0ba5011a9392477c35d3a}\label{classQCPColorGradient_a724e828aa6f0ba5011a9392477c35d3a}} 
+\index{QCPColorGradient@{QCPColorGradient}!setColorStops@{setColorStops}}
+\index{setColorStops@{setColorStops}!QCPColorGradient@{QCPColorGradient}}
+\doxysubsubsection{\texorpdfstring{setColorStops()}{setColorStops()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Color\+Gradient\+::set\+Color\+Stops (\begin{DoxyParamCaption}\item[{const Q\+Map$<$ double, Q\+Color $>$ \&}]{color\+Stops }\end{DoxyParamCaption})}
+
+Sets at which positions from 0 to 1 which color shall occur. The positions are the keys, the colors are the values of the passed Q\+Map {\itshape color\+Stops}. In between these color stops, the color is interpolated according to \mbox{\hyperlink{classQCPColorGradient_aa13fda86406e1d896a465a409ae63b38}{set\+Color\+Interpolation}}.
+
+A more convenient way to create a custom gradient may be to clear all color stops with \mbox{\hyperlink{classQCPColorGradient_a939213e85f0d1279519d555c5fcfb6ad}{clear\+Color\+Stops}} and then adding them one by one with \mbox{\hyperlink{classQCPColorGradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPColorGradient_a939213e85f0d1279519d555c5fcfb6ad}{clear\+Color\+Stops}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 11227 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11228 \{}
+\DoxyCodeLine{11229   mColorStops = colorStops;}
+\DoxyCodeLine{11230   mColorBufferInvalidated = \textcolor{keyword}{true};}
+\DoxyCodeLine{11231 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPColorGradient_a18da587eb4f7fc788ea28ba15b6a12de}\label{classQCPColorGradient_a18da587eb4f7fc788ea28ba15b6a12de}} 
+\index{QCPColorGradient@{QCPColorGradient}!setLevelCount@{setLevelCount}}
+\index{setLevelCount@{setLevelCount}!QCPColorGradient@{QCPColorGradient}}
+\doxysubsubsection{\texorpdfstring{setLevelCount()}{setLevelCount()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Color\+Gradient\+::set\+Level\+Count (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+Sets the number of discretization levels of the color gradient to {\itshape n}. The default is 350 which is typically enough to create a smooth appearance.
+
+ 
+
+Definition at line 11203 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11204 \{}
+\DoxyCodeLine{11205   \textcolor{keywordflow}{if} (n < 2)}
+\DoxyCodeLine{11206   \{}
+\DoxyCodeLine{11207     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"n must be greater or equal 2 but was"} << n;}
+\DoxyCodeLine{11208     n = 2;}
+\DoxyCodeLine{11209   \}}
+\DoxyCodeLine{11210   \textcolor{keywordflow}{if} (n != mLevelCount)}
+\DoxyCodeLine{11211   \{}
+\DoxyCodeLine{11212     mLevelCount = n;}
+\DoxyCodeLine{11213     mColorBufferInvalidated = \textcolor{keyword}{true};}
+\DoxyCodeLine{11214   \}}
+\DoxyCodeLine{11215 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPColorGradient_a39d6448155fc00a219f239220d14bb39}\label{classQCPColorGradient_a39d6448155fc00a219f239220d14bb39}} 
+\index{QCPColorGradient@{QCPColorGradient}!setPeriodic@{setPeriodic}}
+\index{setPeriodic@{setPeriodic}!QCPColorGradient@{QCPColorGradient}}
+\doxysubsubsection{\texorpdfstring{setPeriodic()}{setPeriodic()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Color\+Gradient\+::set\+Periodic (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+Sets whether data points that are outside the configured data range (e.\+g. \mbox{\hyperlink{classQCPColorMap_a980b42837821159786a85b4b7dcb8774}{Q\+C\+P\+Color\+Map\+::set\+Data\+Range}}) are colored by periodically repeating the color gradient or whether they all have the same color, corresponding to the respective gradient boundary color.
+
+
+
+As shown in the image above, gradients that have the same start and end color are especially suitable for a periodic gradient mapping, since they produce smooth color transitions throughout the color map. A preset that has this property is \mbox{\hyperlink{classQCPColorGradient_aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130}{gp\+Hues}}.
+
+In practice, using periodic color gradients makes sense when the data corresponds to a periodic dimension, such as an angle or a phase. If this is not the case, the color encoding might become ambiguous, because multiple different data values are shown as the same color. 
+
+Definition at line 11276 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11277 \{}
+\DoxyCodeLine{11278   mPeriodic = enabled;}
+\DoxyCodeLine{11279 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
+\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}

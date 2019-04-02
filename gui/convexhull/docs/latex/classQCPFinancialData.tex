@@ -1,0 +1,101 @@
+\hypertarget{classQCPFinancialData}{}\doxysection{Q\+C\+P\+Financial\+Data Class Reference}
+\label{classQCPFinancialData}\index{QCPFinancialData@{QCPFinancialData}}
+
+
+Holds the data of one single data point for \mbox{\hyperlink{classQCPFinancial}{Q\+C\+P\+Financial}}.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPFinancialData_a1ca53b3a9ae4e9658a4fd1ca57d76ba4}{Q\+C\+P\+Financial\+Data}} ()
+\item 
+\mbox{\hyperlink{classQCPFinancialData_a069b72c514dfd4fc8e1d5df811e54ca4}{Q\+C\+P\+Financial\+Data}} (double key, double open, double high, double low, double close)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPFinancialData_a18bc92126f28c214b05b0161e5f5958b}\label{classQCPFinancialData_a18bc92126f28c214b05b0161e5f5958b}} 
+double {\bfseries key}
+\item 
+\mbox{\Hypertarget{classQCPFinancialData_a3059e1e1fbcb9fd243fde0450f238032}\label{classQCPFinancialData_a3059e1e1fbcb9fd243fde0450f238032}} 
+double {\bfseries open}
+\item 
+\mbox{\Hypertarget{classQCPFinancialData_a299a4b241296fb6cd1baf5ab03f7126a}\label{classQCPFinancialData_a299a4b241296fb6cd1baf5ab03f7126a}} 
+double {\bfseries high}
+\item 
+\mbox{\Hypertarget{classQCPFinancialData_aecce0fb45a115e3f3a25eea78491ac16}\label{classQCPFinancialData_aecce0fb45a115e3f3a25eea78491ac16}} 
+double {\bfseries low}
+\item 
+\mbox{\Hypertarget{classQCPFinancialData_a45e9b96944c4a08ea6c82a72d3d22df2}\label{classQCPFinancialData_a45e9b96944c4a08ea6c82a72d3d22df2}} 
+double {\bfseries close}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Holds the data of one single data point for \mbox{\hyperlink{classQCPFinancial}{Q\+C\+P\+Financial}}. 
+
+The container for storing multiple data points is \mbox{\hyperlink{qcustomplot_8h_a745c09823fae0974b50beca9bc3b3d7d}{Q\+C\+P\+Financial\+Data\+Map}}.
+
+The stored data is\+: \begin{DoxyItemize}
+\item {\itshape key\+:} coordinate on the key axis of this data point \item {\itshape open\+:} The opening value at the data point \item {\itshape high\+:} The high/maximum value at the data point \item {\itshape low\+:} The low/minimum value at the data point \item {\itshape close\+:} The closing value at the data point\end{DoxyItemize}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{qcustomplot_8h_a745c09823fae0974b50beca9bc3b3d7d}{Q\+C\+P\+Financial\+Data\+Map}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 3124 of file qcustomplot.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQCPFinancialData_a1ca53b3a9ae4e9658a4fd1ca57d76ba4}\label{classQCPFinancialData_a1ca53b3a9ae4e9658a4fd1ca57d76ba4}} 
+\index{QCPFinancialData@{QCPFinancialData}!QCPFinancialData@{QCPFinancialData}}
+\index{QCPFinancialData@{QCPFinancialData}!QCPFinancialData@{QCPFinancialData}}
+\doxysubsubsection{\texorpdfstring{QCPFinancialData()}{QCPFinancialData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Q\+C\+P\+Financial\+Data\+::\+Q\+C\+P\+Financial\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a data point with key and all values set to zero. 
+
+Definition at line 20559 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20559                                    :}
+\DoxyCodeLine{20560   key(0),}
+\DoxyCodeLine{20561   open(0),}
+\DoxyCodeLine{20562   high(0),}
+\DoxyCodeLine{20563   low(0),}
+\DoxyCodeLine{20564   close(0)}
+\DoxyCodeLine{20565 \{}
+\DoxyCodeLine{20566 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPFinancialData_a069b72c514dfd4fc8e1d5df811e54ca4}\label{classQCPFinancialData_a069b72c514dfd4fc8e1d5df811e54ca4}} 
+\index{QCPFinancialData@{QCPFinancialData}!QCPFinancialData@{QCPFinancialData}}
+\index{QCPFinancialData@{QCPFinancialData}!QCPFinancialData@{QCPFinancialData}}
+\doxysubsubsection{\texorpdfstring{QCPFinancialData()}{QCPFinancialData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Q\+C\+P\+Financial\+Data\+::\+Q\+C\+P\+Financial\+Data (\begin{DoxyParamCaption}\item[{double}]{key,  }\item[{double}]{open,  }\item[{double}]{high,  }\item[{double}]{low,  }\item[{double}]{close }\end{DoxyParamCaption})}
+
+Constructs a data point with the specified {\itshape key} and O\+H\+LC values. 
+
+Definition at line 20571 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20571                                                                                                  :}
+\DoxyCodeLine{20572   key(key),}
+\DoxyCodeLine{20573   open(open),}
+\DoxyCodeLine{20574   high(high),}
+\DoxyCodeLine{20575   low(low),}
+\DoxyCodeLine{20576   close(close)}
+\DoxyCodeLine{20577 \{}
+\DoxyCodeLine{20578 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
+\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}

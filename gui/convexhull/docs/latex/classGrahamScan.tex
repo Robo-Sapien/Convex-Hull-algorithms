@@ -1,0 +1,87 @@
+\hypertarget{classGrahamScan}{}\doxysection{Graham\+Scan Class Reference}
+\label{classGrahamScan}\index{GrahamScan@{GrahamScan}}
+Inheritance diagram for Graham\+Scan\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGrahamScan}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGrahamScan_a23e7ce7445eef1d971df9687961e3993}\label{classGrahamScan_a23e7ce7445eef1d971df9687961e3993}} 
+{\bfseries Graham\+Scan} (vector$<$ struct \mbox{\hyperlink{structpoint}{point}} $>$ points)
+\item 
+void \mbox{\hyperlink{classGrahamScan_a8e42e789ad6ff1737f5c2d85def028e2}{run\+Graham\+Scan}} (vector$<$ \mbox{\hyperlink{structpoint}{point}} $>$ \&points, \mbox{\hyperlink{classMainWindow}{Main\+Window}} $\ast$w)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 19 of file Graham\+Scan.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGrahamScan_a8e42e789ad6ff1737f5c2d85def028e2}\label{classGrahamScan_a8e42e789ad6ff1737f5c2d85def028e2}} 
+\index{GrahamScan@{GrahamScan}!runGrahamScan@{runGrahamScan}}
+\index{runGrahamScan@{runGrahamScan}!GrahamScan@{GrahamScan}}
+\doxysubsubsection{\texorpdfstring{runGrahamScan()}{runGrahamScan()}}
+{\footnotesize\ttfamily void Graham\+Scan\+::run\+Graham\+Scan (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structpoint}{point}} $>$ \&}]{points,  }\item[{\mbox{\hyperlink{classMainWindow}{Main\+Window}} $\ast$}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+runs the graham\textquotesingle{}s scan algorithm on the vector of points and displays the convexhull in the G\+UI. 
+
+Definition at line 121 of file Graham\+Scan.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{121                                                             \{}
+\DoxyCodeLine{122       }
+\DoxyCodeLine{123       findReferencePointAndSwap(points);}
+\DoxyCodeLine{124       \textcolor{comment}{// sort the points according to the polar angle with respect to the center}}
+\DoxyCodeLine{125       \textcolor{comment}{// and line parallel to x-\/axis.}}
+\DoxyCodeLine{126       qsort(\&points[1], points.size() -\/ 1, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structpoint}{point}}), compare);}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128       removeCollinearPoints(points);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130       \mbox{\hyperlink{classcustomStack}{customStack<point>}} convexHull;}
+\DoxyCodeLine{131       convexHull.push(points[0]);}
+\DoxyCodeLine{132       convexHull.push(points[1]);}
+\DoxyCodeLine{133       convexHull.push(points[2]);}
+\DoxyCodeLine{134       vector<point> hullPoints;}
+\DoxyCodeLine{135       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 3; i < points.size(); i++)}
+\DoxyCodeLine{136       \{}
+\DoxyCodeLine{137         \textcolor{keywordflow}{while}( findOrientation(convexHull.getElementBelowTop(), convexHull.getTopElement(), points[i]) == 1)\{}
+\DoxyCodeLine{138             w-\/>clearLines();}
+\DoxyCodeLine{139             w-\/>drawLines(hullPoints);}
+\DoxyCodeLine{140             sleep(1);}
+\DoxyCodeLine{141             convexHull.pop();}
+\DoxyCodeLine{142         \}}
+\DoxyCodeLine{143         convexHull.push(points[i]);}
+\DoxyCodeLine{144         hullPoints = convexHull.getPoints();}
+\DoxyCodeLine{145         w-\/>clearLines();}
+\DoxyCodeLine{146         w-\/>drawLines(hullPoints);}
+\DoxyCodeLine{147         sleep(1);}
+\DoxyCodeLine{148 \textcolor{comment}{//        for(unsigned int i=0; i<hullPoints.size(); i++)\{}}
+\DoxyCodeLine{149 \textcolor{comment}{//            cout<<hullPoints[i].x<<" "<<hullPoints[i].y<<endl;}}
+\DoxyCodeLine{150 \textcolor{comment}{//        \}}}
+\DoxyCodeLine{151         cout<<endl;}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153       \}}
+\DoxyCodeLine{154        hullPoints.push\_back(hullPoints[0]);}
+\DoxyCodeLine{155        w-\/>clearLines();}
+\DoxyCodeLine{156        w-\/>drawLines(hullPoints);}
+\DoxyCodeLine{157       }
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159 \textcolor{comment}{//      convexHull.getPoints();}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graham\+Scan.\+h\end{DoxyCompactItemize}

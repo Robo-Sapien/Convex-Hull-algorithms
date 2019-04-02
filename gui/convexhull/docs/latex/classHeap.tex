@@ -1,0 +1,261 @@
+\hypertarget{classHeap}{}\doxysection{Heap Class Reference}
+\label{classHeap}\index{Heap@{Heap}}
+
+
+{\ttfamily \#include $<$convex\+\_\+hull\+\_\+utility.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHeap_addb03b11b49db404eae6dc6cc834f409}{Heap}} (char heap\+\_\+type, int heap\+\_\+size)
+\item 
+\mbox{\hyperlink{classHeap_a734051272cbd0945d3916a1a89707ba2}{$\sim$\+Heap}} ()
+\item 
+void \mbox{\hyperlink{classHeap_a308eec23bc220eb9f8bae8b0d589ed5a}{insert\+\_\+into\+\_\+heap}} (int idx, double value)
+\item 
+int \mbox{\hyperlink{classHeap_a4cd1bb59297dbfee9068d1a9cb3feeed}{pop\+\_\+from\+\_\+heap}} ()
+\item 
+void \mbox{\hyperlink{classHeap_ac50730a724c7fa9849d585421a77e54a}{print\+\_\+heap}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHeap_abcb496c86bb1b899c56029ccd495e8ad}\label{classHeap_abcb496c86bb1b899c56029ccd495e8ad}} 
+char {\bfseries heap\+\_\+type}
+\item 
+\mbox{\Hypertarget{classHeap_a03e09fe84bc7226ae6e8630c923cb419}\label{classHeap_a03e09fe84bc7226ae6e8630c923cb419}} 
+int {\bfseries heap\+\_\+size}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defining the template for the Min and Max \mbox{\hyperlink{classHeap}{Heap}} class which will be used for finding the Median of a range of points according to their when they are ordered according to their x-\/coordinate. 
+
+Definition at line 51 of file convex\+\_\+hull\+\_\+utility.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHeap_addb03b11b49db404eae6dc6cc834f409}\label{classHeap_addb03b11b49db404eae6dc6cc834f409}} 
+\index{Heap@{Heap}!Heap@{Heap}}
+\index{Heap@{Heap}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{Heap()}{Heap()}}
+{\footnotesize\ttfamily Heap\+::\+Heap (\begin{DoxyParamCaption}\item[{char}]{heap\+\_\+type,  }\item[{int}]{heap\+\_\+size }\end{DoxyParamCaption})}
+
+implementing the heap related function as defined in header file Description\+: The constructor for creating the heap. U\+S\+A\+GE\+: I\+N\+P\+UT\+: heap\+\_\+type \+: char to specify the type of the heap heap\+\_\+size \+: integer to define the specify of the heap
+
+Definition at line 12 of file convex\+\_\+hull\+\_\+utility.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12                                       \{}
+\DoxyCodeLine{21     \textcolor{comment}{//Assigning the type and size to the heap}}
+\DoxyCodeLine{22     \textcolor{keywordflow}{if}(heap\_type!=\textcolor{charliteral}{'n'} \&\& heap\_type!=\textcolor{charliteral}{'x'})\{}
+\DoxyCodeLine{23         cout<<\textcolor{stringliteral}{"Wrong Heap type specified\(\backslash\)n"};}
+\DoxyCodeLine{24         exit(0);}
+\DoxyCodeLine{25     \}}
+\DoxyCodeLine{26     this-\/>heap\_type=heap\_type;}
+\DoxyCodeLine{27     this-\/>heap\_size=heap\_size;}
+\DoxyCodeLine{28     this-\/>last\_pos=-\/1;          \textcolor{comment}{//nothing in the heap}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{comment}{//Initializing the heap array to contain the index of the}}
+\DoxyCodeLine{31     idx\_heap=(\textcolor{keywordtype}{int} *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})*heap\_size);}
+\DoxyCodeLine{32     val\_heap=(\textcolor{keywordtype}{double} *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double})*heap\_size);}
+\DoxyCodeLine{33 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHeap_a734051272cbd0945d3916a1a89707ba2}\label{classHeap_a734051272cbd0945d3916a1a89707ba2}} 
+\index{Heap@{Heap}!````~Heap@{$\sim$Heap}}
+\index{````~Heap@{$\sim$Heap}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{$\sim$Heap()}{~Heap()}}
+{\footnotesize\ttfamily Heap\+::$\sim$\+Heap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Description\+: Destructor for the heap, freeing the dynamically allocatted area in heap used for this \char`\"{}heap\char`\"{}
+
+Definition at line 34 of file convex\+\_\+hull\+\_\+utility.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{34            \{}
+\DoxyCodeLine{40     free(this-\/>idx\_heap);}
+\DoxyCodeLine{41     free(this-\/>val\_heap);}
+\DoxyCodeLine{42 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHeap_a308eec23bc220eb9f8bae8b0d589ed5a}\label{classHeap_a308eec23bc220eb9f8bae8b0d589ed5a}} 
+\index{Heap@{Heap}!insert\_into\_heap@{insert\_into\_heap}}
+\index{insert\_into\_heap@{insert\_into\_heap}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{insert\_into\_heap()}{insert\_into\_heap()}}
+{\footnotesize\ttfamily void Heap\+::insert\+\_\+into\+\_\+heap (\begin{DoxyParamCaption}\item[{int}]{idx,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+Description\+: This function will insert an elemnt into heap and then heapify to maintain all the proterty of the heap. U\+S\+A\+GE\+: I\+N\+P\+UT\+: idx \+: index of the point being entered (useful sometimes) value \+: the value which will be consulted while heapifying.
+
+Definition at line 44 of file convex\+\_\+hull\+\_\+utility.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44                                                \{}
+\DoxyCodeLine{54     \textcolor{comment}{//Incrementing the last pos which is being entered right now}}
+\DoxyCodeLine{55     this-\/>last\_pos++;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{comment}{//Now inserting the element into the heap}}
+\DoxyCodeLine{58     idx\_heap[this-\/>last\_pos]=idx;}
+\DoxyCodeLine{59     val\_heap[this-\/>last\_pos]=value;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{comment}{//Now cleaning up the house after the party}}
+\DoxyCodeLine{62     \textcolor{keywordtype}{int} cid=this-\/>last\_pos;}
+\DoxyCodeLine{63     \textcolor{comment}{//Going bottom up to heapify the last elemet inserted}}
+\DoxyCodeLine{64     \textcolor{keywordflow}{while}(cid>0)\{}
+\DoxyCodeLine{65         \textcolor{comment}{// cout<<"cid: "<<cid<<endl;}}
+\DoxyCodeLine{66         \textcolor{comment}{//getting the parent index}}
+\DoxyCodeLine{67         \textcolor{keywordtype}{int} pid=(cid-\/1)/2;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69         \textcolor{comment}{//Now depending on the type of the heap we will heapify different}}
+\DoxyCodeLine{70         \textcolor{comment}{//If the heap is a max heap and the parent is smallar than child}}
+\DoxyCodeLine{71         \textcolor{keywordflow}{if}(this-\/>heap\_type==\textcolor{charliteral}{'x'} \&\& val\_heap[cid]>val\_heap[pid])\{}
+\DoxyCodeLine{72             \textcolor{comment}{//Putting the parent to children position}}
+\DoxyCodeLine{73             \textcolor{comment}{//And putting the children(curr point) as parent pos}}
+\DoxyCodeLine{74             this-\/>swap\_elements(cid,pid);}
+\DoxyCodeLine{75         \}}
+\DoxyCodeLine{76         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this-\/>heap\_type==\textcolor{charliteral}{'n'} \&\& val\_heap[cid]<val\_heap[pid])\{}
+\DoxyCodeLine{77             \textcolor{comment}{//if the heap is min and the child is smallar than parent}}
+\DoxyCodeLine{78             \textcolor{comment}{//Putting the parent to child position}}
+\DoxyCodeLine{79             \textcolor{comment}{//And putting the current point at the parent pos}}
+\DoxyCodeLine{80             this-\/>swap\_elements(cid,pid);}
+\DoxyCodeLine{81         \}}
+\DoxyCodeLine{82         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{83             \textcolor{comment}{//Nothing is wrong so break}}
+\DoxyCodeLine{84             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{85         \}}
+\DoxyCodeLine{86         \textcolor{comment}{//Updating the new position of the current point to check up}}
+\DoxyCodeLine{87         cid=pid;}
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHeap_a4cd1bb59297dbfee9068d1a9cb3feeed}\label{classHeap_a4cd1bb59297dbfee9068d1a9cb3feeed}} 
+\index{Heap@{Heap}!pop\_from\_heap@{pop\_from\_heap}}
+\index{pop\_from\_heap@{pop\_from\_heap}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{pop\_from\_heap()}{pop\_from\_heap()}}
+{\footnotesize\ttfamily int Heap\+::pop\+\_\+from\+\_\+heap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Description\+: This function will pop the first element from the heap and do the cleanup after that. Also it returns the index of the point being popped.
+
+Definition at line 107 of file convex\+\_\+hull\+\_\+utility.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{107                        \{}
+\DoxyCodeLine{114     \textcolor{comment}{//saving the index of top of heap for returning}}
+\DoxyCodeLine{115     \textcolor{keywordtype}{int} pop\_idx=idx\_heap[0];}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \textcolor{comment}{//Removing the top of the heap}}
+\DoxyCodeLine{118     idx\_heap[0]=idx\_heap[this-\/>last\_pos];}
+\DoxyCodeLine{119     val\_heap[0]=val\_heap[this-\/>last\_pos];}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     \textcolor{comment}{//Decrementing the count of the heap}}
+\DoxyCodeLine{122     this-\/>last\_pos-\/-\/;}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124     \textcolor{comment}{//Now cleaning up the house after the party by heapifying top down.}}
+\DoxyCodeLine{125     \textcolor{keywordtype}{int} pid=0;}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     \textcolor{comment}{//Now going down until we exceed the last\_pos}}
+\DoxyCodeLine{128     \textcolor{comment}{// cout<<"last\_pos: "<<this-\/>last\_pos<<endl;}}
+\DoxyCodeLine{129     \textcolor{comment}{// this-\/>print\_heap();}}
+\DoxyCodeLine{130     \textcolor{keywordflow}{while}(this-\/>last\_pos>0)\{}
+\DoxyCodeLine{131         \textcolor{comment}{// cout<<"pid: "<<pid<<endl;}}
+\DoxyCodeLine{132         \textcolor{comment}{//Retreiving the value of parent and its child}}
+\DoxyCodeLine{133         \textcolor{keywordtype}{int} cid1=2*pid+1;}
+\DoxyCodeLine{134         \textcolor{keywordtype}{int} cid2=2*pid+2;}
+\DoxyCodeLine{135         \textcolor{keywordtype}{double} valp=val\_heap[pid];}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137         \textcolor{comment}{//if this is max heap and parent's val is less than either of}}
+\DoxyCodeLine{138         \textcolor{comment}{//child}}
+\DoxyCodeLine{139         \textcolor{keywordflow}{if}(cid1>this-\/>last\_pos)\{}
+\DoxyCodeLine{140             \textcolor{comment}{//if the first child is out of bound then no child exist}}
+\DoxyCodeLine{141             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{142         \}}
+\DoxyCodeLine{143         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(cid2>this-\/>last\_pos)\{}
+\DoxyCodeLine{144             \textcolor{comment}{// cout<<"lpos: "<<this-\/>last\_pos<<endl;}}
+\DoxyCodeLine{145             \textcolor{comment}{// cout<<"cid1: "<<cid1<<endl;}}
+\DoxyCodeLine{146             \textcolor{comment}{// cout<<this-\/>heap\_type<<endl;}}
+\DoxyCodeLine{147             \textcolor{comment}{// cout<<"valp: "<<valp<<endl;}}
+\DoxyCodeLine{148             \textcolor{comment}{// cout<<val\_heap[cid1]<<endl;}}
+\DoxyCodeLine{149             \textcolor{comment}{//if one first child exist and second dont}}
+\DoxyCodeLine{150             \textcolor{keywordtype}{double} val1=val\_heap[cid1];}
+\DoxyCodeLine{151             \textcolor{comment}{//If this is max heap and the value of child is greater}}
+\DoxyCodeLine{152             \textcolor{keywordflow}{if}(this-\/>heap\_type==\textcolor{charliteral}{'x'} \&\& valp<val1)\{}
+\DoxyCodeLine{153                 this-\/>swap\_elements(cid1,pid);}
+\DoxyCodeLine{154             \}}
+\DoxyCodeLine{155             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this-\/>heap\_type==\textcolor{charliteral}{'n'} \&\& valp>val1)\{}
+\DoxyCodeLine{156                 \textcolor{comment}{//If this is min heap and value of parent is less}}
+\DoxyCodeLine{157                 this-\/>swap\_elements(cid1,pid);}
+\DoxyCodeLine{158             \}}
+\DoxyCodeLine{159             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{160         \}}
+\DoxyCodeLine{161         \textcolor{keywordtype}{int} val1=val\_heap[cid1];}
+\DoxyCodeLine{162         \textcolor{keywordtype}{int} val2=val\_heap[cid2];}
+\DoxyCodeLine{163         \textcolor{keywordflow}{if}(this-\/>heap\_type==\textcolor{charliteral}{'x'} \&\& (valp<val1 || valp<val2))\{}
+\DoxyCodeLine{164             \textcolor{comment}{//Now swappping the parent with the max valued child}}
+\DoxyCodeLine{165             \textcolor{keywordflow}{if}(val1>val2)\{}
+\DoxyCodeLine{166                 \textcolor{comment}{//Swapping parent with the first child}}
+\DoxyCodeLine{167                 \textcolor{comment}{//Putting the parent at the children's pos}}
+\DoxyCodeLine{168                 this-\/>swap\_elements(cid1,pid);}
+\DoxyCodeLine{169                 pid=cid1;}
+\DoxyCodeLine{170             \}}
+\DoxyCodeLine{171             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{172                 \textcolor{comment}{//if second child is greater than parent and first}}
+\DoxyCodeLine{173                 \textcolor{comment}{//Putting the parent to second's children position}}
+\DoxyCodeLine{174                 this-\/>swap\_elements(cid2,pid);}
+\DoxyCodeLine{175                 pid=cid2;}
+\DoxyCodeLine{176             \}}
+\DoxyCodeLine{177         \}}
+\DoxyCodeLine{178         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this-\/>heap\_type==\textcolor{charliteral}{'n'} \&\& (valp>val1 || valp>val2))\{}
+\DoxyCodeLine{179             \textcolor{keywordflow}{if}(val1<val2)\{}
+\DoxyCodeLine{180                 \textcolor{comment}{//if child1's value is less than the child2 then let up.}}
+\DoxyCodeLine{181                 this-\/>swap\_elements(cid1,pid);}
+\DoxyCodeLine{182                 pid=cid1;}
+\DoxyCodeLine{183             \}}
+\DoxyCodeLine{184             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{185                 this-\/>swap\_elements(cid2,pid);}
+\DoxyCodeLine{186                 pid=cid2;}
+\DoxyCodeLine{187             \}}
+\DoxyCodeLine{188         \}}
+\DoxyCodeLine{189         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{190             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{191         \}}
+\DoxyCodeLine{192     \}}
+\DoxyCodeLine{193     \textcolor{keywordflow}{return} pop\_idx;}
+\DoxyCodeLine{194 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHeap_ac50730a724c7fa9849d585421a77e54a}\label{classHeap_ac50730a724c7fa9849d585421a77e54a}} 
+\index{Heap@{Heap}!print\_heap@{print\_heap}}
+\index{print\_heap@{print\_heap}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{print\_heap()}{print\_heap()}}
+{\footnotesize\ttfamily void Heap\+::print\+\_\+heap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Description\+: This function will print the elements presently in the heap for the debuggin purpose only.
+
+Definition at line 195 of file convex\+\_\+hull\+\_\+utility.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{195                      \{}
+\DoxyCodeLine{201     cout<<\textcolor{stringliteral}{"Elements in the "}<<this-\/>heap\_type<<\textcolor{stringliteral}{" are:"}<<endl;}
+\DoxyCodeLine{202     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<=this-\/>last\_pos;i++)\{}
+\DoxyCodeLine{203         cout<<idx\_heap[i]<<\textcolor{stringliteral}{", "}<<val\_heap[i]<<endl;}
+\DoxyCodeLine{204     \}}
+\DoxyCodeLine{205     cout<<endl;}
+\DoxyCodeLine{206 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+convex\+\_\+hull\+\_\+utility.\+h\item 
+convex\+\_\+hull\+\_\+utility.\+cpp\end{DoxyCompactItemize}

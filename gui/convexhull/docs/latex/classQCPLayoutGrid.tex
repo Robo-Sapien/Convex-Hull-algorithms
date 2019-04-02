@@ -1,0 +1,907 @@
+\hypertarget{classQCPLayoutGrid}{}\doxysection{Q\+C\+P\+Layout\+Grid Class Reference}
+\label{classQCPLayoutGrid}\index{QCPLayoutGrid@{QCPLayoutGrid}}
+
+
+A layout that arranges child elements in a grid.  
+
+
+Inheritance diagram for Q\+C\+P\+Layout\+Grid\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classQCPLayoutGrid}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayoutGrid_ab2a4c1587dc8aed4c41c509c8d8d2a64}{Q\+C\+P\+Layout\+Grid}} ()
+\item 
+int \mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{row\+Count}} () const
+\item 
+int \mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{column\+Count}} () const
+\item 
+\mbox{\Hypertarget{classQCPLayoutGrid_a8e0e587c386bbcd1b94119f5f44c512d}\label{classQCPLayoutGrid_a8e0e587c386bbcd1b94119f5f44c512d}} 
+Q\+List$<$ double $>$ {\bfseries column\+Stretch\+Factors} () const
+\item 
+\mbox{\Hypertarget{classQCPLayoutGrid_aa33408586427e77e05f79defde7f3568}\label{classQCPLayoutGrid_aa33408586427e77e05f79defde7f3568}} 
+Q\+List$<$ double $>$ {\bfseries row\+Stretch\+Factors} () const
+\item 
+\mbox{\Hypertarget{classQCPLayoutGrid_adcf4c387d5996bf6e4ae0ed26138247e}\label{classQCPLayoutGrid_adcf4c387d5996bf6e4ae0ed26138247e}} 
+int {\bfseries column\+Spacing} () const
+\item 
+\mbox{\Hypertarget{classQCPLayoutGrid_a4cb6c680505cd0ce6f85b9e217fd2cd0}\label{classQCPLayoutGrid_a4cb6c680505cd0ce6f85b9e217fd2cd0}} 
+int {\bfseries row\+Spacing} () const
+\item 
+void \mbox{\hyperlink{classQCPLayoutGrid_ae38f31a71687b9d7ee3104852528fb50}{set\+Column\+Stretch\+Factor}} (int column, double factor)
+\item 
+void \mbox{\hyperlink{classQCPLayoutGrid_a6c2591d1a7e2534ce036989543b49e57}{set\+Column\+Stretch\+Factors}} (const Q\+List$<$ double $>$ \&factors)
+\item 
+void \mbox{\hyperlink{classQCPLayoutGrid_a7b0273de5369bd93d942edbaf5b166ec}{set\+Row\+Stretch\+Factor}} (int row, double factor)
+\item 
+void \mbox{\hyperlink{classQCPLayoutGrid_a200b45f9c908f96ebadaa3c8d87a2782}{set\+Row\+Stretch\+Factors}} (const Q\+List$<$ double $>$ \&factors)
+\item 
+void \mbox{\hyperlink{classQCPLayoutGrid_a3a49272aba32bb0fddc3bb2a45a3dba0}{set\+Column\+Spacing}} (int pixels)
+\item 
+void \mbox{\hyperlink{classQCPLayoutGrid_aaef2cd2d456197ee06a208793678e436}{set\+Row\+Spacing}} (int pixels)
+\item 
+\mbox{\Hypertarget{classQCPLayoutGrid_a07f8dd7d3d61d7345026621d446042a4}\label{classQCPLayoutGrid_a07f8dd7d3d61d7345026621d446042a4}} 
+virtual void {\bfseries update\+Layout} ()
+\item 
+virtual int \mbox{\hyperlink{classQCPLayoutGrid_a77f194843d037e0da6d5f3170acdf3a2}{element\+Count}} () const
+\item 
+virtual \mbox{\hyperlink{classQCPLayoutElement}{Q\+C\+P\+Layout\+Element}} $\ast$ \mbox{\hyperlink{classQCPLayoutGrid_a97672ecc379cb3a09639926ba9980297}{element\+At}} (int index) const
+\item 
+virtual \mbox{\hyperlink{classQCPLayoutElement}{Q\+C\+P\+Layout\+Element}} $\ast$ \mbox{\hyperlink{classQCPLayoutGrid_acc1277394ff8a6432e111ff9463e6375}{take\+At}} (int index)
+\item 
+virtual bool \mbox{\hyperlink{classQCPLayoutGrid_a666a9fe9e92054436f9b66eba25cca0c}{take}} (\mbox{\hyperlink{classQCPLayoutElement}{Q\+C\+P\+Layout\+Element}} $\ast$\mbox{\hyperlink{classQCPLayoutGrid_a602b426609b4411cf6a93c3ddf3a381a}{element}})
+\item 
+virtual Q\+List$<$ \mbox{\hyperlink{classQCPLayoutElement}{Q\+C\+P\+Layout\+Element}} $\ast$ $>$ \mbox{\hyperlink{classQCPLayoutGrid_a20a745d013de4c89cf5de8004a5a36f7}{elements}} (bool recursive) const
+\item 
+virtual void \mbox{\hyperlink{classQCPLayoutGrid_a08bba60e4acd20165526a8fd7f986b58}{simplify}} ()
+\item 
+virtual Q\+Size \mbox{\hyperlink{classQCPLayoutGrid_a9ef4b0d626708a1ada2cfea3a5973b80}{minimum\+Size\+Hint}} () const
+\item 
+virtual Q\+Size \mbox{\hyperlink{classQCPLayoutGrid_a3720d1b79931b2bdec3f2158a5f0181c}{maximum\+Size\+Hint}} () const
+\item 
+\mbox{\hyperlink{classQCPLayoutElement}{Q\+C\+P\+Layout\+Element}} $\ast$ \mbox{\hyperlink{classQCPLayoutGrid_a602b426609b4411cf6a93c3ddf3a381a}{element}} (int row, int column) const
+\item 
+bool \mbox{\hyperlink{classQCPLayoutGrid_adff1a2ca691ed83d2d24a4cd1fe17012}{add\+Element}} (int row, int column, \mbox{\hyperlink{classQCPLayoutElement}{Q\+C\+P\+Layout\+Element}} $\ast$\mbox{\hyperlink{classQCPLayoutGrid_a602b426609b4411cf6a93c3ddf3a381a}{element}})
+\item 
+bool \mbox{\hyperlink{classQCPLayoutGrid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}{has\+Element}} (int row, int column)
+\item 
+void \mbox{\hyperlink{classQCPLayoutGrid_a886c0dcbabd51a45da399e044552b685}{expand\+To}} (int new\+Row\+Count, int new\+Column\+Count)
+\item 
+void \mbox{\hyperlink{classQCPLayoutGrid_a48af3dd7c3a653d9c3d7dd99bd02e838}{insert\+Row}} (int new\+Index)
+\item 
+void \mbox{\hyperlink{classQCPLayoutGrid_a1e880a321dbe8b43b471ccd764433dc4}{insert\+Column}} (int new\+Index)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPLayoutGrid_a4b9a251919936f127a63fc1b9911cd4e}\label{classQCPLayoutGrid_a4b9a251919936f127a63fc1b9911cd4e}} 
+void {\bfseries get\+Minimum\+Row\+Col\+Sizes} (Q\+Vector$<$ int $>$ $\ast$min\+Col\+Widths, Q\+Vector$<$ int $>$ $\ast$min\+Row\+Heights) const
+\item 
+\mbox{\Hypertarget{classQCPLayoutGrid_a9be77011ec5b5dfbe7fbda126659e1eb}\label{classQCPLayoutGrid_a9be77011ec5b5dfbe7fbda126659e1eb}} 
+void {\bfseries get\+Maximum\+Row\+Col\+Sizes} (Q\+Vector$<$ int $>$ $\ast$max\+Col\+Widths, Q\+Vector$<$ int $>$ $\ast$max\+Row\+Heights) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPLayoutGrid_a3577d3855bf8ad20ef9079291a49f397}\label{classQCPLayoutGrid_a3577d3855bf8ad20ef9079291a49f397}} 
+Q\+List$<$ Q\+List$<$ \mbox{\hyperlink{classQCPLayoutElement}{Q\+C\+P\+Layout\+Element}} $\ast$ $>$ $>$ {\bfseries m\+Elements}
+\item 
+\mbox{\Hypertarget{classQCPLayoutGrid_ac6aabe62339f94f18b9f8adab94b1840}\label{classQCPLayoutGrid_ac6aabe62339f94f18b9f8adab94b1840}} 
+Q\+List$<$ double $>$ {\bfseries m\+Column\+Stretch\+Factors}
+\item 
+\mbox{\Hypertarget{classQCPLayoutGrid_a36c85a7eaf342680fb9b8a4977486f16}\label{classQCPLayoutGrid_a36c85a7eaf342680fb9b8a4977486f16}} 
+Q\+List$<$ double $>$ {\bfseries m\+Row\+Stretch\+Factors}
+\item 
+\mbox{\Hypertarget{classQCPLayoutGrid_ae9ac48f0791be07ead0a96dbd5622770}\label{classQCPLayoutGrid_ae9ac48f0791be07ead0a96dbd5622770}} 
+int {\bfseries m\+Column\+Spacing}
+\item 
+\mbox{\Hypertarget{classQCPLayoutGrid_a8b67f183f4645739cc4c794d75843b40}\label{classQCPLayoutGrid_a8b67f183f4645739cc4c794d75843b40}} 
+int {\bfseries m\+Row\+Spacing}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A layout that arranges child elements in a grid. 
+
+Elements are laid out in a grid with configurable stretch factors (\mbox{\hyperlink{classQCPLayoutGrid_ae38f31a71687b9d7ee3104852528fb50}{set\+Column\+Stretch\+Factor}}, \mbox{\hyperlink{classQCPLayoutGrid_a7b0273de5369bd93d942edbaf5b166ec}{set\+Row\+Stretch\+Factor}}) and spacing (\mbox{\hyperlink{classQCPLayoutGrid_a3a49272aba32bb0fddc3bb2a45a3dba0}{set\+Column\+Spacing}}, \mbox{\hyperlink{classQCPLayoutGrid_aaef2cd2d456197ee06a208793678e436}{set\+Row\+Spacing}}).
+
+Elements can be added to cells via \mbox{\hyperlink{classQCPLayoutGrid_adff1a2ca691ed83d2d24a4cd1fe17012}{add\+Element}}. The grid is expanded if the specified row or column doesn\textquotesingle{}t exist yet. Whether a cell contains a valid layout element can be checked with \mbox{\hyperlink{classQCPLayoutGrid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}{has\+Element}}, that element can be retrieved with \mbox{\hyperlink{classQCPLayoutGrid_a602b426609b4411cf6a93c3ddf3a381a}{element}}. If rows and columns that only have empty cells shall be removed, call \mbox{\hyperlink{classQCPLayoutGrid_a08bba60e4acd20165526a8fd7f986b58}{simplify}}. Removal of elements is either done by just adding the element to a different layout or by using the \mbox{\hyperlink{classQCPLayout}{Q\+C\+P\+Layout}} interface \mbox{\hyperlink{classQCPLayoutGrid_a666a9fe9e92054436f9b66eba25cca0c}{take}} or \mbox{\hyperlink{classQCPLayout_a6c58f537d8086f352576ab7c5b15d0bc}{remove}}.
+
+Row and column insertion can be performed with \mbox{\hyperlink{classQCPLayoutGrid_a48af3dd7c3a653d9c3d7dd99bd02e838}{insert\+Row}} and \mbox{\hyperlink{classQCPLayoutGrid_a1e880a321dbe8b43b471ccd764433dc4}{insert\+Column}}. 
+
+Definition at line 757 of file qcustomplot.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQCPLayoutGrid_ab2a4c1587dc8aed4c41c509c8d8d2a64}\label{classQCPLayoutGrid_ab2a4c1587dc8aed4c41c509c8d8d2a64}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!QCPLayoutGrid@{QCPLayoutGrid}}
+\index{QCPLayoutGrid@{QCPLayoutGrid}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{QCPLayoutGrid()}{QCPLayoutGrid()}}
+{\footnotesize\ttfamily Q\+C\+P\+Layout\+Grid\+::\+Q\+C\+P\+Layout\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates an instance of \mbox{\hyperlink{classQCPLayoutGrid}{Q\+C\+P\+Layout\+Grid}} and sets default values. 
+
+Definition at line 2483 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2483                              :}
+\DoxyCodeLine{2484   mColumnSpacing(5),}
+\DoxyCodeLine{2485   mRowSpacing(5)}
+\DoxyCodeLine{2486 \{}
+\DoxyCodeLine{2487 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQCPLayoutGrid_adff1a2ca691ed83d2d24a4cd1fe17012}\label{classQCPLayoutGrid_adff1a2ca691ed83d2d24a4cd1fe17012}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!addElement@{addElement}}
+\index{addElement@{addElement}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{addElement()}{addElement()}}
+{\footnotesize\ttfamily bool Q\+C\+P\+Layout\+Grid\+::add\+Element (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column,  }\item[{\mbox{\hyperlink{classQCPLayoutElement}{Q\+C\+P\+Layout\+Element}} $\ast$}]{element }\end{DoxyParamCaption})}
+
+Adds the {\itshape element} to cell with {\itshape row} and {\itshape column}. If {\itshape element} is already in a layout, it is first removed from there. If {\itshape row} or {\itshape column} don\textquotesingle{}t exist yet, the layout is expanded accordingly.
+
+Returns true if the element was added successfully, i.\+e. if the cell at {\itshape row} and {\itshape column} didn\textquotesingle{}t already have an element.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_a602b426609b4411cf6a93c3ddf3a381a}{element}}, \mbox{\hyperlink{classQCPLayoutGrid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}{has\+Element}}, \mbox{\hyperlink{classQCPLayoutGrid_a666a9fe9e92054436f9b66eba25cca0c}{take}}, \mbox{\hyperlink{classQCPLayout_a6c58f537d8086f352576ab7c5b15d0bc}{remove}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2554 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2555 \{}
+\DoxyCodeLine{2556   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classQCPLayoutGrid_a602b426609b4411cf6a93c3ddf3a381a}{element}})}
+\DoxyCodeLine{2557   \{}
+\DoxyCodeLine{2558     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classQCPLayoutGrid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}{hasElement}}(row, column))}
+\DoxyCodeLine{2559     \{}
+\DoxyCodeLine{2560       \textcolor{keywordflow}{if} (\mbox{\hyperlink{classQCPLayoutGrid_a602b426609b4411cf6a93c3ddf3a381a}{element}}-\/>\mbox{\hyperlink{classQCPLayoutElement_a4efdcbde9d28f410e5ef166c9d691deb}{layout}}()) \textcolor{comment}{// remove from old layout first}}
+\DoxyCodeLine{2561         \mbox{\hyperlink{classQCPLayoutGrid_a602b426609b4411cf6a93c3ddf3a381a}{element}}-\/>\mbox{\hyperlink{classQCPLayoutElement_a4efdcbde9d28f410e5ef166c9d691deb}{layout}}()-\/>\mbox{\hyperlink{classQCPLayout_ada26cd17e56472b0b4d7fbbc96873e4c}{take}}(\mbox{\hyperlink{classQCPLayoutGrid_a602b426609b4411cf6a93c3ddf3a381a}{element}});}
+\DoxyCodeLine{2562       \mbox{\hyperlink{classQCPLayoutGrid_a886c0dcbabd51a45da399e044552b685}{expandTo}}(row+1, column+1);}
+\DoxyCodeLine{2563       mElements[row][column] = \mbox{\hyperlink{classQCPLayoutGrid_a602b426609b4411cf6a93c3ddf3a381a}{element}};}
+\DoxyCodeLine{2564       adoptElement(\mbox{\hyperlink{classQCPLayoutGrid_a602b426609b4411cf6a93c3ddf3a381a}{element}});}
+\DoxyCodeLine{2565       \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{2566     \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2567       qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"There is already an element in the specified row/column:"} << row << column;}
+\DoxyCodeLine{2568   \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2569     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Can't add null element to row/column:"} << row << column;}
+\DoxyCodeLine{2570   \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{2571 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}\label{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!columnCount@{columnCount}}
+\index{columnCount@{columnCount}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{columnCount()}{columnCount()}}
+{\footnotesize\ttfamily int Q\+C\+P\+Layout\+Grid\+::column\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the number of columns in the layout.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{row\+Count}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2536 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2537 \{}
+\DoxyCodeLine{2538   \textcolor{keywordflow}{if} (mElements.size() > 0)}
+\DoxyCodeLine{2539     \textcolor{keywordflow}{return} mElements.first().size();}
+\DoxyCodeLine{2540   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2541     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{2542 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a602b426609b4411cf6a93c3ddf3a381a}\label{classQCPLayoutGrid_a602b426609b4411cf6a93c3ddf3a381a}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!element@{element}}
+\index{element@{element}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{element()}{element()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPLayoutElement}{Q\+C\+P\+Layout\+Element}} $\ast$ Q\+C\+P\+Layout\+Grid\+::element (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption}) const}
+
+Returns the element in the cell in {\itshape row} and {\itshape column}.
+
+Returns 0 if either the row/column is invalid or if the cell is empty. In those cases, a q\+Debug message is printed. To check whether a cell exists and isn\textquotesingle{}t empty, use \mbox{\hyperlink{classQCPLayoutGrid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}{has\+Element}}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_adff1a2ca691ed83d2d24a4cd1fe17012}{add\+Element}}, \mbox{\hyperlink{classQCPLayoutGrid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}{has\+Element}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2504 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2505 \{}
+\DoxyCodeLine{2506   \textcolor{keywordflow}{if} (row >= 0 \&\& row < mElements.size())}
+\DoxyCodeLine{2507   \{}
+\DoxyCodeLine{2508     \textcolor{keywordflow}{if} (column >= 0 \&\& column < mElements.first().size())}
+\DoxyCodeLine{2509     \{}
+\DoxyCodeLine{2510       \textcolor{keywordflow}{if} (\mbox{\hyperlink{classQCPLayoutElement}{QCPLayoutElement}} *result = mElements.at(row).at(column))}
+\DoxyCodeLine{2511         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{2512       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2513         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Requested cell is empty. Row:"} << row << \textcolor{stringliteral}{"Column:"} << column;}
+\DoxyCodeLine{2514     \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2515       qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Invalid column. Row:"} << row << \textcolor{stringliteral}{"Column:"} << column;}
+\DoxyCodeLine{2516   \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2517     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Invalid row. Row:"} << row << \textcolor{stringliteral}{"Column:"} << column;}
+\DoxyCodeLine{2518   \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{2519 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a97672ecc379cb3a09639926ba9980297}\label{classQCPLayoutGrid_a97672ecc379cb3a09639926ba9980297}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!elementAt@{elementAt}}
+\index{elementAt@{elementAt}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{elementAt()}{elementAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPLayoutElement}{Q\+C\+P\+Layout\+Element}} $\ast$ Q\+C\+P\+Layout\+Grid\+::element\+At (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the element in the cell with the given {\itshape index}. If {\itshape index} is invalid, returns 0.
+
+Note that even if {\itshape index} is valid, the respective cell may be empty in some layouts (e.\+g. \mbox{\hyperlink{classQCPLayoutGrid}{Q\+C\+P\+Layout\+Grid}}), so this function may return 0 in those cases. You may use this function to check whether a cell is empty or not.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_a20a745d013de4c89cf5de8004a5a36f7}{elements}}, \mbox{\hyperlink{classQCPLayoutGrid_a77f194843d037e0da6d5f3170acdf3a2}{element\+Count}}, \mbox{\hyperlink{classQCPLayoutGrid_acc1277394ff8a6432e111ff9463e6375}{take\+At}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classQCPLayout_afa73ca7d859f8a3ee5c73c9b353d2a56}{Q\+C\+P\+Layout}}.
+
+
+
+Definition at line 2828 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2829 \{}
+\DoxyCodeLine{2830   \textcolor{keywordflow}{if} (index >= 0 \&\& index < \mbox{\hyperlink{classQCPLayoutGrid_a77f194843d037e0da6d5f3170acdf3a2}{elementCount}}())}
+\DoxyCodeLine{2831     \textcolor{keywordflow}{return} mElements.at(index / \mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{columnCount}}()).at(index \% \mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{columnCount}}());}
+\DoxyCodeLine{2832   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2833     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{2834 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a77f194843d037e0da6d5f3170acdf3a2}\label{classQCPLayoutGrid_a77f194843d037e0da6d5f3170acdf3a2}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!elementCount@{elementCount}}
+\index{elementCount@{elementCount}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{elementCount()}{elementCount()}}
+{\footnotesize\ttfamily int Q\+C\+P\+Layout\+Grid\+::element\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the number of elements/cells in the layout.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_a20a745d013de4c89cf5de8004a5a36f7}{elements}}, \mbox{\hyperlink{classQCPLayoutGrid_a97672ecc379cb3a09639926ba9980297}{element\+At}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classQCPLayout_a39d3e9ef5d9b82ab1885ba1cb9597e56}{Q\+C\+P\+Layout}}.
+
+
+
+Definition at line 2822 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2823 \{}
+\DoxyCodeLine{2824   \textcolor{keywordflow}{return} \mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{rowCount}}()*\mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{columnCount}}();}
+\DoxyCodeLine{2825 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a20a745d013de4c89cf5de8004a5a36f7}\label{classQCPLayoutGrid_a20a745d013de4c89cf5de8004a5a36f7}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!elements@{elements}}
+\index{elements@{elements}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{elements()}{elements()}}
+{\footnotesize\ttfamily Q\+List$<$ \mbox{\hyperlink{classQCPLayoutElement}{Q\+C\+P\+Layout\+Element}} $\ast$ $>$ Q\+C\+P\+Layout\+Grid\+::elements (\begin{DoxyParamCaption}\item[{bool}]{recursive }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns a list of all child elements in this layout element. If {\itshape recursive} is true, all sub-\/child elements are included in the list, too.
+
+\begin{DoxyWarning}{Warning}
+There may be entries with value 0 in the returned list. (For example, \mbox{\hyperlink{classQCPLayoutGrid}{Q\+C\+P\+Layout\+Grid}} may have empty cells which yield 0 at the respective index.) 
+\end{DoxyWarning}
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayout_adc9ebc73fc215f9cc22796712a251ff4}{Q\+C\+P\+Layout}}.
+
+
+
+Definition at line 2871 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2872 \{}
+\DoxyCodeLine{2873   QList<QCPLayoutElement*> result;}
+\DoxyCodeLine{2874   \textcolor{keywordtype}{int} colC = \mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{columnCount}}();}
+\DoxyCodeLine{2875   \textcolor{keywordtype}{int} rowC = \mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{rowCount}}();}
+\DoxyCodeLine{2876 \textcolor{preprocessor}{\#if QT\_VERSION >= QT\_VERSION\_CHECK(4, 7, 0)}}
+\DoxyCodeLine{2877   result.reserve(colC*rowC);}
+\DoxyCodeLine{2878 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{2879   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} row=0; row<rowC; ++row)}
+\DoxyCodeLine{2880   \{}
+\DoxyCodeLine{2881     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} col=0; col<colC; ++col)}
+\DoxyCodeLine{2882     \{}
+\DoxyCodeLine{2883       result.append(mElements.at(row).at(col));}
+\DoxyCodeLine{2884     \}}
+\DoxyCodeLine{2885   \}}
+\DoxyCodeLine{2886   \textcolor{keywordflow}{if} (recursive)}
+\DoxyCodeLine{2887   \{}
+\DoxyCodeLine{2888     \textcolor{keywordtype}{int} c = result.size();}
+\DoxyCodeLine{2889     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<c; ++i)}
+\DoxyCodeLine{2890     \{}
+\DoxyCodeLine{2891       \textcolor{keywordflow}{if} (result.at(i))}
+\DoxyCodeLine{2892         result << result.at(i)-\/>elements(recursive);}
+\DoxyCodeLine{2893     \}}
+\DoxyCodeLine{2894   \}}
+\DoxyCodeLine{2895   \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{2896 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a886c0dcbabd51a45da399e044552b685}\label{classQCPLayoutGrid_a886c0dcbabd51a45da399e044552b685}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!expandTo@{expandTo}}
+\index{expandTo@{expandTo}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{expandTo()}{expandTo()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Layout\+Grid\+::expand\+To (\begin{DoxyParamCaption}\item[{int}]{new\+Row\+Count,  }\item[{int}]{new\+Column\+Count }\end{DoxyParamCaption})}
+
+Expands the layout to have {\itshape new\+Row\+Count} rows and {\itshape new\+Column\+Count} columns. So the last valid row index will be {\itshape new\+Row\+Count-\/1}, the last valid column index will be {\itshape new\+Column\+Count-\/1}.
+
+If the current column/row count is already larger or equal to {\itshape new\+Column\+Count/{\itshape new\+Row\+Count},} this function does nothing in that dimension.
+
+Newly created cells are empty, new rows and columns have the stretch factor 1.
+
+Note that upon a call to \mbox{\hyperlink{classQCPLayoutGrid_adff1a2ca691ed83d2d24a4cd1fe17012}{add\+Element}}, the layout is expanded automatically to contain the specified row and column, using this function.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_a08bba60e4acd20165526a8fd7f986b58}{simplify}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2723 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2724 \{}
+\DoxyCodeLine{2725   \textcolor{comment}{// add rows as necessary:}}
+\DoxyCodeLine{2726   \textcolor{keywordflow}{while} (\mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{rowCount}}() < newRowCount)}
+\DoxyCodeLine{2727   \{}
+\DoxyCodeLine{2728     mElements.append(QList<QCPLayoutElement*>());}
+\DoxyCodeLine{2729     mRowStretchFactors.append(1);}
+\DoxyCodeLine{2730   \}}
+\DoxyCodeLine{2731   \textcolor{comment}{// go through rows and expand columns as necessary:}}
+\DoxyCodeLine{2732   \textcolor{keywordtype}{int} newColCount = qMax(\mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{columnCount}}(), newColumnCount);}
+\DoxyCodeLine{2733   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<\mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{rowCount}}(); ++i)}
+\DoxyCodeLine{2734   \{}
+\DoxyCodeLine{2735     \textcolor{keywordflow}{while} (mElements.at(i).size() < newColCount)}
+\DoxyCodeLine{2736       mElements[i].append(0);}
+\DoxyCodeLine{2737   \}}
+\DoxyCodeLine{2738   \textcolor{keywordflow}{while} (mColumnStretchFactors.size() < newColCount)}
+\DoxyCodeLine{2739     mColumnStretchFactors.append(1);}
+\DoxyCodeLine{2740 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}\label{classQCPLayoutGrid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!hasElement@{hasElement}}
+\index{hasElement@{hasElement}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{hasElement()}{hasElement()}}
+{\footnotesize\ttfamily bool Q\+C\+P\+Layout\+Grid\+::has\+Element (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})}
+
+Returns whether the cell at {\itshape row} and {\itshape column} exists and contains a valid element, i.\+e. isn\textquotesingle{}t empty.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_a602b426609b4411cf6a93c3ddf3a381a}{element}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2579 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2580 \{}
+\DoxyCodeLine{2581   \textcolor{keywordflow}{if} (row >= 0 \&\& row < \mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{rowCount}}() \&\& column >= 0 \&\& column < \mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{columnCount}}())}
+\DoxyCodeLine{2582     \textcolor{keywordflow}{return} mElements.at(row).at(column);}
+\DoxyCodeLine{2583   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2584     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{2585 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a1e880a321dbe8b43b471ccd764433dc4}\label{classQCPLayoutGrid_a1e880a321dbe8b43b471ccd764433dc4}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!insertColumn@{insertColumn}}
+\index{insertColumn@{insertColumn}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{insertColumn()}{insertColumn()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Layout\+Grid\+::insert\+Column (\begin{DoxyParamCaption}\item[{int}]{new\+Index }\end{DoxyParamCaption})}
+
+Inserts a new column with empty cells at the column index {\itshape new\+Index}. Valid values for {\itshape new\+Index} range from 0 (inserts a row at the left) to {\itshape row\+Count} (appends a row at the right).
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_a48af3dd7c3a653d9c3d7dd99bd02e838}{insert\+Row}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2774 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2775 \{}
+\DoxyCodeLine{2776   \textcolor{keywordflow}{if} (mElements.isEmpty() || mElements.first().isEmpty()) \textcolor{comment}{// if grid is completely empty, add first cell}}
+\DoxyCodeLine{2777   \{}
+\DoxyCodeLine{2778     \mbox{\hyperlink{classQCPLayoutGrid_a886c0dcbabd51a45da399e044552b685}{expandTo}}(1, 1);}
+\DoxyCodeLine{2779     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{2780   \}}
+\DoxyCodeLine{2781   }
+\DoxyCodeLine{2782   \textcolor{keywordflow}{if} (newIndex < 0)}
+\DoxyCodeLine{2783     newIndex = 0;}
+\DoxyCodeLine{2784   \textcolor{keywordflow}{if} (newIndex > \mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{columnCount}}())}
+\DoxyCodeLine{2785     newIndex = \mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{columnCount}}();}
+\DoxyCodeLine{2786   }
+\DoxyCodeLine{2787   mColumnStretchFactors.insert(newIndex, 1);}
+\DoxyCodeLine{2788   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} row=0; row<\mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{rowCount}}(); ++row)}
+\DoxyCodeLine{2789     mElements[row].insert(newIndex, (\mbox{\hyperlink{classQCPLayoutElement}{QCPLayoutElement}}*)0);}
+\DoxyCodeLine{2790 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a48af3dd7c3a653d9c3d7dd99bd02e838}\label{classQCPLayoutGrid_a48af3dd7c3a653d9c3d7dd99bd02e838}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!insertRow@{insertRow}}
+\index{insertRow@{insertRow}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{insertRow()}{insertRow()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Layout\+Grid\+::insert\+Row (\begin{DoxyParamCaption}\item[{int}]{new\+Index }\end{DoxyParamCaption})}
+
+Inserts a new row with empty cells at the row index {\itshape new\+Index}. Valid values for {\itshape new\+Index} range from 0 (inserts a row at the top) to {\itshape row\+Count} (appends a row at the bottom).
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_a1e880a321dbe8b43b471ccd764433dc4}{insert\+Column}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2748 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2749 \{}
+\DoxyCodeLine{2750   \textcolor{keywordflow}{if} (mElements.isEmpty() || mElements.first().isEmpty()) \textcolor{comment}{// if grid is completely empty, add first cell}}
+\DoxyCodeLine{2751   \{}
+\DoxyCodeLine{2752     \mbox{\hyperlink{classQCPLayoutGrid_a886c0dcbabd51a45da399e044552b685}{expandTo}}(1, 1);}
+\DoxyCodeLine{2753     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{2754   \}}
+\DoxyCodeLine{2755   }
+\DoxyCodeLine{2756   \textcolor{keywordflow}{if} (newIndex < 0)}
+\DoxyCodeLine{2757     newIndex = 0;}
+\DoxyCodeLine{2758   \textcolor{keywordflow}{if} (newIndex > \mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{rowCount}}())}
+\DoxyCodeLine{2759     newIndex = \mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{rowCount}}();}
+\DoxyCodeLine{2760   }
+\DoxyCodeLine{2761   mRowStretchFactors.insert(newIndex, 1);}
+\DoxyCodeLine{2762   QList<QCPLayoutElement*> newRow;}
+\DoxyCodeLine{2763   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} col=0; col<\mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{columnCount}}(); ++col)}
+\DoxyCodeLine{2764     newRow.append((\mbox{\hyperlink{classQCPLayoutElement}{QCPLayoutElement}}*)0);}
+\DoxyCodeLine{2765   mElements.insert(newIndex, newRow);}
+\DoxyCodeLine{2766 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a3720d1b79931b2bdec3f2158a5f0181c}\label{classQCPLayoutGrid_a3720d1b79931b2bdec3f2158a5f0181c}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!maximumSizeHint@{maximumSizeHint}}
+\index{maximumSizeHint@{maximumSizeHint}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{maximumSizeHint()}{maximumSizeHint()}}
+{\footnotesize\ttfamily Q\+Size Q\+C\+P\+Layout\+Grid\+::maximum\+Size\+Hint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the maximum size this layout element (the inner \mbox{\hyperlink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}}) may be expanded to.
+
+if a maximum size (\mbox{\hyperlink{classQCPLayoutElement_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}}) was not set manually, parent layouts consult this function to determine the maximum allowed size of this layout element. (A manual maximum size is considered set if it is smaller than Qt\textquotesingle{}s Q\+W\+I\+D\+G\+E\+T\+S\+I\+Z\+E\+\_\+\+M\+AX.) 
+
+Reimplemented from \mbox{\hyperlink{classQCPLayoutElement_ab5ce2ba22b36d9a3b70a1be562c326e5}{Q\+C\+P\+Layout\+Element}}.
+
+
+
+Definition at line 2961 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2962 \{}
+\DoxyCodeLine{2963   QVector<int> maxColWidths, maxRowHeights;}
+\DoxyCodeLine{2964   getMaximumRowColSizes(\&maxColWidths, \&maxRowHeights);}
+\DoxyCodeLine{2965   }
+\DoxyCodeLine{2966   QSize result(0, 0);}
+\DoxyCodeLine{2967   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<maxColWidths.size(); ++i)}
+\DoxyCodeLine{2968     result.setWidth(qMin(result.width()+maxColWidths.at(i), QWIDGETSIZE\_MAX));}
+\DoxyCodeLine{2969   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<maxRowHeights.size(); ++i)}
+\DoxyCodeLine{2970     result.setHeight(qMin(result.height()+maxRowHeights.at(i), QWIDGETSIZE\_MAX));}
+\DoxyCodeLine{2971   result.rwidth() += qMax(0, \mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{columnCount}}()-\/1) * mColumnSpacing + mMargins.left() + mMargins.right();}
+\DoxyCodeLine{2972   result.rheight() += qMax(0, \mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{rowCount}}()-\/1) * mRowSpacing + mMargins.top() + mMargins.bottom();}
+\DoxyCodeLine{2973   \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{2974 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a9ef4b0d626708a1ada2cfea3a5973b80}\label{classQCPLayoutGrid_a9ef4b0d626708a1ada2cfea3a5973b80}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!minimumSizeHint@{minimumSizeHint}}
+\index{minimumSizeHint@{minimumSizeHint}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{minimumSizeHint()}{minimumSizeHint()}}
+{\footnotesize\ttfamily Q\+Size Q\+C\+P\+Layout\+Grid\+::minimum\+Size\+Hint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the minimum size this layout element (the inner \mbox{\hyperlink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}}) may be compressed to.
+
+if a minimum size (\mbox{\hyperlink{classQCPLayoutElement_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}}) was not set manually, parent layouts consult this function to determine the minimum allowed size of this layout element. (A manual minimum size is considered set if it is non-\/zero.) 
+
+Reimplemented from \mbox{\hyperlink{classQCPLayoutElement_ab3fdb5c9a5189bb2dac10d4d25329cd8}{Q\+C\+P\+Layout\+Element}}.
+
+
+
+Definition at line 2946 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2947 \{}
+\DoxyCodeLine{2948   QVector<int> minColWidths, minRowHeights;}
+\DoxyCodeLine{2949   getMinimumRowColSizes(\&minColWidths, \&minRowHeights);}
+\DoxyCodeLine{2950   QSize result(0, 0);}
+\DoxyCodeLine{2951   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<minColWidths.size(); ++i)}
+\DoxyCodeLine{2952     result.rwidth() += minColWidths.at(i);}
+\DoxyCodeLine{2953   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<minRowHeights.size(); ++i)}
+\DoxyCodeLine{2954     result.rheight() += minRowHeights.at(i);}
+\DoxyCodeLine{2955   result.rwidth() += qMax(0, \mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{columnCount}}()-\/1) * mColumnSpacing + mMargins.left() + mMargins.right();}
+\DoxyCodeLine{2956   result.rheight() += qMax(0, \mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{rowCount}}()-\/1) * mRowSpacing + mMargins.top() + mMargins.bottom();}
+\DoxyCodeLine{2957   \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{2958 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}\label{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!rowCount@{rowCount}}
+\index{rowCount@{rowCount}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{rowCount()}{rowCount()}}
+{\footnotesize\ttfamily int Q\+C\+P\+Layout\+Grid\+::row\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the number of rows in the layout.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{column\+Count}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2526 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2527 \{}
+\DoxyCodeLine{2528   \textcolor{keywordflow}{return} mElements.size();}
+\DoxyCodeLine{2529 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a3a49272aba32bb0fddc3bb2a45a3dba0}\label{classQCPLayoutGrid_a3a49272aba32bb0fddc3bb2a45a3dba0}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!setColumnSpacing@{setColumnSpacing}}
+\index{setColumnSpacing@{setColumnSpacing}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{setColumnSpacing()}{setColumnSpacing()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Layout\+Grid\+::set\+Column\+Spacing (\begin{DoxyParamCaption}\item[{int}]{pixels }\end{DoxyParamCaption})}
+
+Sets the gap that is left blank between columns to {\itshape pixels}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_aaef2cd2d456197ee06a208793678e436}{set\+Row\+Spacing}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2694 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2695 \{}
+\DoxyCodeLine{2696   mColumnSpacing = pixels;}
+\DoxyCodeLine{2697 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_ae38f31a71687b9d7ee3104852528fb50}\label{classQCPLayoutGrid_ae38f31a71687b9d7ee3104852528fb50}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!setColumnStretchFactor@{setColumnStretchFactor}}
+\index{setColumnStretchFactor@{setColumnStretchFactor}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{setColumnStretchFactor()}{setColumnStretchFactor()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Layout\+Grid\+::set\+Column\+Stretch\+Factor (\begin{DoxyParamCaption}\item[{int}]{column,  }\item[{double}]{factor }\end{DoxyParamCaption})}
+
+Sets the stretch {\itshape factor} of {\itshape column}.
+
+Stretch factors control the relative sizes of rows and columns. Cells will not be resized beyond their minimum and maximum widths/heights (\mbox{\hyperlink{classQCPLayoutElement_a5dd29a3c8bc88440c97c06b67be7886b}{Q\+C\+P\+Layout\+Element\+::set\+Minimum\+Size}}, \mbox{\hyperlink{classQCPLayoutElement_a74eb5280a737ab44833d506db65efd95}{Q\+C\+P\+Layout\+Element\+::set\+Maximum\+Size}}), regardless of the stretch factor.
+
+The default stretch factor of newly created rows/columns is 1.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_a6c2591d1a7e2534ce036989543b49e57}{set\+Column\+Stretch\+Factors}}, \mbox{\hyperlink{classQCPLayoutGrid_a7b0273de5369bd93d942edbaf5b166ec}{set\+Row\+Stretch\+Factor}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2598 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2599 \{}
+\DoxyCodeLine{2600   \textcolor{keywordflow}{if} (column >= 0 \&\& column < \mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{columnCount}}())}
+\DoxyCodeLine{2601   \{}
+\DoxyCodeLine{2602     \textcolor{keywordflow}{if} (factor > 0)}
+\DoxyCodeLine{2603       mColumnStretchFactors[column] = factor;}
+\DoxyCodeLine{2604     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2605       qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Invalid stretch factor, must be positive:"} << factor;}
+\DoxyCodeLine{2606   \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2607     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Invalid column:"} << column;}
+\DoxyCodeLine{2608 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a6c2591d1a7e2534ce036989543b49e57}\label{classQCPLayoutGrid_a6c2591d1a7e2534ce036989543b49e57}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!setColumnStretchFactors@{setColumnStretchFactors}}
+\index{setColumnStretchFactors@{setColumnStretchFactors}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{setColumnStretchFactors()}{setColumnStretchFactors()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Layout\+Grid\+::set\+Column\+Stretch\+Factors (\begin{DoxyParamCaption}\item[{const Q\+List$<$ double $>$ \&}]{factors }\end{DoxyParamCaption})}
+
+Sets the stretch {\itshape factors} of all columns. {\itshape factors} must have the size \mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{column\+Count}}.
+
+Stretch factors control the relative sizes of rows and columns. Cells will not be resized beyond their minimum and maximum widths/heights (\mbox{\hyperlink{classQCPLayoutElement_a5dd29a3c8bc88440c97c06b67be7886b}{Q\+C\+P\+Layout\+Element\+::set\+Minimum\+Size}}, \mbox{\hyperlink{classQCPLayoutElement_a74eb5280a737ab44833d506db65efd95}{Q\+C\+P\+Layout\+Element\+::set\+Maximum\+Size}}), regardless of the stretch factor.
+
+The default stretch factor of newly created rows/columns is 1.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_ae38f31a71687b9d7ee3104852528fb50}{set\+Column\+Stretch\+Factor}}, \mbox{\hyperlink{classQCPLayoutGrid_a200b45f9c908f96ebadaa3c8d87a2782}{set\+Row\+Stretch\+Factors}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2621 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2622 \{}
+\DoxyCodeLine{2623   \textcolor{keywordflow}{if} (factors.size() == mColumnStretchFactors.size())}
+\DoxyCodeLine{2624   \{}
+\DoxyCodeLine{2625     mColumnStretchFactors = factors;}
+\DoxyCodeLine{2626     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<mColumnStretchFactors.size(); ++i)}
+\DoxyCodeLine{2627     \{}
+\DoxyCodeLine{2628       \textcolor{keywordflow}{if} (mColumnStretchFactors.at(i) <= 0)}
+\DoxyCodeLine{2629       \{}
+\DoxyCodeLine{2630         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Invalid stretch factor, must be positive:"} << mColumnStretchFactors.at(i);}
+\DoxyCodeLine{2631         mColumnStretchFactors[i] = 1;}
+\DoxyCodeLine{2632       \}}
+\DoxyCodeLine{2633     \}}
+\DoxyCodeLine{2634   \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2635     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Column count not equal to passed stretch factor count:"} << factors;}
+\DoxyCodeLine{2636 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_aaef2cd2d456197ee06a208793678e436}\label{classQCPLayoutGrid_aaef2cd2d456197ee06a208793678e436}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!setRowSpacing@{setRowSpacing}}
+\index{setRowSpacing@{setRowSpacing}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{setRowSpacing()}{setRowSpacing()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Layout\+Grid\+::set\+Row\+Spacing (\begin{DoxyParamCaption}\item[{int}]{pixels }\end{DoxyParamCaption})}
+
+Sets the gap that is left blank between rows to {\itshape pixels}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_a3a49272aba32bb0fddc3bb2a45a3dba0}{set\+Column\+Spacing}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2704 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2705 \{}
+\DoxyCodeLine{2706   mRowSpacing = pixels;}
+\DoxyCodeLine{2707 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a7b0273de5369bd93d942edbaf5b166ec}\label{classQCPLayoutGrid_a7b0273de5369bd93d942edbaf5b166ec}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!setRowStretchFactor@{setRowStretchFactor}}
+\index{setRowStretchFactor@{setRowStretchFactor}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{setRowStretchFactor()}{setRowStretchFactor()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Layout\+Grid\+::set\+Row\+Stretch\+Factor (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{double}]{factor }\end{DoxyParamCaption})}
+
+Sets the stretch {\itshape factor} of {\itshape row}.
+
+Stretch factors control the relative sizes of rows and columns. Cells will not be resized beyond their minimum and maximum widths/heights (\mbox{\hyperlink{classQCPLayoutElement_a5dd29a3c8bc88440c97c06b67be7886b}{Q\+C\+P\+Layout\+Element\+::set\+Minimum\+Size}}, \mbox{\hyperlink{classQCPLayoutElement_a74eb5280a737ab44833d506db65efd95}{Q\+C\+P\+Layout\+Element\+::set\+Maximum\+Size}}), regardless of the stretch factor.
+
+The default stretch factor of newly created rows/columns is 1.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_a6c2591d1a7e2534ce036989543b49e57}{set\+Column\+Stretch\+Factors}}, \mbox{\hyperlink{classQCPLayoutGrid_a7b0273de5369bd93d942edbaf5b166ec}{set\+Row\+Stretch\+Factor}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2649 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2650 \{}
+\DoxyCodeLine{2651   \textcolor{keywordflow}{if} (row >= 0 \&\& row < \mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{rowCount}}())}
+\DoxyCodeLine{2652   \{}
+\DoxyCodeLine{2653     \textcolor{keywordflow}{if} (factor > 0)}
+\DoxyCodeLine{2654       mRowStretchFactors[row] = factor;}
+\DoxyCodeLine{2655     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2656       qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Invalid stretch factor, must be positive:"} << factor;}
+\DoxyCodeLine{2657   \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2658     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Invalid row:"} << row;}
+\DoxyCodeLine{2659 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a200b45f9c908f96ebadaa3c8d87a2782}\label{classQCPLayoutGrid_a200b45f9c908f96ebadaa3c8d87a2782}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!setRowStretchFactors@{setRowStretchFactors}}
+\index{setRowStretchFactors@{setRowStretchFactors}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{setRowStretchFactors()}{setRowStretchFactors()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Layout\+Grid\+::set\+Row\+Stretch\+Factors (\begin{DoxyParamCaption}\item[{const Q\+List$<$ double $>$ \&}]{factors }\end{DoxyParamCaption})}
+
+Sets the stretch {\itshape factors} of all rows. {\itshape factors} must have the size \mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{row\+Count}}.
+
+Stretch factors control the relative sizes of rows and columns. Cells will not be resized beyond their minimum and maximum widths/heights (\mbox{\hyperlink{classQCPLayoutElement_a5dd29a3c8bc88440c97c06b67be7886b}{Q\+C\+P\+Layout\+Element\+::set\+Minimum\+Size}}, \mbox{\hyperlink{classQCPLayoutElement_a74eb5280a737ab44833d506db65efd95}{Q\+C\+P\+Layout\+Element\+::set\+Maximum\+Size}}), regardless of the stretch factor.
+
+The default stretch factor of newly created rows/columns is 1.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_a7b0273de5369bd93d942edbaf5b166ec}{set\+Row\+Stretch\+Factor}}, \mbox{\hyperlink{classQCPLayoutGrid_a6c2591d1a7e2534ce036989543b49e57}{set\+Column\+Stretch\+Factors}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2672 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2673 \{}
+\DoxyCodeLine{2674   \textcolor{keywordflow}{if} (factors.size() == mRowStretchFactors.size())}
+\DoxyCodeLine{2675   \{}
+\DoxyCodeLine{2676     mRowStretchFactors = factors;}
+\DoxyCodeLine{2677     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<mRowStretchFactors.size(); ++i)}
+\DoxyCodeLine{2678     \{}
+\DoxyCodeLine{2679       \textcolor{keywordflow}{if} (mRowStretchFactors.at(i) <= 0)}
+\DoxyCodeLine{2680       \{}
+\DoxyCodeLine{2681         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Invalid stretch factor, must be positive:"} << mRowStretchFactors.at(i);}
+\DoxyCodeLine{2682         mRowStretchFactors[i] = 1;}
+\DoxyCodeLine{2683       \}}
+\DoxyCodeLine{2684     \}}
+\DoxyCodeLine{2685   \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2686     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Row count not equal to passed stretch factor count:"} << factors;}
+\DoxyCodeLine{2687 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a08bba60e4acd20165526a8fd7f986b58}\label{classQCPLayoutGrid_a08bba60e4acd20165526a8fd7f986b58}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!simplify@{simplify}}
+\index{simplify@{simplify}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{simplify()}{simplify()}}
+{\footnotesize\ttfamily void Q\+C\+P\+Layout\+Grid\+::simplify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Simplifies the layout by collapsing rows and columns which only contain empty cells. 
+
+Reimplemented from \mbox{\hyperlink{classQCPLayout_a41e6ac049143866e8f8b4964efab01b2}{Q\+C\+P\+Layout}}.
+
+
+
+Definition at line 2901 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2902 \{}
+\DoxyCodeLine{2903   \textcolor{comment}{// remove rows with only empty cells:}}
+\DoxyCodeLine{2904   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} row=\mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{rowCount}}()-\/1; row>=0; -\/-\/row)}
+\DoxyCodeLine{2905   \{}
+\DoxyCodeLine{2906     \textcolor{keywordtype}{bool} hasElements = \textcolor{keyword}{false};}
+\DoxyCodeLine{2907     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} col=0; col<\mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{columnCount}}(); ++col)}
+\DoxyCodeLine{2908     \{}
+\DoxyCodeLine{2909       \textcolor{keywordflow}{if} (mElements.at(row).at(col))}
+\DoxyCodeLine{2910       \{}
+\DoxyCodeLine{2911         hasElements = \textcolor{keyword}{true};}
+\DoxyCodeLine{2912         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{2913       \}}
+\DoxyCodeLine{2914     \}}
+\DoxyCodeLine{2915     \textcolor{keywordflow}{if} (!hasElements)}
+\DoxyCodeLine{2916     \{}
+\DoxyCodeLine{2917       mRowStretchFactors.removeAt(row);}
+\DoxyCodeLine{2918       mElements.removeAt(row);}
+\DoxyCodeLine{2919       \textcolor{keywordflow}{if} (mElements.isEmpty()) \textcolor{comment}{// removed last element, also remove stretch factor (wouldn't happen below because also columnCount changed to 0 now)}}
+\DoxyCodeLine{2920         mColumnStretchFactors.clear();}
+\DoxyCodeLine{2921     \}}
+\DoxyCodeLine{2922   \}}
+\DoxyCodeLine{2923   }
+\DoxyCodeLine{2924   \textcolor{comment}{// remove columns with only empty cells:}}
+\DoxyCodeLine{2925   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} col=\mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{columnCount}}()-\/1; col>=0; -\/-\/col)}
+\DoxyCodeLine{2926   \{}
+\DoxyCodeLine{2927     \textcolor{keywordtype}{bool} hasElements = \textcolor{keyword}{false};}
+\DoxyCodeLine{2928     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} row=0; row<\mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{rowCount}}(); ++row)}
+\DoxyCodeLine{2929     \{}
+\DoxyCodeLine{2930       \textcolor{keywordflow}{if} (mElements.at(row).at(col))}
+\DoxyCodeLine{2931       \{}
+\DoxyCodeLine{2932         hasElements = \textcolor{keyword}{true};}
+\DoxyCodeLine{2933         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{2934       \}}
+\DoxyCodeLine{2935     \}}
+\DoxyCodeLine{2936     \textcolor{keywordflow}{if} (!hasElements)}
+\DoxyCodeLine{2937     \{}
+\DoxyCodeLine{2938       mColumnStretchFactors.removeAt(col);}
+\DoxyCodeLine{2939       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} row=0; row<\mbox{\hyperlink{classQCPLayoutGrid_a19c66fd76cbce58a8e94f33797e0c0aa}{rowCount}}(); ++row)}
+\DoxyCodeLine{2940         mElements[row].\mbox{\hyperlink{classQCPLayout_a2403f684fee3ce47132faaeed00bb066}{removeAt}}(col);}
+\DoxyCodeLine{2941     \}}
+\DoxyCodeLine{2942   \}}
+\DoxyCodeLine{2943 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_a666a9fe9e92054436f9b66eba25cca0c}\label{classQCPLayoutGrid_a666a9fe9e92054436f9b66eba25cca0c}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!take@{take}}
+\index{take@{take}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{take()}{take()}}
+{\footnotesize\ttfamily bool Q\+C\+P\+Layout\+Grid\+::take (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPLayoutElement}{Q\+C\+P\+Layout\+Element}} $\ast$}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes the specified {\itshape element} from the layout and returns true on success.
+
+If the {\itshape element} isn\textquotesingle{}t in this layout, returns false.
+
+Note that some layouts don\textquotesingle{}t remove the respective cell right away but leave an empty cell after successful removal of the layout element. To collapse empty cells, use \mbox{\hyperlink{classQCPLayoutGrid_a08bba60e4acd20165526a8fd7f986b58}{simplify}}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_acc1277394ff8a6432e111ff9463e6375}{take\+At}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classQCPLayout_ada26cd17e56472b0b4d7fbbc96873e4c}{Q\+C\+P\+Layout}}.
+
+
+
+Definition at line 2852 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2853 \{}
+\DoxyCodeLine{2854   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classQCPLayoutGrid_a602b426609b4411cf6a93c3ddf3a381a}{element}})}
+\DoxyCodeLine{2855   \{}
+\DoxyCodeLine{2856     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<\mbox{\hyperlink{classQCPLayoutGrid_a77f194843d037e0da6d5f3170acdf3a2}{elementCount}}(); ++i)}
+\DoxyCodeLine{2857     \{}
+\DoxyCodeLine{2858       \textcolor{keywordflow}{if} (\mbox{\hyperlink{classQCPLayoutGrid_a97672ecc379cb3a09639926ba9980297}{elementAt}}(i) == \mbox{\hyperlink{classQCPLayoutGrid_a602b426609b4411cf6a93c3ddf3a381a}{element}})}
+\DoxyCodeLine{2859       \{}
+\DoxyCodeLine{2860         \mbox{\hyperlink{classQCPLayoutGrid_acc1277394ff8a6432e111ff9463e6375}{takeAt}}(i);}
+\DoxyCodeLine{2861         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{2862       \}}
+\DoxyCodeLine{2863     \}}
+\DoxyCodeLine{2864     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Element not in this layout, couldn't take"};}
+\DoxyCodeLine{2865   \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2866     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Can't take null element"};}
+\DoxyCodeLine{2867   \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{2868 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classQCPLayoutGrid_acc1277394ff8a6432e111ff9463e6375}\label{classQCPLayoutGrid_acc1277394ff8a6432e111ff9463e6375}} 
+\index{QCPLayoutGrid@{QCPLayoutGrid}!takeAt@{takeAt}}
+\index{takeAt@{takeAt}!QCPLayoutGrid@{QCPLayoutGrid}}
+\doxysubsubsection{\texorpdfstring{takeAt()}{takeAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPLayoutElement}{Q\+C\+P\+Layout\+Element}} $\ast$ Q\+C\+P\+Layout\+Grid\+::take\+At (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes the element with the given {\itshape index} from the layout and returns it.
+
+If the {\itshape index} is invalid or the cell with that index is empty, returns 0.
+
+Note that some layouts don\textquotesingle{}t remove the respective cell right away but leave an empty cell after successful removal of the layout element. To collapse empty cells, use \mbox{\hyperlink{classQCPLayoutGrid_a08bba60e4acd20165526a8fd7f986b58}{simplify}}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQCPLayoutGrid_a97672ecc379cb3a09639926ba9980297}{element\+At}}, \mbox{\hyperlink{classQCPLayoutGrid_a666a9fe9e92054436f9b66eba25cca0c}{take}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classQCPLayout_a5a79621fa0a6eabb8b520cfc04fb601a}{Q\+C\+P\+Layout}}.
+
+
+
+Definition at line 2837 of file qcustomplot.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2838 \{}
+\DoxyCodeLine{2839   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classQCPLayoutElement}{QCPLayoutElement}} *el = \mbox{\hyperlink{classQCPLayoutGrid_a97672ecc379cb3a09639926ba9980297}{elementAt}}(index))}
+\DoxyCodeLine{2840   \{}
+\DoxyCodeLine{2841     releaseElement(el);}
+\DoxyCodeLine{2842     mElements[index / \mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{columnCount}}()][index \% \mbox{\hyperlink{classQCPLayoutGrid_a1a2962cbf45011405b64b913afa8e7a2}{columnCount}}()] = 0;}
+\DoxyCodeLine{2843     \textcolor{keywordflow}{return} el;}
+\DoxyCodeLine{2844   \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2845   \{}
+\DoxyCodeLine{2846     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Attempt to take invalid index:"} << index;}
+\DoxyCodeLine{2847     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{2848   \}}
+\DoxyCodeLine{2849 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
+\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
