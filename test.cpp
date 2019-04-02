@@ -11,8 +11,8 @@ int main(){
     vector<int> points_idx;
     int range=100000;
     for(int i=0;i<range;i++){
-        double x=((double)(rand()%range))/7.0;
-        double y=((double)(rand()%range))/7.0;
+        double x=((double)(rand()%range))/(3.0);//*(rand()%100));
+        double y=((double)(rand()%range))/(3.0);//*(rand()%100));
         int idx=i;
         //cin>>x>>y;
         struct point p;

@@ -5,18 +5,15 @@
 using namespace std;
 
 
-/*
+/**
 implementing the heap related function as defined in header file
 */
 //Defining the constructor function
 Heap::Heap(char heap_type,int heap_size){
-    /*
-    Description:
-        The constructor for creating the heap.
-    USAGE:
-        INPUT:
-            heap_type   : char to specify the type of the heap
-            heap_size   : integer to define the specify of the heap
+    /**
+    The constructor for creating the heap.
+    @param [in] heap_type   : char to specify the type of the heap
+    @param [in] heap_size   : integer to define the specify of the heap
     */
     //Assigning the type and size to the heap
     if(heap_type!='n' && heap_type!='x'){
@@ -32,24 +29,20 @@ Heap::Heap(char heap_type,int heap_size){
     val_heap=(double *)malloc(sizeof(double)*heap_size);
 }
 Heap::~Heap(){
-    /*
-    Description:
-        Destructor for the heap, freeing the dynamically allocatted
-        area in heap used for this "heap"
+    /**
+    Destructor for the heap, freeing the dynamically allocatted
+    area in heap used for this "heap"
     */
     free(this->idx_heap);
     free(this->val_heap);
 }
 //Implementing the insertion function
 void Heap::insert_into_heap(int idx,double value){
-    /*
-    Description:
-        This function will insert an elemnt into heap and then heapify
-        to maintain all the proterty of the heap.
-    USAGE:
-        INPUT:
-            idx     : index of the point being entered (useful sometimes)
-            value   : the value which will be consulted while heapifying.
+    /**
+    This function will insert an elemnt into heap and then heapify
+    to maintain all the proterty of the heap.
+    @param [in]    idx     : index of the point being entered (useful sometimes)
+    @param [in]   value   : the value which will be consulted while heapifying.
     */
     //Incrementing the last pos which is being entered right now
     this->last_pos++;
@@ -88,9 +81,11 @@ void Heap::insert_into_heap(int idx,double value){
     }
 }
 void Heap::swap_elements(int pos1,int pos2){
-    /*
+    /**
     This function will swap the elements present in at pos1 and pos2
     in both idx and val heap simultaneously.
+    @param [in] pos1: index of the first position
+    @param [in] pos2: index of the second position to swap
     */
     //Saving the temporary
     int temp_idx=idx_heap[pos1];
@@ -105,11 +100,10 @@ void Heap::swap_elements(int pos1,int pos2){
 }
 //Implementing the deletion function
 int Heap::pop_from_heap(){
-    /*
-    Description:
-        This function will pop the first element from the heap and
-        do the cleanup after that. Also it returns the index of the
-        point being popped.
+    /**
+    This function will pop the first element from the heap and
+    do the cleanup after that. Also it returns the index of the
+    point being popped.
     */
     //saving the index of top of heap for returning
     int pop_idx=idx_heap[0];
@@ -193,10 +187,9 @@ int Heap::pop_from_heap(){
     return pop_idx;
 }
 void Heap::print_heap(){
-    /*
-    Description:
-        This function will print the elements presently in the heap
-        for the debuggin purpose only.
+    /**
+    This function will print the elements presently in the heap
+    for the debuggin purpose only.
     */
     cout<<"Elements in the "<<this->heap_type<<" are:"<<endl;
     for(int i=0;i<=this->last_pos;i++){
@@ -210,19 +203,17 @@ Median calculation function using the mean heap
 */
 int calculate_median(vector<int> &points_idx,\
                         vector<struct point> &points){
-    /*
+    /**
     Description:
         This function calcualte the median point according to x_coord
         in O(N) using the max and min heap.
-    USAGE:
-        INPUT:
-            points_idx  : the index of the points of which to collect
-                            the median.
-            points      : the vector containing all the points.
 
-        OUTPUT:
-            med_idx : the index of the median element in the points
-                        vector.
+    @param [in]    points_idx  : the index of the points of which to collect
+                        the median.
+    @param [in]    points      : the vector containing all the points.
+
+    @return   med_idx : the index of the median element in the points
+                    vector.
     */
     cout<<"\nFinding the median element"<<endl;
     //Handling the base case when only two elements are present
@@ -243,7 +234,7 @@ int calculate_median(vector<int> &points_idx,\
     min_heap.insert_into_heap(0,points[0].x);
 
     //Iterating over the points vector
-    for(int i=1;i<points_idx.size();i++){
+    for(unsigned int i=1;i<points_idx.size();i++){
         //cout<<"inserting the first two element on left"<<endl;
         //Inserting an element into max heap and heapifying
         int insert_idx=points_idx[i];

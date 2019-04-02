@@ -6,10 +6,10 @@ using namespace std;
 class Kirkpatrick_Seidel: public ConvexHull{
 public:
     //Defining the constructor
-    Kirkpatrick_Seidel(vector<struct point> points,MainWindow *w)\
+    Kirkpatrick_Seidel(vector<struct point> points/*,MainWindow *w*/)\
                                             :ConvexHull(points){
         //Initializing the gui window reference
-        this->w=w;
+        /*this->w=w;*/
         cout<<"\nPoints Initialized"<<endl;
         this->get_extremum_points();
     }
@@ -20,7 +20,7 @@ public:
     //Public function to generate the convex hull
     void put_a_hull_on_points();
     //Function to draw the bridge line
-    void draw_bridge(int idx1,int idx2);
+    void draw_bridge();
 
 private:
     //Extremum points variable
