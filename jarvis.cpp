@@ -8,13 +8,17 @@
 using namespace std;
 
 
+/**
+Description: Runs the Jarvis March algorithm using the vector of 
+struct point inherited from ConvexHull class. 
+*/
 void Jarvis::runJarvisMarch()
 {
 	int indexToBeSwapped = indexOfLeftMostPoint();
 
-	vector<point> gui_points;
+	vector<point> gui_points; //vector to store 
 
-	int orientedPoints[points.size()];
+	int orientedPoints[points.size()]; //stores the indices of points on convex hull in clockwise fashion
 
 	orientedPoints[0] = 0;
 	gui_points.push_back(points[orientedPoints[0]]);
@@ -73,6 +77,11 @@ void Jarvis::runJarvisMarch()
 
 }
 
+/**
+Description: Helper function which finds the index (in the vector of points)
+of the second point on the convex hull (clockwise). 
+@return index: index of the 2nd point on the convex hull (clockwise)
+*/
 int Jarvis::secondPointIndex()
 {
 
@@ -96,6 +105,15 @@ int Jarvis::secondPointIndex()
 	return index;
 }
 
+/**
+Description: Helper function finds the smaller angle between the 
+displacement vectors joining the 3 given points. 
+
+@param a: 1st point
+@param b: 2nd point (middle point)
+@param c: 3rd point
+@return angle: angle between vectors (a-b) & (a-c) 
+*/
 double Jarvis::findAngle(point a, point b, point c)
 {
 	double vector1_icap = a.x-b.x;
@@ -110,6 +128,11 @@ double Jarvis::findAngle(point a, point b, point c)
 	return angle;
 }
 
+/**
+Description: Helper function the index (in the vector of points) 
+of the leftmost point 
+@return index: index of the leftmost point on the convex hull
+*/
 int Jarvis::indexOfLeftMostPoint()
 {
 	double next;
