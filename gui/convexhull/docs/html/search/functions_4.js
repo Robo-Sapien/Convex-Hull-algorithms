@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['element',['element',['../classQCPLayoutGrid.html#a602b426609b4411cf6a93c3ddf3a381a',1,'QCPLayoutGrid']]],
-  ['elementat',['elementAt',['../classQCPLayout.html#afa73ca7d859f8a3ee5c73c9b353d2a56',1,'QCPLayout::elementAt()'],['../classQCPLayoutGrid.html#a97672ecc379cb3a09639926ba9980297',1,'QCPLayoutGrid::elementAt()'],['../classQCPLayoutInset.html#a832e049f0bb32e7db0490a9c904098df',1,'QCPLayoutInset::elementAt()']]],
-  ['elementcount',['elementCount',['../classQCPLayout.html#a39d3e9ef5d9b82ab1885ba1cb9597e56',1,'QCPLayout::elementCount()'],['../classQCPLayoutGrid.html#a77f194843d037e0da6d5f3170acdf3a2',1,'QCPLayoutGrid::elementCount()'],['../classQCPLayoutInset.html#a0398918a888fa7974a6776dc47fc5d2e',1,'QCPLayoutInset::elementCount()']]],
-  ['elements',['elements',['../classQCPMarginGroup.html#ac967a4dc5fe02ae44aeb43511d5e1bd4',1,'QCPMarginGroup::elements()'],['../classQCPLayoutElement.html#a76dec8cb31e498994a944d7647a43309',1,'QCPLayoutElement::elements()'],['../classQCPLayout.html#adc9ebc73fc215f9cc22796712a251ff4',1,'QCPLayout::elements()'],['../classQCPLayoutGrid.html#a20a745d013de4c89cf5de8004a5a36f7',1,'QCPLayoutGrid::elements()'],['../classQCPAxisRect.html#a40c0b3b17eb317ff4d393b7cb9b082a2',1,'QCPAxisRect::elements()']]],
-  ['expand',['expand',['../classQCPRange.html#a0fa1bc8048be50d52bea93a8caf08305',1,'QCPRange']]],
-  ['expanded',['expanded',['../classQCPRange.html#a9cbfb7cd06eac1839cae981e05c19633',1,'QCPRange']]],
-  ['expandto',['expandTo',['../classQCPLayoutGrid.html#a886c0dcbabd51a45da399e044552b685',1,'QCPLayoutGrid']]]
+  ['generate_5fnew_5fcand_5fidx',['generate_new_cand_idx',['../classKirkpatrick__Seidel.html#ab93d5d2d8b237254490a31a48479489c',1,'Kirkpatrick_Seidel']]],
+  ['get_5fbridge_5for_5fcandidate',['get_bridge_or_candidate',['../classKirkpatrick__Seidel.html#a88715575474aaae15641eb578e94933d',1,'Kirkpatrick_Seidel']]],
+  ['get_5fcandidates_5fidx',['get_candidates_idx',['../classKirkpatrick__Seidel.html#a3469702d1b4f11eb2d52d8bd29a9f3a8',1,'Kirkpatrick_Seidel']]],
+  ['get_5fextremum_5fpoints',['get_extremum_points',['../classKirkpatrick__Seidel.html#a52003531d137b726b20e51ca614e40b7',1,'Kirkpatrick_Seidel']]],
+  ['get_5fp2p_5fslope_5fentry',['get_p2p_slope_entry',['../classKirkpatrick__Seidel.html#a489b1cbb1985e231f1ae41c7128adc1c',1,'Kirkpatrick_Seidel']]],
+  ['get_5fpair_5fslopes',['get_pair_slopes',['../classKirkpatrick__Seidel.html#a403fd3696ad1a6b7dedb75cb8f5eaab7',1,'Kirkpatrick_Seidel']]],
+  ['get_5fupper_5fbridge',['get_upper_bridge',['../classKirkpatrick__Seidel.html#a5186a9dd5060b8243cf455c7faf9fb92',1,'Kirkpatrick_Seidel']]],
+  ['get_5fupper_5fhull',['get_upper_hull',['../classKirkpatrick__Seidel.html#a354a7cd71efe24b6750744b993ad48f5',1,'Kirkpatrick_Seidel']]]
 ];

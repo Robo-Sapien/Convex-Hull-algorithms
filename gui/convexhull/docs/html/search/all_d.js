@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normalize',['normalize',['../classQCPRange.html#af914a7740269b0604d0827c634a878a9',1,'QCPRange']]]
+  ['transform_5flowers_5fto_5fupper',['transform_lowers_to_upper',['../classKirkpatrick__Seidel.html#a766a0a811f34a933a6c53125df5ee1d7',1,'Kirkpatrick_Seidel']]]
 ];

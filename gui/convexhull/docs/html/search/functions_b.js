@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normalize',['normalize',['../classQCPRange.html#af914a7740269b0604d0827c634a878a9',1,'QCPRange']]]
+  ['_7eheap',['~Heap',['../classHeap.html#a734051272cbd0945d3916a1a89707ba2',1,'Heap']]]
 ];
