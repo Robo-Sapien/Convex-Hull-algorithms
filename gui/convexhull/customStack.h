@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-#define SIZE 100
+#define SIZE 10000
 
 template <class T>
 class customStack
@@ -82,7 +82,7 @@ template <class T>
 T customStack<T>::getTopElement()
 {
 	// check for stack underflow
-	if (top == -1)
+    if (top <= -1)
 	{
 		cout << "stack is empty, program terminated\n";
 		exit(EXIT_FAILURE);

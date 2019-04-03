@@ -134,9 +134,16 @@ class GrahamScan : public ConvexHull{
       convexHull.push(points[1]);
       convexHull.push(points[2]);
       vector<point> hullPoints;
+      if(points.size() < 3){
+          cout<<"convex hull does not exist"<<endl;
+          return;
+      }
+      hullPoints = convexHull.getPoints();
       for(unsigned int i = 3; i < points.size(); i++)
       {
+
         while( findOrientation(convexHull.getElementBelowTop(), convexHull.getTopElement(), points[i]) == 1){
+            cout<<hullPoints[i].x<<" "<<hullPoints[i].y<<endl;
             w->clearLines();
             w->drawLines(hullPoints);
             sleep(1);
