@@ -23,9 +23,9 @@ int main(){
             continue;
             //exit(0);
         }
-        if(x*x+y*y>3){
+        /*if(x*x+y*y>3){
             continue;
-        }
+        }*/
         //cout<<x<<","<<y<<endl;
         int idx=num_point;
         num_point++;
@@ -46,13 +46,13 @@ int main(){
     //Testing the Upper hull
     MyKPS.put_a_hull_on_points();
 
-    // GrahamScan *obj = new GrahamScan(points);
-    // obj->runGrahamScan(points);
+    /*GrahamScan *obj = new GrahamScan(points);
+    obj->runGrahamScan(points)*/;
 
     //Testing the Jarvis March
-    // Jarvis *ob = new Jarvis(points);
-    // ob->runJarvisMarch();
-
+    /*Jarvis *ob = new Jarvis(points);
+    ob->runJarvisMarch();
+*/
     //Testing the Grahm Scan
 
 
