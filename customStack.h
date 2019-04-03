@@ -119,6 +119,7 @@ void customStack<T>::printPoints()
     {
         cout<< arr[i].x << " " << arr[i].y << endl;
     }
+    cout<<"Hull Size:"<<top+1<<endl;
     
 }
 

@@ -68,7 +68,7 @@ void Jarvis::runJarvisMarch()
 	{
 		cout<<orientedPoints[i]<<" ";
 	}
-	cout<<endl;
+	cout<<"Num on HULL:"<<nPointsInHull<<endl;
 
 	for(i=0;i<gui_points.size();i++)
     {

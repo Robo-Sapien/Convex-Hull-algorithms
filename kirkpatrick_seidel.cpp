@@ -38,6 +38,7 @@ void Kirkpatrick_Seidel::print_pairs_on_hull(){
         this->print_point(hull_pair.second);
         cout<<endl;
     }
+    cout<<"Num of points: "<<hull_point_pairs.size()<<endl;
 }
 
 //Public function to generate the convex hull

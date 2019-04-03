@@ -13,16 +13,22 @@ int main(){
     vector<struct point> points;
     vector<int> points_idx;
     int range=5000;
-    for(int i=0;i<range;i++){
-        double x=((double)(rand()%range))/(7.0*(rand()%range));
-        double y=((double)(rand()%range))/(7.0*(rand()%range));
+    int num_point=0;
+    while(num_point!=range){
+        double x=3*((double)(rand()%range))/((rand()%range));
+        double y=3*((double)(rand()%range))/((rand()%range));
         if(isinf(x) || isinf(y)){
-            cout<<i<<endl;
+            cout<<num_point<<endl;
             cout<<"Infinity found in input: "<<x<<", "<<y<<endl;
             continue;
             //exit(0);
         }
-        int idx=i;
+        if(x*x+y*y>3){
+            continue;
+        }
+        //cout<<x<<","<<y<<endl;
+        int idx=num_point;
+        num_point++;
         //cin>>x>>y;
         struct point p;
         p.x=x;
@@ -36,12 +42,12 @@ int main(){
     //cout<<"med_idx: "<<med_idx<<endl;
 
     //Creating the class and initializig the points
-    // Kirkpatrick_Seidel MyKPS(points);
+    Kirkpatrick_Seidel MyKPS(points);
     //Testing the Upper hull
-    // MyKPS.put_a_hull_on_points();
+    MyKPS.put_a_hull_on_points();
 
-    GrahamScan *obj = new GrahamScan(points);
-    obj->runGrahamScan(points);
+    // GrahamScan *obj = new GrahamScan(points);
+    // obj->runGrahamScan(points);
 
     //Testing the Jarvis March
     // Jarvis *ob = new Jarvis(points);
